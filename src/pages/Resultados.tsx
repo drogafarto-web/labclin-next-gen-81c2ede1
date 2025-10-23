@@ -15,36 +15,48 @@ const Resultados = () => {
         <section className="bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Resultados de Exames{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-hero">
                   Online
                 </span>
               </h1>
               
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
                 Acesse seus resultados de forma rápida, segura e conveniente, a qualquer hora e em qualquer lugar.
               </p>
             </div>
 
-            {/* Worklab Iframe */}
-            <div className="max-w-3xl mx-auto bg-card border border-border rounded-xl shadow-medium p-6 md:p-8">
-              <div className="flex justify-center">
-                <iframe
-                  src="https://worklabweb.com.br/frame.php?Cliente=000&i=1"
-                  name="I1"
-                  width="650"
-                  height="200"
-                  title="Portal de Resultados Labclin"
-                  className="w-full max-w-[650px] border-0"
-                  scrolling="auto"
-                />
-              </div>
-              
-              <div className="mt-6 p-4 bg-muted/50 rounded-lg border border-border">
-                <p className="text-sm text-muted-foreground text-center">
-                  <span className="font-semibold text-foreground">Precisa de ajuda?</span> Entre em contato através do WhatsApp ou ligue para (32) 3642-2323
-                </p>
+            {/* Worklab Iframe Card */}
+            <div className="max-w-3xl mx-auto">
+              <div className="bg-card border border-border rounded-2xl shadow-strong overflow-hidden">
+                {/* Card Header */}
+                <div className="bg-gradient-hero px-6 py-4">
+                  <h2 className="text-xl font-semibold text-primary-foreground text-center">
+                    Portal de Acesso aos Resultados
+                  </h2>
+                </div>
+                
+                {/* Iframe Container */}
+                <div className="p-6 md:p-8">
+                  <div className="flex justify-center mb-4">
+                    <iframe
+                      src="https://worklabweb.com.br/frame.php?Cliente=000&i=1"
+                      name="I1"
+                      width="650"
+                      height="200"
+                      title="Portal de Resultados Labclin"
+                      className="w-full max-w-[650px] border-0"
+                      scrolling="auto"
+                    />
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-muted/50 rounded-lg border border-border">
+                    <p className="text-sm text-muted-foreground text-center">
+                      <span className="font-semibold text-foreground">Precisa de ajuda?</span> Entre em contato através do WhatsApp ou ligue para (32) 3642-2323
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
