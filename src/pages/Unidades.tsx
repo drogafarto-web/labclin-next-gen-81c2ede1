@@ -9,45 +9,59 @@ const Unidades = () => {
   const units = [
     {
       name: "Rio Pomba",
-      address: "Rua Principal, 123 - Centro, Rio Pomba - MG",
+      address: "Rua Dr. José Luiz de Mesquita, 270 - Centro, Rio Pomba - MG",
       cep: "36180-000",
-      phone: "(32) 3642-2323",
-      whatsapp: "5532999999999",
+      phone: "(32) 3571-8959",
+      whatsapp: "5532988547380",
       hours: {
-        weekdays: "Segunda a Sexta: 6h às 18h",
-        saturday: "Sábado: 6h às 12h",
+        weekdays: "Segunda a Sexta: 7h às 17h",
+        saturday: "Sábado: 7h às 11h",
         sunday: "Domingo e feriados: Fechado",
       },
-      services: ["Coleta", "Resultados", "Atendimento"],
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.0!2d-43.0!3d-21.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDE4JzAwLjAiUyA0M8KwMDAnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr",
+      services: ["Exames de Rotina", "Exames Especializados", "Coleta Domiciliar", "Atendimento Infantil", "Resultados Online"],
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.8!2d-43.1811!3d-21.2725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDE2JzIxLjAiUyA0M8KwMTAnNTIuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr",
     },
     {
       name: "Mercês",
-      address: "Av. Central, 456 - Centro, Mercês - MG",
-      cep: "36160-000",
-      phone: "(32) 3642-2323",
-      whatsapp: "5532999999999",
+      address: "Praça São Sebastião, s/n - Centro, Mercês - MG",
+      cep: "36496-000",
+      phone: "(32) 3571-8959",
+      whatsapp: "5532988547380",
       hours: {
-        weekdays: "Segunda a Sexta: 6h às 18h",
-        saturday: "Sábado: 6h às 12h",
+        weekdays: "Segunda a Sexta: 7h às 16h",
+        saturday: "Sábado: 7h às 11h",
         sunday: "Domingo e feriados: Fechado",
       },
-      services: ["Coleta", "Resultados"],
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.0!2d-43.0!3d-21.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDE4JzAwLjAiUyA0M8KwMDAnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr",
+      services: ["Exames de Rotina", "Coleta Domiciliar", "Resultados Online"],
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.8!2d-43.2!3d-21.28!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDE2JzQ4LjAiUyA0M8KwMTInMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr",
+    },
+    {
+      name: "Silverânia",
+      address: "Rua Principal - Centro, Silverânia - MG",
+      cep: "36497-000",
+      phone: "(32) 3571-8959",
+      whatsapp: "5532988547380",
+      hours: {
+        weekdays: "Segunda a Sexta: 7h às 16h",
+        saturday: "Sábado: 7h às 11h",
+        sunday: "Domingo e feriados: Fechado",
+      },
+      services: ["Exames de Rotina", "Coleta Domiciliar", "Resultados Online"],
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.8!2d-43.15!3d-21.26!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDE1JzM2LjAiUyA0M8KwMDknMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr",
     },
     {
       name: "Guarani",
-      address: "Praça da Matriz, 789 - Centro, Guarani - MG",
-      cep: "36170-000",
-      phone: "(32) 3642-2323",
-      whatsapp: "5532999999999",
+      address: "Rua Principal - Centro, Guarani - MG",
+      cep: "36160-000",
+      phone: "(32) 3571-8959",
+      whatsapp: "5532988547380",
       hours: {
-        weekdays: "Segunda a Sexta: 6h às 18h",
-        saturday: "Sábado: 6h às 12h",
+        weekdays: "Segunda a Sexta: 7h às 16h",
+        saturday: "Sábado: 7h às 11h",
         sunday: "Domingo e feriados: Fechado",
       },
-      services: ["Coleta", "Resultados"],
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.0!2d-43.0!3d-21.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDE4JzAwLjAiUyA0M8KwMDAnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr",
+      services: ["Exames de Rotina", "Coleta Domiciliar", "Resultados Online"],
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.8!2d-43.05!3d-21.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDIxJzAwLjAiUyA0M8KwMDMnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr",
     },
   ];
 
@@ -64,7 +78,7 @@ const Unidades = () => {
                 Nossas Unidades
               </h1>
               <p className="text-lg text-muted-foreground">
-                Estamos presentes em 3 cidades para melhor atendê-lo
+                Estamos presentes em 4 cidades para melhor atendê-lo: Rio Pomba, Mercês, Silverânia e Guarani
               </p>
             </div>
           </div>
