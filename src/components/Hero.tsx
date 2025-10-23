@@ -29,14 +29,19 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link to="/agendar">
-                <Button variant="hero" size="lg" className="w-full sm:w-auto">
+              <Link to="/agendar" className="w-full sm:w-auto">
+                <Button variant="hero" size="lg" className="w-full">
                   <Calendar className="mr-2 h-5 w-5" />
                   Agendar Exame
                 </Button>
               </Link>
-              <Link to="/unidades">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto">
+              <Link to="/resultados" className="w-full sm:w-auto">
+                <Button variant="secondary" size="lg" className="w-full">
+                  Ver Resultados Online
+                </Button>
+              </Link>
+              <Link to="/unidades" className="w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="w-full">
                   <MapPin className="mr-2 h-5 w-5" />
                   Ver Unidades
                 </Button>
