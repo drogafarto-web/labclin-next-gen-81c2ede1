@@ -51,12 +51,12 @@ const Hero = () => {
             {/* Trust indicators */}
             <div className="flex flex-wrap gap-6 pt-6 border-t border-border">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary">15+</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary">58+</div>
                 <div className="text-sm text-muted-foreground">Anos de Experiência</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary">50k+</div>
-                <div className="text-sm text-muted-foreground">Exames Realizados</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary">10k+</div>
+                <div className="text-sm text-muted-foreground">Exames por Mês</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-primary">4</div>
