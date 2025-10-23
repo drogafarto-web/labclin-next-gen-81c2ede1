@@ -13,13 +13,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
+            <div className="mb-4">
               <img 
                 src={labclinLogo} 
-                alt="Labclin Logo" 
+                alt="Labclin - Laboratório de Análises Clínicas" 
                 className="h-12 w-auto"
               />
-              <span className="font-bold text-xl text-foreground">Labclin</span>
             </div>
             <p className="text-sm text-muted-foreground mb-4">
               Laboratório de análises clínicas com excelência e tradição na região de Rio Pomba.
