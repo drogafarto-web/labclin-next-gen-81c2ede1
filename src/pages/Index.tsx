@@ -148,6 +148,9 @@ const Index = () => {
         {/* Hero Section */}
         <Hero />
 
+        {/* Results Iframe Section */}
+        <ResultsIframe />
+
         {/* Differentials Section */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
@@ -190,9 +193,6 @@ const Index = () => {
             </div>
           </div>
         </section>
-
-        {/* Results Iframe Section */}
-        <ResultsIframe />
 
         {/* Gallery Section */}
         <GallerySection />
