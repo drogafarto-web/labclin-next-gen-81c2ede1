@@ -8,6 +8,7 @@ import DifferentialCard from "@/components/DifferentialCard";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CookieBanner from "@/components/CookieBanner";
 import ResultsIframe from "@/components/ResultsIframe";
+import GallerySection from "@/components/GallerySection";
 import { Microscope, Home, Stethoscope, FileText, MapPin, Calendar, Heart, Users, Award, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -192,6 +193,9 @@ const Index = () => {
 
         {/* Results Iframe Section */}
         <ResultsIframe />
+
+        {/* Gallery Section */}
+        <GallerySection />
 
         {/* Certifications Section */}
         <section className="py-16 md:py-24">

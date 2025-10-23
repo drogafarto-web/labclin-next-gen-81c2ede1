@@ -4,6 +4,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, Navigation } from "lucide-react";
+import fachada from "@/assets/gallery/fachada-labclin.png";
 
 const Unidades = () => {
   const units = [
@@ -71,13 +72,25 @@ const Unidades = () => {
 
       <main className="flex-grow">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16 md:py-20">
-          <div className="container mx-auto px-4">
+        <section className="relative bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <img 
+              src={fachada}
+              alt="Labclin Background" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background"></div>
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Nossas Unidades
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                Nossas{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-hero">
+                  Unidades
+                </span>
               </h1>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg md:text-xl text-muted-foreground">
                 Estamos presentes em 4 cidades para melhor atendê-lo: Rio Pomba, Mercês, Silverânia e Guarani
               </p>
             </div>
