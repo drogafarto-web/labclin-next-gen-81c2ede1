@@ -22,11 +22,11 @@ const ResultsIframe = () => {
               <iframe
                 src="https://worklabweb.com.br/frame.php?Cliente=000&i=1"
                 name="I1"
-                width="450"
-                height="135"
+                width="650"
+                height="200"
                 title="Consulta de Laudos Labclin"
-                className="w-full max-w-[450px] border-0"
-                scrolling="no"
+                className="w-full max-w-[650px] border-0"
+                scrolling="auto"
               />
             </div>
             
