@@ -71,7 +71,7 @@ const Hero = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-strong">
               <img
                 src={heroImage}
-                alt="Equipe profissional do Laboratório Labclin trabalhando com equipamentos modernos"
+                alt="Profissionais do Laboratório Labclin trabalhando com equipamentos de análise"
                 className="w-full h-auto object-cover"
                 loading="eager"
               />
