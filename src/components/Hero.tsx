@@ -68,11 +68,12 @@ const Hero = () => {
 
           {/* Image */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-strong">
+            <div className="relative rounded-2xl overflow-hidden shadow-strong bg-card">
               <img
                 src={heroImage}
                 alt="Profissionais do Laboratório Labclin trabalhando com equipamentos de análise"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover object-center"
+                style={{ objectPosition: 'center 35%' }}
                 loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/20"></div>
