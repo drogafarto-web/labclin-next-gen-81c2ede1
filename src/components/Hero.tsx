@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin } from "lucide-react";
-import heroImage from "@/assets/hero-lab.jpg";
+import heroImage from "@/assets/hero-professionals.jpg";
 import pncqLogo from "@/assets/pncq-logo.png";
 
 const Hero = () => {
@@ -71,7 +71,7 @@ const Hero = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-strong">
               <img
                 src={heroImage}
-                alt="Laboratório Labclin - Ambiente moderno e equipado"
+                alt="Equipe profissional do Laboratório Labclin trabalhando com equipamentos modernos"
                 className="w-full h-auto object-cover"
                 loading="eager"
               />
