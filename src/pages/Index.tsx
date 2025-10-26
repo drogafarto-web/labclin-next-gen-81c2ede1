@@ -7,7 +7,8 @@ import TestimonialCard from "@/components/TestimonialCard";
 import DifferentialCard from "@/components/DifferentialCard";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CookieBanner from "@/components/CookieBanner";
-import ResultsIframe from "@/components/ResultsIframe";
+import ExamResultsForm from "@/components/ExamResultsForm";
+import ConveniosSection from "@/components/ConveniosSection";
 import GallerySection from "@/components/GallerySection";
 import { Microscope, Home, Stethoscope, FileText, MapPin, Calendar, Heart, Users, Award, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -148,8 +149,8 @@ const Index = () => {
         {/* Hero Section */}
         <Hero />
 
-        {/* Results Iframe Section */}
-        <ResultsIframe />
+        {/* Exam Results Form Section */}
+        <ExamResultsForm />
 
         {/* Differentials Section */}
         <section className="py-16 md:py-24">
@@ -196,6 +197,9 @@ const Index = () => {
 
         {/* Gallery Section */}
         <GallerySection />
+
+        {/* Convênios Section */}
+        <ConveniosSection />
 
         {/* Certifications Section */}
         <section className="py-16 md:py-24">
