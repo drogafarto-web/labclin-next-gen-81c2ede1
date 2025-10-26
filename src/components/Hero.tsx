@@ -18,15 +18,15 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Laboratório de Análises Clínicas em{" "}
+              Laboratório de Análises Clínicas{" "}
               <span className="text-transparent bg-clip-text bg-gradient-hero">
-                Rio Pomba
+                LABCLIN
               </span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
               Exames de rotina, especializados e coleta domiciliar. Resultados rápidos e precisos com
-              equipe altamente qualificada.
+              equipe altamente qualificada em Rio Pomba, Mercês, Guarani e Silverânia.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
