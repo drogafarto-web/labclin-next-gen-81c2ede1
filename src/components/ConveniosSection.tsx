@@ -1,19 +1,40 @@
 import { CreditCard } from "lucide-react";
+import convenio1 from "@/assets/convenios/convenio-1.png";
+import convenio2 from "@/assets/convenios/convenio-2.png";
+import convenio3 from "@/assets/convenios/convenio-3.png";
+import convenio4 from "@/assets/convenios/convenio-4.png";
+import convenio5 from "@/assets/convenios/convenio-5.png";
+import convenio6 from "@/assets/convenios/convenio-6.png";
+import convenio7 from "@/assets/convenios/convenio-7.png";
+import convenio8 from "@/assets/convenios/convenio-8.png";
+import visa from "@/assets/payment/visa.png";
+import mastercard from "@/assets/payment/mastercard.png";
+import elo from "@/assets/payment/elo.png";
+import banricompras from "@/assets/payment/banricompras.png";
+import american from "@/assets/payment/american.jpg";
+import hipercard from "@/assets/payment/hipercard.png";
+import pix from "@/assets/payment/pix.png";
 
 const ConveniosSection = () => {
   const convenios = [
-    "Particular",
-    "PAX Rio Pomba",
-    "Sindicato Rural"
+    { logo: convenio1, alt: "Convênio 1" },
+    { logo: convenio2, alt: "Convênio 2" },
+    { logo: convenio3, alt: "Convênio 3" },
+    { logo: convenio4, alt: "Convênio 4" },
+    { logo: convenio5, alt: "Convênio 5" },
+    { logo: convenio6, alt: "Convênio 6" },
+    { logo: convenio7, alt: "Convênio 7" },
+    { logo: convenio8, alt: "Convênio 8" },
   ];
 
   const paymentMethods = [
-    { name: "Visa", width: "w-24" },
-    { name: "Mastercard", width: "w-16" },
-    { name: "Elo", width: "w-20" },
-    { name: "American Express", width: "w-14" },
-    { name: "Hipercard", width: "w-20" },
-    { name: "PIX", width: "w-24" }
+    { logo: visa, alt: "Visa", width: "w-32" },
+    { logo: mastercard, alt: "Mastercard", width: "w-16" },
+    { logo: elo, alt: "Elo", width: "w-24" },
+    { logo: banricompras, alt: "Banricompras", width: "w-12" },
+    { logo: american, alt: "American Express", width: "w-14" },
+    { logo: hipercard, alt: "Hipercard", width: "w-24" },
+    { logo: pix, alt: "PIX", width: "w-32" },
   ];
 
   return (
@@ -32,9 +53,14 @@ const ConveniosSection = () => {
             {convenios.map((convenio, index) => (
               <div
                 key={index}
-                className="bg-card border border-border rounded-lg px-8 py-6 hover:shadow-medium transition-all min-w-[180px]"
+                className="bg-card border border-border rounded-lg p-4 hover:shadow-medium transition-all"
               >
-                <p className="font-semibold text-foreground text-center">{convenio}</p>
+                <img
+                  src={convenio.logo}
+                  alt={convenio.alt}
+                  className="h-16 w-auto object-contain"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
@@ -56,11 +82,14 @@ const ConveniosSection = () => {
             {paymentMethods.map((method, index) => (
               <div
                 key={index}
-                className={`bg-card border border-border rounded-lg p-4 hover:shadow-medium transition-all ${method.width} h-16 flex items-center justify-center`}
+                className={`bg-card border border-border rounded-lg p-4 hover:shadow-medium transition-all h-16 flex items-center justify-center ${method.width}`}
               >
-                <span className="text-xs font-medium text-muted-foreground text-center">
-                  {method.name}
-                </span>
+                <img
+                  src={method.logo}
+                  alt={method.alt}
+                  className="max-h-12 w-auto object-contain"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
