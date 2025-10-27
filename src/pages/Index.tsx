@@ -95,19 +95,19 @@ const Index = () => {
       icon: Home,
       title: "Coleta Domiciliar: Conforto e Praticidade no Seu Lar",
       description: "Realizamos a coleta de exames na sua casa ou empresa, com toda segurança e profissionalismo. Ideal para idosos, crianças e pessoas com mobilidade reduzida.",
-      image: "/src/assets/differentials/coleta-domiciliar.jpg",
+      image: "/src/assets/differentials/coleta-domiciliar-enhanced.jpg",
     },
     {
       icon: Heart,
       title: "Atendimento Infantil Especializado",
       description: "Equipe treinada para atender crianças com cuidado e carinho, tornando a experiência menos estressante para os pequenos e seus pais.",
-      image: "/src/assets/differentials/atendimento-infantil.jpg",
+      image: "/src/assets/differentials/atendimento-infantil-enhanced.jpg",
     },
     {
       icon: Users,
       title: "Acessibilidade e Inclusão",
       description: "Unidades adaptadas para pessoas com deficiência ou mobilidade reduzida, garantindo atendimento digno para todos.",
-      image: "/src/assets/differentials/acessibilidade.jpg",
+      image: "/src/assets/differentials/acessibilidade-enhanced.jpg",
     },
   ];
 
