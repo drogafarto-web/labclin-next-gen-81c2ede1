@@ -198,6 +198,70 @@ const ColetaDomiciliar = () => {
         </div>
       </section>
 
+      {/* Serviços de Comodidade */}
+      <section className="py-16 bg-gradient-to-br from-accent via-primary to-secondary text-primary-foreground">
+        <div className="container mx-auto px-4 max-w-5xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Labclin Comodidade
+          </h2>
+          <p className="text-lg md:text-xl mb-12 opacity-95 max-w-3xl mx-auto">
+            Dois serviços inovadores pensados para facilitar sua rotina de saúde, seja em casa ou com transporte seguro até o laboratório.
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Labclin em Casa */}
+            <div className="bg-card text-foreground rounded-2xl shadow-strong p-8 hover:shadow-elegant transition-all hover:scale-[1.02]">
+              <div className="text-6xl mb-4">🏡</div>
+              <h3 className="text-2xl font-bold mb-3 text-accent">
+                Labclin em Casa
+              </h3>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                Exames sem sair do seu lar, com todo o cuidado e conforto. Nossa equipe vai até você, 
+                ideal para idosos, gestantes ou quem valoriza comodidade.
+              </p>
+              <p className="text-accent text-xl font-bold mb-2">
+                Custo acessível: R$ 50
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Disponível em Rio Pomba, Mercês, Guarani e Silverânia.
+              </p>
+            </div>
+
+            {/* Labclin Leva & Traz */}
+            <div className="bg-card text-foreground rounded-2xl shadow-strong p-8 hover:shadow-elegant transition-all hover:scale-[1.02]">
+              <div className="text-6xl mb-4">🚗</div>
+              <h3 className="text-2xl font-bold mb-3 text-primary">
+                Labclin Leva & Traz
+              </h3>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                Oferecemos transporte do paciente: buscamos, levamos ao laboratório, aguardamos a coleta 
+                e levamos em casa – tudo com segurança e atenção.
+              </p>
+              <p className="text-primary text-xl font-bold mb-2">
+                Custo acessível: R$ 30
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Apoio ideal para pacientes com mobilidade reduzida.
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="https://wa.me/553236422323?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20de%20comodidade%20Labclin."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              size="lg"
+              variant="secondary"
+              className="shadow-strong hover:scale-105 transition-transform text-lg px-10"
+            >
+              Agende Agora pelo WhatsApp
+            </Button>
+          </a>
+        </div>
+      </section>
+
       {/* Formulário de Agendamento */}
       <section id="agendamento" className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-2xl">
