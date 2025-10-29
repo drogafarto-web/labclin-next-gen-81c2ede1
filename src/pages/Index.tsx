@@ -10,6 +10,7 @@ import CookieBanner from "@/components/CookieBanner";
 import ExamResultsForm from "@/components/ExamResultsForm";
 import ConveniosSection from "@/components/ConveniosSection";
 import GallerySection from "@/components/GallerySection";
+import CheckupForm from "@/components/CheckupForm";
 import { Microscope, Home, Stethoscope, FileText, MapPin, Calendar, Heart, Users, Award, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -151,6 +152,21 @@ const Index = () => {
 
         {/* Exam Results Form Section */}
         <ExamResultsForm />
+
+        {/* AI Checkup Section */}
+        <section id="checkup-form" className="py-16 md:py-24 bg-gradient-hero">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+                Faça um Checkup com I.A.
+              </h2>
+              <p className="text-lg text-primary-foreground/90 max-w-2xl mx-auto">
+                Responda algumas perguntas e receba recomendações personalizadas de exames
+              </p>
+            </div>
+            <CheckupForm />
+          </div>
+        </section>
 
         {/* Differentials Section */}
         <section className="py-16 md:py-24">
@@ -325,20 +341,25 @@ const Index = () => {
               Pronto para cuidar da sua saúde?
             </h2>
             <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-              Agende seu exame agora mesmo ou entre em contato conosco
+              Agende seu exame agora mesmo ou faça um checkup personalizado com I.A.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/agendar">
-                <Button variant="secondary" size="lg" className="w-full sm:w-auto">
+              <a href="#checkup-form" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full">
+                  🤖 Faça um Checkup com I.A.
+                </Button>
+              </a>
+              <Link to="/agendar" className="w-full sm:w-auto">
+                <Button variant="secondary" size="lg" className="w-full">
                   <Calendar className="mr-2 h-5 w-5" />
                   Agendar Exame
                 </Button>
               </Link>
-              <Link to="/contato">
+              <Link to="/contato" className="w-full sm:w-auto">
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full sm:w-auto bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                  className="w-full bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
                 >
                   Fale Conosco
                 </Button>
