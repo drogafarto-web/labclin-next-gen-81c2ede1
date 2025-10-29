@@ -11,6 +11,10 @@ import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 import Resultados from "./pages/Resultados";
 import ColetaDomiciliar from "./pages/ColetaDomiciliar";
 import NotFound from "./pages/NotFound";
+import Blog from "./pages/Blog";
+import HemogramaRioPomba from "./pages/blog/HemogramaRioPomba";
+import SexagemFetalMerces from "./pages/blog/SexagemFetalMerces";
+import ColetaDomiciliarGuaraniSilverania from "./pages/blog/ColetaDomiciliarGuaraniSilverania";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +32,10 @@ const App = () => (
           <Route path="/resultados" element={<Resultados />} />
           <Route path="/coleta-domiciliar" element={<ColetaDomiciliar />} />
           <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/hemograma-rio-pomba" element={<HemogramaRioPomba />} />
+          <Route path="/blog/sexagem-fetal-merces" element={<SexagemFetalMerces />} />
+          <Route path="/blog/coleta-domiciliar-guarani-silverania" element={<ColetaDomiciliarGuaraniSilverania />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
