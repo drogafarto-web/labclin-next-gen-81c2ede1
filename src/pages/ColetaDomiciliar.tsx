@@ -1,0 +1,401 @@
+import { useState } from "react";
+import { Calendar, Clock, Home, Shield, CheckCircle, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const ColetaDomiciliar = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    nome: "",
+    whatsapp: "",
+    endereco: "",
+    data: "",
+    horario: "",
+    observacoes: "",
+  });
+
+  const formatWhatsApp = (value: string) => {
+    const numbers = value.replace(/\D/g, "");
+    if (numbers.length <= 11) {
+      return numbers
+        .replace(/(\d{2})(\d)/, "($1) $2")
+        .replace(/(\d{5})(\d)/, "$1-$2");
+    }
+    return value.slice(0, 15);
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    if (name === "whatsapp") {
+      setFormData({ ...formData, [name]: formatWhatsApp(value) });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.nome || !formData.whatsapp || !formData.endereco || !formData.data || !formData.horario) {
+      toast({
+        title: "Campos obrigatórios",
+        description: "Por favor, preencha todos os campos obrigatórios.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const message = `*Agendamento de Coleta Domiciliar*\n\n` +
+      `Nome: ${formData.nome}\n` +
+      `WhatsApp: ${formData.whatsapp}\n` +
+      `Endereço: ${formData.endereco}\n` +
+      `Data: ${formData.data}\n` +
+      `Horário: ${formData.horario}\n` +
+      `Observações: ${formData.observacoes || "Nenhuma"}`;
+
+    const whatsappUrl = `https://wa.me/553236422323?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+
+    toast({
+      title: "Sucesso!",
+      description: "Você será redirecionado para o WhatsApp para confirmar seu agendamento.",
+    });
+
+    setFormData({
+      nome: "",
+      whatsapp: "",
+      endereco: "",
+      data: "",
+      horario: "",
+      observacoes: "",
+    });
+  };
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="bg-gradient-hero text-primary-foreground py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            🏠 Coleta Domiciliar
+          </h1>
+          <p className="text-lg md:text-xl mb-8 opacity-95">
+            Seus exames no conforto de casa, com segurança e praticidade
+          </p>
+          <Button
+            size="lg"
+            variant="secondary"
+            onClick={() => scrollToSection("agendamento")}
+            className="shadow-strong hover:scale-105 transition-transform"
+          >
+            Agendar Agora
+          </Button>
+        </div>
+      </section>
+
+      {/* Benefícios */}
+      <section id="beneficios" className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+            Por que escolher nossa Coleta Domiciliar?
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Home,
+                title: "Conforto",
+                description: "Realize seus exames sem sair de casa",
+              },
+              {
+                icon: Shield,
+                title: "Segurança",
+                description: "Profissionais treinados e equipamentos certificados",
+              },
+              {
+                icon: Clock,
+                title: "Praticidade",
+                description: "Agendamento flexível no horário que preferir",
+              },
+              {
+                icon: CheckCircle,
+                title: "Qualidade",
+                description: "Mesma excelência do laboratório",
+              },
+            ].map((benefit, index) => (
+              <div
+                key={index}
+                className="bg-card border border-border rounded-lg p-6 text-center hover:shadow-medium transition-all"
+              >
+                <div className="bg-gradient-hero rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <benefit.icon className="h-8 w-8 text-primary-foreground" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-foreground">
+                  {benefit.title}
+                </h3>
+                <p className="text-muted-foreground">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Como Funciona */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+            Como funciona?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {[
+              {
+                step: "1",
+                title: "Agende",
+                description: "Preencha o formulário e escolha data e horário",
+              },
+              {
+                step: "2",
+                title: "Confirmação",
+                description: "Nossa equipe confirmará seu agendamento via WhatsApp",
+              },
+              {
+                step: "3",
+                title: "Coleta",
+                description: "Profissional vai até você no horário combinado",
+              },
+            ].map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="bg-gradient-hero text-primary-foreground rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-medium">
+                  {step.step}
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-foreground">
+                  {step.title}
+                </h3>
+                <p className="text-muted-foreground">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Formulário de Agendamento */}
+      <section id="agendamento" className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-2xl">
+          <div className="bg-card border border-border rounded-lg shadow-strong p-8">
+            <h2 className="text-3xl font-bold text-center mb-2 text-foreground">
+              Agende sua Coleta Domiciliar
+            </h2>
+            <p className="text-center text-muted-foreground mb-8">
+              Preencha o formulário abaixo e nossa equipe entrará em contato
+            </p>
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <Label htmlFor="nome">Nome Completo *</Label>
+                <Input
+                  id="nome"
+                  name="nome"
+                  type="text"
+                  value={formData.nome}
+                  onChange={handleInputChange}
+                  placeholder="Seu nome completo"
+                  required
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="whatsapp">WhatsApp *</Label>
+                <Input
+                  id="whatsapp"
+                  name="whatsapp"
+                  type="tel"
+                  value={formData.whatsapp}
+                  onChange={handleInputChange}
+                  placeholder="(00) 00000-0000"
+                  required
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="endereco">Endereço Completo *</Label>
+                <Textarea
+                  id="endereco"
+                  name="endereco"
+                  value={formData.endereco}
+                  onChange={handleInputChange}
+                  placeholder="Rua, número, complemento, bairro, cidade"
+                  required
+                  rows={3}
+                />
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="data">Data Preferida *</Label>
+                  <Input
+                    id="data"
+                    name="data"
+                    type="date"
+                    value={formData.data}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="horario">Horário Preferido *</Label>
+                  <Input
+                    id="horario"
+                    name="horario"
+                    type="time"
+                    value={formData.horario}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <Label htmlFor="observacoes">Observações</Label>
+                <Textarea
+                  id="observacoes"
+                  name="observacoes"
+                  value={formData.observacoes}
+                  onChange={handleInputChange}
+                  placeholder="Exames solicitados, jejum necessário, etc."
+                  rows={3}
+                />
+              </div>
+
+              <Button
+                type="submit"
+                className="w-full bg-gradient-hero hover:opacity-90"
+                size="lg"
+              >
+                Agendar Coleta
+              </Button>
+
+              <p className="text-sm text-muted-foreground text-center">
+                * Campos obrigatórios
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+            Perguntas Frequentes
+          </h2>
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="item-1" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Quais exames podem ser feitos em casa?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                A maioria dos exames de sangue, urina e fezes podem ser coletados em domicílio. 
+                Entre em contato para confirmar a disponibilidade do seu exame específico.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Qual é o valor da coleta domiciliar?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                O valor varia conforme a região e quantidade de exames. Entre em contato via 
+                WhatsApp para solicitar um orçamento personalizado.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Preciso estar em jejum?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Depende do tipo de exame. Nossa equipe informará todas as orientações de preparo 
+                no momento da confirmação do agendamento.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Como recebo os resultados?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Os resultados ficam disponíveis em nosso portal online e também podem ser 
+                enviados por WhatsApp ou retirados em uma de nossas unidades.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="bg-card border border-border rounded-lg px-6">
+              <AccordionTrigger className="text-left font-semibold">
+                Qual a área de atendimento?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Atendemos toda a região metropolitana. Consulte via WhatsApp se seu endereço 
+                está na área de cobertura.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      {/* Contato Final */}
+      <section className="py-16 bg-gradient-hero text-primary-foreground">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">
+            Ainda tem dúvidas?
+          </h2>
+          <p className="text-lg mb-8 opacity-95">
+            Entre em contato conosco pelo WhatsApp ou telefone
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="https://wa.me/553236422323"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="secondary" size="lg" className="shadow-medium">
+                📱 WhatsApp: (32) 3642-2323
+              </Button>
+            </a>
+            <a href="mailto:coleta@labclin.com.br">
+              <Button variant="secondary" size="lg" className="shadow-medium">
+                📧 coleta@labclin.com.br
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+      <WhatsAppButton />
+    </div>
+  );
+};
+
+export default ColetaDomiciliar;

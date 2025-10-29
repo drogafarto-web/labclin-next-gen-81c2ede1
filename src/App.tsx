@@ -9,6 +9,7 @@ import Agendar from "./pages/Agendar";
 import Unidades from "./pages/Unidades";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 import Resultados from "./pages/Resultados";
+import ColetaDomiciliar from "./pages/ColetaDomiciliar";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/agendar" element={<Agendar />} />
           <Route path="/unidades" element={<Unidades />} />
           <Route path="/resultados" element={<Resultados />} />
+          <Route path="/coleta-domiciliar" element={<ColetaDomiciliar />} />
           <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
