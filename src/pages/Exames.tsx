@@ -406,9 +406,9 @@ const Exames = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
-        <title>Exames e Check-ups Labclin - Diagnóstico Preciso e Prevenção</title>
-        <meta name="description" content="Descubra os check-ups completos oferecidos pelo Labclin para monitorar sua saúde com exames de alta qualidade. Check-ups da tireoide, colesterol, rim, diabetes e coração." />
-        <meta name="keywords" content="check-ups personalizados, exames laboratoriais, saúde, diagnóstico precoce, prevenção de doenças, Labclin, Rio Pomba, tireoide, colesterol, diabetes" />
+        <title>Exames e Check-ups Labclin</title>
+        <meta name="description" content="Descubra os check-ups completos oferecidos pela Labclin para monitorar sua saúde com exames de alta qualidade." />
+        <meta name="keywords" content="check-ups personalizados, exames laboratoriais, saúde, diagnóstico precoce, prevenção de doenças" />
       </Helmet>
       
       <Header />
