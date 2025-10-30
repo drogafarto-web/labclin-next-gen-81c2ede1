@@ -1,13 +1,16 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { Card, CardContent } from "@/components/ui/card";
+import TestimonialCard from "@/components/TestimonialCard";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
-import { Search, ArrowRight } from "lucide-react";
+import { Search, ArrowRight, CheckCircle2, Activity, Heart, Users } from "lucide-react";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const Exames = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -77,33 +80,175 @@ const Exames = () => {
     return matchesSearch && matchesCategory;
   });
 
+  const checkups = [
+    {
+      id: "diabetico",
+      name: "Check-up Diabético",
+      icon: Activity,
+      description: "Exames específicos para monitorar a saúde de pessoas com diabetes ou risco de desenvolvê-la.",
+      color: "text-primary",
+      exams: [
+        { name: "Glicemia em Jejum", justification: "Mede os níveis de glicose no sangue, essencial para o diagnóstico de diabetes." },
+        { name: "Hemoglobina Glicada", justification: "Exame que avalia o controle glicêmico a longo prazo, fundamental para a gestão da diabetes." },
+        { name: "Creatinina", justification: "Avalia a função renal, uma vez que a diabetes pode afetar os rins." },
+        { name: "Ureia", justification: "Complementa o exame de creatinina, ajudando na avaliação da função renal." },
+        { name: "Colesterol Total", justification: "Controlar os níveis de colesterol é fundamental para prevenir doenças cardiovasculares, comuns em diabéticos." },
+      ],
+    },
+    {
+      id: "atletas",
+      name: "Check-up para Atletas",
+      icon: Heart,
+      description: "Exames especializados para avaliar o estado físico de atletas e prevenir lesões ou condições relacionadas ao esforço físico.",
+      color: "text-secondary",
+      exams: [
+        { name: "Hemograma Completo", justification: "Avalia o estado geral da saúde e identifica condições como anemia, comum entre atletas." },
+        { name: "Creatina Quinase (CK)", justification: "Mede a lesão muscular, um exame crucial para monitorar atletas e prevenir danos musculares." },
+        { name: "Ácido Lático", justification: "Mede os níveis de ácido lático, utilizado para monitorar o desempenho e a fadiga muscular." },
+        { name: "TGO e TGP", justification: "Avaliam a função hepática, importante para garantir que o corpo de um atleta esteja funcionando adequadamente sob esforço físico." },
+        { name: "Testosterona Total", justification: "Verifica os níveis hormonais que podem afetar o desempenho atlético e a recuperação." },
+      ],
+    },
+    {
+      id: "mulher",
+      name: "Check-up Mulher",
+      icon: Users,
+      description: "Exame completo focado na saúde da mulher, incluindo exames preventivos e hormonais.",
+      color: "text-accent",
+      exams: [
+        { name: "Papanicolau", justification: "Detecta precocemente alterações no colo do útero, previne câncer cervical." },
+        { name: "Mamografia", justification: "Detecta sinais precoces de câncer de mama, essencial para mulheres acima de 40 anos." },
+        { name: "Colesterol Total e Frações", justification: "A avaliação do colesterol é importante para mulheres, pois o risco cardiovascular aumenta com a idade." },
+        { name: "Glicemia em Jejum", justification: "Exame básico para detectar diabetes ou risco de diabetes, comum após os 40 anos." },
+        { name: "Densitometria Óssea", justification: "Exame fundamental para mulheres acima de 40 anos, para prevenção da osteoporose." },
+      ],
+    },
+    {
+      id: "mulher-40",
+      name: "Check-up Mulher Acima de 40 Anos",
+      icon: Users,
+      description: "Focado na prevenção de doenças crônicas e monitoramento da saúde reprodutiva e óssea para mulheres acima de 40 anos.",
+      color: "text-primary",
+      exams: [
+        { name: "Exame de Sangue Completo", justification: "Avalia o estado geral da saúde e detecta anemias, infecções e outras condições." },
+        { name: "Ultrassonografia Abdominal", justification: "Verifica alterações nos órgãos internos, como fígado, rins e bexiga, que podem surgir com o envelhecimento." },
+        { name: "Exame de Função Hepática (TGO, TGP)", justification: "Importante para mulheres após 40 anos, já que doenças hepáticas podem se desenvolver mais tarde na vida." },
+        { name: "Mamografia", justification: "Essencial para detectar precocemente o câncer de mama, especialmente após os 40 anos." },
+        { name: "Exame de Densidade Óssea", justification: "Previne a osteoporose, que afeta muitas mulheres na faixa etária acima dos 40 anos." },
+      ],
+    },
+  ];
+
+  const testimonials = [
+    { name: "João Silva", city: "Rio Pomba", rating: 5, text: "Excelente atendimento e resultados rápidos. Recomendo!", service: "Check-up Completo" },
+    { name: "Maria Oliveira", city: "Mercês", rating: 5, text: "Profissionais qualificados e ambiente acolhedor.", service: "Exames de Rotina" },
+    { name: "Carlos Santos", city: "Guarani", rating: 5, text: "Ótima experiência! Equipe muito atenciosa.", service: "Check-up Diabético" },
+  ];
+
+  const faqs = [
+    { question: "Como agendar um exame?", answer: "Você pode agendar seu exame diretamente pelo nosso site, WhatsApp ou entrando em contato pelo telefone (32) 3642-2323." },
+    { question: "Quais são os horários de atendimento?", answer: "Atendemos de segunda a sexta-feira, das 7h às 18h, e aos sábados das 7h às 12h." },
+    { question: "Preciso fazer jejum para todos os exames?", answer: "Não. O jejum depende do tipo de exame. Consulte sempre as orientações específicas para cada exame ou entre em contato conosco." },
+    { question: "Quanto tempo demora para sair o resultado?", answer: "O prazo varia conforme o exame, mas a maioria dos resultados fica pronta em 24 a 48 horas." },
+    { question: "Vocês atendem convênios?", answer: "Sim! Trabalhamos com diversos convênios. Consulte a lista completa em nossa página de convênios." },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
+      <Helmet>
+        <title>Exames Laboratoriais e Check-ups Personalizados - Labclin</title>
+        <meta name="description" content="Conheça os exames e check-ups personalizados oferecidos pelo Labclin em Rio Pomba, Mercês, Guarani e Silverânia. Resultados precisos e rápidos para sua saúde." />
+        <meta name="keywords" content="Exames laboratoriais, Check-ups personalizados, Labclin, Saúde, Rio Pomba, Mercês, Guarani, Silverânia, hemograma, glicemia, colesterol" />
+      </Helmet>
+      
       <Header />
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16 md:py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Nossos Exames
+        <section className="relative bg-gradient-to-br from-primary via-accent to-secondary py-20 md:py-28 overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
+                Exames Laboratoriais e Check-ups Personalizados
               </h1>
-              <p className="text-lg text-muted-foreground mb-8">
-                Ampla variedade de exames laboratoriais com resultados rápidos e precisos
+              <p className="text-xl md:text-2xl text-primary-foreground/95 mb-8">
+                Resultados precisos e rápidos para sua saúde
               </p>
 
               {/* Search */}
-              <div className="relative max-w-xl mx-auto">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <div className="relative max-w-2xl mx-auto mb-8">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 <Input
                   type="text"
                   placeholder="Buscar exame..."
-                  className="pl-10 h-12"
+                  className="pl-12 h-14 text-lg bg-card/95 backdrop-blur-sm"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
               </div>
+
+              <Link to="/agendar">
+                <Button size="lg" variant="secondary" className="shadow-strong hover:scale-105 transition-transform text-lg px-8">
+                  Agende Seu Exame
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Check-ups Personalizados */}
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Check-ups Personalizados
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Pacotes completos de exames desenvolvidos para atender necessidades específicas de saúde
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {checkups.map((checkup) => {
+                const Icon = checkup.icon;
+                return (
+                  <Card key={checkup.id} className="hover:shadow-strong transition-all border-2 hover:border-primary/50">
+                    <CardHeader>
+                      <div className="flex items-center gap-4 mb-2">
+                        <div className={`w-14 h-14 rounded-full bg-gradient-hero flex items-center justify-center ${checkup.color}`}>
+                          <Icon className="h-7 w-7 text-primary-foreground" />
+                        </div>
+                        <CardTitle className="text-2xl">{checkup.name}</CardTitle>
+                      </div>
+                      <CardDescription className="text-base">{checkup.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        {checkup.exams.map((exam, index) => (
+                          <div key={index} className="bg-muted/50 rounded-lg p-4">
+                            <div className="flex items-start gap-3">
+                              <CheckCircle2 className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-1">{exam.name}</h4>
+                                <p className="text-sm text-muted-foreground">{exam.justification}</p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-6">
+                        <Link to="/agendar">
+                          <Button variant="outline" className="w-full">
+                            Agendar Check-up
+                            <ArrowRight className="h-4 w-4 ml-2" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -182,20 +327,80 @@ const Exames = () => {
           </div>
         </section>
 
+        {/* Testimonials */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                O Que Nossos Pacientes Dizem
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Experiências reais de quem confia no Labclin
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard key={index} {...testimonial} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Perguntas Frequentes
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Tire suas dúvidas sobre nossos exames e serviços
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`item-${index}`} className="bg-card border rounded-lg px-6">
+                    <AccordionTrigger className="text-left font-semibold hover:text-primary">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-20 bg-gradient-to-br from-primary via-accent to-secondary">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Não encontrou o exame que procura?
+            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+              Pronto para Cuidar da Sua Saúde?
             </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Entre em contato conosco para mais informações
+            <p className="text-xl text-primary-foreground/95 mb-8 max-w-2xl mx-auto">
+              Agende seu exame ou check-up agora mesmo e tenha resultados rápidos e precisos
             </p>
-            <Link to="/contato">
-              <Button variant="hero" size="lg">
-                Fale Conosco
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/agendar">
+                <Button size="lg" variant="secondary" className="shadow-strong text-lg px-8">
+                  Agendar Exame
+                </Button>
+              </Link>
+              <a
+                href="https://wa.me/553236422323?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20exames."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" variant="outline" className="bg-card/20 backdrop-blur-sm text-primary-foreground border-primary-foreground/30 hover:bg-card/30 text-lg px-8">
+                  Fale Conosco
+                </Button>
+              </a>
+            </div>
           </div>
         </section>
       </main>
