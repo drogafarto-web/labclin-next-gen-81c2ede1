@@ -154,78 +154,237 @@ const Exames = () => {
 
   const checkups = [
     {
-      id: "tireoide",
-      name: "Check-up da Tireoide",
-      icon: Activity,
-      description: "Avaliação da função tireoidiana com exames essenciais.",
-      color: "text-primary",
-      price: "Consulte valores",
-      preparation: "Não requer jejum",
-      justification: "Esses exames ajudam a diagnosticar doenças tireoidianas como o hipotireoidismo ou hipertireoidismo, comuns em mulheres após 40 anos.",
-      exams: [
-        { name: "TSH", description: "Avalia a função da tireoide." },
-        { name: "T4 Livre", description: "Mede os níveis de hormônio tireoidiano livre." },
-      ],
-    },
-    {
-      id: "colesterol",
-      name: "Check-up do Colesterol",
+      id: "cardiovascular",
+      name: "Check-up Cardiovascular (Coração)",
       icon: Heart,
-      description: "Avaliação completa dos níveis de colesterol e risco cardiovascular.",
-      color: "text-secondary",
-      price: "Consulte valores",
-      preparation: "Jejum de 12 horas",
-      justification: "Esses exames são essenciais para identificar o risco de doenças cardiovasculares e acidentes vasculares cerebrais (AVC).",
+      description: "Avaliação essencial para monitorar a saúde do coração e prevenir doenças cardiovasculares. Detecta fatores de risco como colesterol alto, hipertensão e problemas no ritmo cardíaco.",
+      color: "text-red-500",
+      bgGradient: "from-red-500/20 via-pink-500/20 to-rose-500/20",
+      preparation: "Jejum de 12 horas 🍽️",
+      justification: "Identifique problemas cardíacos precocemente e previna doenças graves como infarto e AVC.",
       exams: [
-        { name: "Colesterol Total", description: "Mede o colesterol total no sangue." },
-        { name: "HDL", description: "Mede o colesterol bom." },
-        { name: "LDL", description: "Mede o colesterol ruim." },
-        { name: "Triglicerídeos", description: "Mede a quantidade de gordura no sangue." },
+        { name: "Hemograma Completo", description: "Avalia células sanguíneas e detecta anemias." },
+        { name: "Glicemia em Jejum", description: "Mede níveis de açúcar no sangue." },
+        { name: "Colesterol Total e Frações", description: "Analisa perfil lipídico completo." },
+        { name: "Triglicerídeos", description: "Mede gorduras no sangue." },
+        { name: "Creatinina", description: "Avalia função renal." },
+        { name: "Ureia", description: "Verifica funcionamento dos rins." },
       ],
     },
     {
-      id: "rim",
-      name: "Check-up do Rim",
+      id: "infantil",
+      name: "Check-up Infantil",
+      icon: Users,
+      description: "Exame completo para crianças, garantindo que o seu filho cresça saudável e sem complicações ocultas.",
+      color: "text-blue-500",
+      bgGradient: "from-blue-500/20 via-cyan-500/20 to-sky-500/20",
+      preparation: "Jejum de 8 horas 🍽️",
+      justification: "Esses exames são essenciais para monitorar a saúde das crianças, garantindo que o desenvolvimento esteja em conformidade com as necessidades nutricionais e evitando doenças ocultas.",
+      exams: [
+        { name: "Hemograma Completo", description: "Avalia células sanguíneas." },
+        { name: "Glicemia em Jejum", description: "Verifica níveis de glicose." },
+        { name: "Colesterol Total e Frações", description: "Analisa perfil lipídico." },
+        { name: "Triglicerídeos", description: "Mede gorduras no sangue." },
+        { name: "Creatinina", description: "Avalia função renal." },
+        { name: "Ureia", description: "Verifica funcionamento dos rins." },
+        { name: "Exame de Urina Tipo 1", description: "Detecta alterações urinárias." },
+      ],
+    },
+    {
+      id: "homem",
+      name: "Check-up Homem",
       icon: Activity,
-      description: "Exames para monitorar a saúde renal e identificar possíveis problemas nos rins.",
-      color: "text-accent",
-      price: "Consulte valores",
-      preparation: "Jejum de 8 horas",
-      justification: "Esses exames ajudam a detectar problemas renais precocemente, especialmente em pessoas com histórico de doenças renais.",
+      description: "Exame essencial para homens, focado em avaliar o risco de doenças cardiovasculares e monitorar a função prostática.",
+      color: "text-indigo-500",
+      bgGradient: "from-indigo-500/20 via-purple-500/20 to-violet-500/20",
+      preparation: "Jejum de 12 horas 🍽️",
+      justification: "Ideal para homens que desejam monitorar sua saúde e prevenir problemas cardíacos e prostáticos.",
       exams: [
-        { name: "Creatinina", description: "Avalia a função renal." },
-        { name: "Ureia", description: "Verifica o funcionamento dos rins." },
-        { name: "Exame de Urina Completo", description: "Verifica a presença de substâncias anormais na urina." },
+        { name: "Hemograma Completo", description: "Avalia células sanguíneas." },
+        { name: "Glicemia em Jejum", description: "Mede níveis de glicose." },
+        { name: "Colesterol Total e Frações", description: "Analisa perfil lipídico." },
+        { name: "Triglicerídeos", description: "Mede gorduras no sangue." },
+        { name: "Creatinina", description: "Avalia função renal." },
+        { name: "Ureia", description: "Verifica funcionamento dos rins." },
+        { name: "PSA (Antígeno Prostático Específico)", description: "Rastreamento de saúde prostática." },
       ],
     },
     {
-      id: "diabetes",
-      name: "Check-up do Diabetes",
-      icon: Activity,
-      description: "Exames para detectar e monitorar o diabetes, avaliando o risco de complicações.",
-      color: "text-primary",
-      price: "Consulte valores",
-      preparation: "Jejum de 8 horas",
-      justification: "Esses exames são fundamentais para o diagnóstico e controle do diabetes, além de avaliar o risco de complicações cardiovasculares e renais.",
-      exams: [
-        { name: "Glicemia em Jejum", description: "Mede os níveis de glicose no sangue." },
-        { name: "Hemoglobina Glicada", description: "Mede o controle glicêmico a longo prazo." },
-        { name: "Colesterol Total e Frações", description: "Avalia o risco cardiovascular associado ao diabetes." },
-      ],
-    },
-    {
-      id: "coracao",
-      name: "Check-up do Coração",
+      id: "mulher",
+      name: "Check-up Mulher",
       icon: Heart,
-      description: "Exames essenciais para monitorar a saúde do coração e prevenir doenças cardiovasculares.",
-      color: "text-secondary",
-      price: "Consulte valores",
-      preparation: "Não requer jejum",
-      justification: "Esses exames são essenciais para monitorar a saúde do coração, prevenir doenças como infarto e AVC e controlar a hipertensão.",
+      description: "Check-up personalizado para mulheres, com foco na saúde hormonal e monitoramento de colesterol, glicemia e outros indicadores importantes.",
+      color: "text-pink-500",
+      bgGradient: "from-pink-500/20 via-rose-500/20 to-fuchsia-500/20",
+      preparation: "Jejum de 12 horas 🍽️",
+      justification: "Monitore a saúde de forma completa, com foco nas necessidades específicas da mulher, prevenindo doenças hormonais e cardiovasculares.",
       exams: [
-        { name: "Eletrocardiograma (ECG)", description: "Detecta alterações no ritmo cardíaco." },
-        { name: "Pressão Arterial", description: "Avalia a pressão sanguínea e o risco de hipertensão." },
-        { name: "Colesterol Total e Frações", description: "Avalia os níveis de colesterol para identificar riscos cardíacos." },
+        { name: "Hemograma Completo", description: "Avalia células sanguíneas." },
+        { name: "Glicemia em Jejum", description: "Mede níveis de glicose." },
+        { name: "Colesterol Total e Frações", description: "Analisa perfil lipídico." },
+        { name: "Triglicerídeos", description: "Mede gorduras no sangue." },
+        { name: "Creatinina", description: "Avalia função renal." },
+        { name: "Ureia", description: "Verifica funcionamento dos rins." },
+        { name: "Ácido Fólico", description: "Essencial para saúde reprodutiva." },
+        { name: "TSH (Hormônio Estimulante da Tireoide)", description: "Avalia função tireoidiana." },
+      ],
+    },
+    {
+      id: "endocrinologico",
+      name: "Check-up Endocrinológico (Hormônios)",
+      icon: Activity,
+      description: "Exame detalhado para avaliar a função hormonal e identificar distúrbios endócrinos que podem afetar seu metabolismo, como problemas de tireoide, diabetes e mais.",
+      color: "text-emerald-500",
+      bgGradient: "from-emerald-500/20 via-teal-500/20 to-green-500/20",
+      preparation: "Jejum de 12 horas 🍽️",
+      justification: "Ideal para identificar desequilíbrios hormonais que podem afetar a saúde geral, ajudando a tratar precocemente distúrbios endócrinos.",
+      exams: [
+        { name: "Hemograma Completo", description: "Avalia células sanguíneas." },
+        { name: "Glicemia em Jejum", description: "Mede níveis de glicose." },
+        { name: "Colesterol Total e Frações", description: "Analisa perfil lipídico." },
+        { name: "Triglicerídeos", description: "Mede gorduras no sangue." },
+        { name: "Creatinina", description: "Avalia função renal." },
+        { name: "Ureia", description: "Verifica funcionamento dos rins." },
+        { name: "TSH", description: "Avalia função da tireoide." },
+        { name: "T4 Livre", description: "Mede hormônio tireoidiano livre." },
+        { name: "Insulina", description: "Avalia produção de insulina." },
+      ],
+    },
+    {
+      id: "idoso",
+      name: "Check-up Idoso",
+      icon: Users,
+      description: "Exame completo para monitorar a saúde de pessoas acima de 60 anos, com foco em doenças prevalentes nessa faixa etária, como doenças cardíacas e cânceres.",
+      color: "text-amber-500",
+      bgGradient: "from-amber-500/20 via-orange-500/20 to-yellow-500/20",
+      preparation: "Jejum de 12 horas 🍽️",
+      justification: "Acompanhamento de saúde essencial para garantir qualidade de vida na terceira idade, prevenindo doenças comuns entre os mais velhos.",
+      exams: [
+        { name: "Hemograma Completo", description: "Avalia células sanguíneas." },
+        { name: "Glicemia em Jejum", description: "Mede níveis de glicose." },
+        { name: "Colesterol Total e Frações", description: "Analisa perfil lipídico." },
+        { name: "Triglicerídeos", description: "Mede gorduras no sangue." },
+        { name: "Creatinina", description: "Avalia função renal." },
+        { name: "Ureia", description: "Verifica funcionamento dos rins." },
+        { name: "TSH", description: "Avalia função da tireoide." },
+        { name: "PSA (para homens)", description: "Rastreamento prostático." },
+      ],
+    },
+    {
+      id: "hepatico",
+      name: "Check-up Hepático (Fígado)",
+      icon: Activity,
+      description: "Exame para avaliar a função do fígado e detectar possíveis doenças hepáticas, como hepatites e cirrose.",
+      color: "text-orange-500",
+      bgGradient: "from-orange-500/20 via-amber-500/20 to-yellow-500/20",
+      preparation: "Jejum de 12 horas 🍽️",
+      justification: "Esses exames são cruciais para identificar problemas no fígado, como hepatite, cirrose ou danos causados por substâncias.",
+      exams: [
+        { name: "Hemograma Completo", description: "Avalia células sanguíneas." },
+        { name: "Glicemia em Jejum", description: "Mede níveis de glicose." },
+        { name: "Colesterol Total e Frações", description: "Analisa perfil lipídico." },
+        { name: "Triglicerídeos", description: "Mede gorduras no sangue." },
+        { name: "Creatinina", description: "Avalia função renal." },
+        { name: "Ureia", description: "Verifica funcionamento dos rins." },
+        { name: "ALT (Alanina Aminotransferase)", description: "Enzima hepática." },
+        { name: "AST (Aspartato Aminotransferase)", description: "Enzima hepática." },
+        { name: "Bilirrubinas", description: "Avalia função hepática." },
+      ],
+    },
+    {
+      id: "renal",
+      name: "Check-up Renal (Rim)",
+      icon: Activity,
+      description: "Exame para monitorar a função dos rins e detectar doenças renais precoces.",
+      color: "text-cyan-500",
+      bgGradient: "from-cyan-500/20 via-blue-500/20 to-teal-500/20",
+      preparation: "Jejum de 12 horas 🍽️",
+      justification: "Esses exames ajudam a detectar problemas nos rins, especialmente em pacientes com histórico de diabetes ou hipertensão.",
+      exams: [
+        { name: "Hemograma Completo", description: "Avalia células sanguíneas." },
+        { name: "Glicemia em Jejum", description: "Mede níveis de glicose." },
+        { name: "Colesterol Total e Frações", description: "Analisa perfil lipídico." },
+        { name: "Triglicerídeos", description: "Mede gorduras no sangue." },
+        { name: "Creatinina", description: "Avalia função renal." },
+        { name: "Ureia", description: "Verifica funcionamento dos rins." },
+        { name: "Urina Tipo 1", description: "Detecta alterações urinárias." },
+      ],
+    },
+    {
+      id: "fitness",
+      name: "Check-up Fitness",
+      icon: Activity,
+      description: "Exame para quem pratica atividades físicas intensas, avaliando a saúde cardiovascular e metabólica.",
+      color: "text-lime-500",
+      bgGradient: "from-lime-500/20 via-green-500/20 to-emerald-500/20",
+      preparation: "Jejum de 8 horas 🏋️‍♂️",
+      justification: "Ideal para quem pratica esportes e atividades físicas intensas, ajudando a avaliar o impacto no corpo e prevenir lesões.",
+      exams: [
+        { name: "Hemograma Completo", description: "Avalia células sanguíneas." },
+        { name: "Glicemia em Jejum", description: "Mede níveis de glicose." },
+        { name: "Colesterol Total e Frações", description: "Analisa perfil lipídico." },
+        { name: "Triglicerídeos", description: "Mede gorduras no sangue." },
+        { name: "Creatinina", description: "Avalia função renal." },
+        { name: "Ureia", description: "Verifica funcionamento dos rins." },
+        { name: "Teste de Esforço", description: "Avalia resposta cardiovascular." },
+        { name: "Eletrocardiograma (ECG)", description: "Detecta alterações cardíacas." },
+      ],
+    },
+    {
+      id: "vitaminas",
+      name: "Check-up de Vitaminas",
+      icon: Activity,
+      description: "Exame para verificar os níveis de vitaminas e minerais essenciais para o corpo, como B12, D, ferro e cálcio.",
+      color: "text-violet-500",
+      bgGradient: "from-violet-500/20 via-purple-500/20 to-fuchsia-500/20",
+      preparation: "Não requer jejum 🌿",
+      justification: "Esses exames ajudam a detectar deficiências nutricionais que podem afetar a saúde geral e o bem-estar.",
+      exams: [
+        { name: "Vitamina B9 (Ácido Fólico/Folato)", description: "Essencial para formação celular." },
+        { name: "Vitamina B12", description: "Importante para sistema nervoso." },
+        { name: "Vitamina D-25 Hidroxi", description: "Essencial para saúde óssea." },
+        { name: "Cálcio", description: "Mineral importante para ossos." },
+        { name: "Ferro", description: "Essencial para transporte de oxigênio." },
+        { name: "Potássio", description: "Importante para função muscular." },
+        { name: "Fósforo", description: "Essencial para saúde óssea." },
+        { name: "Sódio", description: "Importante para equilíbrio hídrico." },
+      ],
+    },
+    {
+      id: "dsts",
+      name: "Check-up de DSTs (Doenças Sexualmente Transmissíveis)",
+      icon: Activity,
+      description: "Exame para detectar doenças sexualmente transmissíveis e prevenir complicações a longo prazo.",
+      color: "text-rose-500",
+      bgGradient: "from-rose-500/20 via-red-500/20 to-pink-500/20",
+      preparation: "Não requer jejum 🌿",
+      justification: "Esses exames são importantes para detectar infecções sexualmente transmissíveis, prevenindo complicações futuras.",
+      exams: [
+        { name: "Teste de HIV", description: "Detecta vírus da imunodeficiência." },
+        { name: "Teste de Sífilis", description: "Detecta bactéria Treponema." },
+        { name: "Hepatite B e C", description: "Detecta vírus das hepatites." },
+        { name: "Chlamydia", description: "Detecta bactéria Chlamydia." },
+        { name: "Gonorreia", description: "Detecta bactéria Neisseria." },
+      ],
+    },
+    {
+      id: "vegano",
+      name: "Check-up Vegano",
+      icon: Activity,
+      description: "Exame indicado para veganos, para monitorar deficiências nutricionais comuns em dietas veganas, como vitamina B12 e ferro.",
+      color: "text-green-500",
+      bgGradient: "from-green-500/20 via-emerald-500/20 to-teal-500/20",
+      preparation: "Não requer jejum 🌱",
+      justification: "Ideal para veganos, ajudando a monitorar níveis de nutrientes essenciais, como ferro e B12.",
+      exams: [
+        { name: "Hemograma Completo", description: "Avalia células sanguíneas." },
+        { name: "Glicemia em Jejum", description: "Mede níveis de glicose." },
+        { name: "Colesterol Total e Frações", description: "Analisa perfil lipídico." },
+        { name: "Triglicerídeos", description: "Mede gorduras no sangue." },
+        { name: "Creatinina", description: "Avalia função renal." },
+        { name: "Ureia", description: "Verifica funcionamento dos rins." },
+        { name: "Ferro", description: "Essencial para prevenir anemia." },
+        { name: "Vitamina B12", description: "Importante para veganos." },
       ],
     },
   ];
@@ -300,55 +459,59 @@ const Exames = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
               {checkups.map((checkup) => {
                 const Icon = checkup.icon;
                 return (
-                  <Card key={checkup.id} className="hover:shadow-strong transition-all border-2 hover:border-primary/50">
-                    <CardHeader>
-                      <div className="flex items-center gap-4 mb-2">
-                        <div className={`w-14 h-14 rounded-full bg-gradient-hero flex items-center justify-center ${checkup.color}`}>
-                          <Icon className="h-7 w-7 text-primary-foreground" />
+                  <Card key={checkup.id} className={`group hover:shadow-strong transition-all duration-300 border-2 hover:border-primary/50 overflow-hidden bg-gradient-to-br ${checkup.bgGradient} hover:scale-105`}>
+                    <CardHeader className="pb-4">
+                      <div className="flex items-start gap-3 mb-3">
+                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform ${checkup.color}`}>
+                          <Icon className="h-6 w-6 text-white" />
                         </div>
-                        <CardTitle className="text-2xl">{checkup.name}</CardTitle>
+                        <CardTitle className="text-lg leading-tight flex-1">{checkup.name}</CardTitle>
                       </div>
-                      <CardDescription className="text-base">{checkup.description}</CardDescription>
+                      <CardDescription className="text-sm leading-relaxed">{checkup.description}</CardDescription>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="space-y-4">
                       {/* Justification */}
-                      <div className="mb-4 p-4 bg-accent/10 rounded-lg border-l-4 border-accent">
-                        <p className="text-sm text-foreground font-medium">{checkup.justification}</p>
+                      <div className="p-3 bg-primary/5 rounded-lg border-l-4 border-primary">
+                        <p className="text-xs text-foreground font-medium leading-relaxed">{checkup.justification}</p>
                       </div>
 
                       {/* Preparation */}
-                      <div className="mb-4 p-3 bg-muted/50 rounded-lg">
-                        <p className="text-sm">
-                          <span className="font-semibold text-foreground">Preparo:</span>{" "}
-                          <span className="text-muted-foreground">{checkup.preparation}</span>
+                      <div className="p-3 bg-accent/10 rounded-lg border border-accent/20">
+                        <p className="text-sm font-semibold text-foreground">
+                          {checkup.preparation}
                         </p>
                       </div>
 
-                      {/* Exams List */}
-                      <div className="space-y-3 mb-6">
-                        <h4 className="font-semibold text-foreground text-sm uppercase tracking-wide">Exames inclusos:</h4>
-                        {checkup.exams.map((exam, index) => (
-                          <div key={index} className="bg-muted/50 rounded-lg p-4">
-                            <div className="flex items-start gap-3">
-                              <CheckCircle2 className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
-                              <div>
-                                <h5 className="font-semibold text-foreground mb-1">{exam.name}</h5>
-                                <p className="text-sm text-muted-foreground">{exam.description}</p>
+                      {/* Exams List - Collapsed by default */}
+                      <div className="space-y-2">
+                        <h4 className="font-bold text-foreground text-xs uppercase tracking-wide flex items-center gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-primary" />
+                          Exames inclusos ({checkup.exams.length})
+                        </h4>
+                        <div className="space-y-2 max-h-48 overflow-y-auto pr-2 custom-scrollbar">
+                          {checkup.exams.map((exam, index) => (
+                            <div key={index} className="bg-card/50 backdrop-blur-sm rounded-md p-2 border border-border/50 hover:border-primary/30 transition-colors">
+                              <div className="flex items-start gap-2">
+                                <CheckCircle2 className="h-3.5 w-3.5 text-secondary flex-shrink-0 mt-0.5" />
+                                <div className="flex-1 min-w-0">
+                                  <h5 className="font-semibold text-foreground text-xs mb-0.5 truncate">{exam.name}</h5>
+                                  <p className="text-xs text-muted-foreground leading-snug">{exam.description}</p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
 
-                      <div className="mt-6">
+                      <div className="pt-2">
                         <Link to="/agendar">
-                          <Button variant="outline" className="w-full">
+                          <Button variant="default" className="w-full shadow-md group-hover:shadow-lg transition-all">
                             Agendar Check-up
-                            <ArrowRight className="h-4 w-4 ml-2" />
+                            <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                           </Button>
                         </Link>
                       </div>
