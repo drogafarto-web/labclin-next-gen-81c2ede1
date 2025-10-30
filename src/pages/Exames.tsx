@@ -261,10 +261,10 @@ const Exames = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
-                Exames Laboratoriais e Check-ups Personalizados
+                Check-ups Personalizados para sua Saúde
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/95 mb-8">
-                Resultados precisos e rápidos para sua saúde
+                Escolha o check-up ideal para monitorar sua saúde e agende seu exame agora.
               </p>
 
               {/* Search */}
@@ -281,7 +281,7 @@ const Exames = () => {
 
               <Link to="/agendar">
                 <Button size="lg" variant="secondary" className="shadow-strong hover:scale-105 transition-transform text-lg px-8">
-                  Agende Seu Exame
+                  Agendar Check-up
                 </Button>
               </Link>
             </div>
