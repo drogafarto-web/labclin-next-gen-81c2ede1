@@ -154,63 +154,78 @@ const Exames = () => {
 
   const checkups = [
     {
-      id: "diabetico",
-      name: "Check-up Diabético",
+      id: "tireoide",
+      name: "Check-up da Tireoide",
       icon: Activity,
-      description: "Exames específicos para monitorar a saúde de pessoas com diabetes ou risco de desenvolvê-la.",
+      description: "Avaliação da função tireoidiana com exames essenciais.",
       color: "text-primary",
       price: "Consulte valores",
+      preparation: "Não requer jejum",
+      justification: "Esses exames ajudam a diagnosticar doenças tireoidianas como o hipotireoidismo ou hipertireoidismo, comuns em mulheres após 40 anos.",
       exams: [
-        { name: "Glicemia em Jejum", justification: "Mede os níveis de glicose no sangue, essencial para o diagnóstico de diabetes." },
-        { name: "Hemoglobina Glicada", justification: "Exame que avalia o controle glicêmico a longo prazo, fundamental para a gestão da diabetes." },
-        { name: "Creatinina", justification: "Avalia a função renal, uma vez que a diabetes pode afetar os rins." },
-        { name: "Ureia", justification: "Complementa o exame de creatinina, ajudando na avaliação da função renal." },
-        { name: "Colesterol Total", justification: "Controlar os níveis de colesterol é fundamental para prevenir doenças cardiovasculares, comuns em diabéticos." },
+        { name: "TSH", description: "Avalia a função da tireoide." },
+        { name: "T4 Livre", description: "Mede os níveis de hormônio tireoidiano livre." },
       ],
     },
     {
-      id: "atletas",
-      name: "Check-up para Atletas",
+      id: "colesterol",
+      name: "Check-up do Colesterol",
       icon: Heart,
-      description: "Exames especializados para avaliar o estado físico de atletas e prevenir lesões ou condições relacionadas ao esforço físico.",
+      description: "Avaliação completa dos níveis de colesterol e risco cardiovascular.",
       color: "text-secondary",
       price: "Consulte valores",
+      preparation: "Jejum de 12 horas",
+      justification: "Esses exames são essenciais para identificar o risco de doenças cardiovasculares e acidentes vasculares cerebrais (AVC).",
       exams: [
-        { name: "Hemograma Completo", justification: "Avalia o estado geral da saúde e identifica condições como anemia, comum entre atletas." },
-        { name: "Creatina Quinase (CK)", justification: "Mede a lesão muscular, um exame crucial para monitorar atletas e prevenir danos musculares." },
-        { name: "Ácido Lático", justification: "Mede os níveis de ácido lático, utilizado para monitorar o desempenho e a fadiga muscular." },
-        { name: "TGO e TGP", justification: "Avaliam a função hepática, importante para garantir que o corpo de um atleta esteja funcionando adequadamente sob esforço físico." },
-        { name: "Testosterona Total", justification: "Verifica os níveis hormonais que podem afetar o desempenho atlético e a recuperação." },
+        { name: "Colesterol Total", description: "Mede o colesterol total no sangue." },
+        { name: "HDL", description: "Mede o colesterol bom." },
+        { name: "LDL", description: "Mede o colesterol ruim." },
+        { name: "Triglicerídeos", description: "Mede a quantidade de gordura no sangue." },
       ],
     },
     {
-      id: "mulher",
-      name: "Check-up Mulher",
-      icon: Users,
-      description: "Exame completo focado na saúde da mulher, incluindo exames preventivos e hormonais.",
+      id: "rim",
+      name: "Check-up do Rim",
+      icon: Activity,
+      description: "Exames para monitorar a saúde renal e identificar possíveis problemas nos rins.",
       color: "text-accent",
       price: "Consulte valores",
+      preparation: "Jejum de 8 horas",
+      justification: "Esses exames ajudam a detectar problemas renais precocemente, especialmente em pessoas com histórico de doenças renais.",
       exams: [
-        { name: "Hemograma Completo", justification: "Avalia o estado geral da saúde sanguínea." },
-        { name: "Colesterol Total e Frações", justification: "A avaliação do colesterol é importante para mulheres, pois o risco cardiovascular aumenta com a idade." },
-        { name: "Glicemia em Jejum", justification: "Exame básico para detectar diabetes ou risco de diabetes, comum após os 40 anos." },
-        { name: "TSH e T4 Livre", justification: "Avalia a função da tireoide, comum apresentar alterações em mulheres." },
-        { name: "Vitamina D", justification: "Importante para saúde óssea e prevenção de osteoporose." },
+        { name: "Creatinina", description: "Avalia a função renal." },
+        { name: "Ureia", description: "Verifica o funcionamento dos rins." },
+        { name: "Exame de Urina Completo", description: "Verifica a presença de substâncias anormais na urina." },
       ],
     },
     {
-      id: "mulher-40",
-      name: "Check-up Mulher Acima de 40 Anos",
-      icon: Users,
-      description: "Focado na prevenção de doenças crônicas e monitoramento da saúde para mulheres acima de 40 anos.",
+      id: "diabetes",
+      name: "Check-up do Diabetes",
+      icon: Activity,
+      description: "Exames para detectar e monitorar o diabetes, avaliando o risco de complicações.",
       color: "text-primary",
       price: "Consulte valores",
+      preparation: "Jejum de 8 horas",
+      justification: "Esses exames são fundamentais para o diagnóstico e controle do diabetes, além de avaliar o risco de complicações cardiovasculares e renais.",
       exams: [
-        { name: "Hemograma Completo", justification: "Avalia o estado geral da saúde e detecta anemias, infecções e outras condições." },
-        { name: "Glicemia e Hemoglobina Glicada", justification: "Rastreamento e controle de diabetes, mais comum após os 40 anos." },
-        { name: "Perfil Lipídico Completo", justification: "Avaliação do risco cardiovascular através do colesterol e frações." },
-        { name: "TSH e T4 Livre", justification: "Importante para mulheres após 40 anos, já que alterações na tireoide são mais comuns." },
-        { name: "Vitamina D e Cálcio", justification: "Prevenção da osteoporose, que afeta muitas mulheres na faixa etária acima dos 40 anos." },
+        { name: "Glicemia em Jejum", description: "Mede os níveis de glicose no sangue." },
+        { name: "Hemoglobina Glicada", description: "Mede o controle glicêmico a longo prazo." },
+        { name: "Colesterol Total e Frações", description: "Avalia o risco cardiovascular associado ao diabetes." },
+      ],
+    },
+    {
+      id: "coracao",
+      name: "Check-up do Coração",
+      icon: Heart,
+      description: "Exames essenciais para monitorar a saúde do coração e prevenir doenças cardiovasculares.",
+      color: "text-secondary",
+      price: "Consulte valores",
+      preparation: "Não requer jejum",
+      justification: "Esses exames são essenciais para monitorar a saúde do coração, prevenir doenças como infarto e AVC e controlar a hipertensão.",
+      exams: [
+        { name: "Eletrocardiograma (ECG)", description: "Detecta alterações no ritmo cardíaco." },
+        { name: "Pressão Arterial", description: "Avalia a pressão sanguínea e o risco de hipertensão." },
+        { name: "Colesterol Total e Frações", description: "Avalia os níveis de colesterol para identificar riscos cardíacos." },
       ],
     },
   ];
@@ -232,9 +247,9 @@ const Exames = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
-        <title>Exames Laboratoriais e Check-ups Personalizados - Labclin</title>
-        <meta name="description" content="Conheça os exames e check-ups personalizados oferecidos pelo Labclin em Rio Pomba, Mercês, Guarani e Silverânia. Resultados precisos e rápidos para sua saúde." />
-        <meta name="keywords" content="Exames laboratoriais, Check-ups personalizados, Labclin, Saúde, Rio Pomba, Mercês, Guarani, Silverânia, hemograma, glicemia, colesterol" />
+        <title>Exames e Check-ups Labclin - Diagnóstico Preciso e Prevenção</title>
+        <meta name="description" content="Descubra os check-ups completos oferecidos pelo Labclin para monitorar sua saúde com exames de alta qualidade. Check-ups da tireoide, colesterol, rim, diabetes e coração." />
+        <meta name="keywords" content="check-ups personalizados, exames laboratoriais, saúde, diagnóstico precoce, prevenção de doenças, Labclin, Rio Pomba, tireoide, colesterol, diabetes" />
       </Helmet>
       
       <Header />
@@ -300,19 +315,35 @@ const Exames = () => {
                       <CardDescription className="text-base">{checkup.description}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <div className="space-y-3">
+                      {/* Justification */}
+                      <div className="mb-4 p-4 bg-accent/10 rounded-lg border-l-4 border-accent">
+                        <p className="text-sm text-foreground font-medium">{checkup.justification}</p>
+                      </div>
+
+                      {/* Preparation */}
+                      <div className="mb-4 p-3 bg-muted/50 rounded-lg">
+                        <p className="text-sm">
+                          <span className="font-semibold text-foreground">Preparo:</span>{" "}
+                          <span className="text-muted-foreground">{checkup.preparation}</span>
+                        </p>
+                      </div>
+
+                      {/* Exams List */}
+                      <div className="space-y-3 mb-6">
+                        <h4 className="font-semibold text-foreground text-sm uppercase tracking-wide">Exames inclusos:</h4>
                         {checkup.exams.map((exam, index) => (
                           <div key={index} className="bg-muted/50 rounded-lg p-4">
                             <div className="flex items-start gap-3">
                               <CheckCircle2 className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
                               <div>
-                                <h4 className="font-semibold text-foreground mb-1">{exam.name}</h4>
-                                <p className="text-sm text-muted-foreground">{exam.justification}</p>
+                                <h5 className="font-semibold text-foreground mb-1">{exam.name}</h5>
+                                <p className="text-sm text-muted-foreground">{exam.description}</p>
                               </div>
                             </div>
                           </div>
                         ))}
                       </div>
+
                       <div className="mt-6">
                         <Link to="/agendar">
                           <Button variant="outline" className="w-full">
