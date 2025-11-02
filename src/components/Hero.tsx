@@ -6,95 +6,106 @@ import pncqLogo from "@/assets/pncq-logo.png";
 
 const Hero = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background">
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="relative w-full overflow-hidden bg-muted/20">
+      <div className="container mx-auto px-4 py-20 md:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div className="inline-block">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20">
+              <span className="inline-flex items-center px-4 py-2 rounded text-sm font-bold bg-secondary/20 text-secondary border-2 border-secondary/40 uppercase tracking-wide">
                 ✓ Laboratório Certificado
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Laboratório de Análises Clínicas{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-hero">
-                LABCLIN
+            <h1 className="font-black text-foreground leading-tight">
+              Check-ups Personalizados{" "}
+              <span className="text-primary">
+                para sua Saúde
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
-              Exames de rotina, especializados e coleta domiciliar. Resultados rápidos e precisos com
-              equipe altamente qualificada em Rio Pomba, Mercês, Guarani e Silverânia.
+            <p className="text-xl md:text-2xl text-foreground/80 max-w-xl font-medium">
+              Escolha o check-up ideal para monitorar sua saúde e agende seu exame agora.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <Link to="/agendar" className="w-full sm:w-auto">
-                <Button variant="hero" size="lg" className="w-full">
+                <Button variant="default" size="lg" className="w-full uppercase font-bold text-base shadow-strong">
                   <Calendar className="mr-2 h-5 w-5" />
-                  Agendar Exame
+                  Agendar Check-up
                 </Button>
               </Link>
               <Link to="/resultados" className="w-full sm:w-auto">
-                <Button variant="secondary" size="lg" className="w-full">
-                  Ver Resultados Online
-                </Button>
-              </Link>
-              <Link to="/unidades" className="w-full sm:w-auto">
-                <Button variant="outline" size="lg" className="w-full">
-                  <MapPin className="mr-2 h-5 w-5" />
-                  Ver Unidades
+                <Button variant="outline" size="lg" className="w-full font-semibold border-2">
+                  Ver Resultados
                 </Button>
               </Link>
             </div>
 
             {/* Trust indicators */}
-            <div className="flex flex-wrap gap-6 pt-6 border-t border-border">
+            <div className="flex flex-wrap gap-8 pt-8 border-t-2 border-border">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary">58+</div>
-                <div className="text-sm text-muted-foreground">Anos de Experiência</div>
+                <div className="text-3xl md:text-4xl font-black text-primary">58+</div>
+                <div className="text-sm font-semibold text-muted-foreground uppercase">Anos de Experiência</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary">5M+</div>
-                <div className="text-sm text-muted-foreground">Exames Realizados</div>
+                <div className="text-3xl md:text-4xl font-black text-primary">5M+</div>
+                <div className="text-sm font-semibold text-muted-foreground uppercase">Exames Realizados</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary">4</div>
-                <div className="text-sm text-muted-foreground">Unidades</div>
+                <div className="text-3xl md:text-4xl font-black text-primary">4</div>
+                <div className="text-sm font-semibold text-muted-foreground uppercase">Unidades</div>
               </div>
             </div>
           </div>
 
-          {/* Image */}
+          {/* Visual Grid Block */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-strong bg-card">
-              <img
-                src={heroImage}
-                alt="Profissionais do Laboratório Labclin trabalhando com equipamentos de análise"
-                className="w-full h-auto object-cover object-center"
-                style={{ objectPosition: 'center 35%' }}
-                loading="eager"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/20"></div>
-            </div>
-            
-            {/* Floating badge */}
-            <div className="absolute -bottom-6 -left-6 bg-card rounded-xl shadow-medium p-4 border border-border max-w-xs">
-              <div className="flex items-center space-x-3">
-                <div className="bg-white rounded-lg p-2 flex items-center justify-center">
-                  <img 
-                    src={pncqLogo} 
-                    alt="PNCQ - Programa Nacional de Controle de Qualidade" 
-                    className="h-12 w-auto object-contain"
-                  />
+            <div className="grid grid-cols-2 gap-4 h-[500px]">
+              {/* Top left - Wine block */}
+              <div className="bg-primary rounded-lg shadow-strong flex items-center justify-center">
+                <div className="text-center text-primary-foreground p-6">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-primary-foreground/20 rounded-full flex items-center justify-center">
+                    <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 18c-3.86-.96-6-4.69-6-9V8.3l6-3.11 6 3.11V11c0 4.31-2.14 8.04-6 9z"/>
+                    </svg>
+                  </div>
+                  <p className="font-bold text-lg">Qualidade Certificada</p>
                 </div>
-                <div>
-                  <div className="font-semibold text-foreground">Certificado PNCQ</div>
-                  <div className="text-sm text-muted-foreground">Qualidade Garantida</div>
+              </div>
+              
+              {/* Top right - Professional Image */}
+              <div className="rounded-lg overflow-hidden shadow-strong">
+                <img
+                  src={heroImage}
+                  alt="Profissionais do Laboratório Labclin"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+              </div>
+              
+              {/* Bottom left - PNCQ Badge */}
+              <div className="bg-card rounded-lg shadow-strong flex items-center justify-center border-4 border-secondary p-6">
+                <img 
+                  src={pncqLogo} 
+                  alt="PNCQ - Programa Nacional de Controle de Qualidade" 
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              
+              {/* Bottom right - Green/Cyan accent block */}
+              <div className="bg-secondary rounded-lg shadow-strong flex items-center justify-center">
+                <div className="text-center text-secondary-foreground p-6">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-secondary-foreground/20 rounded-full flex items-center justify-center">
+                    <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                  <p className="font-bold text-lg">Resultados Precisos</p>
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
       </div>

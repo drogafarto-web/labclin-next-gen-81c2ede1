@@ -18,36 +18,24 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80 shadow-soft">
+    <header className="sticky top-0 z-50 w-full bg-card shadow-soft">
+      {/* Top bar with logo and CTA */}
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between border-b border-border">
           {/* Logo */}
           <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
             <img 
               src={labclinLogo} 
               alt="Labclin - Laboratório de Análises Clínicas" 
-              className="h-12 w-auto"
+              className="h-14 w-auto"
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/10 rounded-md transition-all"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* CTA Button - Desktop */}
+          <div className="hidden md:flex items-center">
             <Link to="/agendar">
-              <Button variant="hero" size="default">
-                <Calendar className="mr-2 h-4 w-4" />
+              <Button variant="default" size="lg" className="uppercase font-bold">
+                <Calendar className="mr-2 h-5 w-5" />
                 Agendar Exame
               </Button>
             </Link>
@@ -62,31 +50,48 @@ const Header = () => {
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <nav className="flex flex-col space-y-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/10 rounded-md transition-all"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link to="/agendar" className="px-4 pt-2" onClick={() => setIsMenuOpen(false)}>
-                <Button variant="hero" className="w-full">
-                  <Calendar className="mr-2 h-4 w-4" />
-                  Agendar Exame
-                </Button>
-              </Link>
-            </nav>
-          </div>
-        )}
       </div>
+
+      {/* Secondary Navigation Bar */}
+      <div className="bg-primary">
+        <div className="container mx-auto px-4">
+          <nav className="hidden md:flex items-center justify-center h-12 space-x-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm font-semibold text-primary-foreground hover:text-primary-foreground/80 transition-all uppercase tracking-wide"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-primary">
+          <nav className="flex flex-col py-4 px-4 space-y-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary-hover rounded transition-all uppercase"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link to="/agendar" className="px-4 pt-2" onClick={() => setIsMenuOpen(false)}>
+              <Button variant="secondary" className="w-full uppercase font-bold">
+                <Calendar className="mr-2 h-4 w-4" />
+                Agendar Exame
+              </Button>
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };

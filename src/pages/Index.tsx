@@ -169,16 +169,16 @@ const Index = () => {
         </section>
 
         {/* Differentials Section */}
-        <section className="py-16 md:py-24">
+        <section className="py-20 md:py-32">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <div className="text-center mb-16">
+              <h2 className="font-black text-foreground mb-6">
                 Por Que Escolher o{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-hero">
+                <span className="text-primary">
                   Labclin?
                 </span>
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
                 Nossos diferenciais fazem toda a diferença no cuidado com sua saúde
               </p>
             </div>
@@ -192,13 +192,13 @@ const Index = () => {
         </section>
 
         {/* Services Section */}
-        <section className="py-16 md:py-24 bg-muted/30">
+        <section className="py-20 md:py-32 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <div className="text-center mb-16">
+              <h2 className="font-black text-foreground mb-6">
                 Nossos Serviços
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
                 Oferecemos uma ampla gama de exames e serviços para cuidar da sua saúde
               </p>
             </div>
@@ -287,18 +287,18 @@ const Index = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-16 md:py-24">
+        <section className="py-20 md:py-32 bg-muted/20">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <div className="text-center mb-16">
+              <h2 className="font-black text-foreground mb-6">
                 O Que Nossos Clientes Dizem
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
                 Depoimentos reais de quem confia no Labclin para cuidar da saúde
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
                 <TestimonialCard key={index} {...testimonial} />
               ))}
