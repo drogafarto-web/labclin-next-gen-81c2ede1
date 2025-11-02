@@ -29,7 +29,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Facebook"
+                aria-label="Facebook - @labclinmg"
               >
                 <Facebook className="h-5 w-5" />
               </a>
@@ -38,7 +38,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Instagram"
+                aria-label="Instagram - @labclinmg"
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -76,7 +76,7 @@ const Footer = () => {
               <li className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-muted-foreground">
-                  Rio Pomba, Mercês e Guarani - MG
+                  Rio Pomba, Mercês, Guarani e Silverânia - MG
                 </span>
               </li>
               <li className="flex items-center space-x-2">
@@ -99,18 +99,20 @@ const Footer = () => {
               <li className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
                 <a
-                  href="mailto:contato@labclinmg.com.br"
+                  href="mailto:llabclin3@gmail.com"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  contato@labclinmg.com.br
+                  llabclin3@gmail.com
                 </a>
               </li>
               <li className="flex items-start space-x-2">
                 <Clock className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-muted-foreground">
-                  Seg-Sex: 6h às 18h<br />
-                  Sáb: 6h às 12h
-                </span>
+                <div className="text-sm text-muted-foreground">
+                  <strong>Rio Pomba:</strong> Seg-Sex 6:30-17:30, Sáb 7:00-11:00<br />
+                  <strong>Mercês:</strong> Seg-Sex 6:45-11:45<br />
+                  <strong>Silverânia:</strong> Seg-Sex 7:00-11:00<br />
+                  <strong>Guarani:</strong> Seg-Sex 6:45-15:30
+                </div>
               </li>
             </ul>
           </div>

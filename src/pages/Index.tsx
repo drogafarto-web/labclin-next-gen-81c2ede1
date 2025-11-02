@@ -76,17 +76,22 @@ const Index = () => {
   const units = [
     {
       name: "Rio Pomba",
-      address: "Rua Principal, 123 - Centro",
+      address: "Rua Dr. José Luiz de Mesquita, 270 - Centro",
       phone: "(32) 99199-0239",
     },
     {
       name: "Mercês",
-      address: "Av. Central, 456 - Centro",
+      address: "Praça São Sebastião, s/n - Centro",
       phone: "(32) 99199-0239",
     },
     {
       name: "Guarani",
-      address: "Praça da Matriz, 789 - Centro",
+      address: "Rua Principal - Centro",
+      phone: "(32) 99199-0239",
+    },
+    {
+      name: "Silverânia",
+      address: "Rua Principal - Centro",
       phone: "(32) 99199-0239",
     },
   ];
