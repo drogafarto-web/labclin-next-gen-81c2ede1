@@ -396,7 +396,7 @@ const Exames = () => {
   ];
 
   const faqs = [
-    { question: "Como agendar um exame?", answer: "Você pode agendar seu exame diretamente pelo nosso site, WhatsApp ou entrando em contato pelo telefone (32) 3642-2323." },
+    { question: "Como agendar um exame?", answer: "Você pode agendar seu exame diretamente pelo nosso site, WhatsApp (32) 99199-0239 ou entrando em contato pelo telefone fixo (32) 3571-1599." },
     { question: "Quais são os horários de atendimento?", answer: "Atendemos de segunda a sexta-feira, das 7h às 18h, e aos sábados das 7h às 12h." },
     { question: "Preciso fazer jejum para todos os exames?", answer: "Não. O jejum depende do tipo de exame. Consulte sempre as orientações específicas para cada exame ou entre em contato conosco." },
     { question: "Quanto tempo demora para sair o resultado?", answer: "O prazo varia conforme o exame, mas a maioria dos resultados fica pronta em 24 a 48 horas." },
@@ -662,7 +662,7 @@ const Exames = () => {
                 </Button>
               </Link>
               <a
-                href="https://wa.me/553236422323?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20exames."
+                href="https://wa.me/5532991990239?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20exames."
                 target="_blank"
                 rel="noopener noreferrer"
               >

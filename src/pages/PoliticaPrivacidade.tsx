@@ -134,9 +134,11 @@ const PoliticaPrivacidade = () => {
                 em contato com nosso Encarregado de Dados (DPO):
               </p>
               <p>
-                <strong>E-mail:</strong> dpo@labclinmg.com.br
+                <strong>E-mail:</strong> llabclin3@gmail.com
                 <br />
-                <strong>Telefone:</strong> (32) 3642-2323
+                <strong>WhatsApp:</strong> (32) 99199-0239
+                <br />
+                <strong>Telefone:</strong> (32) 3571-1599
               </p>
             </section>
 

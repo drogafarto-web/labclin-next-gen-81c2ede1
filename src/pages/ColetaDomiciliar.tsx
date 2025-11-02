@@ -67,7 +67,7 @@ const ColetaDomiciliar = () => {
       `Horário: ${formData.horario}\n` +
       `Observações: ${formData.observacoes || "Nenhuma"}`;
 
-    const whatsappUrl = `https://wa.me/553236422323?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5532991990239?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
 
     toast({
@@ -247,7 +247,7 @@ const ColetaDomiciliar = () => {
           </div>
 
           <a
-            href="https://wa.me/553236422323?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20de%20comodidade%20Labclin."
+            href="https://wa.me/5532991990239?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20de%20comodidade%20Labclin."
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -439,17 +439,17 @@ const ColetaDomiciliar = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="https://wa.me/553236422323"
+              href="https://wa.me/5532991990239"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Button variant="secondary" size="lg" className="shadow-medium">
-                📱 WhatsApp: (32) 3642-2323
+                📱 WhatsApp: (32) 99199-0239
               </Button>
             </a>
-            <a href="mailto:coleta@labclin.com.br">
+            <a href="mailto:llabclin3@gmail.com">
               <Button variant="secondary" size="lg" className="shadow-medium">
-                📧 coleta@labclin.com.br
+                📧 llabclin3@gmail.com
               </Button>
             </a>
           </div>

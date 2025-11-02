@@ -209,9 +209,15 @@ const Agendar = () => {
                     </h3>
                     <div className="space-y-3 text-sm">
                       <p className="text-muted-foreground">
-                        Telefone:{" "}
-                        <a href="tel:+553236422323" className="text-primary hover:underline">
-                          (32) 3642-2323
+                        WhatsApp:{" "}
+                        <a href="tel:+5532991990239" className="text-primary hover:underline">
+                          (32) 99199-0239
+                        </a>
+                      </p>
+                      <p className="text-muted-foreground">
+                        Telefone Fixo:{" "}
+                        <a href="tel:+553235711599" className="text-primary hover:underline">
+                          (32) 3571-1599
                         </a>
                       </p>
                       <p className="text-muted-foreground">

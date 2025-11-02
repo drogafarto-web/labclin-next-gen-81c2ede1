@@ -53,7 +53,7 @@ const Resultados = () => {
                   
                   <div className="mt-6 p-4 bg-muted/50 rounded-lg border border-border">
                     <p className="text-sm text-muted-foreground text-center">
-                      <span className="font-semibold text-foreground">Precisa de ajuda?</span> Entre em contato através do WhatsApp ou ligue para (32) 3642-2323
+                      <span className="font-semibold text-foreground">Precisa de ajuda?</span> Entre em contato através do WhatsApp (32) 99199-0239 ou ligue para (32) 3571-1599
                     </p>
                   </div>
                 </div>

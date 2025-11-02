@@ -77,17 +77,17 @@ const Index = () => {
     {
       name: "Rio Pomba",
       address: "Rua Principal, 123 - Centro",
-      phone: "(32) 3642-2323",
+      phone: "(32) 99199-0239",
     },
     {
       name: "Mercês",
       address: "Av. Central, 456 - Centro",
-      phone: "(32) 3642-2323",
+      phone: "(32) 99199-0239",
     },
     {
       name: "Guarani",
       address: "Praça da Matriz, 789 - Centro",
-      phone: "(32) 3642-2323",
+      phone: "(32) 99199-0239",
     },
   ];
 
