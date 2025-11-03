@@ -15,6 +15,9 @@ import Blog from "./pages/Blog";
 import HemogramaRioPomba from "./pages/blog/HemogramaRioPomba";
 import SexagemFetalMerces from "./pages/blog/SexagemFetalMerces";
 import ColetaDomiciliarGuaraniSilverania from "./pages/blog/ColetaDomiciliarGuaraniSilverania";
+import HemogramaCompletoGuiaDefinitivo from "./pages/blog/HemogramaCompletoGuiaDefinitivo";
+import JejumExamesMitosVerdades from "./pages/blog/JejumExamesMitosVerdades";
+import ColetaDomiciliarAgende from "./pages/blog/ColetaDomiciliarAgende";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +39,9 @@ const App = () => (
           <Route path="/blog/hemograma-rio-pomba" element={<HemogramaRioPomba />} />
           <Route path="/blog/sexagem-fetal-merces" element={<SexagemFetalMerces />} />
           <Route path="/blog/coleta-domiciliar-guarani-silverania" element={<ColetaDomiciliarGuaraniSilverania />} />
+          <Route path="/blog/hemograma-completo-guia-definitivo" element={<HemogramaCompletoGuiaDefinitivo />} />
+          <Route path="/blog/jejum-exames-mitos-e-verdades" element={<JejumExamesMitosVerdades />} />
+          <Route path="/blog/coleta-domiciliar-agende" element={<ColetaDomiciliarAgende />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

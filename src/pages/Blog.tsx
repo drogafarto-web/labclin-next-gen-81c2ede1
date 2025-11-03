@@ -9,6 +9,34 @@ import { ArrowLeft } from "lucide-react";
 const Blog = () => {
   const blogPosts = [
     {
+      slug: "coleta-domiciliar-agende",
+      title: "Coleta Domiciliar de Exames: Agende com Conforto e Segurança",
+      excerpt: "A coleta domiciliar é a opção ideal para quem busca conforto e segurança. Agende agora mesmo a coleta de exames no Labclin, no horário e local de sua preferência.",
+      image: "/src/assets/blog/coleta-domiciliar-enhanced.jpg",
+      category: "Serviços de Conveniência",
+      readTime: "4 min",
+      publishDate: "24 Jan 2025",
+      featured: true,
+    },
+    {
+      slug: "jejum-exames-mitos-e-verdades",
+      title: "Jejum para Exames: 5 Mitos e Verdades que Você Precisa Saber",
+      excerpt: "Você sabia que nem todos os exames exigem jejum? Vamos esclarecer as dúvidas mais comuns sobre o preparo para exames e ajudar você a se preparar corretamente.",
+      image: "/src/assets/blog/preparo-exames-enhanced.jpg",
+      category: "Preparação para Exames",
+      readTime: "5 min",
+      publishDate: "22 Jan 2025",
+    },
+    {
+      slug: "hemograma-completo-guia-definitivo",
+      title: "Hemograma Completo: O Guia Definitivo para Entender Seu Exame de Sangue",
+      excerpt: "O hemograma completo é um dos exames mais solicitados, ajudando a detectar condições como anemia e infecções. Neste guia, explicamos como ele funciona e o que você pode esperar.",
+      image: "/src/assets/blog/hemograma-enhanced.jpg",
+      category: "Exames de Rotina",
+      readTime: "6 min",
+      publishDate: "20 Jan 2025",
+    },
+    {
       slug: "hemograma-rio-pomba",
       title: "O que é um hemograma e quando pedir?",
       excerpt: "Entenda como funciona o exame de sangue mais comum, quando ele é indicado e por que o hemograma é importante no diagnóstico de várias doenças.",
@@ -16,7 +44,6 @@ const Blog = () => {
       category: "Exames",
       readTime: "5 min",
       publishDate: "15 Jan 2025",
-      featured: true,
     },
     {
       slug: "sexagem-fetal-merces",
