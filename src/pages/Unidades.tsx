@@ -20,7 +20,7 @@ const Unidades = () => {
         sunday: "Domingo e feriados: Fechado",
       },
       services: ["Exames de Rotina", "Exames Especializados", "Coleta Domiciliar", "Atendimento Infantil", "Resultados Online"],
-      mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Floripes+Maria+de+Jesus+5+Rio+Pomba+MG",
+      mapUrl: "https://www.google.com/maps?q=Rua+Floripes+Maria+de+Jesus,+05,+loja+02,+Centro,+Rio+Pomba+-+MG&output=embed",
     },
     {
       name: "Mercês",
@@ -34,7 +34,7 @@ const Unidades = () => {
         sunday: "Domingo e feriados: Fechado",
       },
       services: ["Exames de Rotina", "Coleta Domiciliar", "Resultados Online"],
-      mapUrl: "https://www.google.com/maps/search/?api=1&query=Praça+Dr.+Castelões+40+Mercês+MG",
+      mapUrl: "https://www.google.com/maps?q=Praça+Dr.+Castelões,+40,+Centro,+Mercês+-+MG&output=embed",
     },
     {
       name: "Guarani",
@@ -48,7 +48,7 @@ const Unidades = () => {
         sunday: "Domingo e feriados: Fechado",
       },
       services: ["Exames de Rotina", "Coleta Domiciliar", "Resultados Online"],
-      mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+José+Ladeira+Pinto+70+Guarani+MG",
+      mapUrl: "https://www.google.com/maps?q=Rua+José+Ladeira+Pinto,+70,+Bairro+Sossego,+Guarani+-+MG&output=embed",
     },
     {
       name: "Silveirânia",
@@ -62,7 +62,7 @@ const Unidades = () => {
         sunday: "Domingo e feriados: Fechado",
       },
       services: ["Exames de Rotina", "Coleta Domiciliar", "Resultados Online"],
-      mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Padre+Cerqueira+20+Silveirânia+MG",
+      mapUrl: "https://www.google.com/maps?q=Rua+Padre+Cerqueira,+20,+Centro,+Silveirânia+-+MG&output=embed",
     },
   ];
 
