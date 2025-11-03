@@ -12,7 +12,7 @@ const Unidades = () => {
       name: "Rio Pomba",
       address: "Rua Floripes Maria de Jesus, 05, loja 02 - Centro, Rio Pomba - MG",
       cep: "36180-000",
-      phone: "(32) 99199-0239",
+      phone: "(32) 3571-1599",
       whatsapp: "5532991990239",
       hours: {
         weekdays: "Segunda a Sexta: 6:30 às 17:30",
@@ -26,8 +26,8 @@ const Unidades = () => {
       name: "Mercês",
       address: "Praça Dr. Castelões, 40 - Centro, Mercês - MG",
       cep: "36190-000",
-      phone: "(32) 99199-0239",
-      whatsapp: "5532991990239",
+      phone: "(32) 99967-1581",
+      whatsapp: "5532999671581",
       hours: {
         weekdays: "Segunda a Sexta: 6:45 às 11:45",
         saturday: "Fechado",
@@ -40,8 +40,8 @@ const Unidades = () => {
       name: "Guarani",
       address: "Rua José Ladeira Pinto, 70 - Bairro Sossego, Guarani - MG",
       cep: "36160-000",
-      phone: "(32) 99199-0239",
-      whatsapp: "5532991990239",
+      phone: "(32) 99942-2574",
+      whatsapp: "5532999422574",
       hours: {
         weekdays: "Segunda a Sexta: 6:45 às 15:30",
         saturday: "Fechado",
@@ -54,8 +54,8 @@ const Unidades = () => {
       name: "Silveirânia",
       address: "Rua Padre Cerqueira, 20 - Centro, Silveirânia - MG",
       cep: "36185-000",
-      phone: "(32) 99199-0239",
-      whatsapp: "5532991990239",
+      phone: "(32) 99959-2154",
+      whatsapp: "5532999592154",
       hours: {
         weekdays: "Segunda a Sexta: 7:00 às 11:00",
         saturday: "Fechado",
