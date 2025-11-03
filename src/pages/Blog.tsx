@@ -71,11 +71,11 @@ const Blog = () => {
         <title>Blog da Saúde Labclin | Dicas e Novidades sobre Exames Laboratoriais</title>
         <meta
           name="description"
-          content="Fique por dentro das novidades, dicas e informações sobre exames laboratoriais, saúde e bem-estar em Rio Pomba, Mercês, Guarani e Silverânia. Artigos sobre hemograma, sexagem fetal, coleta domiciliar e mais."
+          content="Fique por dentro das novidades, dicas e informações sobre exames laboratoriais, saúde e bem-estar em Rio Pomba, Mercês, Guarani e Silveirânia. Artigos sobre hemograma, sexagem fetal, coleta domiciliar e mais."
         />
         <meta
           name="keywords"
-          content="exames laboratoriais, laboratório Rio Pomba, hemograma, sexagem fetal, coleta domiciliar, resultados online, saúde preventiva, medicina personalizada, jejum exames, exames gestantes, laboratório Mercês, laboratório Guarani, laboratório Silverânia"
+          content="exames laboratoriais, laboratório Rio Pomba, hemograma, sexagem fetal, coleta domiciliar, resultados online, saúde preventiva, medicina personalizada, jejum exames, exames gestantes, laboratório Mercês, laboratório Guarani, laboratório Silveirânia"
         />
         <link rel="canonical" href="https://labclin.com.br/blog" />
         <meta property="og:title" content="Blog da Saúde Labclin | Dicas e Novidades sobre Exames" />
@@ -126,7 +126,7 @@ const Blog = () => {
               </h1>
               <p className="text-lg md:text-xl opacity-95 max-w-3xl">
                 Fique por dentro das novidades, dicas e informações sobre exames laboratoriais, 
-                saúde e bem-estar em Rio Pomba, Mercês, Guarani e Silverânia!
+                saúde e bem-estar em Rio Pomba, Mercês, Guarani e Silveirânia!
               </p>
             </div>
           </section>
@@ -152,7 +152,7 @@ const Blog = () => {
                 </h2>
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                   Agende seus exames laboratoriais com praticidade ou solicite nossa coleta domiciliar. 
-                  Atendemos Rio Pomba, Mercês, Guarani e Silverânia.
+                  Atendemos Rio Pomba, Mercês, Guarani e Silveirânia.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link

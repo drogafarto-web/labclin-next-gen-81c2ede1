@@ -10,14 +10,14 @@ const ColetaDomiciliarGuaraniSilverania = () => {
   return (
     <>
       <Helmet>
-        <title>Coleta Domiciliar: vantagens e como agendar | Labclin Guarani e Silverânia</title>
+        <title>Coleta Domiciliar: vantagens e como agendar | Labclin Guarani e Silveirânia</title>
         <meta
           name="description"
-          content="Descubra as vantagens da coleta domiciliar, em quais situações é indicada e como agendar facilmente online ou WhatsApp. Atendemos Guarani, Silverânia, Rio Pomba e Mercês."
+          content="Descubra as vantagens da coleta domiciliar, em quais situações é indicada e como agendar facilmente online ou WhatsApp. Atendemos Guarani, Silveirânia, Rio Pomba e Mercês."
         />
         <meta
           name="keywords"
-          content="coleta domiciliar, exames em casa, laboratório domiciliar, Guarani, Silverânia, comodidade, idosos, gestantes"
+          content="coleta domiciliar, exames em casa, laboratório domiciliar, Guarani, Silveirânia, comodidade, idosos, gestantes"
         />
         <link rel="canonical" href="https://labclin.com.br/blog/coleta-domiciliar-guarani-silverania" />
         <script type="application/ld+json">
@@ -194,7 +194,7 @@ const ColetaDomiciliarGuaraniSilverania = () => {
                   <li><strong>Rio Pomba</strong> e zona rural</li>
                   <li><strong>Mercês</strong> e distritos</li>
                   <li><strong>Guarani</strong> e arredores</li>
-                  <li><strong>Silverânia</strong> e região</li>
+                  <li><strong>Silveirânia</strong> e região</li>
                 </ul>
 
                 <p className="text-muted-foreground italic">
@@ -216,7 +216,7 @@ const ColetaDomiciliarGuaraniSilverania = () => {
                       Precisa de coleta domiciliar?
                     </h3>
                     <p className="text-muted-foreground">
-                      Agende agora em Guarani, Silverânia, Rio Pomba ou Mercês
+                      Agende agora em Guarani, Silveirânia, Rio Pomba ou Mercês
                     </p>
                   </div>
                   <div className="flex gap-3">

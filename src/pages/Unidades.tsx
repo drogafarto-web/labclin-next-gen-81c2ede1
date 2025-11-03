@@ -10,7 +10,7 @@ const Unidades = () => {
   const units = [
     {
       name: "Rio Pomba",
-      address: "Rua Dr. José Luiz de Mesquita, 270 - Centro, Rio Pomba - MG",
+      address: "Rua Floripes Maria de Jesus, 05, loja 02 - Centro, Rio Pomba - MG",
       cep: "36180-000",
       phone: "(32) 99199-0239",
       whatsapp: "5532991990239",
@@ -20,12 +20,12 @@ const Unidades = () => {
         sunday: "Domingo e feriados: Fechado",
       },
       services: ["Exames de Rotina", "Exames Especializados", "Coleta Domiciliar", "Atendimento Infantil", "Resultados Online"],
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.8!2d-43.1811!3d-21.2725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDE2JzIxLjAiUyA0M8KwMTAnNTIuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr",
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Floripes+Maria+de+Jesus+5+Rio+Pomba+MG",
     },
     {
       name: "Mercês",
-      address: "Praça São Sebastião, s/n - Centro, Mercês - MG",
-      cep: "36496-000",
+      address: "Praça Dr. Castelões, 40 - Centro, Mercês - MG",
+      cep: "36190-000",
       phone: "(32) 99199-0239",
       whatsapp: "5532991990239",
       hours: {
@@ -34,25 +34,11 @@ const Unidades = () => {
         sunday: "Domingo e feriados: Fechado",
       },
       services: ["Exames de Rotina", "Coleta Domiciliar", "Resultados Online"],
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.8!2d-43.2!3d-21.28!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDE2JzQ4LjAiUyA0M8KwMTInMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr",
-    },
-    {
-      name: "Silverânia",
-      address: "Rua Principal - Centro, Silverânia - MG",
-      cep: "36497-000",
-      phone: "(32) 99199-0239",
-      whatsapp: "5532991990239",
-      hours: {
-        weekdays: "Segunda a Sexta: 7:00 às 11:00",
-        saturday: "Fechado",
-        sunday: "Domingo e feriados: Fechado",
-      },
-      services: ["Exames de Rotina", "Coleta Domiciliar", "Resultados Online"],
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.8!2d-43.15!3d-21.26!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDE1JzM2LjAiUyA0M8KwMDknMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr",
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=Praça+Dr.+Castelões+40+Mercês+MG",
     },
     {
       name: "Guarani",
-      address: "Rua Principal - Centro, Guarani - MG",
+      address: "Rua José Ladeira Pinto, 70 - Bairro Sossego, Guarani - MG",
       cep: "36160-000",
       phone: "(32) 99199-0239",
       whatsapp: "5532991990239",
@@ -62,7 +48,21 @@ const Unidades = () => {
         sunday: "Domingo e feriados: Fechado",
       },
       services: ["Exames de Rotina", "Coleta Domiciliar", "Resultados Online"],
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.8!2d-43.05!3d-21.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDIxJzAwLjAiUyA0M8KwMDMnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890!5m2!1spt-BR!2sbr",
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+José+Ladeira+Pinto+70+Guarani+MG",
+    },
+    {
+      name: "Silveirânia",
+      address: "Rua Padre Cerqueira, 20 - Centro, Silveirânia - MG",
+      cep: "36185-000",
+      phone: "(32) 99199-0239",
+      whatsapp: "5532991990239",
+      hours: {
+        weekdays: "Segunda a Sexta: 7:00 às 11:00",
+        saturday: "Fechado",
+        sunday: "Domingo e feriados: Fechado",
+      },
+      services: ["Exames de Rotina", "Coleta Domiciliar", "Resultados Online"],
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Padre+Cerqueira+20+Silveirânia+MG",
     },
   ];
 
@@ -91,7 +91,7 @@ const Unidades = () => {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                Estamos presentes em 4 cidades para melhor atendê-lo: Rio Pomba, Mercês, Silverânia e Guarani
+                Estamos presentes em 4 cidades para melhor atendê-lo: Rio Pomba, Mercês, Guarani e Silveirânia
               </p>
             </div>
           </div>

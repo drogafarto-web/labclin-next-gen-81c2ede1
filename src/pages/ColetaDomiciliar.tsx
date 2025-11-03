@@ -223,7 +223,7 @@ const ColetaDomiciliar = () => {
                 Custo acessível: R$ 50
               </p>
               <p className="text-sm text-muted-foreground">
-                Disponível em Rio Pomba, Mercês, Guarani e Silverânia.
+                Disponível em Rio Pomba, Mercês, Guarani e Silveirânia.
               </p>
             </div>
 

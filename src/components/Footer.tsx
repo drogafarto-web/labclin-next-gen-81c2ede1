@@ -76,7 +76,7 @@ const Footer = () => {
               <li className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-muted-foreground">
-                  Rio Pomba, Mercês, Guarani e Silverânia - MG
+                  Rio Pomba, Mercês, Guarani e Silveirânia - MG
                 </span>
               </li>
               <li className="flex items-center space-x-2">
@@ -110,7 +110,7 @@ const Footer = () => {
                 <div className="text-sm text-muted-foreground">
                   <strong>Rio Pomba:</strong> Seg-Sex 6:30-17:30, Sáb 7:00-11:00<br />
                   <strong>Mercês:</strong> Seg-Sex 6:45-11:45<br />
-                  <strong>Silverânia:</strong> Seg-Sex 7:00-11:00<br />
+                  <strong>Silveirânia:</strong> Seg-Sex 7:00-11:00<br />
                   <strong>Guarani:</strong> Seg-Sex 6:45-15:30
                 </div>
               </li>

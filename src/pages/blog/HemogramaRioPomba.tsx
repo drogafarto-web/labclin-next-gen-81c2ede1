@@ -13,7 +13,7 @@ const HemogramaRioPomba = () => {
         <title>O que é um hemograma e quando pedir? | Labclin Rio Pomba</title>
         <meta
           name="description"
-          content="Entenda como funciona o hemograma, o exame de sangue mais comum. Saiba quando é indicado e sua importância no diagnóstico. Labclin Rio Pomba, Mercês, Guarani e Silverânia."
+          content="Entenda como funciona o hemograma, o exame de sangue mais comum. Saiba quando é indicado e sua importância no diagnóstico. Labclin Rio Pomba, Mercês, Guarani e Silveirânia."
         />
         <meta
           name="keywords"

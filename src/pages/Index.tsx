@@ -76,22 +76,22 @@ const Index = () => {
   const units = [
     {
       name: "Rio Pomba",
-      address: "Rua Dr. José Luiz de Mesquita, 270 - Centro",
+      address: "Rua Floripes Maria de Jesus, 05, loja 02 - Centro",
       phone: "(32) 99199-0239",
     },
     {
       name: "Mercês",
-      address: "Praça São Sebastião, s/n - Centro",
+      address: "Praça Dr. Castelões, 40 - Centro",
       phone: "(32) 99199-0239",
     },
     {
       name: "Guarani",
-      address: "Rua Principal - Centro",
+      address: "Rua José Ladeira Pinto, 70 - Bairro Sossego",
       phone: "(32) 99199-0239",
     },
     {
-      name: "Silverânia",
-      address: "Rua Principal - Centro",
+      name: "Silveirânia",
+      address: "Rua Padre Cerqueira, 20 - Centro",
       phone: "(32) 99199-0239",
     },
   ];
@@ -259,11 +259,11 @@ const Index = () => {
                 Nossas Unidades
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Estamos presentes em 3 cidades para melhor atendê-lo
+                Estamos presentes em 4 cidades para melhor atendê-lo
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               {units.map((unit, index) => (
                 <div
                   key={index}
