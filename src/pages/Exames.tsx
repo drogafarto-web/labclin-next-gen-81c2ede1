@@ -8,22 +8,77 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
-import { Search, ArrowRight, CheckCircle2, Activity, Heart, Users } from "lucide-react";
+import { Search, ArrowRight, CheckCircle2, Activity, Heart, Users, ShieldAlert, HeartPulse, AlertTriangle } from "lucide-react";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
+import covidImage from "@/assets/exames/covid-virus.png";
+import influenzaImage from "@/assets/exames/influenza-syringe.png";
+import hba1cImage from "@/assets/exames/hba1c-dna.png";
+import toxicologiaImage from "@/assets/exames/toxicologia-truck.png";
 
 const Exames = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("todos");
 
   const categories = [
-    { id: "todos", label: "Todos" },
-    { id: "rotina", label: "Exames de Rotina" },
-    { id: "especializado", label: "Exames Especializados" },
-    { id: "hormonal", label: "Hormonais" },
+    { id: "todos", label: "Todos", icon: null },
+    { id: "condicoes_especiais", label: "Condições Especiais", icon: ShieldAlert },
+    { id: "rastreio_saude", label: "Rastreio & Saúde", icon: HeartPulse },
+    { id: "urgentes", label: "Exames com Urgência", icon: AlertTriangle },
+    { id: "rotina", label: "Exames de Rotina", icon: Activity },
+    { id: "especializado", label: "Exames Especializados", icon: CheckCircle2 },
+    { id: "hormonal", label: "Hormonais", icon: Heart },
   ];
 
   const exames = [
+    // Condições Especiais
+    {
+      slug: "covid-19",
+      name: "COVID-19",
+      category: "condicoes_especiais",
+      description: "Exame para detecção do vírus SARS-CoV-2",
+      preparo: "Sem jejum necessário",
+      tempo: "24-48 horas",
+      image: covidImage,
+      badge: "Novo",
+      badgeColor: "bg-blue-500",
+    },
+    {
+      slug: "influenza",
+      name: "Influenza",
+      category: "condicoes_especiais",
+      description: "Detecção da gripe (Influenza A/B)",
+      preparo: "Sem jejum necessário",
+      tempo: "24-48 horas",
+      image: influenzaImage,
+      badge: "",
+      badgeColor: "",
+    },
+    // Rastreio & Saúde
+    {
+      slug: "hemoglobina-glicada",
+      name: "Hemoglobina Glicada (HbA1c)",
+      category: "rastreio_saude",
+      description: "Avalia o controle glicêmico dos últimos 3 meses",
+      preparo: "Não requer jejum",
+      tempo: "24-48 horas",
+      image: hba1cImage,
+      badge: "Popular",
+      badgeColor: "bg-green-500",
+    },
+    // Urgentes
+    {
+      slug: "toxicologia",
+      name: "Toxicologia",
+      category: "urgentes",
+      description: "Detecção de substâncias tóxicas no organismo",
+      preparo: "Jejum de 12 horas",
+      tempo: "48 horas",
+      image: toxicologiaImage,
+      badge: "Urgente",
+      badgeColor: "bg-red-500",
+    },
+    // Exames de Rotina
     {
       slug: "hemograma-completo",
       name: "Hemograma Completo",
@@ -31,6 +86,9 @@ const Exames = () => {
       description: "Avaliação completa das células sanguíneas para detectar anemias, infecções e outras condições",
       preparo: "Jejum de 4 horas",
       tempo: "24 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
     {
       slug: "glicemia-jejum",
@@ -39,14 +97,9 @@ const Exames = () => {
       description: "Medição dos níveis de açúcar no sangue, fundamental para diagnóstico de diabetes",
       preparo: "Jejum de 8 horas",
       tempo: "24 horas",
-    },
-    {
-      slug: "hemoglobina-glicada",
-      name: "Hemoglobina Glicada (HbA1c)",
-      category: "especializado",
-      description: "Avalia o controle da glicemia nos últimos 3 meses, essencial para diabéticos",
-      preparo: "Não requer jejum",
-      tempo: "24-48 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
     {
       slug: "colesterol-total-fracoes",
@@ -55,6 +108,9 @@ const Exames = () => {
       description: "Análise completa do perfil lipídico (HDL, LDL, VLDL e triglicérides)",
       preparo: "Jejum de 12 horas",
       tempo: "24 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
     {
       slug: "tsh-t4-livre",
@@ -63,6 +119,9 @@ const Exames = () => {
       description: "Avaliação completa da função da tireoide",
       preparo: "Não requer jejum",
       tempo: "48 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
     {
       slug: "creatinina-ureia",
@@ -71,6 +130,9 @@ const Exames = () => {
       description: "Avaliação da função renal",
       preparo: "Jejum de 4 horas",
       tempo: "24 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
     {
       slug: "tgo-tgp",
@@ -79,6 +141,9 @@ const Exames = () => {
       description: "Enzimas hepáticas para avaliação da função do fígado",
       preparo: "Jejum de 4 horas",
       tempo: "24 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
     {
       slug: "vhs",
@@ -87,6 +152,9 @@ const Exames = () => {
       description: "Detecção de processos inflamatórios e infecciosos no organismo",
       preparo: "Não requer jejum",
       tempo: "24 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
     {
       slug: "pcr",
@@ -95,6 +163,9 @@ const Exames = () => {
       description: "Marcador de inflamação e risco cardiovascular",
       preparo: "Jejum de 4 horas",
       tempo: "24 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
     {
       slug: "testosterona-total",
@@ -103,6 +174,9 @@ const Exames = () => {
       description: "Dosagem hormonal importante para homens e atletas",
       preparo: "Jejum de 8 horas, coletar pela manhã",
       tempo: "48-72 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
     {
       slug: "vitamina-d",
@@ -111,6 +185,9 @@ const Exames = () => {
       description: "Avaliação dos níveis de vitamina D, importante para saúde óssea e imunidade",
       preparo: "Não requer jejum",
       tempo: "48-72 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
     {
       slug: "psa",
@@ -119,6 +196,9 @@ const Exames = () => {
       description: "Rastreamento de saúde da próstata em homens acima de 40 anos",
       preparo: "Não requer jejum, evitar relações sexuais 48h antes",
       tempo: "48 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
     {
       slug: "beta-hcg",
@@ -127,6 +207,9 @@ const Exames = () => {
       description: "Teste de gravidez quantitativo, também usado em acompanhamento de gestação",
       preparo: "Não requer jejum",
       tempo: "24 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
     {
       slug: "ck",
@@ -135,6 +218,9 @@ const Exames = () => {
       description: "Avalia lesões musculares, importante para atletas",
       preparo: "Jejum de 4 horas, evitar exercícios intensos 24h antes",
       tempo: "24 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
     {
       slug: "acido-urico",
@@ -143,6 +229,9 @@ const Exames = () => {
       description: "Diagnóstico de gota e avaliação do metabolismo de purinas",
       preparo: "Jejum de 8 horas",
       tempo: "24 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
     },
   ];
 
@@ -406,9 +495,38 @@ const Exames = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
-        <title>Exames e Check-ups Labclin</title>
-        <meta name="description" content="Descubra os check-ups completos oferecidos pela Labclin para monitorar sua saúde com exames de alta qualidade." />
-        <meta name="keywords" content="check-ups personalizados, exames laboratoriais, saúde, diagnóstico precoce, prevenção de doenças" />
+        <title>Exames Laboratoriais e Check-ups Personalizados - Labclin</title>
+        <meta name="description" content="Descubra exames laboratoriais especializados e check-ups personalizados no Labclin. COVID-19, Influenza, Hemoglobina Glicada, Toxicologia e mais. Agende online." />
+        <meta name="keywords" content="exames laboratoriais, check-ups personalizados, COVID-19, Influenza, hemoglobina glicada, toxicologia, exames especializados, exames de rotina" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalBusiness",
+            "name": "Labclin - Laboratório de Análises Clínicas",
+            "url": "https://www.labclin.com.br",
+            "logo": "https://www.labclin.com.br/logo.png",
+            "description": "Laboratório de análises clínicas oferecendo exames especializados e check-ups personalizados",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Rio Pomba",
+              "addressRegion": "MG",
+              "addressCountry": "BR"
+            },
+            "telephone": "+55-32-3571-1599",
+            "medicalSpecialty": "Análises Clínicas",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Exames e Check-ups",
+              "itemListElement": exames.slice(0, 4).map(exame => ({
+                "@type": "MedicalTest",
+                "name": exame.name,
+                "description": exame.description,
+                "preparation": exame.preparo,
+                "url": `https://www.labclin.com.br/exames/${exame.slug}`
+              }))
+            }
+          })}
+        </script>
       </Helmet>
       
       <Header />
@@ -526,17 +644,22 @@ const Exames = () => {
         {/* Filters */}
         <section className="py-8 border-b border-border bg-card">
           <div className="container mx-auto px-4">
-            <div className="flex flex-wrap gap-2 justify-center">
-              {categories.map((category) => (
-                <Button
-                  key={category.id}
-                  variant={selectedCategory === category.id ? "default" : "outline"}
-                  onClick={() => setSelectedCategory(category.id)}
-                  size="sm"
-                >
-                  {category.label}
-                </Button>
-              ))}
+            <div className="flex flex-wrap gap-3 justify-center">
+              {categories.map((category) => {
+                const CategoryIcon = category.icon;
+                return (
+                  <Button
+                    key={category.id}
+                    variant={selectedCategory === category.id ? "default" : "outline"}
+                    onClick={() => setSelectedCategory(category.id)}
+                    size="lg"
+                    className="gap-2 transition-all hover:scale-105"
+                  >
+                    {CategoryIcon && <CategoryIcon className="h-4 w-4" />}
+                    {category.label}
+                  </Button>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -545,41 +668,63 @@ const Exames = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             {filteredExames.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredExames.map((exame) => (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {filteredExames.map((exame, index) => (
                   <Card
                     key={exame.slug}
-                    className="group hover:shadow-medium transition-all border-border hover:border-primary/50"
+                    className="group hover:shadow-strong transition-all duration-300 border-border hover:border-primary/50 hover:scale-105 relative overflow-hidden animate-fade-in"
+                    style={{ animationDelay: `${index * 100}ms` }}
                   >
+                    {exame.image && (
+                      <div className="aspect-square overflow-hidden bg-muted/30">
+                        <img 
+                          src={exame.image} 
+                          alt={exame.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    {exame.badge && (
+                      <div className="absolute top-4 right-4 z-10">
+                        <Badge 
+                          className={`${exame.badgeColor} text-white border-0 shadow-lg animate-pulse`}
+                        >
+                          {exame.badge}
+                        </Badge>
+                      </div>
+                    )}
                     <CardContent className="p-6">
                       <div className="mb-3">
-                        <Badge variant="secondary" className="mb-2">
-                          {categories.find((c) => c.id === exame.category)?.label}
-                        </Badge>
-                        <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                        <div className="flex items-center justify-between mb-2">
+                          <Badge variant="outline" className="text-xs">
+                            {categories.find((c) => c.id === exame.category)?.label}
+                          </Badge>
+                        </div>
+                        <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
                           {exame.name}
                         </h3>
                       </div>
 
-                      <p className="text-muted-foreground mb-4">{exame.description}</p>
+                      <p className="text-muted-foreground mb-4 text-sm line-clamp-2">{exame.description}</p>
 
-                      <div className="space-y-2 text-sm mb-4">
+                      <div className="space-y-2 text-xs mb-4 bg-muted/30 rounded-lg p-3">
                         <div>
-                          <span className="font-medium text-foreground">Preparo:</span>{" "}
+                          <span className="font-semibold text-foreground">Preparo:</span>{" "}
                           <span className="text-muted-foreground">{exame.preparo}</span>
                         </div>
                         <div>
-                          <span className="font-medium text-foreground">Resultado:</span>{" "}
+                          <span className="font-semibold text-foreground">Resultado:</span>{" "}
                           <span className="text-muted-foreground">{exame.tempo}</span>
                         </div>
                       </div>
 
-                      <Link to={`/exames/${exame.slug}`}>
+                      <Link to="/agendar">
                         <Button
-                          variant="ghost"
-                          className="w-full justify-between p-0 h-auto font-medium text-primary hover:text-primary-hover"
+                          variant="default"
+                          className="w-full justify-between hover:shadow-md transition-all"
+                          size="sm"
                         >
-                          Ver detalhes
+                          Agendar Exame
                           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </Button>
                       </Link>
