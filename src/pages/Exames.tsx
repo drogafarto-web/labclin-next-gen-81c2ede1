@@ -15,6 +15,12 @@ import covidImage from "@/assets/exames/covid-virus.png";
 import influenzaImage from "@/assets/exames/influenza-syringe.png";
 import hba1cImage from "@/assets/exames/hba1c-dna.png";
 import toxicologiaImage from "@/assets/exames/toxicologia-truck.png";
+import testePezinhoImage from "@/assets/exames/teste-pezinho.png";
+import sexagemDnaImage from "@/assets/exames/sexagem-dna.png";
+import lactoseTestImage from "@/assets/exames/lactose-test.png";
+import glutenTestImage from "@/assets/exames/gluten-test.png";
+import preNatalImage from "@/assets/exames/pre-natal.png";
+import alergiaAlimentarImage from "@/assets/exames/alergia-alimentar.png";
 
 const Exames = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -51,6 +57,105 @@ const Exames = () => {
       preparo: "Sem jejum necessário",
       tempo: "24-48 horas",
       image: influenzaImage,
+      badge: "",
+      badgeColor: "",
+    },
+    {
+      slug: "sexagem-fetal",
+      name: "Sexagem Fetal",
+      category: "condicoes_especiais",
+      description: "Exame para determinar o sexo do bebê com alta precisão",
+      preparo: "Sem jejum necessário",
+      tempo: "24 horas",
+      image: sexagemDnaImage,
+      badge: "Popular",
+      badgeColor: "bg-pink-500",
+    },
+    {
+      slug: "teste-pezinho",
+      name: "Teste do Pezinho",
+      category: "condicoes_especiais",
+      description: "Exame para detectar doenças metabólicas e genéticas em recém-nascidos",
+      preparo: "Sem jejum necessário",
+      tempo: "48 horas",
+      image: testePezinhoImage,
+      badge: "",
+      badgeColor: "",
+    },
+    {
+      slug: "variola-macacos",
+      name: "Varíola dos Macacos",
+      category: "condicoes_especiais",
+      description: "Exame para detectar o vírus da varíola dos macacos (Monkeypox)",
+      preparo: "Sem jejum necessário",
+      tempo: "48 horas",
+      image: "",
+      badge: "",
+      badgeColor: "",
+    },
+    {
+      slug: "teste-paternidade",
+      name: "Teste de Paternidade",
+      category: "condicoes_especiais",
+      description: "Exame para confirmar a paternidade através de análise genética",
+      preparo: "Não requer jejum",
+      tempo: "7-10 dias",
+      image: sexagemDnaImage,
+      badge: "",
+      badgeColor: "",
+    },
+    {
+      slug: "intolerancia-lactose",
+      name: "Intolerância a Lactose",
+      category: "condicoes_especiais",
+      description: "Exame para detectar intolerância à lactose no organismo",
+      preparo: "Jejum de 12 horas",
+      tempo: "24 horas",
+      image: lactoseTestImage,
+      badge: "",
+      badgeColor: "",
+    },
+    {
+      slug: "intolerancia-gluten",
+      name: "Intolerância ao Glúten",
+      category: "condicoes_especiais",
+      description: "Exame para detectar intolerância ao glúten no organismo",
+      preparo: "Jejum de 12 horas",
+      tempo: "24 horas",
+      image: glutenTestImage,
+      badge: "",
+      badgeColor: "",
+    },
+    {
+      slug: "alergia-alimentar",
+      name: "Alergia Alimentar",
+      category: "condicoes_especiais",
+      description: "Exame para detectar alergias alimentares comuns",
+      preparo: "Sem jejum necessário",
+      tempo: "48 horas",
+      image: alergiaAlimentarImage,
+      badge: "",
+      badgeColor: "",
+    },
+    {
+      slug: "pre-natal",
+      name: "Pré-Natal",
+      category: "condicoes_especiais",
+      description: "Exames especializados para monitorar a saúde durante a gravidez",
+      preparo: "Sem jejum necessário",
+      tempo: "24-72 horas",
+      image: preNatalImage,
+      badge: "",
+      badgeColor: "",
+    },
+    {
+      slug: "virus-sincicial",
+      name: "Vírus Sincicial Respiratório",
+      category: "condicoes_especiais",
+      description: "Exame para detectar o vírus sincicial respiratório, causador de infecções respiratórias",
+      preparo: "Sem jejum necessário",
+      tempo: "24-48 horas",
+      image: "",
       badge: "",
       badgeColor: "",
     },
