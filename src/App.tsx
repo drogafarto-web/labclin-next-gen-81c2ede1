@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Exames from "./pages/Exames";
 import Agendar from "./pages/Agendar";
 import Unidades from "./pages/Unidades";
+import Contato from "./pages/Contato";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 import Resultados from "./pages/Resultados";
 import ColetaDomiciliar from "./pages/ColetaDomiciliar";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/exames" element={<Exames />} />
           <Route path="/agendar" element={<Agendar />} />
           <Route path="/unidades" element={<Unidades />} />
+          <Route path="/contato" element={<Contato />} />
           <Route path="/resultados" element={<Resultados />} />
           <Route path="/coleta-domiciliar" element={<ColetaDomiciliar />} />
           <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
