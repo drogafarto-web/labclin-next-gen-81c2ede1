@@ -67,7 +67,7 @@ const ColetaDomiciliar = () => {
       `Horário: ${formData.horario}\n` +
       `Observações: ${formData.observacoes || "Nenhuma"}`;
 
-    const whatsappUrl = `https://wa.me/5532991990239?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=5532991990239&text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
 
     toast({
@@ -247,7 +247,7 @@ const ColetaDomiciliar = () => {
           </div>
 
           <a
-            href="https://wa.me/5532991990239?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20de%20comodidade%20Labclin."
+            href="https://api.whatsapp.com/send?phone=5532991990239&text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20de%20comodidade%20Labclin."
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -439,7 +439,7 @@ const ColetaDomiciliar = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="https://wa.me/5532991990239"
+              href="https://api.whatsapp.com/send?phone=5532991990239"
               target="_blank"
               rel="noopener noreferrer"
             >

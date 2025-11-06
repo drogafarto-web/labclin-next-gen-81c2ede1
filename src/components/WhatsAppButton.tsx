@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/button";
 const WhatsAppButton = () => {
   const phoneNumber = "5532991990239";
   const message = "Olá! Gostaria de agendar um exame.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  
+  // Usando formato alternativo mais estável do WhatsApp
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
 
   return (
     <a

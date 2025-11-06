@@ -76,7 +76,7 @@ const CheckupForm = () => {
 
     const mensagem = `Olá Labclin! 👋\n\nGostaria de receber uma proposta de checkup personalizado:\n\n👤 Nome: ${formData.name}\n📱 WhatsApp: ${formData.whatsapp}\n🎂 Faixa Etária: ${formData.age}\n⚧️ Sexo: ${formData.sexo}\n🏥 Condições: ${condicoesText}\n\nTenho interesse nos perfis sugeridos e aguardo orçamento com desconto especial! 🎁`;
 
-    const urlWhatsApp = `https://wa.me/5532991990239?text=${encodeURIComponent(mensagem)}`;
+    const urlWhatsApp = `https://api.whatsapp.com/send?phone=5532991990239&text=${encodeURIComponent(mensagem)}`;
 
     toast.success("Redirecionando para o WhatsApp do Labclin...");
     window.open(urlWhatsApp, "_blank");

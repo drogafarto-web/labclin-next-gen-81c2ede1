@@ -115,7 +115,7 @@ const Contato = () => {
                       Atendimento rápido e personalizado
                     </p>
                     <a
-                      href="https://wa.me/5532991990239?text=Olá! Gostaria de mais informações."
+                      href="https://api.whatsapp.com/send?phone=5532991990239&text=Olá! Gostaria de mais informações."
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -192,7 +192,7 @@ const Contato = () => {
                       <div className="flex items-center space-x-3">
                         <MessageCircle className="h-5 w-5 text-primary flex-shrink-0" />
                         <a
-                          href={`https://wa.me/${unit.whatsapp}?text=${encodeURIComponent(
+                          href={`https://api.whatsapp.com/send?phone=${unit.whatsapp}&text=${encodeURIComponent(
                             `Olá! Gostaria de informações sobre a unidade ${unit.name}.`
                           )}`}
                           target="_blank"
@@ -214,7 +214,7 @@ const Contato = () => {
                     </div>
 
                     <a
-                      href={`https://wa.me/${unit.whatsapp}?text=${encodeURIComponent(
+                      href={`https://api.whatsapp.com/send?phone=${unit.whatsapp}&text=${encodeURIComponent(
                         `Olá! Gostaria de agendar um exame na unidade ${unit.name}.`
                       )}`}
                       target="_blank"
@@ -244,7 +244,7 @@ const Contato = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/5532991990239?text=Olá! Gostaria de agendar um exame."
+                href="https://api.whatsapp.com/send?phone=5532991990239&text=Olá! Gostaria de agendar um exame."
                 target="_blank"
                 rel="noopener noreferrer"
               >
