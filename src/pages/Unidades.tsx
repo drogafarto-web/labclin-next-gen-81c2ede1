@@ -207,7 +207,7 @@ const Unidades = () => {
               Pronto para agendar seu exame?
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Escolha a unidade mais próxima e agende agora mesmo
+              Escolha a unidade mais próxima e agende agora pelo WhatsApp
             </p>
             <a href="/agendar">
               <Button variant="hero" size="lg">

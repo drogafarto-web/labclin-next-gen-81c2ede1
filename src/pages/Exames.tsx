@@ -646,7 +646,7 @@ const Exames = () => {
                 Check-ups Personalizados para sua Saúde
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/95 mb-8">
-                Escolha o check-up ideal para monitorar sua saúde e agende seu exame agora.
+                Escolha o check-up ideal para monitorar sua saúde e agende agora pelo WhatsApp.
               </p>
 
               {/* Search */}
@@ -903,7 +903,7 @@ const Exames = () => {
               Pronto para Cuidar da Sua Saúde?
             </h2>
             <p className="text-xl text-primary-foreground/95 mb-8 max-w-2xl mx-auto">
-              Agende seu exame ou check-up agora mesmo e tenha resultados rápidos e precisos
+              Agende agora pelo WhatsApp seu exame ou check-up e tenha resultados rápidos e precisos
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/agendar">

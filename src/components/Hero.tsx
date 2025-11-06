@@ -25,7 +25,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-foreground/80 max-w-xl font-medium">
-              Escolha o check-up ideal para monitorar sua saúde e agende seu exame agora.
+              Escolha o check-up ideal para monitorar sua saúde e agende agora pelo WhatsApp.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-6">

@@ -240,7 +240,7 @@ const Contato = () => {
               Pronto para agendar seu exame?
             </h2>
             <p className="text-lg mb-8 opacity-95">
-              Entre em contato agora mesmo e agende seu atendimento
+              Entre em contato agora mesmo e agende agora pelo WhatsApp seu atendimento
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

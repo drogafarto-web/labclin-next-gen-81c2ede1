@@ -178,7 +178,7 @@ const Blog = () => {
                   Precisa realizar exames?
                 </h2>
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                  Agende seus exames laboratoriais com praticidade ou solicite nossa coleta domiciliar. 
+                  Agende agora pelo WhatsApp seus exames laboratoriais com praticidade ou solicite nossa coleta domiciliar. 
                   Atendemos Rio Pomba, Mercês, Guarani e Silveirânia.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -346,7 +346,7 @@ const Index = () => {
               Pronto para cuidar da sua saúde?
             </h2>
             <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-              Agende seu exame agora mesmo ou faça um checkup personalizado com I.A.
+              Agende agora pelo WhatsApp seu exame ou faça um checkup personalizado com I.A.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#checkup-form" className="w-full sm:w-auto">
