@@ -1,12 +1,9 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CONTACTS, WHATSAPP_MESSAGES, getWhatsAppUrl } from "@/config/constants";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "5532991990239";
-  const message = "Olá! Gostaria de agendar um exame.";
-  
-  // Usando formato alternativo mais estável do WhatsApp
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+  const whatsappUrl = getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, WHATSAPP_MESSAGES.AGENDAR_EXAME);
 
   return (
     <a

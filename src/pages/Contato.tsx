@@ -1,71 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import UnitCard from "@/components/cards/UnitCard";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Phone, MessageCircle, MapPin, Clock, Mail } from "lucide-react";
+import { MessageCircle, Mail } from "lucide-react";
 import { Helmet } from "react-helmet";
+import { UNITS, CONTACTS, WHATSAPP_MESSAGES, getWhatsAppUrl } from "@/config/constants";
 
 const Contato = () => {
-  const units = [
-    {
-      name: "Rio Pomba",
-      address: "Rua Floripes Maria de Jesus, 05, loja 02 - Centro",
-      city: "Rio Pomba - MG",
-      cep: "36180-000",
-      phone: "(32) 3571-1599",
-      whatsapp: "5532991990239",
-      whatsappDisplay: "(32) 99199-0239",
-      hours: {
-        weekdays: "Segunda a Sexta: 6:30 às 17:30",
-        saturday: "Sábado: 7:00 às 11:00",
-        sunday: "Domingo e feriados: Fechado",
-      },
-    },
-    {
-      name: "Mercês",
-      address: "Praça Dr. Castelões, 40 - Centro",
-      city: "Mercês - MG",
-      cep: "36190-000",
-      phone: "(32) 99967-1581",
-      whatsapp: "5532999671581",
-      whatsappDisplay: "(32) 99967-1581",
-      hours: {
-        weekdays: "Segunda a Sexta: 6:45 às 11:45",
-        saturday: "Fechado",
-        sunday: "Domingo e feriados: Fechado",
-      },
-    },
-    {
-      name: "Guarani",
-      address: "Rua José Ladeira Pinto, 70 - Bairro Sossego",
-      city: "Guarani - MG",
-      cep: "36160-000",
-      phone: "(32) 99942-2574",
-      whatsapp: "5532999422574",
-      whatsappDisplay: "(32) 99942-2574",
-      hours: {
-        weekdays: "Segunda a Sexta: 6:45 às 15:30",
-        saturday: "Fechado",
-        sunday: "Domingo e feriados: Fechado",
-      },
-    },
-    {
-      name: "Silveirânia",
-      address: "Rua Padre Cerqueira, 20 - Centro",
-      city: "Silveirânia - MG",
-      cep: "36185-000",
-      phone: "(32) 99959-2154",
-      whatsapp: "5532999592154",
-      whatsappDisplay: "(32) 99959-2154",
-      hours: {
-        weekdays: "Segunda a Sexta: 7:00 às 11:00",
-        saturday: "Fechado",
-        sunday: "Domingo e feriados: Fechado",
-      },
-    },
-  ];
-
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
@@ -115,13 +58,13 @@ const Contato = () => {
                       Atendimento rápido e personalizado
                     </p>
                     <a
-                      href="https://api.whatsapp.com/send?phone=5532991990239&text=Olá! Gostaria de mais informações."
+                      href={getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, WHATSAPP_MESSAGES.INFORMACOES)}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <Button variant="default" className="w-full">
                         <MessageCircle className="mr-2 h-4 w-4" />
-                        (32) 99199-0239
+                        {CONTACTS.WHATSAPP_DISPLAY}
                       </Button>
                     </a>
                   </CardContent>
@@ -136,10 +79,10 @@ const Contato = () => {
                     <p className="text-muted-foreground mb-4">
                       Envie sua mensagem ou dúvida
                     </p>
-                    <a href="mailto:contato@labclinmg.com.br">
+                    <a href={`mailto:${CONTACTS.EMAIL_CONTACT}`}>
                       <Button variant="outline" className="w-full">
                         <Mail className="mr-2 h-4 w-4" />
-                        contato@labclinmg.com.br
+                        {CONTACTS.EMAIL_CONTACT}
                       </Button>
                     </a>
                   </CardContent>
@@ -162,72 +105,8 @@ const Contato = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-              {units.map((unit, index) => (
-                <Card key={index} className="border-border hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <h3 className="text-2xl font-bold text-foreground mb-4">
-                      {unit.name}
-                    </h3>
-
-                    <div className="space-y-3 mb-6">
-                      <div className="flex items-start space-x-3">
-                        <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                        <div>
-                          <p className="text-foreground">{unit.address}</p>
-                          <p className="text-foreground">{unit.city}</p>
-                          <p className="text-sm text-muted-foreground">CEP: {unit.cep}</p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center space-x-3">
-                        <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                        <a
-                          href={`tel:${unit.phone.replace(/\D/g, "")}`}
-                          className="text-foreground hover:text-primary transition-colors font-medium"
-                        >
-                          {unit.phone}
-                        </a>
-                      </div>
-
-                      <div className="flex items-center space-x-3">
-                        <MessageCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                        <a
-                          href={`https://api.whatsapp.com/send?phone=${unit.whatsapp}&text=${encodeURIComponent(
-                            `Olá! Gostaria de informações sobre a unidade ${unit.name}.`
-                          )}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-foreground hover:text-primary transition-colors font-medium"
-                        >
-                          {unit.whatsappDisplay}
-                        </a>
-                      </div>
-
-                      <div className="flex items-start space-x-3">
-                        <Clock className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                        <div className="text-sm">
-                          <p className="text-foreground">{unit.hours.weekdays}</p>
-                          <p className="text-foreground">{unit.hours.saturday}</p>
-                          <p className="text-muted-foreground">{unit.hours.sunday}</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <a
-                      href={`https://api.whatsapp.com/send?phone=${unit.whatsapp}&text=${encodeURIComponent(
-                        `Olá! Gostaria de agendar um exame na unidade ${unit.name}.`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block"
-                    >
-                      <Button variant="default" className="w-full">
-                        <MessageCircle className="mr-2 h-4 w-4" />
-                        Fale Conosco
-                      </Button>
-                    </a>
-                  </CardContent>
-                </Card>
+              {UNITS.map((unit, index) => (
+                <UnitCard key={index} {...unit} />
               ))}
             </div>
           </div>
@@ -244,7 +123,7 @@ const Contato = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://api.whatsapp.com/send?phone=5532991990239&text=Olá! Gostaria de agendar um exame."
+                href={getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, WHATSAPP_MESSAGES.AGENDAR_EXAME)}
                 target="_blank"
                 rel="noopener noreferrer"
               >

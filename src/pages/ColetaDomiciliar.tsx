@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Calendar, Clock, Home, Shield, CheckCircle, ChevronDown } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Calendar, Clock, Home, Shield, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
@@ -14,60 +14,57 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { coletaDomiciliarSchema, type ColetaDomiciliarFormData } from "@/lib/validators";
+import { formatWhatsApp } from "@/utils/formatters";
+import { sanitizeInput } from "@/utils/sanitizers";
+import { useFormRateLimiter } from "@/hooks/useRateLimiter";
+import { CONTACTS, WHATSAPP_MESSAGES, getWhatsAppUrl } from "@/config/constants";
 
 const ColetaDomiciliar = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    nome: "",
-    whatsapp: "",
-    endereco: "",
-    data: "",
-    horario: "",
-    observacoes: "",
+  const { checkLimit } = useFormRateLimiter(3, 60000);
+
+  const form = useForm<ColetaDomiciliarFormData>({
+    resolver: zodResolver(coletaDomiciliarSchema),
+    defaultValues: {
+      nome: "",
+      whatsapp: "",
+      endereco: "",
+      data: "",
+      horario: "",
+      observacoes: "",
+    },
   });
 
-  const formatWhatsApp = (value: string) => {
-    const numbers = value.replace(/\D/g, "");
-    if (numbers.length <= 11) {
-      return numbers
-        .replace(/(\d{2})(\d)/, "($1) $2")
-        .replace(/(\d{5})(\d)/, "$1-$2");
-    }
-    return value.slice(0, 15);
-  };
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    if (name === "whatsapp") {
-      setFormData({ ...formData, [name]: formatWhatsApp(value) });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!formData.nome || !formData.whatsapp || !formData.endereco || !formData.data || !formData.horario) {
-      toast({
-        title: "Campos obrigatórios",
-        description: "Por favor, preencha todos os campos obrigatórios.",
-        variant: "destructive",
-      });
+  const onSubmit = (data: ColetaDomiciliarFormData) => {
+    if (!checkLimit((msg) => toast({ title: "Limite excedido", description: msg, variant: "destructive" }))) {
       return;
     }
 
-    const message = `*Agendamento de Coleta Domiciliar*\n\n` +
-      `Nome: ${formData.nome}\n` +
-      `WhatsApp: ${formData.whatsapp}\n` +
-      `Endereço: ${formData.endereco}\n` +
-      `Data: ${formData.data}\n` +
-      `Horário: ${formData.horario}\n` +
-      `Observações: ${formData.observacoes || "Nenhuma"}`;
+    const sanitizedData = {
+      ...data,
+      nome: sanitizeInput(data.nome),
+      endereco: sanitizeInput(data.endereco),
+      observacoes: data.observacoes ? sanitizeInput(data.observacoes) : "",
+    };
 
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=5532991990239&text=${encodeURIComponent(message)}`;
+    const message = `*Agendamento de Coleta Domiciliar*\n\n` +
+      `Nome: ${sanitizedData.nome}\n` +
+      `WhatsApp: ${sanitizedData.whatsapp}\n` +
+      `Endereço: ${sanitizedData.endereco}\n` +
+      `Data: ${sanitizedData.data}\n` +
+      `Horário: ${sanitizedData.horario}\n` +
+      `Observações: ${sanitizedData.observacoes || "Nenhuma"}`;
+
+    const whatsappUrl = getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, message);
     window.open(whatsappUrl, "_blank");
 
     toast({
@@ -75,14 +72,7 @@ const ColetaDomiciliar = () => {
       description: "Você será redirecionado para o WhatsApp para confirmar seu agendamento.",
     });
 
-    setFormData({
-      nome: "",
-      whatsapp: "",
-      endereco: "",
-      data: "",
-      horario: "",
-      observacoes: "",
-    });
+    form.reset();
   };
 
   const scrollToSection = (id: string) => {
@@ -247,7 +237,7 @@ const ColetaDomiciliar = () => {
           </div>
 
           <a
-            href="https://api.whatsapp.com/send?phone=5532991990239&text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20de%20comodidade%20Labclin."
+            href={getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, WHATSAPP_MESSAGES.COLETA_DOMICILIAR)}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -273,96 +263,123 @@ const ColetaDomiciliar = () => {
               Preencha o formulário abaixo e nossa equipe entrará em contato
             </p>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <Label htmlFor="nome">Nome Completo *</Label>
-                <Input
-                  id="nome"
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
                   name="nome"
-                  type="text"
-                  value={formData.nome}
-                  onChange={handleInputChange}
-                  placeholder="Seu nome completo"
-                  required
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Nome Completo *</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Seu nome completo" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
 
-              <div>
-                <Label htmlFor="whatsapp">WhatsApp *</Label>
-                <Input
-                  id="whatsapp"
+                <FormField
+                  control={form.control}
                   name="whatsapp"
-                  type="tel"
-                  value={formData.whatsapp}
-                  onChange={handleInputChange}
-                  placeholder="(00) 00000-0000"
-                  required
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>WhatsApp *</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="tel"
+                          placeholder="(32) 99999-9999"
+                          {...field}
+                          onChange={(e) => {
+                            const formatted = formatWhatsApp(e.target.value);
+                            field.onChange(formatted);
+                          }}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
 
-              <div>
-                <Label htmlFor="endereco">Endereço Completo *</Label>
-                <Textarea
-                  id="endereco"
+                <FormField
+                  control={form.control}
                   name="endereco"
-                  value={formData.endereco}
-                  onChange={handleInputChange}
-                  placeholder="Rua, número, complemento, bairro, cidade"
-                  required
-                  rows={3}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Endereço Completo *</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Rua, número, complemento, bairro, cidade"
+                          rows={3}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="data">Data Preferida *</Label>
-                  <Input
-                    id="data"
+                <div className="grid md:grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
                     name="data"
-                    type="date"
-                    value={formData.data}
-                    onChange={handleInputChange}
-                    required
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Data Preferida *</FormLabel>
+                        <FormControl>
+                          <Input type="date" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div>
-                  <Label htmlFor="horario">Horário Preferido *</Label>
-                  <Input
-                    id="horario"
+                  <FormField
+                    control={form.control}
                     name="horario"
-                    type="time"
-                    value={formData.horario}
-                    onChange={handleInputChange}
-                    required
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Horário Preferido *</FormLabel>
+                        <FormControl>
+                          <Input type="time" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
                 </div>
-              </div>
 
-              <div>
-                <Label htmlFor="observacoes">Observações</Label>
-                <Textarea
-                  id="observacoes"
+                <FormField
+                  control={form.control}
                   name="observacoes"
-                  value={formData.observacoes}
-                  onChange={handleInputChange}
-                  placeholder="Exames solicitados, jejum necessário, etc."
-                  rows={3}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Observações</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Exames solicitados, jejum necessário, etc."
+                          rows={3}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
 
-              <Button
-                type="submit"
-                className="w-full bg-gradient-hero hover:opacity-90"
-                size="lg"
-              >
-                Agendar Coleta
-              </Button>
+                <Button
+                  type="submit"
+                  className="w-full bg-gradient-hero hover:opacity-90"
+                  size="lg"
+                >
+                  Agendar Coleta
+                </Button>
 
-              <p className="text-sm text-muted-foreground text-center">
-                * Campos obrigatórios
-              </p>
-            </form>
+                <p className="text-sm text-muted-foreground text-center">
+                  * Campos obrigatórios
+                </p>
+              </form>
+            </Form>
           </div>
         </div>
       </section>
@@ -439,17 +456,17 @@ const ColetaDomiciliar = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="https://api.whatsapp.com/send?phone=5532991990239"
+              href={getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, WHATSAPP_MESSAGES.INFORMACOES)}
               target="_blank"
               rel="noopener noreferrer"
             >
               <Button variant="secondary" size="lg" className="shadow-medium">
-                📱 WhatsApp: (32) 99199-0239
+                📱 WhatsApp: {CONTACTS.WHATSAPP_DISPLAY}
               </Button>
             </a>
-            <a href="mailto:llabclin3@gmail.com">
+            <a href={`mailto:${CONTACTS.EMAIL_MAIN}`}>
               <Button variant="secondary" size="lg" className="shadow-medium">
-                📧 llabclin3@gmail.com
+                📧 {CONTACTS.EMAIL_MAIN}
               </Button>
             </a>
           </div>
