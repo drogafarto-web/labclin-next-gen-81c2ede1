@@ -91,6 +91,7 @@ const ColetaDomiciliar = () => {
       />
       <Header />
       
+      <main id="main-content">
       {/* Hero Section */}
       <section className="bg-gradient-hero text-primary-foreground py-20">
         <div className="container mx-auto px-4 text-center">
@@ -479,6 +480,7 @@ const ColetaDomiciliar = () => {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
       <WhatsAppButton />

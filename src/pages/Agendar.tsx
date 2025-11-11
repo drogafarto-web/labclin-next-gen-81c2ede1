@@ -51,7 +51,7 @@ const Agendar = () => {
       />
       <Header />
 
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         {/* Hero */}
         <section className="bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16 md:py-20">
           <div className="container mx-auto px-4">

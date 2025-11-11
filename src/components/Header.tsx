@@ -19,6 +19,14 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-card shadow-soft" role="banner">
+      {/* Skip to main content link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:shadow-lg"
+      >
+        Pular para o conteúdo principal
+      </a>
+      
       {/* Top bar with logo and CTA */}
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between border-b border-border">

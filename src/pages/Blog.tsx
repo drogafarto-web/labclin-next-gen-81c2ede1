@@ -125,7 +125,7 @@ const Blog = () => {
       <div className="min-h-screen flex flex-col bg-background">
         <Header />
         
-        <main className="flex-grow">
+        <main id="main-content" className="flex-grow">
           {/* Hero Section */}
           <section className="bg-gradient-hero text-primary-foreground py-20 px-4">
             <div className="container mx-auto max-w-6xl">

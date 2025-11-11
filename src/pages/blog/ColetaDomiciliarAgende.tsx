@@ -92,6 +92,9 @@ const ColetaDomiciliarAgende = () => {
                   src={coletaImage}
                   alt="Profissional realizando coleta domiciliar de exames"
                   className="w-full h-auto object-cover"
+                  loading="lazy"
+                  width="800"
+                  height="500"
                 />
               </div>
 

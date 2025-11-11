@@ -18,6 +18,9 @@ const Footer = () => {
                 src={labclinLogo} 
                 alt="Labclin - Laboratório de Análises Clínicas" 
                 className="h-12 w-auto"
+                loading="lazy"
+                width="160"
+                height="48"
               />
             </div>
             <p className="text-sm text-muted-foreground mb-4">

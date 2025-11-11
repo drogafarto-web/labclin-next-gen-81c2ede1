@@ -92,6 +92,9 @@ const JejumExamesMitosVerdades = () => {
                   src={preparoImage}
                   alt="Preparo para exames laboratoriais"
                   className="w-full h-auto object-cover"
+                  loading="lazy"
+                  width="800"
+                  height="500"
                 />
               </div>
 

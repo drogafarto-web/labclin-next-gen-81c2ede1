@@ -17,7 +17,7 @@ const Resultados = () => {
       />
       <Header />
       
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         {/* Hero Section with Iframe */}
         <section className="bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
           <div className="container mx-auto px-4">

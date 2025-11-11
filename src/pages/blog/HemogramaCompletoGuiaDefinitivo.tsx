@@ -92,6 +92,9 @@ const HemogramaCompletoGuiaDefinitivo = () => {
                   src={hemogramaImage}
                   alt="Exame de hemograma completo sendo realizado em laboratório"
                   className="w-full h-auto object-cover"
+                  loading="lazy"
+                  width="800"
+                  height="500"
                 />
               </div>
 

@@ -614,7 +614,7 @@ const Exames = () => {
       />
       <Header />
 
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-primary via-accent to-secondary py-20 md:py-28 overflow-hidden">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
@@ -764,6 +764,9 @@ const Exames = () => {
                           src={exame.image} 
                           alt={exame.name}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          loading="lazy"
+                          width="300"
+                          height="300"
                         />
                       </div>
                     )}

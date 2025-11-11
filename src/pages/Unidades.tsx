@@ -79,7 +79,7 @@ const Unidades = () => {
       />
       <Header />
 
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         {/* Hero */}
         <section className="relative bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
@@ -87,6 +87,9 @@ const Unidades = () => {
               src={fachada}
               alt="Labclin Background" 
               className="w-full h-full object-cover"
+              loading="lazy"
+              width="1920"
+              height="600"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background"></div>
           </div>

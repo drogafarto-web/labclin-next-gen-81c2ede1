@@ -13,7 +13,7 @@ const PoliticaPrivacidade = () => {
       />
       <Header />
 
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         <div className="container mx-auto px-4 py-16 max-w-4xl">
           <h1 className="text-4xl font-bold text-foreground mb-8">Política de Privacidade</h1>
 
