@@ -20,13 +20,16 @@ const ResultsIframe = () => {
           <div className="bg-card border border-border rounded-xl shadow-medium p-6 md:p-8">
             <div className="flex justify-center">
               <iframe
-                src="https://worklabweb.com.br/frame.php?Cliente=000&i=1"
+                src="https://worklabweb.com.br/frame.php?Cliente=386&i=1"
                 name="I1"
-                width="650"
-                height="200"
+                width="450"
+                height="135"
                 title="Consulta de Laudos Labclin"
-                className="w-full max-w-[650px] border-0"
-                scrolling="auto"
+                className="w-full max-w-[450px] border-0"
+                marginWidth={0}
+                marginHeight={0}
+                frameBorder="no"
+                scrolling="no"
               />
             </div>
             
