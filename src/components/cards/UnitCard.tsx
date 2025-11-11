@@ -51,7 +51,7 @@ const UnitCard = ({ name, address, city, cep, phone, whatsapp, whatsappDisplay, 
           <div className="flex items-center space-x-3">
             <MessageCircle className="h-5 w-5 text-primary flex-shrink-0" />
             <a
-              href={`https://api.whatsapp.com/send?phone=${whatsapp}&text=${encodeURIComponent(
+              href={`https://wa.me/${whatsapp}?text=${encodeURIComponent(
                 `Olá! Gostaria de informações sobre a unidade ${name}.`
               )}`}
               target="_blank"
@@ -73,7 +73,7 @@ const UnitCard = ({ name, address, city, cep, phone, whatsapp, whatsappDisplay, 
         </div>
 
         <a
-          href={`https://api.whatsapp.com/send?phone=${whatsapp}&text=${encodeURIComponent(
+          href={`https://wa.me/${whatsapp}?text=${encodeURIComponent(
             `Olá! Gostaria de agendar um exame na unidade ${name}.`
           )}`}
           target="_blank"

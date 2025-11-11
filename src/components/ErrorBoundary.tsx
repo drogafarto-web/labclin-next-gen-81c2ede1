@@ -96,7 +96,7 @@ class ErrorBoundary extends Component<Props, State> {
             <p className="text-sm text-muted-foreground mt-6">
               Se o problema persistir, entre em contato conosco pelo WhatsApp:{" "}
               <a
-                href="https://api.whatsapp.com/send?phone=5532991990239&text=Estou%20com%20problemas%20no%20site"
+                href="https://wa.me/5532991990239?text=Estou%20com%20problemas%20no%20site"
                 className="text-primary hover:underline font-semibold"
                 target="_blank"
                 rel="noopener noreferrer"
