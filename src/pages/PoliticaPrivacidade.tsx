@@ -1,10 +1,16 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEO from "@/components/SEO";
 
 const PoliticaPrivacidade = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Política de Privacidade"
+        description="Política de Privacidade do Labclin conforme LGPD. Saiba como coletamos, usamos e protegemos seus dados pessoais."
+        canonicalUrl="https://labclin.com.br/politica-de-privacidade"
+      />
       <Header />
 
       <main className="flex-grow">

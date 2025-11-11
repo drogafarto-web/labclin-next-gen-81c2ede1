@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEO from "@/components/SEO";
 import { Clock, Shield, Download } from "lucide-react";
 
 const Resultados = () => {
@@ -8,6 +9,12 @@ const Resultados = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Resultados de Exames Online"
+        description="Acesse seus resultados de exames online de forma rápida, segura e conveniente. Disponível 24/7 com criptografia de ponta."
+        keywords="resultados exames online, laboratorio resultados, acesso resultados labclin"
+        canonicalUrl="https://labclin.com.br/resultados"
+      />
       <Header />
       
       <main className="flex-grow">

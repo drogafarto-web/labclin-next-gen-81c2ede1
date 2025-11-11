@@ -1,28 +1,24 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEO from "@/components/SEO";
 import UnitCard from "@/components/cards/UnitCard";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Mail } from "lucide-react";
-import { Helmet } from "react-helmet";
 import { UNITS, CONTACTS, WHATSAPP_MESSAGES, getWhatsAppUrl } from "@/config/constants";
+import { generateLocalBusinessSchema } from "@/lib/structuredData";
 
 const Contato = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Helmet>
-        <title>Contato - Labclin | Entre em Contato com Nossas Unidades</title>
-        <meta
-          name="description"
-          content="Entre em contato com o Labclin. Telefones e WhatsApp de todas as nossas unidades em Rio Pomba, Mercês, Guarani e Silveirânia."
-        />
-        <meta
-          name="keywords"
-          content="contato labclin, telefone labclin, whatsapp labclin, laboratorio rio pomba contato"
-        />
-      </Helmet>
-
+      <SEO
+        title="Contato"
+        description="Entre em contato com o Labclin. Telefones e WhatsApp de todas as nossas unidades em Rio Pomba, Mercês, Guarani e Silveirânia."
+        keywords="contato labclin, telefone labclin, whatsapp labclin, laboratorio rio pomba contato"
+        canonicalUrl="https://labclin.com.br/contato"
+        structuredData={generateLocalBusinessSchema()}
+      />
       <Header />
 
       <main className="flex-grow">

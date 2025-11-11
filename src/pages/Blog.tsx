@@ -1,8 +1,8 @@
-import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlogCard from "@/components/BlogCard";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
@@ -92,46 +92,35 @@ const Blog = () => {
     },
   ];
 
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog da Saúde Labclin",
+    "description": "Novidades e dicas sobre exames laboratoriais e saúde",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Labclin",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://labclin.com.br/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://labclin.com.br/blog"
+    }
+  };
+
   return (
     <>
-      <Helmet>
-        <title>Blog da Saúde Labclin | Dicas e Novidades sobre Exames Laboratoriais</title>
-        <meta
-          name="description"
-          content="Fique por dentro das novidades, dicas e informações sobre exames laboratoriais, saúde e bem-estar em Rio Pomba, Mercês, Guarani e Silveirânia. Artigos sobre hemograma, sexagem fetal, coleta domiciliar e mais."
-        />
-        <meta
-          name="keywords"
-          content="exames laboratoriais, laboratório Rio Pomba, hemograma, sexagem fetal, coleta domiciliar, resultados online, saúde preventiva, medicina personalizada, jejum exames, exames gestantes, laboratório Mercês, laboratório Guarani, laboratório Silveirânia"
-        />
-        <link rel="canonical" href="https://labclin.com.br/blog" />
-        <meta property="og:title" content="Blog da Saúde Labclin | Dicas e Novidades sobre Exames" />
-        <meta
-          property="og:description"
-          content="Artigos sobre exames laboratoriais, saúde preventiva e bem-estar em Rio Pomba e região."
-        />
-        <meta property="og:type" content="website" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Blog",
-            "name": "Blog da Saúde Labclin",
-            "description": "Novidades e dicas sobre exames laboratoriais e saúde",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Labclin",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://labclin.com.br/logo.png"
-              }
-            },
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://labclin.com.br/blog"
-            }
-          })}
-        </script>
-      </Helmet>
+      <SEO
+        title="Blog da Saúde"
+        description="Fique por dentro das novidades, dicas e informações sobre exames laboratoriais, saúde e bem-estar em Rio Pomba, Mercês, Guarani e Silveirânia."
+        keywords="exames laboratoriais, laboratório Rio Pomba, hemograma, sexagem fetal, coleta domiciliar, resultados online, saúde preventiva"
+        canonicalUrl="https://labclin.com.br/blog"
+        ogType="website"
+        structuredData={blogSchema}
+      />
 
       <div className="min-h-screen flex flex-col bg-background">
         <Header />

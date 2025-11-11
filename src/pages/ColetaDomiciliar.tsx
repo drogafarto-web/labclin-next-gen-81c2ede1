@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEO from "@/components/SEO";
 import {
   Accordion,
   AccordionContent,
@@ -82,6 +83,12 @@ const ColetaDomiciliar = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Coleta Domiciliar"
+        description="Serviço de coleta domiciliar em Rio Pomba, Mercês, Guarani e Silveirânia. Exames no conforto de casa com segurança e praticidade."
+        keywords="coleta domiciliar, exames em casa, coleta residencial, laboratorio domicilio"
+        canonicalUrl="https://labclin.com.br/coleta-domiciliar"
+      />
       <Header />
       
       {/* Hero Section */}

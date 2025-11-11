@@ -1,10 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, Navigation } from "lucide-react";
 import fachada from "@/assets/gallery/fachada-labclin.png";
+import { generateLocalBusinessSchema, generateBreadcrumbSchema } from "@/lib/structuredData";
 
 const Unidades = () => {
   const units = [
@@ -68,6 +70,13 @@ const Unidades = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Nossas Unidades"
+        description="Labclin com 4 unidades em Rio Pomba, Mercês, Guarani e Silveirânia - MG. Exames de rotina, coleta domiciliar e resultados online."
+        keywords="labclin unidades, laboratorio rio pomba, laboratorio merces, laboratorio guarani, laboratorio silverania"
+        canonicalUrl="https://labclin.com.br/unidades"
+        structuredData={generateLocalBusinessSchema()}
+      />
       <Header />
 
       <main className="flex-grow">
