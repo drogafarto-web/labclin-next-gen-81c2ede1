@@ -1,9 +1,10 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { analytics } from "./lib/analytics";
 
 // Eager load the Index page
 import Index from "./pages/Index";
@@ -37,12 +38,26 @@ const PageLoader = () => (
 
 const queryClient = new QueryClient();
 
+// Component to track page views
+function PageTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const pagePath = location.pathname + location.search;
+    const pageTitle = document.title;
+    analytics.pageView(pagePath, pageTitle);
+  }, [location]);
+
+  return null;
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PageTracker />
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Index />} />

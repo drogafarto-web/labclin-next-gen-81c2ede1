@@ -1,15 +1,25 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACTS, WHATSAPP_MESSAGES, getWhatsAppUrl } from "@/config/constants";
+import { analytics } from "@/lib/analytics";
 
 const WhatsAppButton = () => {
   const whatsappUrl = getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, WHATSAPP_MESSAGES.AGENDAR_EXAME);
+
+  const handleClick = () => {
+    analytics.whatsappClick(
+      'floating_button',
+      CONTACTS.WHATSAPP_MAIN,
+      WHATSAPP_MESSAGES.AGENDAR_EXAME
+    );
+  };
 
   return (
     <a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleClick}
       className="fixed bottom-6 right-6 z-50 group animate-fade-in"
       aria-label="Fale conosco no WhatsApp"
     >

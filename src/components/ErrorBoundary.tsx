@@ -1,6 +1,8 @@
 import { Component, ErrorInfo, ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { AlertTriangle } from "lucide-react";
+import { logger } from "@/lib/logger";
+import { analytics } from "@/lib/analytics";
 
 interface Props {
   children: ReactNode;
@@ -26,11 +28,18 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    // Log do erro para monitoramento
-    console.error("ErrorBoundary capturou erro:", error, errorInfo);
+    // Log estruturado do erro
+    logger.error("ErrorBoundary capturou erro", error, {
+      componentStack: errorInfo.componentStack,
+      errorInfo,
+    });
     
-    // Aqui você pode enviar para serviço de monitoramento (Sentry, LogRocket, etc)
-    // Example: Sentry.captureException(error, { extra: errorInfo });
+    // Track no analytics
+    analytics.errorOccurred(
+      error.message,
+      'react_error_boundary',
+      true // fatal error
+    );
   }
 
   handleReset = () => {
