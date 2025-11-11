@@ -81,6 +81,8 @@ const Hero = () => {
                   alt="Profissionais do Laboratório Labclin"
                   className="w-full h-full object-cover"
                   loading="eager"
+                  width="400"
+                  height="500"
                 />
               </div>
               
@@ -90,6 +92,9 @@ const Hero = () => {
                   src={pncqLogo} 
                   alt="PNCQ - Programa Nacional de Controle de Qualidade" 
                   className="w-full h-auto object-contain"
+                  loading="eager"
+                  width="200"
+                  height="200"
                 />
               </div>
               

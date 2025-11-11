@@ -11,6 +11,7 @@ import ExamResultsForm from "@/components/ExamResultsForm";
 import ConveniosSection from "@/components/ConveniosSection";
 import GallerySection from "@/components/GallerySection";
 import CheckupForm from "@/components/CheckupForm";
+import SEO from "@/components/SEO";
 import { Microscope, Home, Stethoscope, FileText, MapPin, Calendar, Heart, Users, Award, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -147,11 +148,75 @@ const Index = () => {
     { name: "LGPD", description: "Adequado à Lei Geral de Proteção de Dados" },
   ];
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalBusiness",
+        "name": "Labclin - Laboratório de Análises Clínicas",
+        "description": "Laboratório de análises clínicas com 58+ anos de experiência em Rio Pomba, Mercês, Guarani e Silveirânia - MG. Exames de rotina, especializados e coleta domiciliar.",
+        "url": "https://labclin.com.br",
+        "logo": "https://labclin.com.br/logo.png",
+        "image": "https://labclin.com.br/og-image.jpg",
+        "telephone": "+55-32-99199-0239",
+        "email": "contato@labclin.com.br",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua Floripes Maria de Jesus, 05, loja 02",
+            "addressLocality": "Rio Pomba",
+            "addressRegion": "MG",
+            "addressCountry": "BR"
+          },
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "Praça Dr. Castelões, 40",
+            "addressLocality": "Mercês",
+            "addressRegion": "MG",
+            "addressCountry": "BR"
+          }
+        ],
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 07:00-17:00, Sa 07:00-12:00",
+        "areaServed": ["Rio Pomba", "Mercês", "Guarani", "Silveirânia"],
+        "medicalSpecialty": "Clinical Laboratory",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "500"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "name": "Labclin",
+        "url": "https://labclin.com.br",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://labclin.com.br/exames?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Início"
+        description="Labclin - Laboratório de Análises Clínicas com 58+ anos de experiência. Exames de rotina, especializados e coleta domiciliar em Rio Pomba, Mercês, Guarani e Silveirânia - MG."
+        keywords="laboratório, análises clínicas, exames, Rio Pomba, Mercês, Guarani, Silveirânia, hemograma, coleta domiciliar, check-up"
+        canonicalUrl="https://labclin.com.br"
+        structuredData={structuredData}
+      />
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+      >
+        Pular para o conteúdo principal
+      </a>
       <Header />
       
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         {/* Hero Section */}
         <Hero />
 

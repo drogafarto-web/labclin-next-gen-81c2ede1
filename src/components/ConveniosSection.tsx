@@ -60,6 +60,8 @@ const ConveniosSection = () => {
                   alt={convenio.alt}
                   className="h-16 w-auto object-contain"
                   loading="lazy"
+                  width="120"
+                  height="64"
                 />
               </div>
             ))}
@@ -89,6 +91,8 @@ const ConveniosSection = () => {
                   alt={method.alt}
                   className="max-h-12 w-auto object-contain"
                   loading="lazy"
+                  width="100"
+                  height="48"
                 />
               </div>
             ))}

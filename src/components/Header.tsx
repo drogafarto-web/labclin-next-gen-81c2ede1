@@ -18,16 +18,19 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-card shadow-soft">
+    <header className="sticky top-0 z-50 w-full bg-card shadow-soft" role="banner">
       {/* Top bar with logo and CTA */}
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between border-b border-border">
           {/* Logo */}
-          <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
+          <Link to="/" className="flex items-center hover:opacity-80 transition-opacity" aria-label="Labclin - Página inicial">
             <img 
               src={labclinLogo} 
               alt="Labclin - Laboratório de Análises Clínicas" 
               className="h-14 w-auto"
+              loading="eager"
+              width="180"
+              height="56"
             />
           </Link>
 
@@ -45,7 +48,9 @@ const Header = () => {
           <button
             className="md:hidden p-2 text-foreground hover:bg-accent/10 rounded-md transition-all"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -55,7 +60,7 @@ const Header = () => {
       {/* Secondary Navigation Bar */}
       <div className="bg-primary">
         <div className="container mx-auto px-4">
-          <nav className="hidden md:flex items-center justify-center h-12 space-x-6">
+          <nav className="hidden md:flex items-center justify-center h-12 space-x-6" role="navigation" aria-label="Navegação principal">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -71,8 +76,8 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-primary">
-          <nav className="flex flex-col py-4 px-4 space-y-2">
+        <div className="md:hidden bg-primary" id="mobile-navigation">
+          <nav className="flex flex-col py-4 px-4 space-y-2" role="navigation" aria-label="Navegação mobile">
             {navLinks.map((link) => (
               <Link
                 key={link.href}

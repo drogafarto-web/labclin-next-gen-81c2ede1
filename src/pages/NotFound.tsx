@@ -9,14 +9,18 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-gray-600">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 underline hover:text-blue-700">
-          Return to Home
+    <div className="flex min-h-screen items-center justify-center bg-background">
+      <main className="text-center px-4" role="main" aria-labelledby="error-title">
+        <h1 id="error-title" className="mb-4 text-4xl font-bold text-foreground">404</h1>
+        <p className="mb-4 text-xl text-muted-foreground">Oops! Página não encontrada</p>
+        <a 
+          href="/" 
+          className="text-primary underline hover:text-primary/80 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+          aria-label="Voltar para página inicial"
+        >
+          Voltar para Início
         </a>
-      </div>
+      </main>
     </div>
   );
 };

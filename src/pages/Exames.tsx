@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import TestimonialCard from "@/components/TestimonialCard";
+import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -10,7 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Link } from "react-router-dom";
 import { Search, ArrowRight, CheckCircle2, Activity, Heart, Users, ShieldAlert, HeartPulse, AlertTriangle } from "lucide-react";
 import { useState } from "react";
-import { Helmet } from "react-helmet";
+import { generateBreadcrumbSchema } from "@/lib/structuredData";
 import covidImage from "@/assets/exames/covid-virus.png";
 import influenzaImage from "@/assets/exames/influenza-syringe.png";
 import hba1cImage from "@/assets/exames/hba1c-dna.png";
@@ -597,43 +598,20 @@ const Exames = () => {
     { question: "Vocês atendem convênios?", answer: "Sim! Trabalhamos com diversos convênios. Consulte a lista completa em nossa página de convênios." },
   ];
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Início", url: "https://labclin.com.br" },
+    { name: "Exames", url: "https://labclin.com.br/exames" },
+  ]);
+
   return (
     <div className="flex flex-col min-h-screen">
-      <Helmet>
-        <title>Exames Laboratoriais e Check-ups Personalizados - Labclin</title>
-        <meta name="description" content="Descubra exames laboratoriais especializados e check-ups personalizados no Labclin. COVID-19, Influenza, Hemoglobina Glicada, Toxicologia e mais. Agende online." />
-        <meta name="keywords" content="exames laboratoriais, check-ups personalizados, COVID-19, Influenza, hemoglobina glicada, toxicologia, exames especializados, exames de rotina" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "MedicalBusiness",
-            "name": "Labclin - Laboratório de Análises Clínicas",
-            "url": "https://www.labclin.com.br",
-            "logo": "https://www.labclin.com.br/logo.png",
-            "description": "Laboratório de análises clínicas oferecendo exames especializados e check-ups personalizados",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Rio Pomba",
-              "addressRegion": "MG",
-              "addressCountry": "BR"
-            },
-            "telephone": "+55-32-3571-1599",
-            "medicalSpecialty": "Análises Clínicas",
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Exames e Check-ups",
-              "itemListElement": exames.slice(0, 4).map(exame => ({
-                "@type": "MedicalTest",
-                "name": exame.name,
-                "description": exame.description,
-                "preparation": exame.preparo,
-                "url": `https://www.labclin.com.br/exames/${exame.slug}`
-              }))
-            }
-          })}
-        </script>
-      </Helmet>
-      
+      <SEO
+        title="Exames Laboratoriais"
+        description="Descubra exames laboratoriais especializados e check-ups personalizados no Labclin. COVID-19, Influenza, Hemoglobina Glicada, Toxicologia e mais. Agende online."
+        keywords="exames laboratoriais, check-ups personalizados, COVID-19, Influenza, hemoglobina glicada, toxicologia, exames especializados, exames de rotina"
+        canonicalUrl="https://labclin.com.br/exames"
+        structuredData={breadcrumbSchema}
+      />
       <Header />
 
       <main className="flex-grow">

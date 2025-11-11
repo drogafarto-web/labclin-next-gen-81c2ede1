@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -42,6 +43,12 @@ const Agendar = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO
+        title="Agendar Exame"
+        description="Agende seus exames laboratoriais no Labclin de forma rápida e fácil. Atendimento em Rio Pomba, Mercês, Guarani e Silveirânia - MG."
+        keywords="agendar exame, laboratório, análises clínicas, agendamento online"
+        canonicalUrl="https://labclin.com.br/agendar"
+      />
       <Header />
 
       <main className="flex-grow">
