@@ -280,9 +280,46 @@ const ColetaDomiciliar = () => {
             <h2 className="text-3xl font-bold text-center mb-2 text-foreground">
               Agende sua Coleta Domiciliar
             </h2>
-            <p className="text-center text-muted-foreground mb-8">
-              Preencha o formulário abaixo e nossa equipe entrará em contato
+            <p className="text-center text-muted-foreground mb-6">
+              Escolha a forma mais prática para agendar:
             </p>
+            
+            {/* Opção WhatsApp Direto */}
+            <div className="mb-8 p-6 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 rounded-lg border-2 border-green-500">
+              <div className="text-center">
+                <h3 className="text-xl font-bold mb-2 text-foreground">
+                  ⚡ Agendamento Rápido via WhatsApp
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Fale diretamente com nossa equipe - mais rápido e sem formulários!
+                </p>
+                <a
+                  href={getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, WHATSAPP_MESSAGES.COLETA_DOMICILIAR)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Button
+                    size="lg"
+                    className="w-full bg-green-600 hover:bg-green-700 text-white shadow-lg hover:scale-105 transition-transform text-lg"
+                  >
+                    <span className="mr-2">💬</span>
+                    Agendar pelo WhatsApp Agora
+                  </Button>
+                </a>
+              </div>
+            </div>
+
+            <div className="relative mb-6">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-border"></div>
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-4 bg-card text-muted-foreground">
+                  Ou preencha o formulário abaixo
+                </span>
+              </div>
+            </div>
             
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
