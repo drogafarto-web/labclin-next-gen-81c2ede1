@@ -1,10 +1,5 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Calendar, Clock, Home, Shield, CheckCircle } from "lucide-react";
+import { Home, Shield, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -15,68 +10,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { coletaDomiciliarSchema, type ColetaDomiciliarFormData } from "@/lib/validators";
-import { formatWhatsApp } from "@/utils/formatters";
-import { sanitizeInput } from "@/utils/sanitizers";
-import { useFormRateLimiter } from "@/hooks/useRateLimiter";
 import { CONTACTS, WHATSAPP_MESSAGES, getWhatsAppUrl } from "@/config/constants";
 import coletaDomiciliarCarro from "@/assets/coleta-domiciliar-carro.png";
 
 const ColetaDomiciliar = () => {
-  const { toast } = useToast();
-  const { checkLimit } = useFormRateLimiter(3, 60000);
-
-  const form = useForm<ColetaDomiciliarFormData>({
-    resolver: zodResolver(coletaDomiciliarSchema),
-    defaultValues: {
-      nome: "",
-      whatsapp: "",
-      endereco: "",
-      data: "",
-      horario: "",
-      observacoes: "",
-    },
-  });
-
-  const onSubmit = (data: ColetaDomiciliarFormData) => {
-    if (!checkLimit((msg) => toast({ title: "Limite excedido", description: msg, variant: "destructive" }))) {
-      return;
-    }
-
-    const sanitizedData = {
-      ...data,
-      nome: sanitizeInput(data.nome),
-      endereco: sanitizeInput(data.endereco),
-      observacoes: data.observacoes ? sanitizeInput(data.observacoes) : "",
-    };
-
-    const message = `*Agendamento de Coleta Domiciliar*\n\n` +
-      `Nome: ${sanitizedData.nome}\n` +
-      `WhatsApp: ${sanitizedData.whatsapp}\n` +
-      `Endereço: ${sanitizedData.endereco}\n` +
-      `Data: ${sanitizedData.data}\n` +
-      `Horário: ${sanitizedData.horario}\n` +
-      `Observações: ${sanitizedData.observacoes || "Nenhuma"}`;
-
-    const whatsappUrl = getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, message);
-    window.open(whatsappUrl, "_blank");
-
-    toast({
-      title: "Sucesso!",
-      description: "Você será redirecionado para o WhatsApp para confirmar seu agendamento.",
-    });
-
-    form.reset();
-  };
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -273,19 +210,19 @@ const ColetaDomiciliar = () => {
         </div>
       </section>
 
-      {/* Formulário de Agendamento */}
+      {/* Seção de Agendamento */}
       <section id="agendamento" className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="bg-card border border-border rounded-lg shadow-strong p-8">
             <h2 className="text-3xl font-bold text-center mb-2 text-foreground">
               Agende sua Coleta Domiciliar
             </h2>
-            <p className="text-center text-muted-foreground mb-6">
-              Escolha a forma mais prática para agendar:
+            <p className="text-center text-muted-foreground mb-8">
+              Fale diretamente com nossa equipe pelo WhatsApp
             </p>
             
-            {/* Opção WhatsApp Direto */}
-            <div className="mb-8 p-6 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 rounded-lg border-2 border-green-500">
+            {/* WhatsApp Direto */}
+            <div className="p-6 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 rounded-lg border-2 border-green-500">
               <div className="text-center">
                 <h3 className="text-xl font-bold mb-2 text-foreground">
                   ⚡ Agendamento Rápido via WhatsApp
@@ -309,20 +246,6 @@ const ColetaDomiciliar = () => {
                 </a>
               </div>
             </div>
-
-            <div className="relative mb-6">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-border"></div>
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-card text-muted-foreground">
-                  Ou preencha o formulário abaixo
-                </span>
-              </div>
-            </div>
-            
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
                   control={form.control}
                   name="nome"
