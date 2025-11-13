@@ -15,6 +15,7 @@ import SEO from "@/components/SEO";
 import { Microscope, Home, Stethoscope, FileText, MapPin, Calendar, Heart, Users, Award, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import coletaDomiciliarCarro from "@/assets/coleta-domiciliar-carro.png";
 
 const Index = () => {
   const services = [
@@ -102,7 +103,7 @@ const Index = () => {
       icon: Home,
       title: "Coleta Domiciliar: Conforto e Praticidade no Seu Lar",
       description: "Realizamos a coleta de exames na sua casa ou empresa, com toda segurança e profissionalismo. Ideal para idosos, crianças e pessoas com mobilidade reduzida.",
-      image: "/src/assets/differentials/coleta-domiciliar-enhanced.jpg",
+      image: coletaDomiciliarCarro,
     },
     {
       icon: Heart,
