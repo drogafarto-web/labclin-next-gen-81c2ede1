@@ -81,7 +81,7 @@ const CheckupForm = () => {
     // Gerar recomendações baseadas nos dados
     const recs = {
       economico: ["Hemograma Completo", "Glicose em Jejum", "Hemoglobina Glicada (HbA1c)", "Colesterol Total", "Creatinina", "Urina Tipo 1", "TSH"],
-      normal: ["Hemograma Completo", "Glicose em Jejum", "Colesterol Total e Frações", "Triglicerídeos", "Creatinina e Ureia", "Ácido Úrico", "Urina Tipo 1", "TGO/TGP", "TSH", "Fezes"],
+      normal: ["Hemograma Completo", "Glicose em Jejum", "Colesterol Total e Frações", "Triglicerídeos", "Creatinina e Ureia", "Ácido Úrico", "Urina Tipo 1", "TGO/TGP", "TSH", "Vitamina D", "Vitamina B12", "Fezes"],
       avancado: [
         "Todos os exames do Perfil Normal",
         "Vitamina D",
