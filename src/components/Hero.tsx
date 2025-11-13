@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
 import heroImage from "@/assets/hero-professionals.jpg";
 import pncqLogo from "@/assets/pncq-logo.png";
 
@@ -76,25 +77,25 @@ const Hero = () => {
               
               {/* Top right - Professional Image */}
               <div className="rounded-lg overflow-hidden shadow-strong">
-                <img
+                <OptimizedImage
                   src={heroImage}
                   alt="Profissionais do Laboratório Labclin"
                   className="w-full h-full object-cover"
                   loading="eager"
-                  width="400"
-                  height="500"
+                  width={400}
+                  height={500}
                 />
               </div>
               
               {/* Bottom left - PNCQ Badge */}
               <div className="bg-card rounded-lg shadow-strong flex items-center justify-center border-4 border-secondary p-6">
-                <img 
-                  src={pncqLogo} 
-                  alt="PNCQ - Programa Nacional de Controle de Qualidade" 
+                <OptimizedImage
+                  src={pncqLogo}
+                  alt="PNCQ - Programa Nacional de Controle de Qualidade"
                   className="w-full h-auto object-contain"
                   loading="eager"
-                  width="200"
-                  height="200"
+                  width={200}
+                  height={200}
                 />
               </div>
               

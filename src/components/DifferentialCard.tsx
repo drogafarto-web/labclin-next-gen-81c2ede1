@@ -1,4 +1,5 @@
 import { LucideIcon } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
 
 interface DifferentialCardProps {
   icon: LucideIcon;
@@ -17,11 +18,13 @@ const DifferentialCard = ({
     <div className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-medium transition-all group">
       {image && (
         <div className="relative h-48 overflow-hidden">
-          <img
+          <OptimizedImage
             src={image}
             alt={title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
+            width={400}
+            height={192}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
         </div>
