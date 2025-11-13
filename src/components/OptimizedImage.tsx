@@ -12,21 +12,32 @@ const OptimizedImage = ({
   loading = "lazy",
   ...props 
 }: OptimizedImageProps) => {
-  // Se webpSrc não for fornecido, tenta gerar automaticamente
-  const webpPath = webpSrc || src.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+  // Só usa WebP se for explicitamente fornecido
+  if (webpSrc) {
+    return (
+      <picture>
+        <source srcSet={webpSrc} type="image/webp" />
+        <source srcSet={src} type={`image/${src.match(/\.(png|jpg|jpeg)$/i)?.[1] || 'jpeg'}`} />
+        <img
+          src={src}
+          alt={alt}
+          className={className}
+          loading={loading}
+          {...props}
+        />
+      </picture>
+    );
+  }
   
+  // Fallback para imagem normal se não houver WebP
   return (
-    <picture>
-      <source srcSet={webpPath} type="image/webp" />
-      <source srcSet={src} type={`image/${src.match(/\.(png|jpg|jpeg)$/i)?.[1] || 'jpeg'}`} />
-      <img
-        src={src}
-        alt={alt}
-        className={className}
-        loading={loading}
-        {...props}
-      />
-    </picture>
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      loading={loading}
+      {...props}
+    />
   );
 };
 
