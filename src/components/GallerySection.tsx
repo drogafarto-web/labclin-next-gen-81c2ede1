@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
 import fachada from "@/assets/gallery/fachada-labclin.png";
 import brinquedoteca from "@/assets/gallery/brinquedoteca.png";
 import equipe from "@/assets/gallery/equipe-entrada.png";
@@ -74,13 +75,13 @@ const GallerySection = () => {
                 onClick={() => setSelectedImage(image.src)}
               >
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img
+                  <OptimizedImage
                     src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
-                    width="400"
-                    height="300"
+                    width={400}
+                    height={300}
                   />
                 </div>
                 
@@ -112,7 +113,7 @@ const GallerySection = () => {
           
           {selectedImage && (
             <div className="relative rounded-lg overflow-hidden">
-              <img
+              <OptimizedImage
                 src={selectedImage}
                 alt="Visualização ampliada"
                 className="w-full h-auto max-h-[85vh] object-contain"

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
 
 interface BlogCardProps {
   slug: string;
@@ -18,13 +19,13 @@ const BlogCard = ({ slug, title, excerpt, image, category, readTime, publishDate
     <Link to={`/blog/${slug}`} className="group block">
       <Card className="overflow-hidden hover:shadow-medium transition-all duration-300 border-border hover:border-primary/50 h-full">
         <div className="aspect-video overflow-hidden bg-muted">
-          <img
+          <OptimizedImage
             src={image}
             alt={title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
-            width="400"
-            height="225"
+            width={400}
+            height={225}
           />
         </div>
         <CardContent className="p-5">
