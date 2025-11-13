@@ -85,14 +85,15 @@ const CheckupForm = () => {
       avancado: [
         "Todos os exames do Perfil Normal",
         "Vitamina D",
+        "Vitamina B12",
         "Ferritina",
-        "Cálcio",
+        "Cálcio e Fósforo",
         "Gama GT",
-        "Eletroforese",
-        formData.sexo === "Masculino" && formData.age.includes("50+") ? "PSA" : "",
-        formData.sexo === "Feminino" && formData.age.includes("40+") ? "Mamografia" : "",
-        "Ultrassom Abdominal",
-        "Marcadores Tumorais"
+        "Eletroforese de Proteínas",
+        "Proteína C Reativa",
+        "Hemoglobina Glicada (HbA1c)",
+        formData.sexo === "Masculino" && formData.age.includes("50+") ? "PSA Total e Livre" : "",
+        formData.sexo === "Feminino" ? "CA 125" : "",
       ].filter(Boolean),
     };
 
