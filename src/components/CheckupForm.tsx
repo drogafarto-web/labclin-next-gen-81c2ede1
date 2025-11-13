@@ -271,6 +271,7 @@ const CheckupForm = () => {
                         { id: "colesterol", label: "Colesterol Alto" },
                         { id: "obesidade", label: "Obesidade" },
                         { id: "historico", label: "Histórico Familiar de Doenças Cardíacas" },
+                        { id: "tireoide", label: "Problemas de Tireoide" },
                       ].map((condicao) => (
                         <FormField
                           key={condicao.id}
