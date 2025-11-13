@@ -79,6 +79,7 @@ export const SOCIAL_MEDIA = {
 } as const;
 
 export const WHATSAPP_MESSAGES = {
+  AGENDAMENTO: "Olá! Gostaria de agendar um exame.",
   AGENDAR_EXAME: "Olá! Gostaria de agendar um exame.",
   COLETA_DOMICILIAR: "Olá! Gostaria de agendar um serviço de comodidade Labclin.",
   INFORMACOES: "Olá! Gostaria de mais informações.",
