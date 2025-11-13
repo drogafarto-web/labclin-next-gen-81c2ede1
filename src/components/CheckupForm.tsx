@@ -117,6 +117,8 @@ const CheckupForm = () => {
     const mensagem = `Olá Labclin! 👋\n\nGostaria de receber uma proposta de checkup personalizado:\n\n👤 Nome: ${sanitizedData.name}\n📱 WhatsApp: ${sanitizedData.whatsapp}\n🎂 Faixa Etária: ${sanitizedData.age}\n⚧️ Sexo: ${sanitizedData.sexo || "Não informado"}\n🏥 Condições: ${condicoesText}\n\nTenho interesse nos perfis sugeridos e aguardo orçamento com desconto especial! 🎁`;
 
     const urlWhatsApp = getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, mensagem);
+    
+    console.log('WhatsApp URL do Checkup:', urlWhatsApp);
 
     toast.success("Redirecionando para o WhatsApp do Labclin...");
     window.open(urlWhatsApp, "_blank");
