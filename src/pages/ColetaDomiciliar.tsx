@@ -28,6 +28,7 @@ import { formatWhatsApp } from "@/utils/formatters";
 import { sanitizeInput } from "@/utils/sanitizers";
 import { useFormRateLimiter } from "@/hooks/useRateLimiter";
 import { CONTACTS, WHATSAPP_MESSAGES, getWhatsAppUrl } from "@/config/constants";
+import coletaDomiciliarCarro from "@/assets/coleta-domiciliar-carro.png";
 
 const ColetaDomiciliar = () => {
   const { toast } = useToast();
@@ -93,22 +94,34 @@ const ColetaDomiciliar = () => {
       
       <main id="main-content">
       {/* Hero Section */}
-      <section className="bg-gradient-hero text-primary-foreground py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            🏠 Coleta Domiciliar
-          </h1>
-          <p className="text-lg md:text-xl mb-8 opacity-95">
-            Seus exames no conforto de casa, com segurança e praticidade
-          </p>
-          <Button
-            size="lg"
-            variant="secondary"
-            onClick={() => scrollToSection("agendamento")}
-            className="shadow-strong hover:scale-105 transition-transform"
-          >
-            Agendar Agora
-          </Button>
+      <section className="relative bg-gradient-hero text-primary-foreground py-20 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="text-center md:text-left z-10">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                Coleta Domiciliar: Conforto e Praticidade no Seu Lar
+              </h1>
+              <p className="text-lg md:text-xl mb-8 opacity-95">
+                Seus exames no conforto de casa, com segurança e praticidade. Nossa equipe vai até você!
+              </p>
+              <Button
+                size="lg"
+                variant="secondary"
+                onClick={() => scrollToSection("agendamento")}
+                className="shadow-strong hover:scale-105 transition-transform"
+              >
+                Agendar Agora
+              </Button>
+            </div>
+            <div className="relative h-64 md:h-96">
+              <img
+                src={coletaDomiciliarCarro}
+                alt="Carro da Labclin para coleta domiciliar em frente à unidade, oferecendo serviço de exames no conforto de casa"
+                className="w-full h-full object-cover rounded-lg shadow-strong"
+                loading="eager"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
