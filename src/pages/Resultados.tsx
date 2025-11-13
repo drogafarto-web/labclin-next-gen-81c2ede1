@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SEO from "@/components/SEO";
+import DirectLoginForm from "@/components/DirectLoginForm";
 import { Clock, Shield, Download } from "lucide-react";
 
 const Resultados = () => {
@@ -18,10 +19,10 @@ const Resultados = () => {
       <Header />
       
       <main id="main-content" className="flex-grow">
-        {/* Hero Section with Iframe */}
-        <section className="bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-background via-muted/30 to-background py-12 md:py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center mb-12">
+            <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Resultados de Exames{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-hero">
@@ -29,48 +30,15 @@ const Resultados = () => {
                 </span>
               </h1>
               
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
                 Acesse seus resultados de forma rápida, segura e conveniente, a qualquer hora e em qualquer lugar.
               </p>
             </div>
-
-            {/* Worklab Iframe Card */}
-            <div className="max-w-3xl mx-auto">
-              <div className="bg-card border border-border rounded-2xl shadow-strong overflow-hidden">
-                {/* Card Header */}
-                <div className="bg-gradient-hero px-6 py-4">
-                  <h2 className="text-xl font-semibold text-primary-foreground text-center">
-                    Portal de Acesso aos Resultados
-                  </h2>
-                </div>
-                
-                {/* Iframe Container */}
-                <div className="p-6 md:p-8">
-                  <div className="flex justify-center mb-4">
-                    <iframe
-                      src="https://worklabweb.com.br/frame.php?Cliente=386&i=1"
-                      name="I1"
-                      width="450"
-                      height="135"
-                      title="Portal de Resultados Labclin"
-                      className="w-full max-w-[450px] border-0"
-                      marginWidth={0}
-                      marginHeight={0}
-                      frameBorder="no"
-                      scrolling="no"
-                    />
-                  </div>
-                  
-                  <div className="mt-6 p-4 bg-muted/50 rounded-lg border border-border">
-                    <p className="text-sm text-muted-foreground text-center">
-                      <span className="font-semibold text-foreground">Precisa de ajuda?</span> Entre em contato através do WhatsApp (32) 99199-0239 ou ligue para (32) 3571-1599
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
+
+        {/* Direct Login Form */}
+        <DirectLoginForm />
 
         {/* Features Section */}
         <section className="py-16 md:py-24">
