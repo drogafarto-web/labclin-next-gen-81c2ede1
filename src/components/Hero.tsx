@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
-import heroImage from "@/assets/hero-professionals.jpg";
 
 const Hero = () => {
   return (
@@ -74,10 +73,9 @@ const Hero = () => {
                 </div>
               </div>
               
-              {/* Top right - Professional Image */}
               <div className="rounded-lg overflow-hidden shadow-strong">
                 <OptimizedImage
-                  src={heroImage}
+                  src="/hero-professionals.jpg"
                   alt="Profissionais do Laboratório Labclin"
                   className="w-full h-full object-cover"
                   loading="eager"
