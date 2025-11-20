@@ -5,6 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import preparoImage from "@/assets/blog/preparo-exames-enhanced.jpg";
 
 const SexagemFetalMerces = () => {
   return (
@@ -71,7 +72,7 @@ const SexagemFetalMerces = () => {
 
               <div className="rounded-lg overflow-hidden mb-8">
                 <img
-                  src="/src/assets/blog/preparo-exames-enhanced.jpg"
+                  src={preparoImage}
                   alt="Exame de sexagem fetal para chá de revelação"
                   className="w-full h-auto object-cover"
                 />
