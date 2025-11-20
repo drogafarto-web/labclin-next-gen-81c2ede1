@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
@@ -6,6 +8,8 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   sizes?: string;
   /** Generate srcset automatically for responsive images */
   responsive?: boolean;
+  /** Auto-detect and use WebP version if available (default: true) */
+  autoWebP?: boolean;
 }
 
 const OptimizedImage = ({ 
@@ -14,12 +18,14 @@ const OptimizedImage = ({
   webpSrc,
   sizes,
   responsive = false,
+  autoWebP = true,
   className = "",
   loading = "lazy",
   width,
   height,
   ...props 
 }: OptimizedImageProps) => {
+  const [webpError, setWebpError] = useState(false);
   
   // Gera srcset para imagens responsivas (apenas se responsive=true)
   const generateSrcSet = (baseSrc: string): string => {
@@ -31,20 +37,36 @@ const OptimizedImage = ({
     return srcSet;
   };
 
+  // Auto-detecta WebP: substitui extensão .jpg/.png/.jpeg por .webp
+  const getAutoWebPSrc = (originalSrc: string): string | null => {
+    if (!autoWebP || webpError) return null;
+    if (originalSrc.endsWith('.webp')) return null; // Já é WebP
+    
+    const webpPath = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+    return webpPath !== originalSrc ? webpPath : null;
+  };
+
   // Define sizes padrão se não fornecido
   const defaultSizes = sizes || "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw";
 
-  // Usa WebP se fornecido ou se responsive=true
-  if (webpSrc || responsive) {
+  // Determina qual WebP usar: fornecido manualmente ou auto-detectado
+  const effectiveWebpSrc = webpSrc || getAutoWebPSrc(src);
+
+  // Handler para erro no carregamento do WebP
+  const handleWebPError = () => {
+    setWebpError(true);
+  };
+
+  // Usa WebP se disponível ou se responsive=true
+  if (effectiveWebpSrc && !webpError) {
     return (
       <picture>
-        {webpSrc && (
-          <source 
-            srcSet={responsive ? generateSrcSet(webpSrc) : webpSrc} 
-            type="image/webp"
-            sizes={responsive ? defaultSizes : undefined}
-          />
-        )}
+        <source 
+          srcSet={responsive ? generateSrcSet(effectiveWebpSrc) : effectiveWebpSrc} 
+          type="image/webp"
+          sizes={responsive ? defaultSizes : undefined}
+          onError={handleWebPError}
+        />
         <source 
           srcSet={responsive ? generateSrcSet(src) : src} 
           type={`image/${src.match(/\.(png|jpg|jpeg)$/i)?.[1] || 'jpeg'}`}
@@ -64,7 +86,7 @@ const OptimizedImage = ({
     );
   }
   
-  // Fallback para imagem normal
+  // Fallback para imagem normal (sem WebP ou após erro)
   return (
     <img
       src={src}
