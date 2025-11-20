@@ -1,4 +1,5 @@
 import { CreditCard } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
 import convenio1 from "@/assets/convenios/convenio-1.png";
 import convenio2 from "@/assets/convenios/convenio-2.png";
 import convenio3 from "@/assets/convenios/convenio-3.png";
@@ -55,13 +56,13 @@ const ConveniosSection = () => {
                 key={index}
                 className="bg-card border border-border rounded-lg p-4 hover:shadow-medium transition-all"
               >
-                <img
+                <OptimizedImage
                   src={convenio.logo}
                   alt={convenio.alt}
                   className="h-16 w-auto object-contain"
                   loading="lazy"
-                  width="120"
-                  height="64"
+                  width={120}
+                  height={64}
                 />
               </div>
             ))}
@@ -86,13 +87,13 @@ const ConveniosSection = () => {
                 key={index}
                 className={`bg-card border border-border rounded-lg p-4 hover:shadow-medium transition-all h-16 flex items-center justify-center ${method.width}`}
               >
-                <img
+                <OptimizedImage
                   src={method.logo}
                   alt={method.alt}
                   className="max-h-12 w-auto object-contain"
                   loading="lazy"
-                  width="100"
-                  height="48"
+                  width={100}
+                  height={48}
                 />
               </div>
             ))}

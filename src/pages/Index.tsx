@@ -17,6 +17,11 @@ import { Microscope, Home, Stethoscope, FileText, MapPin, Calendar, Heart, Users
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import coletaDomiciliarCarro from "@/assets/coleta-domiciliar-carro.png";
+import hemogramaImage from "@/assets/blog/hemograma-enhanced.jpg";
+import preparoExamesImage from "@/assets/blog/preparo-exames-enhanced.jpg";
+import coletaDomiciliarImage from "@/assets/blog/coleta-domiciliar-enhanced.jpg";
+import atendimentoInfantilImage from "@/assets/differentials/atendimento-infantil-enhanced.jpg";
+import acessibilidadeImage from "@/assets/differentials/acessibilidade-enhanced.jpg";
 
 const Index = () => {
   const services = [
@@ -51,7 +56,7 @@ const Index = () => {
       slug: "o-que-e-hemograma",
       title: "O que é um hemograma e quando pedir?",
       excerpt: "Entenda como funciona o exame de sangue mais comum e quando ele é indicado pelos médicos.",
-      image: "/src/assets/blog/hemograma-enhanced.jpg",
+      image: hemogramaImage,
       category: "Exames",
       readTime: "5 min",
       publishDate: "15 Jan 2025",
@@ -60,7 +65,7 @@ const Index = () => {
       slug: "como-preparar-exames-sangue",
       title: "Guia completo: como preparar-se para exames de sangue",
       excerpt: "Saiba tudo sobre jejum, hidratação e cuidados necessários antes de fazer exames laboratoriais.",
-      image: "/src/assets/blog/preparo-exames-enhanced.jpg",
+      image: preparoExamesImage,
       category: "Preparo",
       readTime: "7 min",
       publishDate: "10 Jan 2025",
@@ -69,7 +74,7 @@ const Index = () => {
       slug: "coleta-domiciliar-vantagens",
       title: "Coleta domiciliar: vantagens e quando pedir",
       excerpt: "Descubra os benefícios da coleta domiciliar e em quais situações ela é mais recomendada.",
-      image: "/src/assets/blog/coleta-domiciliar-enhanced.jpg",
+      image: coletaDomiciliarImage,
       category: "Serviços",
       readTime: "4 min",
       publishDate: "5 Jan 2025",
@@ -110,13 +115,13 @@ const Index = () => {
       icon: Heart,
       title: "Atendimento Infantil Especializado",
       description: "Equipe treinada para atender crianças com cuidado e carinho, tornando a experiência menos estressante para os pequenos e seus pais.",
-      image: "/src/assets/differentials/atendimento-infantil-enhanced.jpg",
+      image: atendimentoInfantilImage,
     },
     {
       icon: Users,
       title: "Acessibilidade e Inclusão",
       description: "Unidades adaptadas para pessoas com deficiência ou mobilidade reduzida, garantindo atendimento digno para todos.",
-      image: "/src/assets/differentials/acessibilidade-enhanced.jpg",
+      image: acessibilidadeImage,
     },
   ];
 
