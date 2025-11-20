@@ -1,26 +1,43 @@
 import { CreditCard } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
 
+import convenio1 from "@/assets/convenios/convenio-1.png";
+import convenio2 from "@/assets/convenios/convenio-2.png";
+import convenio3 from "@/assets/convenios/convenio-3.png";
+import convenio4 from "@/assets/convenios/convenio-4.png";
+import convenio5 from "@/assets/convenios/convenio-5.png";
+import convenio6 from "@/assets/convenios/convenio-6.png";
+import convenio7 from "@/assets/convenios/convenio-7.png";
+import convenio8 from "@/assets/convenios/convenio-8.png";
+
+import visaLogo from "@/assets/payment/visa.png";
+import mastercardLogo from "@/assets/payment/mastercard.png";
+import eloLogo from "@/assets/payment/elo.png";
+import banricomprasLogo from "@/assets/payment/banricompras.png";
+import americanLogo from "@/assets/payment/american.jpg";
+import hipercardLogo from "@/assets/payment/hipercard.png";
+import pixLogo from "@/assets/payment/pix.png";
+
 const ConveniosSection = () => {
   const convenios = [
-    { logo: "/images/convenios/convenio-1.png", alt: "Convênio 1" },
-    { logo: "/images/convenios/convenio-2.png", alt: "Convênio 2" },
-    { logo: "/images/convenios/convenio-3.png", alt: "Convênio 3" },
-    { logo: "/images/convenios/convenio-4.png", alt: "Convênio 4" },
-    { logo: "/images/convenios/convenio-5.png", alt: "Convênio 5" },
-    { logo: "/images/convenios/convenio-6.png", alt: "Convênio 6" },
-    { logo: "/images/convenios/convenio-7.png", alt: "Convênio 7" },
-    { logo: "/images/convenios/convenio-8.png", alt: "Convênio 8" },
+    { logo: convenio1, alt: "Convênio 1" },
+    { logo: convenio2, alt: "Convênio 2" },
+    { logo: convenio3, alt: "Convênio 3" },
+    { logo: convenio4, alt: "Convênio 4" },
+    { logo: convenio5, alt: "Convênio 5" },
+    { logo: convenio6, alt: "Convênio 6" },
+    { logo: convenio7, alt: "Convênio 7" },
+    { logo: convenio8, alt: "Convênio 8" },
   ];
 
   const paymentMethods = [
-    { logo: "/images/payment/visa.png", alt: "Cartão Visa", width: "w-32" },
-    { logo: "/images/payment/mastercard.png", alt: "Cartão Mastercard", width: "w-16" },
-    { logo: "/images/payment/elo.png", alt: "Cartão Elo", width: "w-24" },
-    { logo: "/images/payment/banricompras.png", alt: "Cartão Banricompras", width: "w-12" },
-    { logo: "/images/payment/american.jpg", alt: "Cartão American Express", width: "w-14" },
-    { logo: "/images/payment/hipercard.png", alt: "Cartão Hipercard", width: "w-24" },
-    { logo: "/images/payment/pix.png", alt: "Pagamento via PIX", width: "w-32" },
+    { logo: visaLogo, alt: "Cartão Visa", width: "w-32" },
+    { logo: mastercardLogo, alt: "Cartão Mastercard", width: "w-16" },
+    { logo: eloLogo, alt: "Cartão Elo", width: "w-24" },
+    { logo: banricomprasLogo, alt: "Cartão Banricompras", width: "w-12" },
+    { logo: americanLogo, alt: "Cartão American Express", width: "w-14" },
+    { logo: hipercardLogo, alt: "Cartão Hipercard", width: "w-24" },
+    { logo: pixLogo, alt: "Pagamento via PIX", width: "w-32" },
   ];
 
   return (
