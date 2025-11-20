@@ -7,7 +7,7 @@ export const CONTACTS = {
   WHATSAPP_MAIN: "5532991990239",
   WHATSAPP_DISPLAY: "(32) 99199-0239",
   EMAIL_MAIN: "llabclin3@gmail.com",
-  EMAIL_CONTACT: "contato@labclinmg.com.br",
+  EMAIL_CONTACT: "llabclin3@gmail.com",
   PHONE_RIO_POMBA: "(32) 3571-1599",
   PHONE_MERCES: "(32) 99967-1581",
   PHONE_GUARANI: "(32) 99942-2574",
