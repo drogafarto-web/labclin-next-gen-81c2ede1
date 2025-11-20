@@ -5,9 +5,6 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import coletaDomiciliarImage from "@/assets/blog/coleta-domiciliar-enhanced.jpg";
-import preparoExamesImage from "@/assets/blog/preparo-exames-enhanced.jpg";
-import hemogramaImage from "@/assets/blog/hemograma-enhanced.jpg";
 
 const Blog = () => {
   const blogPosts = [
@@ -15,7 +12,7 @@ const Blog = () => {
       slug: "coleta-domiciliar-agende",
       title: "Coleta Domiciliar de Exames: Agende com Conforto e Segurança",
       excerpt: "A coleta domiciliar é a opção ideal para quem busca conforto e segurança. Agende agora mesmo a coleta de exames no Labclin, no horário e local de sua preferência.",
-      image: coletaDomiciliarImage,
+      image: "/images/blog/coleta-domiciliar-enhanced.jpg",
       category: "Serviços de Conveniência",
       readTime: "4 min",
       publishDate: "24 Jan 2025",
@@ -25,7 +22,7 @@ const Blog = () => {
       slug: "jejum-exames-mitos-e-verdades",
       title: "Jejum para Exames: 5 Mitos e Verdades que Você Precisa Saber",
       excerpt: "Você sabia que nem todos os exames exigem jejum? Vamos esclarecer as dúvidas mais comuns sobre o preparo para exames e ajudar você a se preparar corretamente.",
-      image: preparoExamesImage,
+      image: "/images/blog/preparo-exames-enhanced.jpg",
       category: "Preparação para Exames",
       readTime: "5 min",
       publishDate: "22 Jan 2025",
@@ -34,7 +31,7 @@ const Blog = () => {
       slug: "hemograma-completo-guia-definitivo",
       title: "Hemograma Completo: O Guia Definitivo para Entender Seu Exame de Sangue",
       excerpt: "O hemograma completo é um dos exames mais solicitados, ajudando a detectar condições como anemia e infecções. Neste guia, explicamos como ele funciona e o que você pode esperar.",
-      image: hemogramaImage,
+      image: "/images/blog/hemograma-enhanced.jpg",
       category: "Exames de Rotina",
       readTime: "6 min",
       publishDate: "20 Jan 2025",
@@ -43,7 +40,7 @@ const Blog = () => {
       slug: "hemograma-rio-pomba",
       title: "O que é um hemograma e quando pedir?",
       excerpt: "Entenda como funciona o exame de sangue mais comum, quando ele é indicado e por que o hemograma é importante no diagnóstico de várias doenças.",
-      image: hemogramaImage,
+      image: "/images/blog/hemograma-enhanced.jpg",
       category: "Exames",
       readTime: "5 min",
       publishDate: "15 Jan 2025",
@@ -52,7 +49,7 @@ const Blog = () => {
       slug: "sexagem-fetal-merces",
       title: "Chá de Revelação: Sexagem Fetal confiável?",
       excerpt: "Saiba como funciona a sexagem fetal, quais os critérios de confiança e como realizar o teste de forma ética e segura para um chá de revelação inesquecível!",
-      image: preparoExamesImage,
+      image: "/images/blog/preparo-exames-enhanced.jpg",
       category: "Gestante",
       readTime: "4 min",
       publishDate: "11 Jan 2025",
@@ -61,7 +58,7 @@ const Blog = () => {
       slug: "coleta-domiciliar-guarani-silverania",
       title: "Coleta domiciliar: vantagens e como agendar",
       excerpt: "Descubra as vantagens da coleta domiciliar, em quais situações ela é indicada e como agendar facilmente online ou pelo WhatsApp.",
-      image: coletaDomiciliarImage,
+      image: "/images/blog/coleta-domiciliar-enhanced.jpg",
       category: "Serviços",
       readTime: "4 min",
       publishDate: "08 Jan 2025",
@@ -70,7 +67,7 @@ const Blog = () => {
       slug: "preparo-exames-laboratoriais",
       title: "Como se preparar corretamente para exames laboratoriais",
       excerpt: "Guia completo sobre jejum, hidratação e cuidados necessários antes de realizar seus exames. Evite resultados incorretos com as orientações certas.",
-      image: preparoExamesImage,
+      image: "/images/blog/preparo-exames-enhanced.jpg",
       category: "Dicas",
       readTime: "6 min",
       publishDate: "05 Jan 2025",
@@ -79,7 +76,7 @@ const Blog = () => {
       slug: "exames-preventivos-saude",
       title: "Exames preventivos: quais fazer anualmente?",
       excerpt: "Conheça os principais exames de rotina recomendados por faixa etária e como eles podem ajudar na detecção precoce de doenças.",
-      image: hemogramaImage,
+      image: "/images/blog/hemograma-enhanced.jpg",
       category: "Saúde Preventiva",
       readTime: "7 min",
       publishDate: "02 Jan 2025",
@@ -88,7 +85,7 @@ const Blog = () => {
       slug: "resultados-online-labclin",
       title: "Acesso rápido e seguro aos resultados online",
       excerpt: "Saiba como consultar seus resultados de exames de forma prática, segura e rápida através da nossa plataforma online.",
-      image: coletaDomiciliarImage,
+      image: "/images/blog/coleta-domiciliar-enhanced.jpg",
       category: "Tecnologia",
       readTime: "3 min",
       publishDate: "28 Dez 2024",

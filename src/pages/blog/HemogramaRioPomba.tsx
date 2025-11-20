@@ -5,7 +5,6 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import hemogramaImage from "@/assets/blog/hemograma-enhanced.jpg";
 
 const HemogramaRioPomba = () => {
   return (
@@ -92,7 +91,7 @@ const HemogramaRioPomba = () => {
               {/* Featured Image */}
               <div className="rounded-lg overflow-hidden mb-8">
                 <img
-                  src={hemogramaImage}
+                  src="/images/blog/hemograma-enhanced.jpg"
                   alt="Profissional realizando exame de hemograma em laboratório"
                   className="w-full h-auto object-cover"
                 />
