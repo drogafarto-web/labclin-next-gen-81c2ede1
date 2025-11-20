@@ -5,7 +5,7 @@ import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, Navigation } from "lucide-react";
-import fachada from "@/assets/gallery/fachada-labclin.png";
+
 import { generateLocalBusinessSchema, generateBreadcrumbSchema } from "@/lib/structuredData";
 
 const Unidades = () => {
@@ -97,7 +97,7 @@ const Unidades = () => {
         <section className="relative bg-gradient-to-br from-background via-muted/30 to-background py-16 md:py-24 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <img 
-              src={fachada}
+              src="/images/gallery/fachada-labclin.png"
               alt="" 
               className="w-full h-full object-cover"
               loading="lazy"
