@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Calendar, MapPin } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
 import heroImage from "@/assets/hero-professionals.jpg";
-import pncqLogo from "@/assets/pncq-logo.png";
 
 const Hero = () => {
   return (
@@ -90,7 +89,7 @@ const Hero = () => {
               {/* Bottom left - PNCQ Badge */}
               <div className="bg-card rounded-lg shadow-strong flex items-center justify-center border-4 border-secondary p-6">
                 <OptimizedImage
-                  src={pncqLogo}
+                  src="/pncq-logo.png"
                   alt="PNCQ - Programa Nacional de Controle de Qualidade"
                   className="w-full h-auto object-contain"
                   loading="eager"
