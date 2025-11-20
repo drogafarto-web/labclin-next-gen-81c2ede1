@@ -11,41 +11,41 @@ import profissionalRetrato from "@/assets/gallery/profissional-retrato.png";
 import equipeEntrada from "@/assets/gallery/equipe-entrada.png";
 
 const GallerySection = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | { default?: string; src?: string } | null>(null);
 
   const galleryImages = [
     {
-      src: "/images/gallery/fachada-labclin.png",
+      src: fachadaLabclin,
       alt: "Fachada do Labclin - Laboratório de Análises Clínicas em Rio Pomba",
       title: "Nossa Fachada",
       description: "Unidade moderna e acessível",
     },
     {
-      src: "/images/gallery/brinquedoteca.png",
+      src: brinquedoteca,
       alt: "Brinquedoteca do Labclin - Espaço infantil colorido",
       title: "Brinquedoteca",
       description: "Conforto para as crianças",
     },
     {
-      src: "/images/gallery/recepcao-plantas.png",
+      src: recepcaoPlantas,
       alt: "Recepção do Labclin - Ambiente acolhedor com decoração moderna",
       title: "Ambiente Acolhedor",
       description: "Espaço pensado no seu bem-estar",
     },
     {
-      src: "/images/gallery/equipamento-lab.png",
+      src: equipamentoLab,
       alt: "Equipamentos de laboratório modernos do Labclin",
       title: "Tecnologia de Ponta",
       description: "Equipamentos de última geração",
     },
     {
-      src: "/images/gallery/profissional-retrato.png",
+      src: profissionalRetrato,
       alt: "Profissional biomédico do Labclin",
       title: "Equipe Qualificada",
       description: "Profissionais especializados",
     },
     {
-      src: "/images/gallery/equipe-entrada.png",
+      src: equipeEntrada,
       alt: "Equipe do Labclin na entrada da unidade - Atendimento humanizado",
       title: "Atendimento Humanizado",
       description: "Nossa equipe sempre pronta para ajudar",
