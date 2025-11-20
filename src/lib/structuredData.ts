@@ -4,29 +4,69 @@ export const generateLocalBusinessSchema = () => ({
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   name: "Labclin - Laboratório de Análises Clínicas",
+  alternateName: "Labclin",
   description:
-    "Laboratório de análises clínicas com 58+ anos de experiência em Rio Pomba, Mercês, Guarani e Silveirânia - MG.",
+    "Laboratório de análises clínicas com mais de 58 anos de experiência em Rio Pomba, Mercês, Guarani e Silveirânia - MG. Exames de rotina, especializados, coleta domiciliar e resultados online.",
   url: "https://labclin.com.br",
   logo: "https://labclin.com.br/logo.png",
   image: "https://labclin.com.br/og-image.jpg",
   telephone: "+55-32-99199-0239",
-  email: "contato@labclin.com.br",
+  email: "llabclin3@gmail.com",
   address: UNITS.map((unit) => ({
     "@type": "PostalAddress",
     streetAddress: unit.address,
-    addressLocality: unit.city,
+    addressLocality: unit.city.split(" - ")[0],
     addressRegion: "MG",
+    postalCode: unit.cep,
     addressCountry: "BR",
   })),
   priceRange: "$$",
-  openingHours: "Mo-Fr 07:00-17:00, Sa 07:00-12:00",
-  areaServed: UNITS.map((unit) => unit.city),
-  medicalSpecialty: "Clinical Laboratory",
+  openingHours: [
+    "Mo-Fr 06:30-17:30",
+    "Sa 07:00-11:00"
+  ],
+  areaServed: UNITS.map((unit) => ({
+    "@type": "City",
+    name: unit.city.split(" - ")[0],
+    containedIn: {
+      "@type": "State",
+      name: "Minas Gerais"
+    }
+  })),
+  medicalSpecialty: ["Clinical Laboratory", "Pathology", "Medical Test"],
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "5",
+    ratingValue: "5.0",
+    bestRating: "5",
     reviewCount: "500",
   },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Serviços Labclin",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "MedicalTest",
+          name: "Exames de Rotina"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "MedicalTest",
+          name: "Exames Especializados"
+        }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Coleta Domiciliar"
+        }
+      }
+    ]
+  }
 });
 
 export const generateBreadcrumbSchema = (items: { name: string; url: string }[]) => ({
@@ -80,13 +120,32 @@ export const generateServiceSchema = (service: {
   url: string;
 }) => ({
   "@context": "https://schema.org",
-  "@type": "MedicalProcedure",
+  "@type": "MedicalTest",
   name: service.name,
   description: service.description,
-  procedureType: "Laboratory Test",
+  usedToDiagnose: "Various medical conditions",
   url: service.url,
   provider: {
     "@type": "MedicalBusiness",
-    name: "Labclin",
+    name: "Labclin - Laboratório de Análises Clínicas",
+    url: "https://labclin.com.br"
   },
+  availableService: {
+    "@type": "MedicalProcedure",
+    name: service.name,
+    procedureType: "Laboratory Test"
+  }
+});
+
+export const generateFAQSchema = (faqs: Array<{ question: string; answer: string }>) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(faq => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer
+    }
+  }))
 });

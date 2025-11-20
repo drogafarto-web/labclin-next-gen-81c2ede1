@@ -8,13 +8,13 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "/", label: "Início" },
-    { href: "/exames", label: "Exames" },
-    { href: "/unidades", label: "Unidades" },
-    { href: "/coleta-domiciliar", label: "Coleta Domiciliar" },
-    { href: "/resultados", label: "Resultados" },
-    { href: "/blog", label: "Blog" },
-    { href: "/contato", label: "Contato" },
+    { href: "/", label: "Início", ariaLabel: "Ir para página inicial" },
+    { href: "/exames", label: "Exames", ariaLabel: "Ver lista de exames disponíveis" },
+    { href: "/unidades", label: "Unidades", ariaLabel: "Encontrar unidades próximas" },
+    { href: "/coleta-domiciliar", label: "Coleta Domiciliar", ariaLabel: "Agendar coleta domiciliar" },
+    { href: "/resultados", label: "Resultados", ariaLabel: "Acessar resultados de exames", highlight: true },
+    { href: "/blog", label: "Blog", ariaLabel: "Ler artigos sobre saúde" },
+    { href: "/contato", label: "Contato", ariaLabel: "Entrar em contato conosco" },
   ];
 
   return (
@@ -73,7 +73,12 @@ const Header = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className="text-sm font-semibold text-primary-foreground hover:text-primary-foreground/80 transition-all uppercase tracking-wide"
+                className={`text-sm font-semibold transition-all uppercase tracking-wide ${
+                  link.highlight 
+                    ? "text-secondary hover:text-secondary/80 font-bold" 
+                    : "text-primary-foreground hover:text-primary-foreground/80"
+                }`}
+                aria-label={link.ariaLabel}
               >
                 {link.label}
               </Link>
@@ -90,15 +95,20 @@ const Header = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className="px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary-hover rounded transition-all uppercase"
+                className={`px-4 py-3 text-base font-semibold rounded transition-all uppercase ${
+                  link.highlight
+                    ? "bg-secondary text-secondary-foreground hover:bg-secondary/90"
+                    : "text-primary-foreground hover:bg-primary-hover"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
+                aria-label={link.ariaLabel}
               >
                 {link.label}
               </Link>
             ))}
             <Link to="/agendar" className="px-4 pt-2" onClick={() => setIsMenuOpen(false)}>
-              <Button variant="secondary" className="w-full uppercase font-bold">
-                <Calendar className="mr-2 h-4 w-4" />
+              <Button variant="secondary" size="lg" className="w-full uppercase font-bold min-h-[48px]">
+                <Calendar className="mr-2 h-5 w-5" />
                 Agendar Exame
               </Button>
             </Link>
