@@ -33,29 +33,29 @@ const Hero = () => {
               <Link to="/agendar" className="w-full sm:w-auto">
                 <Button variant="default" size="lg" className="w-full uppercase font-bold text-base shadow-strong">
                   <Calendar className="mr-2 h-5 w-5" />
-                  Agendar Check-up
+                  Agende seu Exame
                 </Button>
               </Link>
               <Link to="/resultados" className="w-full sm:w-auto">
                 <Button variant="outline" size="lg" className="w-full font-semibold border-2">
-                  Ver Resultados
+                  Visualizar Resultados
                 </Button>
               </Link>
             </div>
 
             {/* Trust indicators */}
-            <div className="flex flex-wrap gap-8 pt-8 border-t-2 border-border">
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t-2 border-border">
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-black text-primary">58+</div>
-                <div className="text-sm font-semibold text-muted-foreground uppercase">Anos de Experiência</div>
+                <div className="text-sm font-semibold text-muted-foreground uppercase leading-tight">Anos de Experiência</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-black text-primary">5M+</div>
-                <div className="text-sm font-semibold text-muted-foreground uppercase">Exames Realizados</div>
+                <div className="text-sm font-semibold text-muted-foreground uppercase leading-tight">Exames Realizados</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-black text-primary">4</div>
-                <div className="text-sm font-semibold text-muted-foreground uppercase">Unidades</div>
+                <div className="text-sm font-semibold text-muted-foreground uppercase leading-tight">Unidades</div>
               </div>
             </div>
           </div>
