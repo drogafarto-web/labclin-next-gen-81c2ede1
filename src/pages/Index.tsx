@@ -7,7 +7,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 import DifferentialCard from "@/components/DifferentialCard";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CookieBanner from "@/components/CookieBanner";
-import ExamResultsForm from "@/components/ExamResultsForm";
+import ResultsIframe from "@/components/ResultsIframe";
 import ConveniosSection from "@/components/ConveniosSection";
 import GallerySection from "@/components/GallerySection";
 import CheckupForm from "@/components/CheckupForm";
@@ -222,7 +222,7 @@ const Index = () => {
         <Hero />
 
         {/* Exam Results Form Section */}
-        <ExamResultsForm />
+        <ResultsIframe />
 
         {/* AI Checkup Section */}
         <section id="checkup-form" className="py-16 md:py-24 bg-gradient-hero">
