@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Calendar } from "lucide-react";
-import labclinLogo from "@/assets/labclin-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,12 +32,12 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center hover:opacity-80 transition-opacity" aria-label="Labclin - Página inicial">
             <img 
-              src={labclinLogo} 
+              src="/labclin-logo.png"
               alt="Labclin - Laboratório de Análises Clínicas" 
               className="h-14 w-auto"
               loading="eager"
-              width="180"
-              height="56"
+              width={180}
+              height={56}
             />
           </Link>
 
