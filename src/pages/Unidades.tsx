@@ -68,14 +68,27 @@ const Unidades = () => {
     },
   ];
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Início", url: "https://labclin.com.br" },
+    { name: "Unidades", url: "https://labclin.com.br/unidades" }
+  ]);
+
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      generateLocalBusinessSchema(),
+      breadcrumbSchema
+    ]
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
-        title="Nossas Unidades"
-        description="Labclin com 4 unidades em Rio Pomba, Mercês, Guarani e Silveirânia - MG. Exames de rotina, coleta domiciliar e resultados online."
-        keywords="labclin unidades, laboratorio rio pomba, laboratorio merces, laboratorio guarani, laboratorio silverania"
+        title="Nossas Unidades em MG - Encontre o Labclin Mais Próximo"
+        description="Labclin presente em 4 cidades de Minas Gerais: Rio Pomba, Mercês, Guarani e Silveirânia. Exames de rotina, coleta domiciliar e resultados online disponíveis."
+        keywords="labclin unidades, laboratório rio pomba mg, laboratório mercês mg, laboratório guarani mg, laboratório silveirânia mg, análises clínicas minas gerais, exames laboratoriais zona da mata"
         canonicalUrl="https://labclin.com.br/unidades"
-        structuredData={generateLocalBusinessSchema()}
+        structuredData={combinedSchema}
       />
       <Header />
 
@@ -85,96 +98,110 @@ const Unidades = () => {
           <div className="absolute inset-0 opacity-10">
             <img 
               src={fachada}
-              alt="Labclin Background" 
+              alt="" 
               className="w-full h-full object-cover"
               loading="lazy"
               width="1920"
               height="600"
+              aria-hidden="true"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background"></div>
           </div>
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Nossas{" "}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+                Encontre a{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-hero">
-                  Unidades
-                </span>
+                  Unidade Labclin
+                </span>{" "}
+                Mais Próxima
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                Estamos presentes em 4 cidades para melhor atendê-lo: Rio Pomba, Mercês, Guarani e Silveirânia
+                Presentes em <strong className="text-foreground">4 cidades da Zona da Mata de Minas Gerais</strong>: Rio Pomba, Mercês, Guarani e Silveirânia
               </p>
             </div>
           </div>
         </section>
 
         {/* Units */}
-        <section className="py-16">
+        <section className="py-16" aria-labelledby="units-heading">
           <div className="container mx-auto px-4">
+            <h2 id="units-heading" className="sr-only">Lista de unidades do Labclin</h2>
             <div className="space-y-12">
               {units.map((unit, index) => (
-                <Card key={index} className="overflow-hidden border-border">
+                <article key={index} className="bg-card border-2 border-border rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow" aria-labelledby={`unit-${index}`}>
                   <div className="grid grid-cols-1 lg:grid-cols-2">
                     {/* Map */}
-                    <div className="h-64 lg:h-auto bg-muted">
+                    <div className="h-80 lg:h-auto bg-muted order-2 lg:order-1">
                       <iframe
                         src={unit.mapUrl}
                         width="100%"
                         height="100%"
-                        style={{ border: 0 }}
+                        style={{ border: 0, minHeight: "350px" }}
                         allowFullScreen
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
-                        title={`Mapa ${unit.name}`}
+                        title={`Localização da unidade ${unit.name} no mapa`}
+                        aria-label={`Mapa interativo mostrando a localização do Labclin em ${unit.name}`}
                       />
                     </div>
 
                     {/* Info */}
-                    <CardContent className="p-6 md:p-8">
-                      <h2 className="text-2xl font-bold text-foreground mb-4">{unit.name}</h2>
+                    <CardContent className="p-6 md:p-8 order-1 lg:order-2">
+                      <h3 id={`unit-${index}`} className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                        Labclin - {unit.name}
+                      </h3>
 
-                      <div className="space-y-4 mb-6">
-                        <div className="flex items-start space-x-3">
-                          <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <div className="space-y-5 mb-8">
+                        <address className="not-italic">
+                          <div className="flex items-start space-x-3">
+                            <MapPin className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
+                            <div>
+                              <p className="text-base md:text-lg text-foreground font-medium">{unit.address}</p>
+                              <p className="text-sm text-muted-foreground mt-1">CEP: {unit.cep}</p>
+                            </div>
+                          </div>
+                        </address>
+
+                        <div className="flex items-center space-x-3">
+                          <Phone className="h-6 w-6 text-primary flex-shrink-0" aria-hidden="true" />
                           <div>
-                            <p className="text-foreground">{unit.address}</p>
-                            <p className="text-sm text-muted-foreground">CEP: {unit.cep}</p>
+                            <p className="text-sm text-muted-foreground">Telefone:</p>
+                            <a
+                              href={`tel:${unit.phone.replace(/\D/g, "")}`}
+                              className="text-base md:text-lg text-foreground hover:text-primary transition-colors font-medium"
+                              aria-label={`Ligar para ${unit.phone}`}
+                            >
+                              {unit.phone}
+                            </a>
                           </div>
                         </div>
 
-                        <div className="flex items-center space-x-3">
-                          <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                          <a
-                            href={`tel:${unit.phone.replace(/\D/g, "")}`}
-                            className="text-foreground hover:text-primary transition-colors"
-                          >
-                            {unit.phone}
-                          </a>
-                        </div>
-
                         <div className="flex items-start space-x-3">
-                          <Clock className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                          <div className="text-sm">
-                            <p className="text-foreground">{unit.hours.weekdays}</p>
-                            <p className="text-foreground">{unit.hours.saturday}</p>
-                            <p className="text-muted-foreground">{unit.hours.sunday}</p>
+                          <Clock className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
+                          <div>
+                            <p className="text-sm text-muted-foreground mb-2">Horário de Funcionamento:</p>
+                            <div className="space-y-1">
+                              <p className="text-base text-foreground font-medium">{unit.hours.weekdays}</p>
+                              <p className="text-base text-foreground font-medium">{unit.hours.saturday}</p>
+                              <p className="text-base text-muted-foreground">{unit.hours.sunday}</p>
+                            </div>
                           </div>
                         </div>
                       </div>
 
-                      <div className="mb-6">
-                        <h3 className="font-semibold text-foreground mb-2">Serviços disponíveis:</h3>
-                        <div className="flex flex-wrap gap-2">
+                      <div className="mb-8">
+                        <h4 className="text-lg font-semibold text-foreground mb-3">Serviços Disponíveis:</h4>
+                        <ul className="flex flex-wrap gap-2" role="list">
                           {unit.services.map((service, idx) => (
-                            <span
-                              key={idx}
-                              className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
-                            >
-                              {service}
-                            </span>
+                            <li key={idx}>
+                              <span className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm md:text-base font-medium rounded-full border border-primary/20">
+                                {service}
+                              </span>
+                            </li>
                           ))}
-                        </div>
+                        </ul>
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-3">
@@ -185,9 +212,10 @@ const Unidades = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex-1"
+                          aria-label={`Ver rotas no Google Maps para ${unit.name}`}
                         >
-                          <Button variant="outline" className="w-full">
-                            <Navigation className="mr-2 h-4 w-4" />
+                          <Button variant="outline" size="lg" className="w-full min-h-[48px]">
+                            <Navigation className="mr-2 h-5 w-5" aria-hidden="true" />
                             Como Chegar
                           </Button>
                         </a>
@@ -198,15 +226,16 @@ const Unidades = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex-1"
+                          aria-label={`Falar no WhatsApp com a unidade ${unit.name}`}
                         >
-                          <Button variant="default" className="w-full">
-                            Fale Conosco
+                          <Button variant="default" size="lg" className="w-full min-h-[48px]">
+                            Fale Conosco via WhatsApp
                           </Button>
                         </a>
                       </div>
                     </CardContent>
                   </div>
-                </Card>
+                </article>
               ))}
             </div>
           </div>
