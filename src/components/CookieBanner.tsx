@@ -27,38 +27,51 @@ const CookieBanner = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 animate-in slide-in-from-bottom">
-      <Card className="max-w-4xl mx-auto p-4 md:p-6 shadow-strong border-border">
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex-1">
-            <h3 className="font-semibold text-foreground mb-2">🍪 Cookies e Privacidade</h3>
-            <p className="text-sm text-muted-foreground mb-4">
-              Utilizamos cookies essenciais para o funcionamento do site e cookies analíticos para
-              melhorar sua experiência. Ao continuar navegando, você concorda com nossa{" "}
-              <Link to="/politica-de-privacidade" className="text-primary hover:underline">
+    <div 
+      className="fixed bottom-4 right-4 z-50 max-w-sm animate-in slide-in-from-bottom-5"
+      role="dialog"
+      aria-labelledby="cookie-banner-title"
+      aria-describedby="cookie-banner-description"
+    >
+      <Card className="p-4 shadow-xl border-2 border-border bg-card/95 backdrop-blur-sm">
+        <div className="flex items-start gap-3">
+          <div className="flex-shrink-0 text-2xl" aria-hidden="true">🍪</div>
+          <div className="flex-1 min-w-0">
+            <h3 id="cookie-banner-title" className="font-semibold text-sm text-foreground mb-1">
+              Cookies
+            </h3>
+            <p id="cookie-banner-description" className="text-xs text-muted-foreground mb-3 line-clamp-3">
+              Usamos cookies essenciais e analíticos. Veja nossa{" "}
+              <Link to="/politica-de-privacidade" className="text-primary hover:underline font-medium">
                 Política de Privacidade
-              </Link>{" "}
-              e com o uso de cookies conforme nossa{" "}
-              <Link to="/cookies" className="text-primary hover:underline">
-                Política de Cookies
               </Link>
               .
             </p>
-            <div className="flex flex-wrap gap-2">
-              <Button onClick={acceptCookies} variant="default" size="sm">
-                Aceitar Todos
+            <div className="flex gap-2">
+              <Button 
+                onClick={acceptCookies} 
+                variant="default" 
+                size="sm"
+                className="text-xs h-8"
+              >
+                Aceitar
               </Button>
-              <Button onClick={rejectCookies} variant="outline" size="sm">
-                Apenas Essenciais
+              <Button 
+                onClick={rejectCookies} 
+                variant="ghost" 
+                size="sm"
+                className="text-xs h-8"
+              >
+                Recusar
               </Button>
             </div>
           </div>
           <button
             onClick={rejectCookies}
-            className="text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="Fechar banner"
+            className="flex-shrink-0 text-muted-foreground hover:text-foreground transition-colors p-1"
+            aria-label="Fechar banner de cookies"
           >
-            <X className="h-5 w-5" />
+            <X className="h-4 w-4" />
           </button>
         </div>
       </Card>

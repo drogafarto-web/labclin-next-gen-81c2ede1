@@ -11,6 +11,7 @@ import ResultsIframe from "@/components/ResultsIframe";
 import ConveniosSection from "@/components/ConveniosSection";
 import GallerySection from "@/components/GallerySection";
 import CheckupForm from "@/components/CheckupForm";
+import FAQSection from "@/components/FAQSection";
 import SEO from "@/components/SEO";
 import { Microscope, Home, Stethoscope, FileText, MapPin, Calendar, Heart, Users, Award, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -376,6 +377,9 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <FAQSection />
 
         {/* Blog Section */}
         <section className="py-16 md:py-24 bg-muted/30">

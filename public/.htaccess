@@ -1,3 +1,65 @@
+# ================================================
+# LABCLIN - OTIMIZAÇÃO DE PERFORMANCE E CACHE
+# ================================================
+
+# Enable GZIP Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml
+</IfModule>
+
+# Browser Caching - Cache Control Headers
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Imagens - Cache por 1 ano
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  
+  # CSS e JavaScript - Cache por 1 ano
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+  
+  # Fontes - Cache por 1 ano
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  
+  # HTML - Cache por 1 hora (dinâmico)
+  ExpiresByType text/html "access plus 1 hour"
+  
+  # JSON e XML - Cache por 1 hora
+  ExpiresByType application/json "access plus 1 hour"
+  ExpiresByType application/xml "access plus 1 hour"
+</IfModule>
+
+# Cache-Control Headers para ativos imutáveis
+<IfModule mod_headers.c>
+  # Ativos estáticos com hash (versionados) - cache agressivo
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|css|js|woff|woff2|ttf|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # HTML - sem cache agressivo
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+  
+  # Security Headers
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Rewrite Rules for React Router (Single Page Application)
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -6,3 +68,13 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
+
+# Desabilitar listagem de diretórios
+Options -Indexes
+
+# Proteger arquivos sensíveis
+<FilesMatch "\.(env|json|lock|md|yml|yaml)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
