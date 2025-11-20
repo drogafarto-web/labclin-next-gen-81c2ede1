@@ -88,8 +88,8 @@ export const WHATSAPP_MESSAGES = {
 
 /**
  * Gera URL do WhatsApp com número e mensagem
- * Usa wa.me que funciona melhor em todos os navegadores
+ * Usa api.whatsapp.com que funciona melhor em todos os navegadores
  */
 export const getWhatsAppUrl = (phone: string, message: string): string => {
-  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  return `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
 };
