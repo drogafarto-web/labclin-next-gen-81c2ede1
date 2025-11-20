@@ -118,8 +118,16 @@ const CheckupForm = () => {
     
     console.log('WhatsApp URL do Checkup:', urlWhatsApp);
 
+    // Criar link temporário e clicar (mais confiável que window.open)
+    const link = document.createElement('a');
+    link.href = urlWhatsApp;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
     toast.success("Redirecionando para o WhatsApp do Labclin...");
-    window.open(urlWhatsApp, "_blank");
 
     setTimeout(() => {
       handleReset();
