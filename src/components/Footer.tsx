@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import labclinLogo from "@/assets/labclin-logo.png";
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,7 +15,7 @@ const Footer = () => {
           <div>
             <div className="mb-4">
               <img 
-                src={labclinLogo} 
+                src="/labclin-logo.png" 
                 alt="Labclin - Laboratório de Análises Clínicas" 
                 className="h-12 w-auto"
                 loading="lazy"

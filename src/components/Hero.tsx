@@ -75,7 +75,7 @@ const Hero = () => {
               
               <div className="rounded-lg overflow-hidden shadow-strong">
                 <OptimizedImage
-                  src="/hero-professionals.jpg"
+                  src="/images/hero-professionals.jpg"
                   alt="Profissionais do Laboratório Labclin"
                   className="w-full h-full object-cover"
                   loading="eager"
