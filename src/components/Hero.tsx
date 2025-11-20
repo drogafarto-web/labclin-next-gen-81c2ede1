@@ -41,21 +41,45 @@ const Hero = () => {
               </Link>
             </div>
 
-            {/* Trust indicators */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t-2 border-border">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-black text-primary">58+</div>
-                <div className="text-sm font-semibold text-muted-foreground uppercase leading-tight">Anos de Experiência</div>
+            {/* Trust indicators - Enhanced */}
+            <div className="grid grid-cols-3 gap-4 pt-8 mt-8 border-t border-border/40">
+              <div className="group relative overflow-hidden bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-6 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative text-center">
+                  <div className="text-4xl md:text-5xl font-black bg-gradient-to-br from-primary to-primary/70 bg-clip-text text-transparent mb-2 animate-pulse-slow">
+                    58+
+                  </div>
+                  <div className="text-xs md:text-sm font-bold text-foreground/70 uppercase tracking-wider leading-tight">
+                    Anos de Experiência
+                  </div>
+                </div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-black text-primary">5M+</div>
-                <div className="text-sm font-semibold text-muted-foreground uppercase leading-tight">Exames Realizados</div>
+              
+              <div className="group relative overflow-hidden bg-gradient-to-br from-secondary/5 to-secondary/10 rounded-xl p-6 border border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/0 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative text-center">
+                  <div className="text-4xl md:text-5xl font-black bg-gradient-to-br from-secondary to-secondary/70 bg-clip-text text-transparent mb-2 animate-pulse-slow">
+                    5M+
+                  </div>
+                  <div className="text-xs md:text-sm font-bold text-foreground/70 uppercase tracking-wider leading-tight">
+                    Exames Realizados
+                  </div>
+                </div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-black text-primary">4</div>
-                <div className="text-sm font-semibold text-muted-foreground uppercase leading-tight">Unidades</div>
+              
+              <div className="group relative overflow-hidden bg-gradient-to-br from-accent/5 to-accent/10 rounded-xl p-6 border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative text-center">
+                  <div className="text-4xl md:text-5xl font-black bg-gradient-to-br from-accent to-accent/70 bg-clip-text text-transparent mb-2 animate-pulse-slow">
+                    4
+                  </div>
+                  <div className="text-xs md:text-sm font-bold text-foreground/70 uppercase tracking-wider leading-tight">
+                    Unidades
+                  </div>
+                </div>
               </div>
             </div>
+
           </div>
 
           {/* Visual Grid Block */}
