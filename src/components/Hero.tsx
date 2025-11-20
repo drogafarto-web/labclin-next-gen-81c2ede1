@@ -88,7 +88,7 @@ const Hero = () => {
               
               {/* Bottom left - PNCQ Badge */}
               <div className="bg-card rounded-lg shadow-strong flex items-center justify-center border-4 border-secondary p-6">
-                <OptimizedImage
+                <img
                   src="/pncq-logo.png"
                   alt="PNCQ - Programa Nacional de Controle de Qualidade"
                   className="w-full h-auto object-contain"
