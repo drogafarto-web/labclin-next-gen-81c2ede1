@@ -32,12 +32,12 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center hover:opacity-80 transition-opacity" aria-label="Labclin - Página inicial">
             <img 
-              src="/labclin-logo.png"
+              src="/labclin-logo-stylized.png"
               alt="Labclin - Laboratório de Análises Clínicas" 
-              className="h-14 w-auto"
+              className="h-16 w-auto drop-shadow-lg"
               loading="eager"
-              width={180}
-              height={56}
+              width={200}
+              height={64}
             />
           </Link>
 

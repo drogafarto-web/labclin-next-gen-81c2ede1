@@ -15,7 +15,7 @@ const Footer = () => {
           <div>
             <div className="mb-4">
               <img 
-                src="/labclin-logo.png" 
+                src="/labclin-logo-stylized.png" 
                 alt="Labclin - Laboratório de Análises Clínicas" 
                 className="h-12 w-auto"
                 loading="lazy"
