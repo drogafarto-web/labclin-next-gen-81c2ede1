@@ -100,8 +100,8 @@ const Hero = () => {
               </div>
               
               <div className="rounded-lg overflow-hidden shadow-strong">
-                <OptimizedImage
-                  src="/images/hero-professionals.jpg"
+                <img
+                  src={heroProfessionals}
                   alt="Profissionais do Laboratório Labclin"
                   className="w-full h-full object-cover"
                   loading="eager"
@@ -113,7 +113,7 @@ const Hero = () => {
               {/* Bottom left - PNCQ Badge */}
               <div className="bg-card rounded-lg shadow-strong flex items-center justify-center border-4 border-secondary p-6">
                 <img
-                  src="/pncq-logo.png"
+                  src={pncqLogo}
                   alt="PNCQ - Programa Nacional de Controle de Qualidade"
                   className="w-full h-auto object-contain"
                   loading="eager"
