@@ -35,7 +35,6 @@ const OptimizedImage = ({
       imgSrc = String(src);
     }
     
-    console.log('[OptimizedImage] Resolved:', { original: src, resolved: imgSrc });
     setResolvedSrc(imgSrc);
     setImageError(false); // Reset error when src changes
   }, [src]);
