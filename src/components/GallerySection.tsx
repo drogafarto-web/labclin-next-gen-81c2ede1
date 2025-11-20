@@ -15,37 +15,37 @@ const GallerySection = () => {
 
   const galleryImages = [
     {
-      src: fachadaLabclin,
+      src: "/images/gallery/fachada-labclin.png",
       alt: "Fachada do Labclin - Laboratório de Análises Clínicas em Rio Pomba",
       title: "Nossa Fachada",
       description: "Unidade moderna e acessível",
     },
     {
-      src: brinquedoteca,
+      src: "/images/gallery/brinquedoteca.png",
       alt: "Brinquedoteca do Labclin - Espaço infantil colorido",
       title: "Brinquedoteca",
       description: "Conforto para as crianças",
     },
     {
-      src: recepcaoPlantas,
+      src: "/images/gallery/recepcao-plantas.png",
       alt: "Recepção do Labclin - Ambiente acolhedor com decoração moderna",
       title: "Ambiente Acolhedor",
       description: "Espaço pensado no seu bem-estar",
     },
     {
-      src: equipamentoLab,
+      src: "/images/gallery/equipamento-lab.png",
       alt: "Equipamentos de laboratório modernos do Labclin",
       title: "Tecnologia de Ponta",
       description: "Equipamentos de última geração",
     },
     {
-      src: profissionalRetrato,
+      src: "/images/gallery/profissional-retrato.png",
       alt: "Profissional biomédico do Labclin",
       title: "Equipe Qualificada",
       description: "Profissionais especializados",
     },
     {
-      src: equipeEntrada,
+      src: "/images/gallery/equipe-entrada.png",
       alt: "Equipe do Labclin na entrada da unidade - Atendimento humanizado",
       title: "Atendimento Humanizado",
       description: "Nossa equipe sempre pronta para ajudar",
