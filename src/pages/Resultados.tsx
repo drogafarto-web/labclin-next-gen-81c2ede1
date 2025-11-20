@@ -2,8 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SEO from "@/components/SEO";
-import DirectLoginForm from "@/components/DirectLoginForm";
-import { Clock, Shield, Download } from "lucide-react";
+import ResultsIframe from "@/components/ResultsIframe";
 
 const Resultados = () => {
 
@@ -37,60 +36,8 @@ const Resultados = () => {
           </div>
         </section>
 
-        {/* Direct Login Form */}
-        <DirectLoginForm />
-
-        {/* Features Section */}
-        <section className="py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Benefícios do Acesso Online
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Tenha controle total sobre seus exames com praticidade e segurança
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="bg-gradient-hero rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <Clock className="h-8 w-8 text-primary-foreground" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">
-                  Disponível 24/7
-                </h3>
-                <p className="text-muted-foreground">
-                  Acesse seus resultados a qualquer hora, de qualquer lugar
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-gradient-hero rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <Shield className="h-8 w-8 text-primary-foreground" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">
-                  100% Seguro
-                </h3>
-                <p className="text-muted-foreground">
-                  Seus dados protegidos com criptografia de ponta
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-gradient-hero rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <Download className="h-8 w-8 text-primary-foreground" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">
-                  Fácil Download
-                </h3>
-                <p className="text-muted-foreground">
-                  Baixe e imprima seus resultados em PDF
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Iframe de Resultados */}
+        <ResultsIframe />
 
         {/* Help Section */}
         <section className="py-16 md:py-24 bg-muted/30">
