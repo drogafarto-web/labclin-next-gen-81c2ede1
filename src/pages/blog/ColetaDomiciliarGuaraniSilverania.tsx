@@ -5,6 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import coletaImage from "@/assets/blog/coleta-domiciliar-enhanced.jpg";
 
 const ColetaDomiciliarGuaraniSilverania = () => {
   return (
@@ -71,7 +72,7 @@ const ColetaDomiciliarGuaraniSilverania = () => {
 
               <div className="rounded-lg overflow-hidden mb-8">
                 <img
-                  src="/src/assets/blog/coleta-domiciliar-enhanced.jpg"
+                  src={coletaImage}
                   alt="Profissional realizando coleta domiciliar de exames"
                   className="w-full h-auto object-cover"
                 />
