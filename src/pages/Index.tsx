@@ -226,9 +226,9 @@ const Index = () => {
         <ResultsIframe />
 
         {/* AI Checkup Section */}
-        <section id="checkup-form" className="py-16 md:py-24 bg-gradient-hero">
+        <section id="checkup-form" className="py-20 md:py-32 bg-gradient-hero">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
+            <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
                 Faça um Checkup com I.A.
               </h2>

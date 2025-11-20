@@ -112,7 +112,25 @@ const CheckupForm = () => {
       ? sanitizedData.condicoes.join(", ") 
       : "Nenhuma";
 
-    const mensagem = `Olá Labclin! 👋\n\nGostaria de receber uma proposta de checkup personalizado:\n\n👤 Nome: ${sanitizedData.name}\n📱 WhatsApp: ${sanitizedData.whatsapp}\n🎂 Faixa Etária: ${sanitizedData.age}\n⚧️ Sexo: ${sanitizedData.sexo || "Não informado"}\n🏥 Condições: ${condicoesText}\n\nTenho interesse nos perfis sugeridos e aguardo orçamento com desconto especial! 🎁`;
+    // Formatar os exames recomendados para envio
+    let examesText = "";
+    if (recommendations) {
+      examesText = "\n\n📋 *EXAMES RECOMENDADOS:*\n\n";
+      examesText += "🔹 *Perfil Econômico:*\n";
+      recommendations.economico.forEach((exam: string) => {
+        examesText += `  • ${exam}\n`;
+      });
+      examesText += "\n🔹 *Perfil Normal:*\n";
+      recommendations.normal.forEach((exam: string) => {
+        examesText += `  • ${exam}\n`;
+      });
+      examesText += "\n🔹 *Perfil Avançado:*\n";
+      recommendations.avancado.forEach((exam: string) => {
+        examesText += `  • ${exam}\n`;
+      });
+    }
+
+    const mensagem = `Olá Labclin! 👋\n\nGostaria de receber uma proposta de checkup personalizado:\n\n👤 Nome: ${sanitizedData.name}\n📱 WhatsApp: ${sanitizedData.whatsapp}\n🎂 Faixa Etária: ${sanitizedData.age}\n⚧️ Sexo: ${sanitizedData.sexo || "Não informado"}\n🏥 Condições: ${condicoesText}${examesText}\n\nAguardo orçamento com desconto especial! 🎁`;
 
     const urlWhatsApp = getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, mensagem);
     
@@ -125,7 +143,13 @@ const CheckupForm = () => {
     link.rel = 'noopener noreferrer';
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
+    
+    // Remover link de forma segura após um pequeno delay
+    setTimeout(() => {
+      if (link.parentNode) {
+        document.body.removeChild(link);
+      }
+    }, 100);
 
     toast.success("Redirecionando para o WhatsApp do Labclin...");
 

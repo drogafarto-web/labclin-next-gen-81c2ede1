@@ -41,7 +41,7 @@ const ResultsIframe = () => {
                 </h3>
                 <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
                   <li>Digite sua <strong className="text-foreground">chave de acesso</strong> (fornecida no momento da coleta)</li>
-                  <li>Insira sua <strong className="text-foreground">senha</strong> (geralmente sua data de nascimento)</li>
+                  <li>Insira sua <strong className="text-foreground">senha</strong> (fornecida no momento da coleta)</li>
                   <li>Clique em "Consultar" para visualizar seus laudos</li>
                 </ol>
               </div>
