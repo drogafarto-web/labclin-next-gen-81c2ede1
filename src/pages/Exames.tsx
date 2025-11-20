@@ -12,16 +12,6 @@ import { Link } from "react-router-dom";
 import { Search, ArrowRight, CheckCircle2, Activity, Heart, Users, ShieldAlert, HeartPulse, AlertTriangle } from "lucide-react";
 import { useState } from "react";
 import { generateBreadcrumbSchema } from "@/lib/structuredData";
-import covidImage from "@/assets/exames/covid-virus.png";
-import influenzaImage from "@/assets/exames/influenza-syringe.png";
-import hba1cImage from "@/assets/exames/hba1c-dna.png";
-import toxicologiaImage from "@/assets/exames/toxicologia-truck.png";
-import testePezinhoImage from "@/assets/exames/teste-pezinho.png";
-import sexagemDnaImage from "@/assets/exames/sexagem-dna.png";
-import lactoseTestImage from "@/assets/exames/lactose-test.png";
-import glutenTestImage from "@/assets/exames/gluten-test.png";
-import preNatalImage from "@/assets/exames/pre-natal.png";
-import alergiaAlimentarImage from "@/assets/exames/alergia-alimentar.png";
 
 const Exames = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -46,7 +36,7 @@ const Exames = () => {
       description: "Exame para detecção do vírus SARS-CoV-2",
       preparo: "Sem jejum necessário",
       tempo: "24-48 horas",
-      image: covidImage,
+      image: "/images/exames/covid-virus.png",
       badge: "Novo",
       badgeColor: "bg-blue-500",
     },
@@ -57,7 +47,7 @@ const Exames = () => {
       description: "Detecção da gripe (Influenza A/B)",
       preparo: "Sem jejum necessário",
       tempo: "24-48 horas",
-      image: influenzaImage,
+      image: "/images/exames/influenza-syringe.png",
       badge: "",
       badgeColor: "",
     },
@@ -68,7 +58,7 @@ const Exames = () => {
       description: "Exame para determinar o sexo do bebê com alta precisão",
       preparo: "Sem jejum necessário",
       tempo: "24 horas",
-      image: sexagemDnaImage,
+      image: "/images/exames/sexagem-dna.png",
       badge: "Popular",
       badgeColor: "bg-pink-500",
     },
@@ -79,7 +69,7 @@ const Exames = () => {
       description: "Exame para detectar doenças metabólicas e genéticas em recém-nascidos",
       preparo: "Sem jejum necessário",
       tempo: "48 horas",
-      image: testePezinhoImage,
+      image: "/images/exames/teste-pezinho.png",
       badge: "",
       badgeColor: "",
     },
@@ -101,7 +91,7 @@ const Exames = () => {
       description: "Exame para confirmar a paternidade através de análise genética",
       preparo: "Não requer jejum",
       tempo: "7-10 dias",
-      image: sexagemDnaImage,
+      image: "/images/exames/sexagem-dna.png",
       badge: "",
       badgeColor: "",
     },
@@ -112,7 +102,7 @@ const Exames = () => {
       description: "Exame para detectar intolerância à lactose no organismo",
       preparo: "Jejum de 12 horas",
       tempo: "24 horas",
-      image: lactoseTestImage,
+      image: "/images/exames/lactose-test.png",
       badge: "",
       badgeColor: "",
     },
@@ -123,7 +113,7 @@ const Exames = () => {
       description: "Exame para detectar intolerância ao glúten no organismo",
       preparo: "Jejum de 12 horas",
       tempo: "24 horas",
-      image: glutenTestImage,
+      image: "/images/exames/gluten-test.png",
       badge: "",
       badgeColor: "",
     },
@@ -134,7 +124,7 @@ const Exames = () => {
       description: "Exame para detectar alergias alimentares comuns",
       preparo: "Sem jejum necessário",
       tempo: "48 horas",
-      image: alergiaAlimentarImage,
+      image: "/images/exames/alergia-alimentar.png",
       badge: "",
       badgeColor: "",
     },
@@ -145,7 +135,7 @@ const Exames = () => {
       description: "Exames especializados para monitorar a saúde durante a gravidez",
       preparo: "Sem jejum necessário",
       tempo: "24-72 horas",
-      image: preNatalImage,
+      image: "/images/exames/pre-natal.png",
       badge: "",
       badgeColor: "",
     },
@@ -168,7 +158,7 @@ const Exames = () => {
       description: "Avalia o controle glicêmico dos últimos 3 meses",
       preparo: "Não requer jejum",
       tempo: "24-48 horas",
-      image: hba1cImage,
+      image: "/images/exames/hba1c-dna.png",
       badge: "Popular",
       badgeColor: "bg-green-500",
     },
@@ -180,7 +170,7 @@ const Exames = () => {
       description: "Detecção de substâncias tóxicas no organismo",
       preparo: "Jejum de 12 horas",
       tempo: "48 horas",
-      image: toxicologiaImage,
+      image: "/images/exames/toxicologia-truck.png",
       badge: "Urgente",
       badgeColor: "bg-red-500",
     },
