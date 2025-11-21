@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string | { default?: string; src?: string } | any;
@@ -6,6 +6,18 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   fallbackSrc?: string;
   showErrorIndicator?: boolean;
 }
+
+// Resolve src SYNCHRONOUSLY to avoid race conditions in production
+const resolveSrc = (src: string | { default?: string; src?: string } | any): string => {
+  if (typeof src === "string") {
+    return src;
+  }
+  if (src && typeof src === "object") {
+    // Handle Vite ES6 imports: { default: "url" }
+    return src.default || src.src || String(src);
+  }
+  return String(src);
+};
 
 const OptimizedImage = ({ 
   src, 
@@ -20,24 +32,9 @@ const OptimizedImage = ({
   ...props 
 }: OptimizedImageProps) => {
   const [imageError, setImageError] = useState(false);
-  const [resolvedSrc, setResolvedSrc] = useState<string>("");
-
-  // Resolve src from ES6 import object or string
-  useEffect(() => {
-    let imgSrc = "";
-    
-    if (typeof src === "string") {
-      imgSrc = src;
-    } else if (src && typeof src === "object") {
-      // Handle Vite ES6 imports: { default: "url" }
-      imgSrc = src.default || src.src || String(src);
-    } else {
-      imgSrc = String(src);
-    }
-    
-    setResolvedSrc(imgSrc);
-    setImageError(false); // Reset error when src changes
-  }, [src]);
+  
+  // Resolve src synchronously
+  const resolvedSrc = resolveSrc(src);
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
     console.error(`[OptimizedImage] Failed to load: ${resolvedSrc}`);
