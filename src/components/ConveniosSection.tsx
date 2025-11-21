@@ -1,22 +1,22 @@
 import { CreditCard } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
 
-const convenio1 = "/images/convenios/convenio-1.png";
-const convenio2 = "/images/convenios/convenio-2.png";
-const convenio3 = "/images/convenios/convenio-3.png";
-const convenio4 = "/images/convenios/convenio-4.png";
-const convenio5 = "/images/convenios/convenio-5.png";
-const convenio6 = "/images/convenios/convenio-6.png";
-const convenio7 = "/images/convenios/convenio-7.png";
-const convenio8 = "/images/convenios/convenio-8.png";
+import convenio1 from "@/assets/convenios/convenio-1.png";
+import convenio2 from "@/assets/convenios/convenio-2.png";
+import convenio3 from "@/assets/convenios/convenio-3.png";
+import convenio4 from "@/assets/convenios/convenio-4.png";
+import convenio5 from "@/assets/convenios/convenio-5.png";
+import convenio6 from "@/assets/convenios/convenio-6.png";
+import convenio7 from "@/assets/convenios/convenio-7.png";
+import convenio8 from "@/assets/convenios/convenio-8.png";
 
-const visaLogo = "/images/payment/visa.png";
-const mastercardLogo = "/images/payment/mastercard.png";
-const eloLogo = "/images/payment/elo.png";
-const banricomprasLogo = "/images/payment/banricompras.png";
-const americanLogo = "/images/payment/american.jpg";
-const hipercardLogo = "/images/payment/hipercard.png";
-const pixLogo = "/images/payment/pix.png";
+import visaLogo from "@/assets/payment/visa.png";
+import mastercardLogo from "@/assets/payment/mastercard.png";
+import eloLogo from "@/assets/payment/elo.png";
+import banricomprasLogo from "@/assets/payment/banricompras.png";
+import americanLogo from "@/assets/payment/american.jpg";
+import hipercardLogo from "@/assets/payment/hipercard.png";
+import pixLogo from "@/assets/payment/pix.png";
 
 const ConveniosSection = () => {
   const convenios = [
