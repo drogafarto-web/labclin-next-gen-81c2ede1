@@ -25,7 +25,7 @@ const OptimizedImage = ({
   fallbackSrc,
   showErrorIndicator = true,
   className = "",
-  loading = "lazy",
+  loading = "eager",
   width,
   height,
   onError,
