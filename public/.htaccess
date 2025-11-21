@@ -43,13 +43,23 @@
 # Cache-Control Headers para ativos imutáveis
 <IfModule mod_headers.c>
   # Ativos estáticos com hash (versionados) - cache agressivo
-  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|css|js|woff|woff2|ttf|otf)$">
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|css|js|woff|woff2|ttf|otf|eot|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # Favicon especificamente
+  <FilesMatch "favicon\.(ico|png|svg)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
   
   # HTML - sem cache agressivo
   <FilesMatch "\.(html|htm)$">
     Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+  
+  # Manifest e Service Workers - cache curto
+  <FilesMatch "\.(manifest|webmanifest|json)$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
   </FilesMatch>
   
   # Security Headers
