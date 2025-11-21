@@ -62,7 +62,7 @@ const ConveniosSection = () => {
                   src={convenio.logo}
                   alt={convenio.alt}
                   className="h-16 w-auto object-contain"
-                  loading="lazy"
+                  loading="eager"
                   width={120}
                   height={64}
                 />
@@ -93,7 +93,7 @@ const ConveniosSection = () => {
                   src={method.logo}
                   alt={method.alt}
                   className="max-h-12 w-auto object-contain"
-                  loading="lazy"
+                  loading="eager"
                   width={100}
                   height={48}
                 />
