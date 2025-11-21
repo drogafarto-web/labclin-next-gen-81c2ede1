@@ -3,12 +3,12 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
 
-const fachadaLabclin = "/images/gallery/fachada-labclin.png";
-const brinquedoteca = "/images/gallery/brinquedoteca.png";
-const recepcaoPlantas = "/images/gallery/recepcao-plantas.png";
-const equipamentoLab = "/images/gallery/equipamento-lab.png";
-const profissionalRetrato = "/images/gallery/profissional-retrato.png";
-const equipeEntrada = "/images/gallery/equipe-entrada.png";
+import fachadaLabclin from "@/assets/gallery/fachada-labclin.png";
+import brinquedoteca from "@/assets/gallery/brinquedoteca.png";
+import recepcaoPlantas from "@/assets/gallery/recepcao-plantas.png";
+import equipamentoLab from "@/assets/gallery/equipamento-lab.png";
+import profissionalRetrato from "@/assets/gallery/profissional-retrato.png";
+import equipeEntrada from "@/assets/gallery/equipe-entrada.png";
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<string | { default?: string; src?: string } | null>(null);
