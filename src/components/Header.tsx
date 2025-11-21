@@ -33,10 +33,11 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center hover:opacity-80 transition-opacity" aria-label="Labclin - Página inicial">
             <img 
-              src="/labclin-logo.png"
+              src="/labclin-logo-optimized.webp"
               alt="Labclin - Laboratório de Análises Clínicas" 
               className="h-14 w-auto"
               loading="eager"
+              fetchPriority="high"
               width={180}
               height={56}
             />
