@@ -76,7 +76,7 @@ const GallerySection = () => {
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="eager"
+                  loading={index < 3 ? "eager" : "lazy"}
                   width={400}
                   height={300}
                 />

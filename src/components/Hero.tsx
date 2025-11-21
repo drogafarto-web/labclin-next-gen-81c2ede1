@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
+import { cn } from "@/lib/utils";
 import OptimizedImage from "@/components/OptimizedImage";
 import heroProfessionals from "@/assets/hero-professionals.jpg";
 import pncqLogo from "@/assets/pncq-logo.png";
@@ -30,16 +31,18 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
-              <Link to="/agendar" className="w-full sm:w-auto">
-                <Button variant="default" size="lg" className="w-full uppercase font-bold text-base shadow-strong">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Agende seu Exame
-                </Button>
+              <Link 
+                to="/agendar" 
+                className={cn(buttonVariants({ variant: "default", size: "lg" }), "w-full sm:w-auto uppercase font-bold text-base shadow-strong")}
+              >
+                <Calendar className="mr-2 h-5 w-5" />
+                Agende seu Exame
               </Link>
-              <Link to="/resultados" className="w-full sm:w-auto">
-                <Button variant="outline" size="lg" className="w-full font-semibold border-2">
-                  Visualizar Resultados
-                </Button>
+              <Link 
+                to="/resultados" 
+                className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full sm:w-auto font-semibold border-2")}
+              >
+                Visualizar Resultados
               </Link>
             </div>
 

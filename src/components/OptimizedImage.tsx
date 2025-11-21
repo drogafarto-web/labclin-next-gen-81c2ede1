@@ -78,6 +78,7 @@ const OptimizedImage = ({
       alt={alt}
       className={className}
       loading={loading}
+      fetchPriority={loading === "eager" ? "high" : "auto"}
       width={width}
       height={height}
       onError={handleImageError}

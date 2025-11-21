@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Menu, X, Calendar } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,11 +44,12 @@ const Header = () => {
 
           {/* CTA Button - Desktop */}
           <div className="hidden md:flex items-center">
-            <Link to="/agendar">
-              <Button variant="default" size="lg" className="uppercase font-bold">
-                <Calendar className="mr-2 h-5 w-5" />
-                Agendar Exame
-              </Button>
+            <Link 
+              to="/agendar"
+              className={cn(buttonVariants({ variant: "default", size: "lg" }), "uppercase font-bold")}
+            >
+              <Calendar className="mr-2 h-5 w-5" />
+              Agendar Exame
             </Link>
           </div>
 
@@ -105,11 +107,13 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <Link to="/agendar" className="px-4 pt-2" onClick={() => setIsMenuOpen(false)}>
-              <Button variant="secondary" size="lg" className="w-full uppercase font-bold min-h-[48px]">
-                <Calendar className="mr-2 h-5 w-5" />
-                Agendar Exame
-              </Button>
+            <Link 
+              to="/agendar" 
+              className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "w-full uppercase font-bold min-h-[48px] px-4 pt-2")}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Calendar className="mr-2 h-5 w-5" />
+              Agendar Exame
             </Link>
           </nav>
         </div>
