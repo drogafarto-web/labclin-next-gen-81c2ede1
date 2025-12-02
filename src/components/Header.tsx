@@ -32,14 +32,17 @@ const Header = () => {
         <div className="flex h-20 items-center justify-between border-b border-border">
           {/* Logo */}
           <Link to="/" className="flex items-center hover:opacity-80 transition-opacity" aria-label="Labclin - Página inicial">
-            <img 
-              src="/labclin-logo-optimized.webp"
-              alt="Labclin - Laboratório de Análises Clínicas" 
-              className="h-14 w-auto"
-              loading="eager"
-              width={180}
-              height={56}
-            />
+            <picture>
+              <source srcSet="/labclin-logo-optimized.webp" type="image/webp" />
+              <img 
+                src="/labclin-logo.png"
+                alt="Labclin - Laboratório de Análises Clínicas" 
+                className="h-14 w-auto"
+                loading="eager"
+                width={180}
+                height={56}
+              />
+            </picture>
           </Link>
 
           {/* CTA Button - Desktop */}

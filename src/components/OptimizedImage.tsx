@@ -39,7 +39,7 @@ const OptimizedImage = ({
   fallbackSrc,
   showErrorIndicator = true,
   priority = false,
-  enableWebP = true,
+  enableWebP = false,
   showSkeleton = true,
   className = "",
   width,
@@ -51,7 +51,7 @@ const OptimizedImage = ({
   const [imageError, setImageError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(priority);
-  const imgRef = useRef<HTMLImageElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
   
   // Resolve src synchronously
   const resolvedSrc = resolveSrc(src);

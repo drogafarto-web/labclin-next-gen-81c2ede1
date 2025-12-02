@@ -72,11 +72,12 @@ const GallerySection = () => {
               onClick={() => setSelectedImage(image.src)}
             >
               <div className="aspect-[4/3] overflow-hidden">
-                <OptimizedImage
+              <OptimizedImage
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading={index < 3 ? "eager" : "lazy"}
+                  enableWebP={false}
                   width={400}
                   height={300}
                 />
@@ -105,11 +106,12 @@ const GallerySection = () => {
             
             {selectedImage && (
               <div className="relative rounded-lg overflow-hidden">
-                <OptimizedImage
+              <OptimizedImage
                   src={selectedImage}
                   alt="Visualização ampliada"
                   className="w-full h-auto max-h-[85vh] object-contain"
                   loading="eager"
+                  enableWebP={false}
                   width={1200}
                   height={900}
                 />
