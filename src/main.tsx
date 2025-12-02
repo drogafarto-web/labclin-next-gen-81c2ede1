@@ -24,3 +24,21 @@ if (import.meta.env.PROD) {
     }, 1000);
   }
 }
+
+// Registrar Service Worker para PWA
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((registration) => {
+        console.log('[SW] Registrado com sucesso:', registration.scope);
+        
+        // Verificar atualizações periodicamente
+        setInterval(() => {
+          registration.update();
+        }, 60 * 60 * 1000); // A cada hora
+      })
+      .catch((error) => {
+        console.log('[SW] Falha no registro:', error);
+      });
+  });
+}
