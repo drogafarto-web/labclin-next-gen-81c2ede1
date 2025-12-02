@@ -13,7 +13,7 @@ const Agendar = () => {
         title="Agendar Exame"
         description="Agende seus exames laboratoriais no Labclin de forma rápida e fácil. Atendimento em Rio Pomba, Mercês, Guarani e Silveirânia - MG."
         keywords="agendar exame, laboratório, análises clínicas, agendamento online"
-        canonicalUrl="https://labclin.com.br/agendar"
+        canonicalUrl="https://www.labclinmg.com.br/agendar"
       />
       <Header />
 

@@ -20,7 +20,7 @@ const HemogramaCompletoGuiaDefinitivo = () => {
           name="keywords"
           content="hemograma completo, exame de sangue, análises clínicas"
         />
-        <link rel="canonical" href="https://labclin.com.br/blog/hemograma-completo-guia-definitivo" />
+        <link rel="canonical" href="https://www.labclinmg.com.br/blog/hemograma-completo-guia-definitivo" />
         <meta property="og:title" content="Hemograma Completo: O Guia Definitivo" />
         <meta property="og:description" content="Entenda o exame de sangue Hemograma Completo e a importância desse teste para a sua saúde." />
         <meta property="og:type" content="article" />
@@ -40,7 +40,7 @@ const HemogramaCompletoGuiaDefinitivo = () => {
               "name": "Labclin",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://labclin.com.br/logo.png"
+                "url": "https://www.labclinmg.com.br/labclin-logo.png"
               }
             }
           })}

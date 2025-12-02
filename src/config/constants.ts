@@ -3,6 +3,14 @@
  * IMPORTANTE: Dados sensíveis devem estar em variáveis de ambiente
  */
 
+export const SITE_CONFIG = {
+  baseUrl: 'https://www.labclinmg.com.br',
+  name: 'Labclin - Laboratório de Análises Clínicas',
+  shortName: 'Labclin',
+  logo: 'https://www.labclinmg.com.br/labclin-logo.png',
+  ogImage: 'https://www.labclinmg.com.br/og-image.jpg',
+} as const;
+
 export const CONTACTS = {
   WHATSAPP_MAIN: "5532991990239",
   WHATSAPP_DISPLAY: "(32) 99199-0239",

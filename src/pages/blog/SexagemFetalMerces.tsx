@@ -19,7 +19,7 @@ const SexagemFetalMerces = () => {
           name="keywords"
           content="sexagem fetal, chá de revelação, exame sexo bebê, gestante, Mercês, laboratório, gravidez, DNA fetal"
         />
-        <link rel="canonical" href="https://labclin.com.br/blog/sexagem-fetal-merces" />
+        <link rel="canonical" href="https://www.labclinmg.com.br/blog/sexagem-fetal-merces" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

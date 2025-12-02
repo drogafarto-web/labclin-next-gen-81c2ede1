@@ -16,7 +16,7 @@ const Contato = () => {
         title="Contato"
         description="Entre em contato com o Labclin. Telefones e WhatsApp de todas as nossas unidades em Rio Pomba, Mercês, Guarani e Silveirânia."
         keywords="contato labclin, telefone labclin, whatsapp labclin, laboratorio rio pomba contato"
-        canonicalUrl="https://labclin.com.br/contato"
+        canonicalUrl="https://www.labclinmg.com.br/contato"
         structuredData={generateLocalBusinessSchema()}
       />
       <Header />

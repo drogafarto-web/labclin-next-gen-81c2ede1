@@ -20,7 +20,7 @@ const ColetaDomiciliarAgende = () => {
           name="keywords"
           content="coleta domiciliar, agendamento de exames, exames em casa"
         />
-        <link rel="canonical" href="https://labclin.com.br/blog/coleta-domiciliar-agende" />
+        <link rel="canonical" href="https://www.labclinmg.com.br/blog/coleta-domiciliar-agende" />
         <meta property="og:title" content="Coleta Domiciliar de Exames: Agende com Conforto e Segurança" />
         <meta property="og:description" content="Realize seus exames no conforto da sua casa com o Labclin." />
         <meta property="og:type" content="article" />
@@ -40,7 +40,7 @@ const ColetaDomiciliarAgende = () => {
               "name": "Labclin",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://labclin.com.br/logo.png"
+                "url": "https://www.labclinmg.com.br/labclin-logo.png"
               }
             }
           })}
