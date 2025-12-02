@@ -15,7 +15,7 @@ const SEO = ({
   description,
   keywords,
   canonicalUrl,
-  ogImage = "https://labclin.com.br/og-image.jpg",
+  ogImage = "https://www.labclinmg.com.br/og-image.jpg",
   ogType = "website",
   structuredData,
 }: SEOProps) => {

@@ -17,11 +17,13 @@ const Hero = () => {
             </div>
             
             <h1 className="font-black text-foreground leading-tight">
-              Check-ups Personalizados{" "}
-              <span className="text-primary">
-                para sua Saúde
-              </span>
+              <span className="text-primary">LABCLINMG</span>: Laboratório de Análises Clínicas em{" "}
+              <span className="text-secondary">Rio Pomba e Região</span>
             </h1>
+            
+            <p className="text-xl md:text-2xl text-foreground/80 max-w-xl font-bold">
+              Check-ups Personalizados para sua Saúde
+            </p>
             
             <p className="text-xl md:text-2xl text-foreground/80 max-w-xl font-medium">
               Escolha o check-up ideal para monitorar sua saúde e agende agora pelo WhatsApp.

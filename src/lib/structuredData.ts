@@ -7,9 +7,9 @@ export const generateLocalBusinessSchema = () => ({
   alternateName: "Labclin",
   description:
     "Laboratório de análises clínicas com mais de 58 anos de experiência em Rio Pomba, Mercês, Guarani e Silveirânia - MG. Exames de rotina, especializados, coleta domiciliar e resultados online.",
-  url: "https://labclin.com.br",
-  logo: "https://labclin.com.br/logo.png",
-  image: "https://labclin.com.br/og-image.jpg",
+  url: "https://www.labclinmg.com.br",
+  logo: "https://www.labclinmg.com.br/logo.png",
+  image: "https://www.labclinmg.com.br/og-image.jpg",
   telephone: "+55-32-99199-0239",
   email: "llabclin3@gmail.com",
   address: UNITS.map((unit) => ({
@@ -105,7 +105,7 @@ export const generateBlogPostSchema = (post: {
     name: "Labclin",
     logo: {
       "@type": "ImageObject",
-      url: "https://labclin.com.br/logo.png",
+      url: "https://www.labclinmg.com.br/logo.png",
     },
   },
   mainEntityOfPage: {
@@ -128,7 +128,7 @@ export const generateServiceSchema = (service: {
   provider: {
     "@type": "MedicalBusiness",
     name: "Labclin - Laboratório de Análises Clínicas",
-    url: "https://labclin.com.br"
+    url: "https://www.labclinmg.com.br"
   },
   availableService: {
     "@type": "MedicalProcedure",
