@@ -13,7 +13,7 @@ const Resultados = () => {
         title="Resultados de Exames Online"
         description="Acesse seus resultados de exames online de forma rápida, segura e conveniente. Disponível 24/7 com criptografia de ponta."
         keywords="resultados exames online, laboratorio resultados, acesso resultados labclin"
-        canonicalUrl="https://labclin.com.br/resultados"
+        canonicalUrl="https://www.labclinmg.com.br/resultados"
       />
       <Header />
       

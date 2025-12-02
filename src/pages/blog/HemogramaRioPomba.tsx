@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,7 +20,7 @@ const HemogramaRioPomba = () => {
           name="keywords"
           content="hemograma, exame de sangue, hemograma completo, Rio Pomba, laboratório, análises clínicas, eritrograma, leucograma, plaquetas"
         />
-        <link rel="canonical" href="https://labclin.com.br/blog/hemograma-rio-pomba" />
+        <link rel="canonical" href="https://www.labclinmg.com.br/blog/hemograma-rio-pomba" />
         <meta property="og:title" content="O que é um hemograma e quando pedir?" />
         <meta property="og:description" content="Guia completo sobre hemograma - o exame de sangue mais solicitado" />
         <meta property="og:type" content="article" />
@@ -39,7 +40,7 @@ const HemogramaRioPomba = () => {
               "name": "Labclin",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://labclin.com.br/logo.png"
+                "url": "https://www.labclinmg.com.br/labclin-logo.png"
               }
             }
           })}
@@ -90,7 +91,7 @@ const HemogramaRioPomba = () => {
 
               {/* Featured Image */}
               <div className="rounded-lg overflow-hidden mb-8">
-                <img
+                <OptimizedImage
                   src="/images/blog/hemograma-enhanced.jpg"
                   alt="Profissional realizando exame de hemograma em laboratório"
                   className="w-full h-auto object-cover"

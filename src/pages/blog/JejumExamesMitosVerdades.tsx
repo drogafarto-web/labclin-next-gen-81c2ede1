@@ -20,7 +20,7 @@ const JejumExamesMitosVerdades = () => {
           name="keywords"
           content="jejum para exames, mitos e verdades, preparo para exames"
         />
-        <link rel="canonical" href="https://labclin.com.br/blog/jejum-exames-mitos-e-verdades" />
+        <link rel="canonical" href="https://www.labclinmg.com.br/blog/jejum-exames-mitos-e-verdades" />
         <meta property="og:title" content="Jejum para Exames: 5 Mitos e Verdades" />
         <meta property="og:description" content="Descubra a verdade sobre os requisitos de jejum para exames de sangue." />
         <meta property="og:type" content="article" />
@@ -40,7 +40,7 @@ const JejumExamesMitosVerdades = () => {
               "name": "Labclin",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://labclin.com.br/logo.png"
+                "url": "https://www.labclinmg.com.br/labclin-logo.png"
               }
             }
           })}

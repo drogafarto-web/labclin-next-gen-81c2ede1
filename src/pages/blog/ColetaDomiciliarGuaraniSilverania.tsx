@@ -19,7 +19,7 @@ const ColetaDomiciliarGuaraniSilverania = () => {
           name="keywords"
           content="coleta domiciliar, exames em casa, laboratório domiciliar, Guarani, Silveirânia, comodidade, idosos, gestantes"
         />
-        <link rel="canonical" href="https://labclin.com.br/blog/coleta-domiciliar-guarani-silverania" />
+        <link rel="canonical" href="https://www.labclinmg.com.br/blog/coleta-domiciliar-guarani-silverania" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",

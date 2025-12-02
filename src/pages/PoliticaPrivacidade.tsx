@@ -9,7 +9,7 @@ const PoliticaPrivacidade = () => {
       <SEO
         title="Política de Privacidade"
         description="Política de Privacidade do Labclin conforme LGPD. Saiba como coletamos, usamos e protegemos seus dados pessoais."
-        canonicalUrl="https://labclin.com.br/politica-de-privacidade"
+        canonicalUrl="https://www.labclinmg.com.br/politica-de-privacidade"
       />
       <Header />
 
