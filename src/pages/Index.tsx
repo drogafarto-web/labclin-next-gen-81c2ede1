@@ -16,12 +16,14 @@ import SEO from "@/components/SEO";
 import { Microscope, Home, Stethoscope, FileText, MapPin, Calendar, Heart, Users, Award, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import hemogramaImg from "@/assets/blog/hemograma-enhanced.jpg";
-import preparoExamesImg from "@/assets/blog/preparo-exames-enhanced.jpg";
-import coletaBlogImg from "@/assets/blog/coleta-domiciliar-enhanced.jpg";
-import coletaCarImg from "@/assets/coleta-domiciliar-carro.png";
-import atendimentoInfantilImg from "@/assets/differentials/atendimento-infantil-enhanced.jpg";
-import acessibilidadeImg from "@/assets/differentials/acessibilidade-enhanced.jpg";
+
+// Public paths for images (better for caching and CDN)
+const hemogramaImg = "/images/blog/hemograma-enhanced.jpg";
+const preparoExamesImg = "/images/blog/preparo-exames-enhanced.jpg";
+const coletaBlogImg = "/images/blog/coleta-domiciliar-enhanced.jpg";
+const coletaCarImg = "/images/coleta-domiciliar-carro.png";
+const atendimentoInfantilImg = "/images/differentials/atendimento-infantil-enhanced.jpg";
+const acessibilidadeImg = "/images/differentials/acessibilidade-enhanced.jpg";
 
 const Index = () => {
   const services = [
@@ -162,11 +164,11 @@ const Index = () => {
         "@type": "MedicalBusiness",
         "name": "Labclin - Laboratório de Análises Clínicas",
         "description": "Laboratório de análises clínicas com 58+ anos de experiência em Rio Pomba, Mercês, Guarani e Silveirânia - MG. Exames de rotina, especializados e coleta domiciliar.",
-        "url": "https://labclin.com.br",
-        "logo": "https://labclin.com.br/logo.png",
-        "image": "https://labclin.com.br/og-image.jpg",
+        "url": "https://www.labclinmg.com.br",
+        "logo": "https://www.labclinmg.com.br/logo.png",
+        "image": "https://www.labclinmg.com.br/og-image.jpg",
         "telephone": "+55-32-99199-0239",
-        "email": "contato@labclin.com.br",
+        "email": "contato@labclinmg.com.br",
         "address": [
           {
             "@type": "PostalAddress",
@@ -196,10 +198,10 @@ const Index = () => {
       {
         "@type": "WebSite",
         "name": "Labclin",
-        "url": "https://labclin.com.br",
+        "url": "https://www.labclinmg.com.br",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://labclin.com.br/exames?q={search_term_string}",
+          "target": "https://www.labclinmg.com.br/exames?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       }
@@ -212,7 +214,7 @@ const Index = () => {
         title="Início"
         description="Labclin - Laboratório de Análises Clínicas com 58+ anos de experiência. Exames de rotina, especializados e coleta domiciliar em Rio Pomba, Mercês, Guarani e Silveirânia - MG."
         keywords="laboratório, análises clínicas, exames, Rio Pomba, Mercês, Guarani, Silveirânia, hemograma, coleta domiciliar, check-up"
-        canonicalUrl="https://labclin.com.br"
+        canonicalUrl="https://www.labclinmg.com.br"
         structuredData={structuredData}
       />
       <a

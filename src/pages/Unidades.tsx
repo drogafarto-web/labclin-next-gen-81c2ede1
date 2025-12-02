@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SEO from "@/components/SEO";
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, Navigation } from "lucide-react";
 
@@ -22,7 +22,7 @@ const Unidades = () => {
         sunday: "Domingo e feriados: Fechado",
       },
       services: ["Exames de Rotina", "Exames Especializados", "Coleta Domiciliar", "Atendimento Infantil", "Resultados Online"],
-      mapUrl: "https://www.google.com/maps?q=Rua+Floripes+Maria+de+Jesus,+05,+loja+02,+Centro,+Rio+Pomba+-+MG&output=embed",
+      mapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Rua+Floripes+Maria+de+Jesus,+05,+loja+02,+Centro,+Rio+Pomba+-+MG",
     },
     {
       name: "Mercês",
@@ -36,7 +36,7 @@ const Unidades = () => {
         sunday: "Domingo e feriados: Fechado",
       },
       services: ["Exames de Rotina", "Coleta Domiciliar", "Resultados Online"],
-      mapUrl: "https://www.google.com/maps?q=Praça+Dr.+Castelões,+40,+Centro,+Mercês+-+MG&output=embed",
+      mapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Praça+Dr.+Castelões,+40,+Centro,+Mercês+-+MG",
     },
     {
       name: "Guarani",
@@ -50,7 +50,7 @@ const Unidades = () => {
         sunday: "Domingo e feriados: Fechado",
       },
       services: ["Exames de Rotina", "Coleta Domiciliar", "Resultados Online"],
-      mapUrl: "https://www.google.com/maps?q=Rua+José+Ladeira+Pinto,+70,+Bairro+Sossego,+Guarani+-+MG&output=embed",
+      mapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Rua+José+Ladeira+Pinto,+70,+Bairro+Sossego,+Guarani+-+MG",
     },
     {
       name: "Silveirânia",
@@ -64,13 +64,13 @@ const Unidades = () => {
         sunday: "Domingo e feriados: Fechado",
       },
       services: ["Exames de Rotina", "Coleta Domiciliar", "Resultados Online"],
-      mapUrl: "https://www.google.com/maps?q=Rua+Padre+Cerqueira,+20,+Centro,+Silveirânia+-+MG&output=embed",
+      mapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Rua+Padre+Cerqueira,+20,+Centro,+Silveirânia+-+MG",
     },
   ];
 
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Início", url: "https://labclin.com.br" },
-    { name: "Unidades", url: "https://labclin.com.br/unidades" }
+    { name: "Início", url: "https://www.labclinmg.com.br" },
+    { name: "Unidades", url: "https://www.labclinmg.com.br/unidades" }
   ]);
 
   const combinedSchema = {
@@ -87,7 +87,7 @@ const Unidades = () => {
         title="Nossas Unidades em MG - Encontre o Labclin Mais Próximo"
         description="Labclin presente em 4 cidades de Minas Gerais: Rio Pomba, Mercês, Guarani e Silveirânia. Exames de rotina, coleta domiciliar e resultados online disponíveis."
         keywords="labclin unidades, laboratório rio pomba mg, laboratório mercês mg, laboratório guarani mg, laboratório silveirânia mg, análises clínicas minas gerais, exames laboratoriais zona da mata"
-        canonicalUrl="https://labclin.com.br/unidades"
+        canonicalUrl="https://www.labclinmg.com.br/unidades"
         structuredData={combinedSchema}
       />
       <Header />
@@ -132,19 +132,26 @@ const Unidades = () => {
               {units.map((unit, index) => (
                 <article key={index} className="bg-card border-2 border-border rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow" aria-labelledby={`unit-${index}`}>
                   <div className="grid grid-cols-1 lg:grid-cols-2">
-                    {/* Map */}
-                    <div className="h-80 lg:h-auto bg-muted order-2 lg:order-1">
-                      <iframe
-                        src={unit.mapUrl}
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0, minHeight: "350px" }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        title={`Localização da unidade ${unit.name} no mapa`}
-                        aria-label={`Mapa interativo mostrando a localização do Labclin em ${unit.name}`}
-                      />
+                    {/* Map Placeholder - Replaces heavy iframe */}
+                    <div className="h-80 lg:h-auto bg-gradient-to-br from-primary/10 via-secondary/10 to-muted order-2 lg:order-1 flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <div className="w-20 h-20 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+                          <MapPin className="h-10 w-10 text-primary" />
+                        </div>
+                        <h4 className="text-xl font-bold text-foreground mb-2">Labclin {unit.name}</h4>
+                        <p className="text-muted-foreground mb-4 text-sm">{unit.address}</p>
+                        <a
+                          href={unit.mapsDirectionsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center"
+                        >
+                          <Button variant="outline" size="sm">
+                            <Navigation className="mr-2 h-4 w-4" />
+                            Ver no Google Maps
+                          </Button>
+                        </a>
+                      </div>
                     </div>
 
                     {/* Info */}
@@ -206,9 +213,7 @@ const Unidades = () => {
 
                       <div className="flex flex-col sm:flex-row gap-3">
                         <a
-                          href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                            unit.address
-                          )}`}
+                          href={unit.mapsDirectionsUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex-1"
