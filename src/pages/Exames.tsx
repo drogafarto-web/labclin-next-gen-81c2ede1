@@ -599,9 +599,69 @@ const Exames = () => {
   ];
 
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Início", url: "https://labclin.com.br" },
-    { name: "Exames", url: "https://labclin.com.br/exames" },
+    { name: "Início", url: "https://www.labclinmg.com.br" },
+    { name: "Exames", url: "https://www.labclinmg.com.br/exames" },
   ]);
+
+  const medicalTestsSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      breadcrumbSchema,
+      {
+        "@type": "ItemList",
+        "name": "Exames Laboratoriais Labclin",
+        "itemListElement": [
+          {
+            "@type": "MedicalTest",
+            "name": "Hemograma Completo",
+            "description": "Avaliação completa das células sanguíneas para detectar anemias, infecções e outras condições",
+            "usedToDiagnose": ["Anemia", "Infecções", "Leucemia", "Distúrbios da coagulação"],
+            "normalRange": "Valores de referência variam por idade e sexo",
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceLocation": {
+                "@type": "Place",
+                "name": "Labclin Rio Pomba, Mercês, Guarani e Silveirânia"
+              }
+            }
+          },
+          {
+            "@type": "MedicalTest",
+            "name": "Glicemia de Jejum",
+            "description": "Medição dos níveis de açúcar no sangue, fundamental para diagnóstico de diabetes",
+            "usedToDiagnose": ["Diabetes Mellitus", "Pré-diabetes", "Hipoglicemia"],
+            "normalRange": "70 a 99 mg/dL"
+          },
+          {
+            "@type": "MedicalTest",
+            "name": "Colesterol Total e Frações",
+            "description": "Análise completa do perfil lipídico (HDL, LDL, VLDL e triglicérides)",
+            "usedToDiagnose": ["Dislipidemia", "Risco cardiovascular"],
+            "normalRange": "Colesterol total: até 200 mg/dL"
+          },
+          {
+            "@type": "MedicalTest",
+            "name": "TSH e T4 Livre",
+            "description": "Avaliação completa da função da tireoide",
+            "usedToDiagnose": ["Hipotireoidismo", "Hipertireoidismo"],
+            "normalRange": "TSH: 0,4 a 4,0 mUI/L"
+          },
+          {
+            "@type": "MedicalTest",
+            "name": "COVID-19",
+            "description": "Exame para detecção do vírus SARS-CoV-2",
+            "usedToDiagnose": ["COVID-19", "Infecção por SARS-CoV-2"]
+          },
+          {
+            "@type": "MedicalTest",
+            "name": "Sexagem Fetal",
+            "description": "Exame para determinar o sexo do bebê com alta precisão a partir da 8ª semana de gestação",
+            "usedToDiagnose": ["Determinação do sexo fetal"]
+          }
+        ]
+      }
+    ]
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -609,8 +669,8 @@ const Exames = () => {
         title="Exames Laboratoriais"
         description="Descubra exames laboratoriais especializados e check-ups personalizados no Labclin. COVID-19, Influenza, Hemoglobina Glicada, Toxicologia e mais. Agende online."
         keywords="exames laboratoriais, check-ups personalizados, COVID-19, Influenza, hemoglobina glicada, toxicologia, exames especializados, exames de rotina"
-        canonicalUrl="https://labclin.com.br/exames"
-        structuredData={breadcrumbSchema}
+        canonicalUrl="https://www.labclinmg.com.br/exames"
+        structuredData={medicalTestsSchema}
       />
       <Header />
 
