@@ -108,7 +108,7 @@ const Hero = () => {
                   alt="Profissionais do Laboratório Labclin"
                   className="w-full h-full object-cover"
                   priority
-                  enableWebP
+                  enableWebP={false}
                   width={400}
                   height={500}
                 />
