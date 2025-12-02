@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { buttonVariants } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const Hero = () => {
   return (
@@ -102,12 +103,12 @@ const Hero = () => {
               </div>
               
               <div className="rounded-lg overflow-hidden shadow-strong">
-                <img
+                <OptimizedImage
                   src="/hero-professionals.jpg"
                   alt="Profissionais do Laboratório Labclin"
                   className="w-full h-full object-cover"
-                  loading="eager"
-                  fetchPriority="high"
+                  priority
+                  enableWebP
                   width={400}
                   height={500}
                 />
@@ -115,11 +116,12 @@ const Hero = () => {
               
               {/* Bottom left - PNCQ Badge */}
               <div className="bg-card rounded-lg shadow-strong flex items-center justify-center border-4 border-secondary p-6">
-                <img
+                <OptimizedImage
                   src="/pncq-logo-optimized.webp"
                   alt="PNCQ - Programa Nacional de Controle de Qualidade"
                   className="w-full h-auto object-contain"
-                  loading="eager"
+                  priority
+                  enableWebP={false}
                   width={200}
                   height={200}
                 />

@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SEO from "@/components/SEO";
+import OptimizedImage from "@/components/OptimizedImage";
 import {
   Accordion,
   AccordionContent,
@@ -25,7 +26,7 @@ const ColetaDomiciliar = () => {
         title="Coleta Domiciliar"
         description="Serviço de coleta domiciliar em Rio Pomba, Mercês, Guarani e Silveirânia. Exames no conforto de casa com segurança e praticidade."
         keywords="coleta domiciliar, exames em casa, coleta residencial, laboratorio domicilio"
-        canonicalUrl="https://labclin.com.br/coleta-domiciliar"
+        canonicalUrl="https://www.labclinmg.com.br/coleta-domiciliar"
       />
       <Header />
       
@@ -51,11 +52,12 @@ const ColetaDomiciliar = () => {
                 </Button>
               </div>
               <div className="relative h-64 md:h-96">
-                <img
+                <OptimizedImage
                   src={coletaCarImg}
                   alt="Carro da Labclin para coleta domiciliar em frente à unidade, oferecendo serviço de exames no conforto de casa"
                   className="w-full h-full object-cover rounded-lg shadow-strong"
-                  loading="eager"
+                  priority
+                  enableWebP
                 />
               </div>
             </div>
