@@ -102,12 +102,12 @@ const Blog = () => {
       "name": "Labclin",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://labclin.com.br/logo.png"
+        "url": "https://www.labclinmg.com.br/logo.png"
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://labclin.com.br/blog"
+      "@id": "https://www.labclinmg.com.br/blog"
     }
   };
 
@@ -117,7 +117,7 @@ const Blog = () => {
         title="Blog da Saúde"
         description="Fique por dentro das novidades, dicas e informações sobre exames laboratoriais, saúde e bem-estar em Rio Pomba, Mercês, Guarani e Silveirânia."
         keywords="exames laboratoriais, laboratório Rio Pomba, hemograma, sexagem fetal, coleta domiciliar, resultados online, saúde preventiva"
-        canonicalUrl="https://labclin.com.br/blog"
+        canonicalUrl="https://www.labclinmg.com.br/blog"
         ogType="website"
         structuredData={blogSchema}
       />

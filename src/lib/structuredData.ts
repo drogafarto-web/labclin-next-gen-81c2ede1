@@ -149,3 +149,25 @@ export const generateFAQSchema = (faqs: Array<{ question: string; answer: string
     }
   }))
 });
+
+export const generateReviewSchema = (review: {
+  author: string;
+  rating: number;
+  text: string;
+  datePublished?: string;
+  service?: string;
+}) => ({
+  "@type": "Review",
+  author: {
+    "@type": "Person",
+    name: review.author
+  },
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: review.rating.toString(),
+    bestRating: "5"
+  },
+  reviewBody: review.text,
+  datePublished: review.datePublished || new Date().toISOString().split('T')[0],
+  ...(review.service && { itemReviewed: { "@type": "MedicalTest", name: review.service } })
+});

@@ -193,7 +193,51 @@ const Index = () => {
           "@type": "AggregateRating",
           "ratingValue": "5",
           "reviewCount": "500"
-        }
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Maria Silva"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Atendimento excelente! A coleta domiciliar foi muito prática e os resultados saíram rapidamente. Recomendo!",
+            "datePublished": "2025-01-15"
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "João Santos"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Equipe muito atenciosa com meu filho. Ele ficou tranquilo durante toda a coleta. Parabéns pelo profissionalismo!",
+            "datePublished": "2025-01-10"
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Ana Paula"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Laboratório de confiança, com equipamentos modernos e resultados precisos. Sempre faço meus exames aqui!",
+            "datePublished": "2025-01-05"
+          }
+        ]
       },
       {
         "@type": "WebSite",
