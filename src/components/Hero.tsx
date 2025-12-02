@@ -17,7 +17,7 @@ const Hero = () => {
             </div>
             
             <h1 className="font-black text-foreground leading-tight">
-              <span className="text-primary">LABCLINMG</span>: Laboratório de Análises Clínicas em{" "}
+              <span className="text-primary">LABCLIN</span>: Laboratório de Análises Clínicas em{" "}
               <span className="text-secondary">Rio Pomba e Região</span>
             </h1>
             
