@@ -37,7 +37,6 @@ const Header = () => {
               alt="Labclin - Laboratório de Análises Clínicas" 
               className="h-14 w-auto"
               loading="eager"
-              fetchPriority="high"
               width={180}
               height={56}
             />
