@@ -102,13 +102,21 @@ export default {
             opacity: "0.8",
           },
         },
+        "shimmer": {
+          "0%": {
+            transform: "translateX(-100%)",
+          },
+          "100%": {
+            transform: "translateX(100%)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.5s ease-out forwards",
         "pulse-slow": "pulse-slow 3s ease-in-out infinite",
-
+        "shimmer": "shimmer 2s infinite ease-in-out",
       },
     },
   },

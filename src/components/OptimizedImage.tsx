@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { cn } from "@/lib/utils";
 
 interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string | { default?: string; src?: string } | any;
   alt: string;
   fallbackSrc?: string;
   showErrorIndicator?: boolean;
+  priority?: boolean;
+  enableWebP?: boolean;
+  showSkeleton?: boolean;
 }
 
 // Resolve src SYNCHRONOUSLY to avoid race conditions in production
@@ -19,22 +23,65 @@ const resolveSrc = (src: string | { default?: string; src?: string } | any): str
   return String(src);
 };
 
+// Get WebP version of an image path
+const getWebPSrc = (src: string): string | null => {
+  // Don't convert if already WebP or if it's a data URL
+  if (src.endsWith('.webp') || src.startsWith('data:')) {
+    return null;
+  }
+  // Replace extension with .webp
+  return src.replace(/\.(jpg|jpeg|png|gif)$/i, '.webp');
+};
+
 const OptimizedImage = ({ 
   src, 
   alt, 
   fallbackSrc,
   showErrorIndicator = true,
+  priority = false,
+  enableWebP = true,
+  showSkeleton = true,
   className = "",
-  loading = "eager",
   width,
   height,
   onError,
+  onLoad,
   ...props 
 }: OptimizedImageProps) => {
   const [imageError, setImageError] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(priority);
+  const imgRef = useRef<HTMLImageElement>(null);
   
   // Resolve src synchronously
   const resolvedSrc = resolveSrc(src);
+  const webpSrc = enableWebP ? getWebPSrc(resolvedSrc) : null;
+
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    if (priority || isInView) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        rootMargin: '50px 0px', // Start loading 50px before entering viewport
+        threshold: 0.01,
+      }
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [priority, isInView]);
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
     console.error(`[OptimizedImage] Failed to load: ${resolvedSrc}`);
@@ -44,11 +91,21 @@ const OptimizedImage = ({
     }
   };
 
+  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    setIsLoaded(true);
+    if (onLoad) {
+      onLoad(e);
+    }
+  };
+
   // Error placeholder
   if (imageError && showErrorIndicator) {
     return (
       <div 
-        className={`flex items-center justify-center bg-muted border border-border ${className}`}
+        className={cn(
+          "flex items-center justify-center bg-muted border border-border",
+          className
+        )}
         style={{ width: width || '100%', height: height || '100%', minHeight: '100px' }}
         title={`Failed to load: ${alt}`}
       >
@@ -71,19 +128,75 @@ const OptimizedImage = ({
 
   // Use fallback if provided and error occurred
   const finalSrc = (imageError && fallbackSrc) ? fallbackSrc : resolvedSrc;
+  const finalWebpSrc = (imageError && fallbackSrc) ? getWebPSrc(fallbackSrc) : webpSrc;
 
-  return (
-    <img
-      src={finalSrc}
-      alt={alt}
-      className={className}
-      loading={loading}
-      fetchPriority={loading === "eager" ? "high" : "auto"}
-      width={width}
-      height={height}
-      onError={handleImageError}
-      {...props}
+  const loadingValue = priority ? "eager" : "lazy";
+  const fetchPriorityValue = priority ? "high" : "auto";
+
+  // Skeleton placeholder while loading
+  const skeleton = showSkeleton && !isLoaded && (
+    <div 
+      className={cn(
+        "absolute inset-0 animate-pulse bg-gradient-to-r from-muted via-muted/70 to-muted rounded",
+        isLoaded && "opacity-0 transition-opacity duration-300"
+      )}
+      style={{ width: width || '100%', height: height || '100%' }}
     />
+  );
+
+  // If WebP is available, use picture element
+  if (finalWebpSrc && isInView) {
+    return (
+      <div ref={imgRef} className={cn("relative overflow-hidden", className)} style={{ width, height }}>
+        {skeleton}
+        <picture>
+          <source type="image/webp" srcSet={finalWebpSrc} />
+          <img
+            src={finalSrc}
+            alt={alt}
+            className={cn(
+              "w-full h-full transition-opacity duration-300",
+              !isLoaded && "opacity-0",
+              isLoaded && "opacity-100"
+            )}
+            loading={loadingValue}
+            fetchPriority={fetchPriorityValue}
+            decoding={priority ? "sync" : "async"}
+            width={width}
+            height={height}
+            onError={handleImageError}
+            onLoad={handleImageLoad}
+            {...props}
+          />
+        </picture>
+      </div>
+    );
+  }
+
+  // Standard image (no WebP or not in view yet)
+  return (
+    <div ref={imgRef} className={cn("relative overflow-hidden", className)} style={{ width, height }}>
+      {skeleton}
+      {isInView && (
+        <img
+          src={finalSrc}
+          alt={alt}
+          className={cn(
+            "w-full h-full transition-opacity duration-300",
+            !isLoaded && "opacity-0",
+            isLoaded && "opacity-100"
+          )}
+          loading={loadingValue}
+          fetchPriority={fetchPriorityValue}
+          decoding={priority ? "sync" : "async"}
+          width={width}
+          height={height}
+          onError={handleImageError}
+          onLoad={handleImageLoad}
+          {...props}
+        />
+      )}
+    </div>
   );
 };
 
