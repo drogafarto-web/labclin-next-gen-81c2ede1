@@ -147,12 +147,24 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               © {currentYear} Labclin. Todos os direitos reservados.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-4">
               <Link
                 to="/politica-de-privacidade"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 Política de Privacidade
+              </Link>
+              <Link
+                to="/termos-de-uso"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Termos de Uso
+              </Link>
+              <Link
+                to="/politica-de-cookies"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Política de Cookies
               </Link>
             </div>
           </div>
