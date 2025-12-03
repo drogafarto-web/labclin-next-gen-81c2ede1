@@ -12,7 +12,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CONTACTS, WHATSAPP_MESSAGES, getWhatsAppUrl } from "@/config/constants";
-import coletaCarImg from "@/assets/coleta-domiciliar-carro.png";
 
 const ColetaDomiciliar = () => {
   const scrollToSection = (id: string) => {
@@ -53,11 +52,12 @@ const ColetaDomiciliar = () => {
               </div>
               <div className="relative h-64 md:h-96">
                 <OptimizedImage
-                  src={coletaCarImg}
+                  src="/images/coleta-domiciliar-carro.png"
                   alt="Carro da Labclin para coleta domiciliar em frente à unidade, oferecendo serviço de exames no conforto de casa"
-                  className="w-full h-full object-cover rounded-lg shadow-strong"
+                  className="w-full h-full rounded-lg shadow-strong"
+                  imgClassName="object-cover rounded-lg"
                   priority
-                  enableWebP
+                  enableWebP={false}
                 />
               </div>
             </div>
