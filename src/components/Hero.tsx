@@ -106,7 +106,8 @@ const Hero = () => {
                 <OptimizedImage
                   src="/hero-professionals.jpg"
                   alt="Profissionais do Laboratório Labclin"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full"
+                  imgClassName="object-cover"
                   priority
                   enableWebP={false}
                 />
@@ -115,9 +116,10 @@ const Hero = () => {
               {/* Bottom left - PNCQ Badge */}
               <div className="bg-card rounded-lg shadow-strong flex items-center justify-center border-4 border-secondary p-6">
                 <OptimizedImage
-                  src="/pncq-logo-optimized.webp"
+                  src="/pncq-logo.png"
                   alt="PNCQ - Programa Nacional de Controle de Qualidade"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto"
+                  imgClassName="object-contain"
                   priority
                   enableWebP={false}
                   width={200}
