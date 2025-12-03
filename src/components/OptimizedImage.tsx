@@ -147,7 +147,7 @@ const OptimizedImage = ({
   // If WebP is available, use picture element
   if (finalWebpSrc && isInView) {
     return (
-      <div ref={imgRef} className={cn("relative overflow-hidden", className)} style={{ width, height }}>
+      <div ref={imgRef} className={cn("relative overflow-hidden", className)}>
         {skeleton}
         <picture>
           <source type="image/webp" srcSet={finalWebpSrc} />
@@ -175,7 +175,7 @@ const OptimizedImage = ({
 
   // Standard image (no WebP or not in view yet)
   return (
-    <div ref={imgRef} className={cn("relative overflow-hidden", className)} style={{ width, height }}>
+    <div ref={imgRef} className={cn("relative overflow-hidden", className)}>
       {skeleton}
       {isInView && (
         <img

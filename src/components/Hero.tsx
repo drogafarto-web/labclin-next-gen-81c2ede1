@@ -109,8 +109,6 @@ const Hero = () => {
                   className="w-full h-full object-cover"
                   priority
                   enableWebP={false}
-                  width={400}
-                  height={500}
                 />
               </div>
               
