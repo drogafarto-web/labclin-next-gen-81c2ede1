@@ -5,8 +5,6 @@ import { analytics } from "@/lib/analytics";
 
 const WhatsAppButton = () => {
   const whatsappUrl = getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, WHATSAPP_MESSAGES.AGENDAR_EXAME);
-  
-  console.log('WhatsApp URL gerada:', whatsappUrl);
 
   const handleClick = () => {
     analytics.whatsappClick(
