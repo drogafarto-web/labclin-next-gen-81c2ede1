@@ -42,8 +42,8 @@ const CookieBanner = () => {
             </h3>
             <p id="cookie-banner-description" className="text-xs text-muted-foreground mb-3 line-clamp-3">
               Usamos cookies essenciais e analíticos. Veja nossa{" "}
-              <Link to="/politica-de-privacidade" className="text-primary hover:underline font-medium">
-                Política de Privacidade
+              <Link to="/politica-de-cookies" className="text-primary hover:underline font-medium">
+                Política de Cookies
               </Link>
               .
             </p>

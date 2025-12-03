@@ -15,6 +15,8 @@ const Agendar = lazy(() => import("./pages/Agendar"));
 const Unidades = lazy(() => import("./pages/Unidades"));
 const Contato = lazy(() => import("./pages/Contato"));
 const PoliticaPrivacidade = lazy(() => import("./pages/PoliticaPrivacidade"));
+const TermosUso = lazy(() => import("./pages/TermosUso"));
+const PoliticaCookies = lazy(() => import("./pages/PoliticaCookies"));
 const Resultados = lazy(() => import("./pages/Resultados"));
 const ColetaDomiciliar = lazy(() => import("./pages/ColetaDomiciliar"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -68,6 +70,8 @@ const App = () => (
             <Route path="/resultados" element={<Resultados />} />
             <Route path="/coleta-domiciliar" element={<ColetaDomiciliar />} />
             <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
+            <Route path="/termos-de-uso" element={<TermosUso />} />
+            <Route path="/politica-de-cookies" element={<PoliticaCookies />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/hemograma-rio-pomba" element={<HemogramaRioPomba />} />
             <Route path="/blog/sexagem-fetal-merces" element={<SexagemFetalMerces />} />
