@@ -74,8 +74,6 @@ const ResultsIframe = () => {
                         frameBorder="no"
                         scrolling="no"
                         aria-describedby="results-help"
-                        sandbox="allow-forms allow-scripts allow-same-origin"
-                        referrerPolicy="strict-origin-when-cross-origin"
                       />
                     </div>
                   </div>
