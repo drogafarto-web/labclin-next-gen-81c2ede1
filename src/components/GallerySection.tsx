@@ -75,7 +75,8 @@ const GallerySection = () => {
               <OptimizedImage
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full"
+                  imgClassName="object-cover transition-transform duration-500 group-hover:scale-110"
                   loading={index < 3 ? "eager" : "lazy"}
                   enableWebP={false}
                   width={400}
@@ -109,7 +110,8 @@ const GallerySection = () => {
               <OptimizedImage
                   src={selectedImage}
                   alt="Visualização ampliada"
-                  className="w-full h-auto max-h-[85vh] object-contain"
+                  className="w-full h-auto max-h-[85vh]"
+                  imgClassName="object-contain"
                   loading="eager"
                   enableWebP={false}
                   width={1200}

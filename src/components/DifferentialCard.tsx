@@ -21,7 +21,8 @@ const DifferentialCard = ({
           <OptimizedImage
             src={image}
             alt={title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full"
+            imgClassName="object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
             enableWebP={false}
             width={400}

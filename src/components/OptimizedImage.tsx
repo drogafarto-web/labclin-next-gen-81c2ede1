@@ -9,6 +9,7 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   priority?: boolean;
   enableWebP?: boolean;
   showSkeleton?: boolean;
+  imgClassName?: string;
 }
 
 // Resolve src SYNCHRONOUSLY to avoid race conditions in production
@@ -42,6 +43,7 @@ const OptimizedImage = ({
   enableWebP = false,
   showSkeleton = true,
   className = "",
+  imgClassName = "",
   width,
   height,
   onError,
@@ -156,6 +158,7 @@ const OptimizedImage = ({
             alt={alt}
             className={cn(
               "w-full h-full transition-opacity duration-300",
+              imgClassName,
               !isLoaded && "opacity-0",
               isLoaded && "opacity-100"
             )}
@@ -183,6 +186,7 @@ const OptimizedImage = ({
           alt={alt}
           className={cn(
             "w-full h-full transition-opacity duration-300",
+            imgClassName,
             !isLoaded && "opacity-0",
             isLoaded && "opacity-100"
           )}
