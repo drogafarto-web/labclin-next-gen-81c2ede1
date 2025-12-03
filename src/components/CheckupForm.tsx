@@ -28,9 +28,15 @@ import { sanitizeInput } from "@/utils/sanitizers";
 import { useFormRateLimiter } from "@/hooks/useRateLimiter";
 import { CONTACTS, getWhatsAppUrl } from "@/config/constants";
 
+interface CheckupRecommendations {
+  economico: string[];
+  normal: string[];
+  avancado: string[];
+}
+
 const CheckupForm = () => {
   const [step, setStep] = useState<"initial" | "details" | "results">("initial");
-  const [recommendations, setRecommendations] = useState<any>(null);
+  const [recommendations, setRecommendations] = useState<CheckupRecommendations | null>(null);
   const { checkLimit } = useFormRateLimiter(3, 60000);
 
   const form = useForm<CheckupFormData>({

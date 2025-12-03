@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 
 const Footer = () => {
@@ -120,25 +118,23 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Fale Conosco */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Newsletter</h3>
+            <h3 className="font-semibold text-foreground mb-4">Fale Conosco</h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Receba novidades e dicas de saúde
+              Dúvidas? Entre em contato pelo WhatsApp
             </p>
-            <form className="space-y-2" onSubmit={(e) => e.preventDefault()}>
-              <Input
-                type="email"
-                placeholder="Seu e-mail"
-                className="w-full"
-                aria-label="Email para newsletter"
-              />
-              <Button type="submit" variant="default" className="w-full">
-                Inscrever
-              </Button>
-            </form>
-            <p className="text-xs text-muted-foreground mt-2">
-              Ao se inscrever, você concorda com nossa{" "}
+            <a
+              href="https://wa.me/5532991990239?text=Ol%C3%A1%20Labclin!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors w-full justify-center"
+            >
+              <Phone className="h-4 w-4" />
+              WhatsApp
+            </a>
+            <p className="text-xs text-muted-foreground mt-4">
+              Veja nossa{" "}
               <Link to="/politica-de-privacidade" className="text-primary hover:underline">
                 Política de Privacidade
               </Link>
@@ -157,18 +153,6 @@ const Footer = () => {
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 Política de Privacidade
-              </Link>
-              <Link
-                to="/termos"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                Termos de Uso
-              </Link>
-              <Link
-                to="/cookies"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                Cookies
               </Link>
             </div>
           </div>
