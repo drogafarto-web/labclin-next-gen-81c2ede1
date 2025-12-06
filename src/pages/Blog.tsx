@@ -9,6 +9,16 @@ import { ArrowLeft } from "lucide-react";
 const Blog = () => {
   const blogPosts = [
     {
+      slug: "sexagem-fetal-preco",
+      title: "Sexagem Fetal por R$ 140,00 em Rio Pomba e Região",
+      excerpt: "Descubra o sexo do bebê a partir da 8ª semana por apenas R$ 140,00. Sem jejum, sem pedido médico. Disponível em Rio Pomba, Mercês, Guarani e Silveirânia.",
+      image: "/images/blog/preparo-exames-enhanced.jpg",
+      category: "Gestante",
+      readTime: "5 min",
+      publishDate: "05 Fev 2025",
+      featured: true,
+    },
+    {
       slug: "coleta-domiciliar-agende",
       title: "Coleta Domiciliar de Exames: Agende com Conforto e Segurança",
       excerpt: "A coleta domiciliar é a opção ideal para quem busca conforto e segurança. Agende agora mesmo a coleta de exames no Labclin, no horário e local de sua preferência.",
@@ -16,7 +26,6 @@ const Blog = () => {
       category: "Serviços de Conveniência",
       readTime: "4 min",
       publishDate: "24 Jan 2025",
-      featured: true,
     },
     {
       slug: "jejum-exames-mitos-e-verdades",
