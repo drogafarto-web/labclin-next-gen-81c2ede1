@@ -239,10 +239,16 @@ const Unidades = () => {
                       </div>
 
                       {/* Link to individual pages */}
-                      {(unit.name === "Mercês" || unit.name === "Silveirânia") && (
+                      {(unit.name === "Mercês" || unit.name === "Silveirânia" || unit.name === "Guarani") && (
                         <div className="mt-4 pt-4 border-t border-border">
                           <Link
-                            to={unit.name === "Mercês" ? "/unidades/merces" : "/unidades/silveirania"}
+                            to={
+                              unit.name === "Mercês" 
+                                ? "/unidades/merces" 
+                                : unit.name === "Silveirânia"
+                                  ? "/unidades/silveirania"
+                                  : "/unidades/guarani"
+                            }
                             className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
                           >
                             <ExternalLink className="mr-2 h-4 w-4" aria-hidden="true" />
