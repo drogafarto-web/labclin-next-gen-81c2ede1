@@ -27,6 +27,7 @@ const ColetaDomiciliarGuaraniSilverania = lazy(() => import("./pages/blog/Coleta
 const HemogramaCompletoGuiaDefinitivo = lazy(() => import("./pages/blog/HemogramaCompletoGuiaDefinitivo"));
 const JejumExamesMitosVerdades = lazy(() => import("./pages/blog/JejumExamesMitosVerdades"));
 const ColetaDomiciliarAgende = lazy(() => import("./pages/blog/ColetaDomiciliarAgende"));
+const UnidadeMerces = lazy(() => import("./pages/unidades/UnidadeMerces"));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -66,6 +67,7 @@ const App = () => (
             <Route path="/exames" element={<Exames />} />
             <Route path="/agendar" element={<Agendar />} />
             <Route path="/unidades" element={<Unidades />} />
+            <Route path="/unidades/merces" element={<UnidadeMerces />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/resultados" element={<Resultados />} />
             <Route path="/coleta-domiciliar" element={<ColetaDomiciliar />} />

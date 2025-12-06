@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -5,7 +6,7 @@ import SEO from "@/components/SEO";
 import OptimizedImage from "@/components/OptimizedImage";
 import { CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Clock, Navigation } from "lucide-react";
+import { MapPin, Phone, Clock, Navigation, ExternalLink } from "lucide-react";
 
 import { generateLocalBusinessSchema, generateBreadcrumbSchema } from "@/lib/structuredData";
 
@@ -236,6 +237,19 @@ const Unidades = () => {
                           </Button>
                         </a>
                       </div>
+
+                      {/* Link to individual page for Mercês */}
+                      {unit.name === "Mercês" && (
+                        <div className="mt-4 pt-4 border-t border-border">
+                          <Link
+                            to="/unidades/merces"
+                            className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
+                          >
+                            <ExternalLink className="mr-2 h-4 w-4" aria-hidden="true" />
+                            Ver página completa da unidade
+                          </Link>
+                        </div>
+                      )}
                     </CardContent>
                   </div>
                 </article>
