@@ -14,7 +14,7 @@ const SexagemFetalPreco = () => {
         "@type": "BlogPosting",
         "headline": "Sexagem Fetal por R$ 140,00 em Rio Pomba e Região: Descubra o Sexo do Bebê",
         "description": "Descubra o sexo do seu bebê a partir da 8ª semana por apenas R$ 140,00. Sexagem Fetal com 99% de precisão em Rio Pomba, Mercês, Guarani e Silveirânia. Sem jejum, sem pedido médico.",
-        "image": "https://www.labclinmg.com.br/images/blog/preparo-exames-enhanced.jpg",
+        "image": "https://www.labclinmg.com.br/images/blog/sexagem-fetal-gestante.webp",
         "datePublished": "2025-02-05",
         "dateModified": "2025-02-05",
         "author": {
@@ -137,7 +137,7 @@ const SexagemFetalPreco = () => {
         />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://www.labclinmg.com.br/blog/sexagem-fetal-preco" />
-        <meta property="og:image" content="https://www.labclinmg.com.br/images/blog/preparo-exames-enhanced.jpg" />
+        <meta property="og:image" content="https://www.labclinmg.com.br/images/blog/sexagem-fetal-gestante.webp" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
@@ -171,6 +171,17 @@ const SexagemFetalPreco = () => {
                   <Clock className="h-4 w-4" />
                   <span>5 min de leitura</span>
                 </div>
+              </div>
+
+              {/* Hero Image */}
+              <div className="mb-8 rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src="/images/blog/sexagem-fetal-gestante.webp"
+                  alt="Gestante sorrindo segurando a barriga - Sexagem Fetal Labclin"
+                  className="w-full h-64 md:h-96 object-cover"
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
 
               {/* H1 Title */}
