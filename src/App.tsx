@@ -29,6 +29,7 @@ const JejumExamesMitosVerdades = lazy(() => import("./pages/blog/JejumExamesMito
 const ColetaDomiciliarAgende = lazy(() => import("./pages/blog/ColetaDomiciliarAgende"));
 const UnidadeMerces = lazy(() => import("./pages/unidades/UnidadeMerces"));
 const UnidadeSilveirania = lazy(() => import("./pages/unidades/UnidadeSilveirania"));
+const UnidadeGuarani = lazy(() => import("./pages/unidades/UnidadeGuarani"));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -70,6 +71,7 @@ const App = () => (
             <Route path="/unidades" element={<Unidades />} />
             <Route path="/unidades/merces" element={<UnidadeMerces />} />
             <Route path="/unidades/silveirania" element={<UnidadeSilveirania />} />
+            <Route path="/unidades/guarani" element={<UnidadeGuarani />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/resultados" element={<Resultados />} />
             <Route path="/coleta-domiciliar" element={<ColetaDomiciliar />} />
