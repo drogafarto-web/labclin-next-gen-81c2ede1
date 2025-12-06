@@ -12,7 +12,7 @@ const Blog = () => {
       slug: "sexagem-fetal-preco",
       title: "Sexagem Fetal por R$ 140,00 em Rio Pomba e Região",
       excerpt: "Descubra o sexo do bebê a partir da 8ª semana por apenas R$ 140,00. Sem jejum, sem pedido médico. Disponível em Rio Pomba, Mercês, Guarani e Silveirânia.",
-      image: "/images/blog/preparo-exames-enhanced.jpg",
+      image: "/images/blog/sexagem-fetal-gestante.webp",
       category: "Gestante",
       readTime: "5 min",
       publishDate: "05 Fev 2025",
