@@ -28,6 +28,7 @@ const HemogramaCompletoGuiaDefinitivo = lazy(() => import("./pages/blog/Hemogram
 const JejumExamesMitosVerdades = lazy(() => import("./pages/blog/JejumExamesMitosVerdades"));
 const ColetaDomiciliarAgende = lazy(() => import("./pages/blog/ColetaDomiciliarAgende"));
 const SexagemFetalPreco = lazy(() => import("./pages/blog/SexagemFetalPreco"));
+const UnidadeRioPomba = lazy(() => import("./pages/unidades/UnidadeRioPomba"));
 const UnidadeMerces = lazy(() => import("./pages/unidades/UnidadeMerces"));
 const UnidadeSilveirania = lazy(() => import("./pages/unidades/UnidadeSilveirania"));
 const UnidadeGuarani = lazy(() => import("./pages/unidades/UnidadeGuarani"));
@@ -72,6 +73,7 @@ const App = () => (
             <Route path="/exames" element={<Exames />} />
             <Route path="/agendar" element={<Agendar />} />
             <Route path="/unidades" element={<Unidades />} />
+            <Route path="/unidades/rio-pomba" element={<UnidadeRioPomba />} />
             <Route path="/unidades/merces" element={<UnidadeMerces />} />
             <Route path="/unidades/silveirania" element={<UnidadeSilveirania />} />
             <Route path="/unidades/guarani" element={<UnidadeGuarani />} />
