@@ -27,7 +27,7 @@ const faqCategories = [
       },
       {
         question: "É obrigatório ter pedido médico?",
-        answer: "Depende. Se for usar convênio (Unimed, Fusex, etc.), sim, é obrigatório. Se for particular, muitos exames (como Sexagem Fetal e Teste de Gravidez) podem ser feitos sem pedido."
+        answer: "Depende. Se for usar convênio (Unimed, Casu, etc.), sim, é obrigatório. Se for particular, muitos exames (como Sexagem Fetal e Teste de Gravidez) podem ser feitos sem pedido."
       },
       {
         question: "Todo exame de sangue precisa de jejum?",
@@ -170,7 +170,7 @@ const faqCategories = [
     faqs: [
       {
         question: "Quais convênios o Labclin aceita?",
-        answer: "Aceitamos uma ampla rede, incluindo Unimed, Fusex, IPSM, Promed, entre outros. A lista pode mudar, por isso sempre confirme o seu plano específico pelo WhatsApp antes da coleta."
+        answer: "Aceitamos uma ampla rede, incluindo Unimed, Casu, Sus, Plasc, Santa Casa, IPSM, Promed, entre outros. A lista pode mudar, por isso sempre confirme o seu plano específico pelo WhatsApp antes da coleta."
       },
       {
         question: "Vocês fazem orçamento de exames particulares?",
