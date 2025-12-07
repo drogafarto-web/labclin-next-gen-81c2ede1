@@ -28,6 +28,7 @@ const HemogramaCompletoGuiaDefinitivo = lazy(() => import("./pages/blog/Hemogram
 const JejumExamesMitosVerdades = lazy(() => import("./pages/blog/JejumExamesMitosVerdades"));
 const ColetaDomiciliarAgende = lazy(() => import("./pages/blog/ColetaDomiciliarAgende"));
 const SexagemFetalPreco = lazy(() => import("./pages/blog/SexagemFetalPreco"));
+const ColetaInfantilSemTraumas = lazy(() => import("./pages/blog/ColetaInfantilSemTraumas"));
 const UnidadeRioPomba = lazy(() => import("./pages/unidades/UnidadeRioPomba"));
 const UnidadeMerces = lazy(() => import("./pages/unidades/UnidadeMerces"));
 const UnidadeSilveirania = lazy(() => import("./pages/unidades/UnidadeSilveirania"));
@@ -91,6 +92,7 @@ const App = () => (
             <Route path="/blog/jejum-exames-mitos-e-verdades" element={<JejumExamesMitosVerdades />} />
             <Route path="/blog/coleta-domiciliar-agende" element={<ColetaDomiciliarAgende />} />
             <Route path="/blog/sexagem-fetal-preco" element={<SexagemFetalPreco />} />
+            <Route path="/blog/coleta-infantil-sem-traumas" element={<ColetaInfantilSemTraumas />} />
             <Route path="/duvidas-frequentes" element={<DuvidasFrequentes />} />
             <Route path="/admin/generate-image" element={<GenerateImage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -9,6 +9,16 @@ import { ArrowLeft } from "lucide-react";
 const Blog = () => {
   const blogPosts = [
     {
+      slug: "coleta-infantil-sem-traumas",
+      title: "Coleta Infantil Humanizada: Espaço Kids e técnica Mãozinha Leve",
+      excerpt: "O choro e o trauma ficaram no passado. Conheça o Espaço Kids e a técnica 'Mãozinha Leve' que tranquiliza pais e filhos.",
+      image: "/images/blog/espaco-kids-labclin-rio-pomba.jpg",
+      category: "Atendimento Infantil",
+      readTime: "4 min",
+      publishDate: "07 Dez 2024",
+      featured: true,
+    },
+    {
       slug: "sexagem-fetal-preco",
       title: "Sexagem Fetal por R$ 140,00 em Rio Pomba e Região",
       excerpt: "Descubra o sexo do bebê a partir da 8ª semana por apenas R$ 140,00. Sem jejum, sem pedido médico. Disponível em Rio Pomba, Mercês, Guarani e Silveirânia.",
@@ -16,7 +26,7 @@ const Blog = () => {
       category: "Gestante",
       readTime: "5 min",
       publishDate: "05 Fev 2025",
-      featured: true,
+      featured: false,
     },
     {
       slug: "coleta-domiciliar-agende",
