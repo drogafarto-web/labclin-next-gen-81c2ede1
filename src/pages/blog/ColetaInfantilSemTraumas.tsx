@@ -123,7 +123,7 @@ const ColetaInfantilSemTraumas = () => {
                       src="/images/blog/espaco-kids-labclin-rio-pomba.jpg"
                       alt="Espaço Kids do Laboratório Labclin em Rio Pomba MG - Ambiente colorido para coleta infantil"
                       className="w-full h-full"
-                      imgClassName="object-cover"
+                      imgClassName="object-cover object-top"
                       showSkeleton={true}
                     />
                   </div>
@@ -155,7 +155,7 @@ const ColetaInfantilSemTraumas = () => {
                       src="/images/blog/brinquedoteca-coleta-infantil-labclin.png"
                       alt="Brinquedos e certificado de coragem no laboratório infantil Labclin"
                       className="w-full h-full"
-                      imgClassName="object-cover"
+                      imgClassName="object-cover object-top"
                       showSkeleton={true}
                     />
                   </div>
