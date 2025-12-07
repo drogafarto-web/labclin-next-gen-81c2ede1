@@ -16,6 +16,7 @@ import SEO from "@/components/SEO";
 import { Microscope, Home, Stethoscope, FileText, MapPin, Calendar, Heart, Users, Award, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { generateOrganizationWithDepartments } from "@/lib/structuredData";
 
 // Public paths for images (better for caching and CDN)
 const hemogramaImg = "/images/blog/hemograma-enhanced.jpg";
@@ -157,36 +158,34 @@ const Index = () => {
     { name: "LGPD", description: "Adequado à Lei Geral de Proteção de Dados" },
   ];
 
+  // Generate Organization schema with departments
+  const organizationSchema = generateOrganizationWithDepartments();
+  
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
+      organizationSchema,
+      {
+        "@type": "WebSite",
+        "name": "Labclin: Rio Pomba, Mercês, Guarani e Silveirânia",
+        "url": "https://www.labclinmg.com.br",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.labclinmg.com.br/exames?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
       {
         "@type": "MedicalBusiness",
         "name": "Labclin - Laboratório de Análises Clínicas",
         "description": "Laboratório de análises clínicas com 58+ anos de experiência em Rio Pomba, Mercês, Guarani e Silveirânia - MG. Exames de rotina, especializados e coleta domiciliar.",
         "url": "https://www.labclinmg.com.br",
-        "logo": "https://www.labclinmg.com.br/logo.png",
+        "logo": "https://www.labclinmg.com.br/labclin-logo.png",
         "image": "https://www.labclinmg.com.br/og-image.jpg",
         "telephone": "+55-32-99199-0239",
-        "email": "contato@labclinmg.com.br",
-        "address": [
-          {
-            "@type": "PostalAddress",
-            "streetAddress": "Rua Floripes Maria de Jesus, 05, loja 02",
-            "addressLocality": "Rio Pomba",
-            "addressRegion": "MG",
-            "addressCountry": "BR"
-          },
-          {
-            "@type": "PostalAddress",
-            "streetAddress": "Praça Dr. Castelões, 40",
-            "addressLocality": "Mercês",
-            "addressRegion": "MG",
-            "addressCountry": "BR"
-          }
-        ],
+        "email": "llabclin3@gmail.com",
         "priceRange": "$$",
-        "openingHours": "Mo-Fr 07:00-17:00, Sa 07:00-12:00",
+        "openingHours": "Mo-Fr 06:30-17:30, Sa 07:00-11:00",
         "areaServed": ["Rio Pomba", "Mercês", "Guarani", "Silveirânia"],
         "medicalSpecialty": "Clinical Laboratory",
         "aggregateRating": {
@@ -197,57 +196,26 @@ const Index = () => {
         "review": [
           {
             "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "Maria Silva"
-            },
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5",
-              "bestRating": "5"
-            },
+            "author": { "@type": "Person", "name": "Maria Silva" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
             "reviewBody": "Atendimento excelente! A coleta domiciliar foi muito prática e os resultados saíram rapidamente. Recomendo!",
             "datePublished": "2025-01-15"
           },
           {
             "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "João Santos"
-            },
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5",
-              "bestRating": "5"
-            },
+            "author": { "@type": "Person", "name": "João Santos" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
             "reviewBody": "Equipe muito atenciosa com meu filho. Ele ficou tranquilo durante toda a coleta. Parabéns pelo profissionalismo!",
             "datePublished": "2025-01-10"
           },
           {
             "@type": "Review",
-            "author": {
-              "@type": "Person",
-              "name": "Ana Paula"
-            },
-            "reviewRating": {
-              "@type": "Rating",
-              "ratingValue": "5",
-              "bestRating": "5"
-            },
+            "author": { "@type": "Person", "name": "Ana Paula" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
             "reviewBody": "Laboratório de confiança, com equipamentos modernos e resultados precisos. Sempre faço meus exames aqui!",
             "datePublished": "2025-01-05"
           }
         ]
-      },
-      {
-        "@type": "WebSite",
-        "name": "Labclin",
-        "url": "https://www.labclinmg.com.br",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.labclinmg.com.br/exames?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
       }
     ]
   };
@@ -255,9 +223,9 @@ const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
-        title="Início"
-        description="Labclin - Laboratório de Análises Clínicas com 58+ anos de experiência. Exames de rotina, especializados e coleta domiciliar em Rio Pomba, Mercês, Guarani e Silveirânia - MG."
-        keywords="laboratório, análises clínicas, exames, Rio Pomba, Mercês, Guarani, Silveirânia, hemograma, coleta domiciliar, check-up"
+        title="Labclin: Rio Pomba, Mercês, Guarani e Silveirânia | Análises Clínicas"
+        description="Laboratório de referência na Zona da Mata. Exames de sangue, Sexagem Fetal e Toxicológico. Resultados online. Atendimento em Rio Pomba, Mercês, Guarani e Silveirânia."
+        keywords="laboratório rio pomba, análises clínicas mercês, exames guarani, silveirânia, hemograma, coleta domiciliar, sexagem fetal, toxicológico cnh"
         canonicalUrl="https://www.labclinmg.com.br"
         structuredData={structuredData}
       />

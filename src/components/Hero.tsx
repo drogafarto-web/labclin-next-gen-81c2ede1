@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
 import { buttonVariants } from "@/components/ui/button";
-import { Calendar } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import OptimizedImage from "@/components/OptimizedImage";
+
+const CITIES = [
+  { name: "Rio Pomba", href: "/unidades/rio-pomba" },
+  { name: "Mercês", href: "/unidades/merces" },
+  { name: "Guarani", href: "/unidades/guarani" },
+  { name: "Silveirânia", href: "/unidades/silveirania" },
+];
 
 const Hero = () => {
   return (
@@ -18,12 +25,12 @@ const Hero = () => {
             </div>
             
             <h1 className="font-black text-foreground leading-tight">
-              <span className="text-primary">LABCLIN</span>: Laboratório de Análises Clínicas em{" "}
-              <span className="text-secondary">Rio Pomba e Região</span>
+              Excelência em <span className="text-primary">Análises Clínicas</span>{" "}
+              <span className="text-secondary">perto de você</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-foreground/80 max-w-xl font-bold">
-              Check-ups Personalizados para sua Saúde
+              Atendimento humanizado e resultados online em nossas 4 unidades integradas.
             </p>
             
             <p className="text-xl md:text-2xl text-foreground/80 max-w-xl font-medium">
@@ -44,6 +51,27 @@ const Hero = () => {
               >
                 Visualizar Resultados
               </Link>
+            </div>
+
+            {/* City Selector - Diplomatic Display */}
+            <div className="pt-8 border-t border-border/40">
+              <p className="text-sm font-medium text-foreground/70 mb-4 uppercase tracking-wide">
+                Escolha sua unidade mais próxima:
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {CITIES.map((city) => (
+                  <Link
+                    key={city.href}
+                    to={city.href}
+                    className="group flex items-center justify-center gap-2 px-4 py-3 bg-card border-2 border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all duration-200 shadow-sm hover:shadow-md"
+                  >
+                    <MapPin className="h-4 w-4 text-primary group-hover:scale-110 transition-transform" />
+                    <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {city.name}
+                    </span>
+                  </Link>
+                ))}
+              </div>
             </div>
 
             {/* Trust indicators - Enhanced */}

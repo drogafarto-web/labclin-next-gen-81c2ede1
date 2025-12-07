@@ -1,8 +1,21 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { buttonVariants } from "@/components/ui/button";
-import { Menu, X, Calendar } from "lucide-react";
+import { Menu, X, Calendar, ChevronDown, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+const UNIT_LINKS = [
+  { href: "/unidades/rio-pomba", label: "Rio Pomba" },
+  { href: "/unidades/merces", label: "Mercês" },
+  { href: "/unidades/guarani", label: "Guarani" },
+  { href: "/unidades/silveirania", label: "Silveirânia" },
+];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,10 +23,9 @@ const Header = () => {
   const navLinks = [
     { href: "/", label: "Início", ariaLabel: "Ir para página inicial" },
     { href: "/exames", label: "Exames", ariaLabel: "Ver lista de exames disponíveis" },
-    { href: "/unidades", label: "Unidades", ariaLabel: "Encontrar unidades próximas" },
     { href: "/coleta-domiciliar", label: "Coleta Domiciliar", ariaLabel: "Agendar coleta domiciliar" },
     { href: "/resultados", label: "Resultados", ariaLabel: "Acessar resultados de exames", highlight: true },
-    { href: "/duvidas-frequentes", label: "Ajuda", ariaLabel: "Central de ajuda e dúvidas frequentes" },
+    { href: "/duvidas-frequentes", label: "Dúvidas Frequentes", ariaLabel: "Central de ajuda e dúvidas frequentes" },
     { href: "/blog", label: "Blog", ariaLabel: "Ler artigos sobre saúde" },
     { href: "/contato", label: "Contato", ariaLabel: "Entrar em contato conosco" },
   ];
@@ -71,7 +83,47 @@ const Header = () => {
       <div className="bg-primary">
         <div className="container mx-auto px-4">
           <nav className="hidden md:flex items-center justify-center h-12 space-x-6" role="navigation" aria-label="Navegação principal">
-            {navLinks.map((link) => (
+            {navLinks.slice(0, 2).map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm font-semibold transition-all uppercase tracking-wide text-primary-foreground hover:text-primary-foreground/80"
+                aria-label={link.ariaLabel}
+              >
+                {link.label}
+              </Link>
+            ))}
+            
+            {/* Unidades Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="text-sm font-semibold transition-all uppercase tracking-wide text-primary-foreground hover:text-primary-foreground/80 flex items-center gap-1 outline-none">
+                Unidades
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-card border border-border shadow-lg z-50">
+                {UNIT_LINKS.map((unit) => (
+                  <DropdownMenuItem key={unit.href} asChild>
+                    <Link
+                      to={unit.href}
+                      className="flex items-center gap-2 cursor-pointer"
+                    >
+                      <MapPin className="h-4 w-4 text-primary" />
+                      {unit.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+                <DropdownMenuItem asChild>
+                  <Link
+                    to="/unidades"
+                    className="flex items-center gap-2 cursor-pointer border-t border-border mt-1 pt-2 font-semibold text-primary"
+                  >
+                    Ver todas as unidades
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {navLinks.slice(2).map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
@@ -93,7 +145,44 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-primary" id="mobile-navigation">
           <nav className="flex flex-col py-4 px-4 space-y-2" role="navigation" aria-label="Navegação mobile">
-            {navLinks.map((link) => (
+            {navLinks.slice(0, 2).map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="px-4 py-3 text-base font-semibold rounded transition-all uppercase text-primary-foreground hover:bg-primary-hover"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label={link.ariaLabel}
+              >
+                {link.label}
+              </Link>
+            ))}
+            
+            {/* Mobile Units Section */}
+            <div className="px-4 py-2">
+              <p className="text-xs font-bold uppercase text-primary-foreground/70 mb-2">Unidades</p>
+              <div className="grid grid-cols-2 gap-2">
+                {UNIT_LINKS.map((unit) => (
+                  <Link
+                    key={unit.href}
+                    to={unit.href}
+                    className="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <MapPin className="h-3 w-3" />
+                    {unit.label}
+                  </Link>
+                ))}
+              </div>
+              <Link
+                to="/unidades"
+                className="block mt-2 text-xs font-semibold text-secondary hover:underline"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Ver todas →
+              </Link>
+            </div>
+
+            {navLinks.slice(2).map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
