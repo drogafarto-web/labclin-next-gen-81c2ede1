@@ -118,12 +118,15 @@ const ColetaInfantilSemTraumas = () => {
 
                 {/* Image 1 - Espaço Kids */}
                 <figure className="my-10">
-                  <OptimizedImage
-                    src="/images/blog/espaco-kids-labclin-rio-pomba.jpg"
-                    alt="Espaço Kids do Laboratório Labclin em Rio Pomba MG - Ambiente colorido para coleta infantil"
-                    className="w-full rounded-xl shadow-lg"
-                    showSkeleton={true}
-                  />
+                  <div className="w-full h-64 md:h-96 overflow-hidden rounded-xl shadow-lg">
+                    <OptimizedImage
+                      src="/images/blog/espaco-kids-labclin-rio-pomba.jpg"
+                      alt="Espaço Kids do Laboratório Labclin em Rio Pomba MG - Ambiente colorido para coleta infantil"
+                      className="w-full h-full"
+                      imgClassName="object-cover"
+                      showSkeleton={true}
+                    />
+                  </div>
                   <figcaption className="text-center text-sm text-muted-foreground mt-3 italic">
                     Nosso cantinho especial preparado para distrair e acolher os pequenos.
                   </figcaption>
@@ -147,12 +150,15 @@ const ColetaInfantilSemTraumas = () => {
 
                 {/* Image 2 - Brinquedoteca */}
                 <figure className="my-10">
-                  <OptimizedImage
-                    src="/images/blog/brinquedoteca-coleta-infantil-labclin.png"
-                    alt="Brinquedos e certificado de coragem no laboratório infantil Labclin"
-                    className="w-full rounded-xl shadow-lg"
-                    showSkeleton={true}
-                  />
+                  <div className="w-full h-64 md:h-96 overflow-hidden rounded-xl shadow-lg">
+                    <OptimizedImage
+                      src="/images/blog/brinquedoteca-coleta-infantil-labclin.png"
+                      alt="Brinquedos e certificado de coragem no laboratório infantil Labclin"
+                      className="w-full h-full"
+                      imgClassName="object-cover"
+                      showSkeleton={true}
+                    />
+                  </div>
                   <figcaption className="text-center text-sm text-muted-foreground mt-3 italic">
                     Ambiente lúdico com brinquedos que distraem e acalmam as crianças.
                   </figcaption>
