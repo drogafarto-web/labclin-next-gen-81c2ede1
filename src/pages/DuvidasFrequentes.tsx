@@ -55,7 +55,7 @@ const faqCategories = [
       },
       {
         question: "O Labclin abre aos sábados?",
-        answer: "Sim, a maioria das unidades abre aos sábados de manhã para coletas. Verifique o horário específico da sua cidade na seção de unidades."
+        answer: "Sim, a unidade de Rio Pomba abre aos sábados de manhã para coletas. As demais unidades (Mercês, Guarani e Silveirânia) funcionam apenas de segunda a sexta."
       },
       {
         question: "Como faço para entrar em contato rápido?",
