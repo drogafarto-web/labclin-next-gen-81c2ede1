@@ -13,6 +13,7 @@ const Header = () => {
     { href: "/unidades", label: "Unidades", ariaLabel: "Encontrar unidades próximas" },
     { href: "/coleta-domiciliar", label: "Coleta Domiciliar", ariaLabel: "Agendar coleta domiciliar" },
     { href: "/resultados", label: "Resultados", ariaLabel: "Acessar resultados de exames", highlight: true },
+    { href: "/duvidas-frequentes", label: "Ajuda", ariaLabel: "Central de ajuda e dúvidas frequentes" },
     { href: "/blog", label: "Blog", ariaLabel: "Ler artigos sobre saúde" },
     { href: "/contato", label: "Contato", ariaLabel: "Entrar em contato conosco" },
   ];
