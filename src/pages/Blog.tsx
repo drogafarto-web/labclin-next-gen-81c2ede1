@@ -9,6 +9,16 @@ import { ArrowLeft } from "lucide-react";
 const Blog = () => {
   const blogPosts = [
     {
+      slug: "exame-toxicologico-primeira-habilitacao-preco",
+      title: "Nova Lei da CNH 2025: Exame Toxicológico para Primeira Habilitação por R$ 100",
+      excerpt: "Exame toxicológico obrigatório para CNH categorias C, D e E por apenas R$ 100,00. Nova normativa 2025, laudo rápido para RENACH. Laboratório credenciado.",
+      image: "/images/blog/exame-toxicologico-cnh-labclin.webp",
+      category: "CNH & Habilitação",
+      readTime: "4 min",
+      publishDate: "07 Dez 2025",
+      featured: true,
+    },
+    {
       slug: "coleta-infantil-sem-traumas",
       title: "Coleta Infantil Humanizada: Espaço Kids e técnica Mãozinha Leve",
       excerpt: "O choro e o trauma ficaram no passado. Conheça o Espaço Kids e a técnica 'Mãozinha Leve' que tranquiliza pais e filhos.",
@@ -16,7 +26,7 @@ const Blog = () => {
       category: "Atendimento Infantil",
       readTime: "4 min",
       publishDate: "07 Dez 2024",
-      featured: true,
+      featured: false,
     },
     {
       slug: "sexagem-fetal-preco",
