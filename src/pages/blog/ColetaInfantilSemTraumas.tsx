@@ -155,7 +155,7 @@ const ColetaInfantilSemTraumas = () => {
                       src="/images/blog/brinquedoteca-coleta-infantil-labclin.png"
                       alt="Brinquedos e certificado de coragem no laboratório infantil Labclin"
                       className="w-full h-full"
-                      imgClassName="object-cover object-[50%_50%]"
+                      imgClassName="object-cover object-[50%_37%]"
                       showSkeleton={true}
                     />
                   </div>
