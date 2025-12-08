@@ -31,6 +31,7 @@ const SexagemFetalPreco = lazy(() => import("./pages/blog/SexagemFetalPreco"));
 const ColetaInfantilSemTraumas = lazy(() => import("./pages/blog/ColetaInfantilSemTraumas"));
 const ExameToxicologicoCNH = lazy(() => import("./pages/blog/ExameToxicologicoCNH"));
 const TesteGravidezBetaHCG = lazy(() => import("./pages/blog/TesteGravidezBetaHCG"));
+const TestePezinhoAmpliado = lazy(() => import("./pages/blog/TestePezinhoAmpliado"));
 const UnidadeRioPomba = lazy(() => import("./pages/unidades/UnidadeRioPomba"));
 const UnidadeMerces = lazy(() => import("./pages/unidades/UnidadeMerces"));
 const UnidadeSilveirania = lazy(() => import("./pages/unidades/UnidadeSilveirania"));
@@ -97,6 +98,7 @@ const App = () => (
             <Route path="/blog/coleta-infantil-sem-traumas" element={<ColetaInfantilSemTraumas />} />
             <Route path="/blog/exame-toxicologico-primeira-habilitacao-preco" element={<ExameToxicologicoCNH />} />
             <Route path="/blog/teste-gravidez-farmacia-ou-sangue-beta-hcg" element={<TesteGravidezBetaHCG />} />
+            <Route path="/blog/teste-do-pezinho-ampliado-sus-particular" element={<TestePezinhoAmpliado />} />
             <Route path="/duvidas-frequentes" element={<DuvidasFrequentes />} />
             <Route path="/admin/generate-image" element={<GenerateImage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

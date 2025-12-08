@@ -9,14 +9,24 @@ import { ArrowLeft } from "lucide-react";
 const Blog = () => {
   const blogPosts = [
     {
+      slug: "teste-do-pezinho-ampliado-sus-particular",
+      title: "Teste do Pezinho Ampliado: SUS ou Particular? A melhor escolha para seu bebê",
+      excerpt: "O Teste do Pezinho Básico cobre 6 doenças, mas o Ampliado detecta mais de 50. Saiba a diferença e conheça nossa coleta humanizada em Rio Pomba.",
+      image: "/images/blog/teste-pezinho-ampliado-labclin.webp",
+      category: "Saúde Infantil",
+      readTime: "5 min",
+      publishDate: "08 Dez 2025",
+      featured: true,
+    },
+    {
       slug: "exame-toxicologico-primeira-habilitacao-preco",
       title: "Nova Lei da CNH 2025: Exame Toxicológico para Primeira Habilitação por R$ 100",
-      excerpt: "Exame toxicológico obrigatório para CNH categorias C, D e E por apenas R$ 100,00. Nova normativa 2025, laudo rápido para RENACH. Laboratório credenciado.",
+      excerpt: "Exame toxicologico obrigatório para CNH categorias C, D e E por apenas R$ 100,00. Nova normativa 2025, laudo rápido para RENACH. Laboratório credenciado.",
       image: "/images/blog/exame-toxicologico-cnh-labclin.webp",
       category: "CNH & Habilitação",
       readTime: "4 min",
       publishDate: "07 Dez 2025",
-      featured: true,
+      featured: false,
     },
     {
       slug: "teste-gravidez-farmacia-ou-sangue-beta-hcg",
