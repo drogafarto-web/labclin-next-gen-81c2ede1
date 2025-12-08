@@ -19,6 +19,16 @@ const Blog = () => {
       featured: true,
     },
     {
+      slug: "teste-gravidez-farmacia-ou-sangue-beta-hcg",
+      title: "Teste de Gravidez: Farmácia ou Sangue (Beta HCG)? Qual é mais confiável?",
+      excerpt: "Compare o teste de farmácia com o exame Beta HCG. Entenda a diferença de precisão, riscos de falso negativo e por que o laboratório é o padrão-ouro.",
+      image: "/images/blog/diferenca-teste-gravidez-farmacia-sangue-beta-hcg-labclin-rio-pomba.webp",
+      category: "Gestante",
+      readTime: "4 min",
+      publishDate: "08 Dez 2025",
+      featured: false,
+    },
+    {
       slug: "coleta-infantil-sem-traumas",
       title: "Coleta Infantil Humanizada: Espaço Kids e técnica Mãozinha Leve",
       excerpt: "O choro e o trauma ficaram no passado. Conheça o Espaço Kids e a técnica 'Mãozinha Leve' que tranquiliza pais e filhos.",
