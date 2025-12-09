@@ -167,7 +167,7 @@ const UnidadeMerces = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
-        title="Laboratório em Mercês MG | Exames de Sangue Labclin"
+        title="Laboratório em Mercês - Exames de Sangue e Check-up | LabClin"
         description="Realize seus exames no Labclin Mercês. Coleta de sangue, sexagem fetal e toxicológico na Praça Dr. Castelões. Resultados online e atendimento humanizado."
         keywords="laboratório mercês mg, exames de sangue mercês, labclin mercês, sexagem fetal mercês, toxicológico cnh mercês, análises clínicas mercês"
         canonicalUrl="https://www.labclinmg.com.br/unidades/merces"
@@ -211,12 +211,12 @@ const UnidadeMerces = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center animate-fade-in">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                Cuidando da saúde de{" "}
+                Exames Laboratoriais em{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-hero">Mercês</span>{" "}
-                com tecnologia e carinho
+                com Qualidade e Confiança
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Seus exames de análises clínicas com resultados online e confiança total.
+                Sua saúde em primeiro lugar no LabClin Mercês.
                 Atendimento humanizado no coração da cidade.
               </p>
 
