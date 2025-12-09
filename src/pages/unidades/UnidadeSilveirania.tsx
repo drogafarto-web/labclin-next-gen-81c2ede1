@@ -160,7 +160,7 @@ const UnidadeSilveirania = () => {
   return (
     <>
       <SEO
-        title="Laboratório em Silveirânia MG | Labclin Exames de Sangue"
+        title="Laboratório em Silveirânia - Análises Clínicas | LabClin"
         description="O Labclin chegou em Silveirânia! Realize seus exames de sangue, sexagem fetal e preventivos no Centro. Resultados online e coleta humanizada."
         keywords="laboratório silveirânia mg, exames de sangue silveirânia, labclin silveirânia, sexagem fetal silveirânia, toxicológico cnh silveirânia, posto de coleta silveirânia"
         canonicalUrl="https://www.labclinmg.com.br/unidades/silveirania"
@@ -190,12 +190,13 @@ const UnidadeSilveirania = () => {
               </div>
               
               <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                Exames de qualidade{" "}
-                <span className="text-primary">sem sair de Silveirânia</span>.
+                Exames Laboratoriais em{" "}
+                <span className="text-primary">Silveirânia</span>{" "}
+                com Qualidade e Confiança
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                O padrão de qualidade Labclin agora perto da sua casa. 
+                Sua saúde em primeiro lugar no LabClin Silveirânia. 
                 Coletas rápidas e resultados pela internet.
               </p>
               
