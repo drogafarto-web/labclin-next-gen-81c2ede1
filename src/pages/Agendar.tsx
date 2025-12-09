@@ -1,10 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, MapPin, Phone } from "lucide-react";
-import { CONTACTS, WHATSAPP_MESSAGES, getWhatsAppUrl } from "@/config/constants";
+import { Clock, MapPin, Phone } from "lucide-react";
+import { CONTACTS, WHATSAPP_MESSAGES } from "@/config/constants";
 
 const Agendar = () => {
   return (
@@ -46,7 +47,7 @@ const Agendar = () => {
                     Escolha a forma mais prática para agendar:
                   </p>
                   
-                  <div className="p-6 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 rounded-lg border-2 border-green-500">
+                  <div className="p-6 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 rounded-lg border-2 border-[#25D366]">
                     <div className="text-center">
                       <h3 className="text-xl font-bold mb-2 text-foreground">
                         ⚡ Agendamento Rápido via WhatsApp
@@ -54,20 +55,14 @@ const Agendar = () => {
                       <p className="text-muted-foreground mb-4">
                         Fale diretamente com nossa equipe - mais rápido e sem formulários!
                       </p>
-                      <a
-                        href={getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, WHATSAPP_MESSAGES.AGENDAMENTO)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block"
-                      >
-                        <Button
-                          size="lg"
-                          className="w-full bg-green-600 hover:bg-green-700 text-white shadow-lg hover:scale-105 transition-transform text-lg"
-                        >
-                          <span className="mr-2">💬</span>
-                          Agendar pelo WhatsApp Agora
-                        </Button>
-                      </a>
+                      <WhatsAppCTA
+                        number={CONTACTS.WHATSAPP_MAIN}
+                        message={WHATSAPP_MESSAGES.AGENDAMENTO}
+                        text="Agendar pelo WhatsApp Agora"
+                        source="agendar_hero"
+                        className="w-full text-lg"
+                        animated
+                      />
                     </div>
                   </div>
                 </div>
@@ -168,24 +163,17 @@ const Agendar = () => {
               Nossa equipe está pronta para atendê-lo. Entre em contato agora!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, WHATSAPP_MESSAGES.AGENDAMENTO)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="shadow-strong hover:scale-105 transition-transform"
-                >
-                  Agendar pelo WhatsApp
-                </Button>
-              </a>
+              <WhatsAppCTA
+                number={CONTACTS.WHATSAPP_MAIN}
+                message={WHATSAPP_MESSAGES.AGENDAMENTO}
+                text="Agendar pelo WhatsApp"
+                source="agendar_cta"
+              />
               <a href={`tel:${CONTACTS.PHONE_RIO_POMBA}`}>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary min-h-[52px]"
                 >
                   Ligar Agora
                 </Button>
