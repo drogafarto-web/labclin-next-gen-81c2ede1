@@ -22,6 +22,7 @@ import {
   Navigation,
   MessageCircle
 } from "lucide-react";
+import { LABCLIN_SOCIAL_LINKS, LABCLIN_PARENT_ORGANIZATION, UNIT_REVIEWS, generateReviewsArray } from "@/lib/structuredData";
 
 const UnidadeSilveirania = () => {
   // Check if currently open (Mon-Fri 07:00-11:00)
@@ -83,8 +84,13 @@ const UnidadeSilveirania = () => {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "150"
-    }
+      "reviewCount": "150",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": generateReviewsArray(UNIT_REVIEWS.silveirania),
+    "sameAs": LABCLIN_SOCIAL_LINKS,
+    "parentOrganization": LABCLIN_PARENT_ORGANIZATION
   };
 
   // Schema FAQPage

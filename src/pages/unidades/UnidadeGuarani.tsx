@@ -23,6 +23,7 @@ import {
   MessageCircle,
   Shield
 } from "lucide-react";
+import { LABCLIN_SOCIAL_LINKS, LABCLIN_PARENT_ORGANIZATION, UNIT_REVIEWS, generateReviewsArray } from "@/lib/structuredData";
 
 const UnidadeGuarani = () => {
   // Check if currently open (Mon-Fri 06:45-15:30)
@@ -84,8 +85,13 @@ const UnidadeGuarani = () => {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "280"
-    }
+      "reviewCount": "280",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": generateReviewsArray(UNIT_REVIEWS.guarani),
+    "sameAs": LABCLIN_SOCIAL_LINKS,
+    "parentOrganization": LABCLIN_PARENT_ORGANIZATION
   };
 
   // Schema FAQPage

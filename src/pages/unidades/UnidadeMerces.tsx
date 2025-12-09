@@ -25,7 +25,7 @@ import {
   MessageCircle,
   CheckCircle,
 } from "lucide-react";
-import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/structuredData";
+import { generateBreadcrumbSchema, generateFAQSchema, LABCLIN_SOCIAL_LINKS, LABCLIN_PARENT_ORGANIZATION, UNIT_REVIEWS, generateReviewsArray } from "@/lib/structuredData";
 
 // Unit data
 const UNIT_DATA = {
@@ -144,7 +144,12 @@ const UnidadeMerces = () => {
       "@type": "AggregateRating",
       ratingValue: "4.9",
       reviewCount: "150",
+      bestRating: "5",
+      worstRating: "1"
     },
+    review: generateReviewsArray(UNIT_REVIEWS.merces),
+    sameAs: LABCLIN_SOCIAL_LINKS,
+    parentOrganization: LABCLIN_PARENT_ORGANIZATION
   };
 
   const breadcrumbSchema = generateBreadcrumbSchema([

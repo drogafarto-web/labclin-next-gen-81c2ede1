@@ -299,3 +299,57 @@ export const generateReviewSchema = (review: {
   datePublished: review.datePublished || new Date().toISOString().split('T')[0],
   ...(review.service && { itemReviewed: { "@type": "MedicalTest", name: review.service } })
 });
+
+// Social media links for Labclin
+export const LABCLIN_SOCIAL_LINKS = [
+  "https://www.instagram.com/labclin_analises",
+  "https://www.facebook.com/labclinanalises"
+];
+
+// Parent organization schema
+export const LABCLIN_PARENT_ORGANIZATION = {
+  "@type": "Organization",
+  "name": "Labclin - Laboratório de Análises Clínicas",
+  "url": "https://www.labclinmg.com.br",
+  "logo": "https://www.labclinmg.com.br/labclin-logo.png"
+};
+
+// Reviews data for each unit
+export const UNIT_REVIEWS = {
+  rioPomba: [
+    { author: "Maria Silva", rating: 5, text: "Atendimento excelente! Equipe muito profissional e resultados rápidos.", datePublished: "2024-10-15" },
+    { author: "João Oliveira", rating: 5, text: "Faço meus exames há mais de 10 anos. Confiança total no Labclin!", datePublished: "2024-09-20" },
+    { author: "Ana Costa", rating: 5, text: "Ambiente limpo e acolhedor. Recomendo muito para toda a família!", datePublished: "2024-08-10" },
+    { author: "Carlos Santos", rating: 5, text: "A coleta domiciliar salvou minha vida com minha mãe idosa. Muito obrigado!", datePublished: "2024-07-25" },
+    { author: "Fernanda Lima", rating: 5, text: "Únicos que abrem sábado na região. Muito prático para quem trabalha!", datePublished: "2024-06-18" }
+  ],
+  merces: [
+    { author: "Paula Mendes", rating: 5, text: "Ótimo atendimento na unidade de Mercês! Profissionais muito atenciosos.", datePublished: "2024-10-08" },
+    { author: "Juliana Alves", rating: 5, text: "Fiz minha sexagem fetal aqui. Super recomendo, resultado rápido!", datePublished: "2024-09-12" },
+    { author: "Roberto Freitas", rating: 5, text: "Equipe atenciosa e resultado rápido online. Excelente!", datePublished: "2024-08-05" }
+  ],
+  guarani: [
+    { author: "Marcos Ribeiro", rating: 5, text: "Finalmente um laboratório de qualidade em Guarani! Atendimento nota 10.", datePublished: "2024-10-01" },
+    { author: "Luciana Pereira", rating: 5, text: "Toxicológico para CNH sem complicação. Processo rápido e eficiente.", datePublished: "2024-09-05" },
+    { author: "Camila Souza", rating: 5, text: "Coleta infantil excelente, meu filho nem chorou. Equipe maravilhosa!", datePublished: "2024-08-15" }
+  ],
+  silveirania: [
+    { author: "Ricardo Gomes", rating: 5, text: "Que bom ter o Labclin aqui em Silveirânia! Não preciso mais viajar.", datePublished: "2024-10-05" },
+    { author: "Beatriz Santos", rating: 5, text: "Atendimento humanizado e profissional. Parabéns pela nova unidade!", datePublished: "2024-09-18" },
+    { author: "André Martins", rating: 5, text: "Resultados online muito prático. Recomendo a todos!", datePublished: "2024-08-22" }
+  ]
+};
+
+// Generate review array for schema
+export const generateReviewsArray = (reviews: Array<{ author: string; rating: number; text: string; datePublished: string }>) => 
+  reviews.map(review => ({
+    "@type": "Review",
+    "author": { "@type": "Person", "name": review.author },
+    "datePublished": review.datePublished,
+    "reviewBody": review.text,
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": review.rating.toString(),
+      "bestRating": "5"
+    }
+  }));
