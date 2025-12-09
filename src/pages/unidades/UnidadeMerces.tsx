@@ -22,9 +22,9 @@ import {
   Smartphone,
   ChevronRight,
   Navigation,
-  MessageCircle,
   CheckCircle,
 } from "lucide-react";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 import { generateBreadcrumbSchema, generateFAQSchema, LABCLIN_SOCIAL_LINKS, LABCLIN_PARENT_ORGANIZATION, UNIT_REVIEWS, generateReviewsArray } from "@/lib/structuredData";
 
 // Unit data
@@ -226,12 +226,14 @@ const UnidadeMerces = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                  <Button variant="hero" size="lg" className="w-full sm:w-auto min-h-[52px] text-base">
-                    <MessageCircle className="mr-2 h-5 w-5" aria-hidden="true" />
-                    Agendar no WhatsApp
-                  </Button>
-                </a>
+                <WhatsAppCTA
+                  number={UNIT_DATA.whatsapp}
+                  message="Olá! Gostaria de agendar um exame na unidade de Mercês."
+                  text="Agendar no WhatsApp"
+                  animated
+                  source="merces_hero"
+                  className="w-full sm:w-auto"
+                />
                 <a href="#mapa">
                   <Button variant="outline" size="lg" className="w-full sm:w-auto min-h-[52px] text-base">
                     <MapPin className="mr-2 h-5 w-5" aria-hidden="true" />
@@ -416,12 +418,15 @@ const UnidadeMerces = () => {
                       Traçar Rota
                     </Button>
                   </a>
-                  <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex-1">
-                    <Button variant="default" size="lg" className="w-full min-h-[48px]">
-                      <MessageCircle className="mr-2 h-5 w-5" aria-hidden="true" />
-                      Falar no WhatsApp
-                    </Button>
-                  </a>
+                  <div className="flex-1">
+                    <WhatsAppCTA
+                      number={UNIT_DATA.whatsapp}
+                      message="Olá! Gostaria de agendar um exame na unidade de Mercês."
+                      text="Falar no WhatsApp"
+                      source="merces_map"
+                      className="w-full"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -471,12 +476,12 @@ const UnidadeMerces = () => {
               Agende seus exames agora mesmo ou venha nos visitar na Praça Dr. Castelões
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <Button variant="hero" size="lg" className="min-h-[52px] text-base">
-                  <MessageCircle className="mr-2 h-5 w-5" aria-hidden="true" />
-                  Agendar pelo WhatsApp
-                </Button>
-              </a>
+              <WhatsAppCTA
+                number={UNIT_DATA.whatsapp}
+                message="Olá! Gostaria de agendar um exame na unidade de Mercês."
+                text="Agendar pelo WhatsApp"
+                source="merces_cta"
+              />
               <Link to="/resultados">
                 <Button variant="outline" size="lg" className="min-h-[52px] text-base">
                   <Smartphone className="mr-2 h-5 w-5" aria-hidden="true" />

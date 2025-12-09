@@ -19,9 +19,9 @@ import {
   Heart,
   FileCheck,
   Sparkles,
-  Navigation,
-  MessageCircle
+  Navigation
 } from "lucide-react";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 import { LABCLIN_SOCIAL_LINKS, LABCLIN_PARENT_ORGANIZATION, UNIT_REVIEWS, generateReviewsArray } from "@/lib/structuredData";
 
 const UnidadeSilveirania = () => {
@@ -207,22 +207,20 @@ const UnidadeSilveirania = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                >
-                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="mr-2 h-5 w-5" />
-                    Agendar no WhatsApp
-                  </a>
-                </Button>
+                <WhatsAppCTA
+                  number="5532999592154"
+                  message="Olá, gostaria de agendar um exame na unidade Silveirânia."
+                  text="Agendar no WhatsApp"
+                  animated
+                  source="silveirania_hero"
+                  className="w-full sm:w-auto"
+                />
                 
                 <Button
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-primary text-primary hover:bg-primary/10 transition-all duration-300"
+                  className="border-primary text-primary hover:bg-primary/10 transition-all duration-300 min-h-[52px]"
                 >
                   <a href="#mapa">
                     <MapPin className="mr-2 h-5 w-5" />
@@ -436,16 +434,12 @@ const UnidadeSilveirania = () => {
                 Agende seu exame pelo WhatsApp e tenha atendimento rápido e humanizado.
               </p>
               
-              <Button
-                asChild
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-              >
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Agendar pelo WhatsApp
-                </a>
-              </Button>
+              <WhatsAppCTA
+                number="5532999592154"
+                message="Olá, gostaria de agendar um exame na unidade Silveirânia."
+                text="Agendar pelo WhatsApp"
+                source="silveirania_cta"
+              />
             </div>
           </div>
         </section>

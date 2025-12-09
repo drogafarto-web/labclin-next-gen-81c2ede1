@@ -110,6 +110,16 @@ export default {
             transform: "translateX(100%)",
           },
         },
+        "heartbeat": {
+          "0%, 100%": {
+            transform: "scale(1)",
+            boxShadow: "0 4px 14px rgba(37,211,102,0.4)",
+          },
+          "50%": {
+            transform: "scale(1.03)",
+            boxShadow: "0 6px 20px rgba(37,211,102,0.5)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -117,6 +127,7 @@ export default {
         "fade-in": "fade-in 0.5s ease-out forwards",
         "pulse-slow": "pulse-slow 3s ease-in-out infinite",
         "shimmer": "shimmer 2s infinite ease-in-out",
+        "heartbeat": "heartbeat 2s ease-in-out infinite",
       },
     },
   },
