@@ -365,10 +365,8 @@ const UnidadeMerces = () => {
                   src="/images/unidades/merces/fachada-labclin-merces.png"
                   alt="Fachada do Labclin Mercês - Laboratório de análises clínicas na Praça Dr. Castelões, Centro de Mercês MG"
                   title="Labclin Mercês - Laboratório de Análises Clínicas"
-                  className="w-full h-64 md:h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full aspect-[16/10] object-cover transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
-                  width="800"
-                  height="500"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                   <h3 className="text-white font-semibold">Fachada do Labclin Mercês</h3>
@@ -382,10 +380,8 @@ const UnidadeMerces = () => {
                   src="/images/unidades/merces/sala-coleta-labclin-merces.png"
                   alt="Sala de coleta de exames do Labclin Mercês - Ambiente limpo e confortável para coleta de sangue em Mercês MG"
                   title="Sala de Coleta de Exames - Labclin Mercês"
-                  className="w-full h-64 md:h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
-                  width="600"
-                  height="400"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                   <h3 className="text-white font-semibold">Sala de Coleta</h3>
@@ -399,10 +395,8 @@ const UnidadeMerces = () => {
                   src="/images/unidades/merces/area-tecnica-labclin-merces.png"
                   alt="Área técnica de triagem do laboratório Labclin em Mercês MG - Equipamentos modernos para processamento de amostras"
                   title="Área Técnica - Labclin Mercês"
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full aspect-[16/9] object-cover transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
-                  width="1200"
-                  height="400"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                   <h3 className="text-white font-semibold">Área Técnica</h3>
