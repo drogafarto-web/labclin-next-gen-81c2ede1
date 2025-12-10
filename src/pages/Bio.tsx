@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { FileText, MapPin, Building2, Microscope, Instagram, Facebook, Globe } from "lucide-react";
+import { FileText, MapPin, Building2, Microscope, Instagram, Facebook, Globe, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhatsAppCTA from "@/components/WhatsAppCTA";
 import SEO from "@/components/SEO";
 import { CONTACTS, SOCIAL_MEDIA, SITE_CONFIG } from "@/config/constants";
 import labclinLogo from "@/assets/labclin-logo.png";
+import pncqLogo from "@/assets/pncq-logo.png";
 
 const Bio = () => {
   return (
@@ -29,6 +30,19 @@ const Bio = () => {
               <br />
               Resultados rápidos e confiáveis.
             </p>
+
+            {/* Badge PNCQ */}
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2">
+              <img
+                src={pncqLogo}
+                alt="Certificação PNCQ - Programa Nacional de Controle de Qualidade"
+                className="h-6 w-auto"
+              />
+              <span className="text-xs font-medium text-primary flex items-center gap-1">
+                <Award className="h-3 w-3" />
+                Certificado PNCQ
+              </span>
+            </div>
           </div>
 
           {/* CTAs de Alta Prioridade */}
