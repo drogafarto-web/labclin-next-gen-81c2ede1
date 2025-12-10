@@ -38,6 +38,7 @@ const UnidadeSilveirania = lazy(() => import("./pages/unidades/UnidadeSilveirani
 const UnidadeGuarani = lazy(() => import("./pages/unidades/UnidadeGuarani"));
 const GenerateImage = lazy(() => import("./pages/admin/GenerateImage"));
 const DuvidasFrequentes = lazy(() => import("./pages/DuvidasFrequentes"));
+const Bio = lazy(() => import("./pages/Bio"));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -100,6 +101,7 @@ const App = () => (
             <Route path="/blog/teste-gravidez-farmacia-ou-sangue-beta-hcg" element={<TesteGravidezBetaHCG />} />
             <Route path="/blog/teste-do-pezinho-ampliado-sus-particular" element={<TestePezinhoAmpliado />} />
             <Route path="/duvidas-frequentes" element={<DuvidasFrequentes />} />
+            <Route path="/bio" element={<Bio />} />
             <Route path="/admin/generate-image" element={<GenerateImage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
