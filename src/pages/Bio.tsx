@@ -16,8 +16,8 @@ const Bio = () => {
         canonicalUrl={`${SITE_CONFIG.baseUrl}/bio`}
       />
 
-      <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-green-500/5 flex items-center justify-center p-4">
-        <div className="w-full max-w-md space-y-6">
+      <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-green-500/5 flex flex-col items-center pt-8 sm:pt-12 pb-8 px-4">
+        <div className="w-full max-w-md space-y-5 bg-white/40 backdrop-blur-sm rounded-3xl p-6 shadow-soft border border-white/60">
           {/* Logo e Frase */}
           <div className="text-center space-y-4">
             <img
@@ -25,21 +25,21 @@ const Bio = () => {
               alt="Labclin - Laboratório de Análises Clínicas"
               className="h-20 mx-auto drop-shadow-md"
             />
-            <p className="text-muted-foreground text-sm font-medium px-4">
-              Sua saúde em primeiro lugar.
+            <p className="text-muted-foreground text-base px-4 leading-relaxed">
+              <span className="text-foreground font-bold">Sua saúde em primeiro lugar.</span>
               <br />
-              Resultados rápidos e confiáveis.
+              <span className="text-sm">Resultados rápidos e confiáveis.</span>
             </p>
 
             {/* Badge PNCQ */}
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2">
+            <div className="inline-flex items-center gap-2 bg-white shadow-soft border border-primary/20 rounded-full px-4 py-2.5">
               <img
                 src={pncqLogo}
                 alt="Certificação PNCQ - Programa Nacional de Controle de Qualidade"
-                className="h-6 w-auto"
+                className="h-7 w-auto"
               />
-              <span className="text-xs font-medium text-primary flex items-center gap-1">
-                <Award className="h-3 w-3" />
+              <span className="text-sm font-semibold text-primary flex items-center gap-1">
+                <Award className="h-4 w-4" />
                 Certificado PNCQ
               </span>
             </div>
@@ -47,13 +47,7 @@ const Bio = () => {
 
           {/* CTAs de Alta Prioridade */}
           <div className="space-y-3">
-            <Link to="/resultados" className="block">
-              <Button variant="hero" size="lg" className="w-full min-h-[56px] text-base font-semibold">
-                <FileText className="mr-2 h-5 w-5" />
-                Acessar Resultados de Exames
-              </Button>
-            </Link>
-
+            {/* CTA PRINCIPAL - WhatsApp */}
             <WhatsAppCTA
               number={CONTACTS.WHATSAPP_MAIN}
               message="Olá! Vim pelo Instagram e gostaria de agendar um exame."
@@ -61,30 +55,54 @@ const Bio = () => {
               source="bio_instagram"
               animated={true}
               size="lg"
-              className="w-full"
+              className="w-full min-h-[60px] text-lg font-bold shadow-lg"
             />
+
+            {/* CTA SECUNDÁRIO - Resultados */}
+            <Link to="/resultados" className="block">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="w-full min-h-[52px] text-base font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-white bg-white/50 backdrop-blur-sm shadow-soft transition-all duration-300"
+              >
+                <FileText className="mr-2 h-5 w-5" />
+                Acessar Resultados de Exames
+              </Button>
+            </Link>
           </div>
 
           {/* CTAs de Média Prioridade */}
           <div className="space-y-3">
             <Link to="/unidades" className="block">
-              <Button variant="outline" size="lg" className="w-full min-h-[52px] justify-start text-left">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="w-full min-h-[52px] justify-start text-left bg-white shadow-soft hover:shadow-md border-muted hover:border-primary/30 transition-all duration-300"
+              >
                 <MapPin className="mr-3 h-5 w-5 text-primary" />
-                <span>Unidades e Horários</span>
+                <span className="font-medium">Unidades e Horários</span>
               </Button>
             </Link>
 
             <Link to="/#convenios" className="block">
-              <Button variant="outline" size="lg" className="w-full min-h-[52px] justify-start text-left">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="w-full min-h-[52px] justify-start text-left bg-white shadow-soft hover:shadow-md border-muted hover:border-primary/30 transition-all duration-300"
+              >
                 <Building2 className="mr-3 h-5 w-5 text-primary" />
-                <span>Convênios Atendidos</span>
+                <span className="font-medium">Convênios Atendidos</span>
               </Button>
             </Link>
 
             <Link to="/exames" className="block">
-              <Button variant="outline" size="lg" className="w-full min-h-[52px] justify-start text-left">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="w-full min-h-[52px] justify-start text-left bg-white shadow-soft hover:shadow-md border-muted hover:border-primary/30 transition-all duration-300"
+              >
                 <Microscope className="mr-3 h-5 w-5 text-primary" />
-                <span>Exames Realizados</span>
+                <span className="font-medium">Exames Realizados</span>
               </Button>
             </Link>
           </div>
