@@ -5,6 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 
 const SexagemFetalMerces = () => {
   return (
@@ -167,11 +168,12 @@ const SexagemFetalMerces = () => {
                     </p>
                   </div>
                   <div className="flex gap-3">
-                    <Link to="/agendar">
-                      <Button className="bg-gradient-hero">
-                        Agendar Exame
-                      </Button>
-                    </Link>
+                    <WhatsAppCTA
+                      number="5532999671581"
+                      message="Olá! Gostaria de agendar sexagem fetal em Mercês."
+                      text="Agendar no WhatsApp"
+                      source="blog_sexagem_merces"
+                    />
                     <Link to="/coleta-domiciliar">
                       <Button variant="outline">
                         Coleta em Casa

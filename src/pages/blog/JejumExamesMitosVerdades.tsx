@@ -5,6 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 import preparoImage from "@/assets/blog/preparo-exames-enhanced.jpg";
 
 const JejumExamesMitosVerdades = () => {
@@ -176,14 +177,15 @@ const JejumExamesMitosVerdades = () => {
                     </p>
                   </div>
                   <div className="flex gap-3">
+                    <WhatsAppCTA
+                      number="5532991990239"
+                      message="Olá! Gostaria de tirar dúvidas sobre preparo para exames."
+                      text="Tirar Dúvidas"
+                      source="blog_jejum_mitos"
+                    />
                     <Link to="/exames">
-                      <Button className="bg-gradient-hero">
-                        Ver Exames
-                      </Button>
-                    </Link>
-                    <Link to="/agendar">
                       <Button variant="outline">
-                        Agendar Agora
+                        Ver Exames
                       </Button>
                     </Link>
                   </div>

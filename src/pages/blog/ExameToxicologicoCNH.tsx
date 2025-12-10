@@ -17,7 +17,6 @@ import {
   Clock, 
   Calendar, 
   User, 
-  MessageCircle, 
   CheckCircle2, 
   Shield, 
   Beaker, 
@@ -26,6 +25,7 @@ import {
   Award,
   Phone
 } from "lucide-react";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 
 const ExameToxicologicoCNH = () => {
   const [activeSection, setActiveSection] = useState("");
@@ -421,15 +421,13 @@ const ExameToxicologicoCNH = () => {
                           Clique para falar no WhatsApp e garanta seu horário
                         </p>
                       </div>
-                      <a
-                        href={whatsappLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-white text-green-700 px-6 py-3 rounded-lg font-bold hover:bg-green-50 transition-colors shadow-md whitespace-nowrap"
-                      >
-                        <MessageCircle className="h-5 w-5" />
-                        Agendar por R$ 100
-                      </a>
+                      <WhatsAppCTA
+                        number="553236121500"
+                        message="Olá! Quero agendar o exame toxicológico por R$ 100,00"
+                        text="Agendar por R$ 100"
+                        source="blog_toxicologico_mid"
+                        className="bg-white text-green-700 hover:bg-green-50 shadow-md"
+                      />
                     </div>
                   </div>
 
@@ -581,15 +579,13 @@ const ExameToxicologicoCNH = () => {
                       Garanta o menor preço da região: <strong>R$ 100,00</strong> com laudo rápido para o RENACH.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <a
-                        href={whatsappLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold transition-colors shadow-md"
-                      >
-                        <MessageCircle className="h-5 w-5" />
-                        Agendar pelo WhatsApp
-                      </a>
+                      <WhatsAppCTA
+                        number="553236121500"
+                        message="Olá! Quero agendar o exame toxicológico por R$ 100,00"
+                        text="Agendar pelo WhatsApp"
+                        source="blog_toxicologico_final"
+                        animated
+                      />
                       <a
                         href="tel:+553236121500"
                         className="inline-flex items-center justify-center gap-2 bg-card border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-lg font-bold transition-colors"
@@ -658,15 +654,13 @@ const ExameToxicologicoCNH = () => {
                     </div>
 
                     {/* Sticky CTA */}
-                    <a
-                      href={whatsappLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-4 px-6 rounded-xl font-bold transition-colors shadow-lg w-full"
-                    >
-                      <MessageCircle className="h-5 w-5" />
-                      Agendar por R$ 100
-                    </a>
+                    <WhatsAppCTA
+                      number="553236121500"
+                      message="Olá! Quero agendar o exame toxicológico por R$ 100,00"
+                      text="Agendar por R$ 100"
+                      source="blog_toxicologico_sidebar"
+                      className="w-full"
+                    />
                   </div>
                 </aside>
               </div>
@@ -679,15 +673,13 @@ const ExameToxicologicoCNH = () => {
 
         {/* Mobile Sticky CTA */}
         <div className="fixed bottom-20 left-4 right-4 lg:hidden z-40">
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-4 px-6 rounded-xl font-bold transition-colors shadow-xl w-full"
-          >
-            <MessageCircle className="h-5 w-5" />
-            Agendar Toxicológico por R$ 100
-          </a>
+          <WhatsAppCTA
+            number="553236121500"
+            message="Olá! Quero agendar o exame toxicológico por R$ 100,00"
+            text="Agendar Toxicológico por R$ 100"
+            source="blog_toxicologico_mobile"
+            className="w-full"
+          />
         </div>
       </div>
     </>

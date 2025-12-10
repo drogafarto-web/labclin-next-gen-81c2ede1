@@ -5,6 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 
 const ColetaDomiciliarGuaraniSilverania = () => {
   return (
@@ -220,20 +221,18 @@ const ColetaDomiciliarGuaraniSilverania = () => {
                     </p>
                   </div>
                   <div className="flex gap-3">
+                    <WhatsAppCTA
+                      number="5532991990239"
+                      message="Olá! Gostaria de agendar uma coleta domiciliar em Guarani/Silveirânia."
+                      text="Agendar pelo WhatsApp"
+                      source="blog_coleta_guarani_silveirania"
+                      animated
+                    />
                     <Link to="/coleta-domiciliar">
-                      <Button className="bg-gradient-hero">
-                        Agendar Coleta
+                      <Button variant="outline">
+                        Ver Detalhes
                       </Button>
                     </Link>
-                    <a 
-                      href="https://wa.me/5531987654321?text=Olá! Gostaria de agendar uma coleta domiciliar."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button variant="outline">
-                        WhatsApp
-                      </Button>
-                    </a>
                   </div>
                 </div>
               </div>

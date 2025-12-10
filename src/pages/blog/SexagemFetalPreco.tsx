@@ -5,6 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock, MapPin, Phone, CheckCircle, Baby, Heart, Sparkles, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 
 const SexagemFetalPreco = () => {
   const structuredData = {
@@ -210,19 +211,14 @@ const SexagemFetalPreco = () => {
                 <p className="text-sm text-muted-foreground mb-2 uppercase tracking-wide">Sexagem Fetal por apenas</p>
                 <p className="text-5xl md:text-6xl font-bold text-primary mb-3">R$ 140,00</p>
                 <p className="text-muted-foreground mb-4">Resultado em <strong>3 a 5 dias úteis</strong> • Sem jejum • Sem pedido médico</p>
-                <Button
-                  asChild
+                <WhatsAppCTA
+                  number="5532991990239"
+                  message="Olá! Gostaria de agendar sexagem fetal."
+                  text="Agendar pelo WhatsApp"
+                  source="blog_sexagem_preco_hero"
                   size="lg"
-                  className="bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold"
-                >
-                  <a
-                    href="https://wa.me/5532991990239?text=Olá! Gostaria de agendar sexagem fetal."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Agendar pelo WhatsApp
-                  </a>
-                </Button>
+                  animated
+                />
               </div>
 
               {/* Content Sections */}
@@ -335,19 +331,13 @@ const SexagemFetalPreco = () => {
                           </p>
                         </div>
                         <div className="flex gap-2">
-                          <Button
-                            asChild
+                          <WhatsAppCTA
+                            number={unit.whatsapp}
+                            message="Olá! Gostaria de agendar sexagem fetal."
+                            text="WhatsApp"
+                            source={`blog_sexagem_unit_${unit.name.toLowerCase().replace(/[^a-z]/g, '_')}`}
                             size="sm"
-                            className="bg-[#25D366] hover:bg-[#20BD5A] text-white"
-                          >
-                            <a
-                              href={`https://wa.me/${unit.whatsapp}?text=Olá! Gostaria de agendar sexagem fetal.`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              WhatsApp
-                            </a>
-                          </Button>
+                          />
                           {unit.link && (
                             <Button asChild size="sm" variant="outline">
                               <Link to={unit.link}>Ver Unidade</Link>
@@ -446,19 +436,14 @@ const SexagemFetalPreco = () => {
                   Agende sua sexagem fetal agora mesmo pelo WhatsApp. Atendimento rápido e humanizado em todas as nossas unidades.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    asChild
+                  <WhatsAppCTA
+                    number="5532991990239"
+                    message="Olá! Gostaria de agendar sexagem fetal por R$ 140,00."
+                    text="Agendar pelo WhatsApp"
+                    source="blog_sexagem_preco_final"
                     size="lg"
-                    className="bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold"
-                  >
-                    <a
-                      href="https://wa.me/5532991990239?text=Olá! Gostaria de agendar sexagem fetal por R$ 140,00."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Agendar pelo WhatsApp
-                    </a>
-                  </Button>
+                    animated
+                  />
                   <Button asChild size="lg" variant="outline">
                     <Link to="/coleta-domiciliar">Coleta Domiciliar</Link>
                   </Button>
