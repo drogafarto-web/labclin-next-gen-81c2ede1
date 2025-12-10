@@ -358,18 +358,18 @@ const UnidadeMerces = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Fachada - Imagem Principal */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Fachada - Imagem Principal em Destaque */}
               <div className="md:col-span-2 group relative overflow-hidden rounded-xl shadow-lg">
                 <img
                   src="/images/unidades/merces/fachada-labclin-merces.png"
                   alt="Fachada do Labclin Mercês - Laboratório de análises clínicas na Praça Dr. Castelões, Centro de Mercês MG"
                   title="Labclin Mercês - Laboratório de Análises Clínicas"
-                  className="w-full aspect-[16/10] object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full aspect-[16/9] object-cover transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                  <h3 className="text-white font-semibold">Fachada do Labclin Mercês</h3>
+                  <h3 className="text-white font-semibold text-lg">Fachada do Labclin Mercês</h3>
                   <p className="text-white/80 text-sm">Praça Dr. Castelões, 40 - Centro</p>
                 </div>
               </div>
@@ -390,17 +390,17 @@ const UnidadeMerces = () => {
               </div>
 
               {/* Área Técnica */}
-              <div className="md:col-span-3 group relative overflow-hidden rounded-xl shadow-lg">
+              <div className="group relative overflow-hidden rounded-xl shadow-lg aspect-[4/3]">
                 <img
                   src="/images/unidades/merces/area-tecnica-labclin-merces.png"
                   alt="Área técnica de triagem do laboratório Labclin em Mercês MG - Equipamentos modernos para processamento de amostras"
                   title="Área Técnica - Labclin Mercês"
-                  className="w-full aspect-[16/9] object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                   <h3 className="text-white font-semibold">Área Técnica</h3>
-                  <p className="text-white/80 text-sm">Equipamentos de última geração para processamento de amostras</p>
+                  <p className="text-white/80 text-sm">Equipamentos de última geração</p>
                 </div>
               </div>
             </div>
