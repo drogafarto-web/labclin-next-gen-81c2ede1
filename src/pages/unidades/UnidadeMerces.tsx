@@ -375,12 +375,12 @@ const UnidadeMerces = () => {
               </div>
 
               {/* Sala de Coleta */}
-              <div className="group relative overflow-hidden rounded-xl shadow-lg">
+              <div className="group relative overflow-hidden rounded-xl shadow-lg aspect-[4/3]">
                 <img
                   src="/images/unidades/merces/sala-coleta-labclin-merces.png"
                   alt="Sala de coleta de exames do Labclin Mercês - Ambiente limpo e confortável para coleta de sangue em Mercês MG"
                   title="Sala de Coleta de Exames - Labclin Mercês"
-                  className="w-full aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
