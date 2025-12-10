@@ -117,7 +117,11 @@ const UnidadeMerces = () => {
     url: "https://www.labclinmg.com.br/unidades/merces",
     telephone: "+55-32-99967-1581",
     priceRange: "$$",
-    image: "https://www.labclinmg.com.br/images/gallery/fachada-labclin.png",
+    image: [
+      "https://www.labclinmg.com.br/images/unidades/merces/fachada-labclin-merces.png",
+      "https://www.labclinmg.com.br/images/unidades/merces/sala-coleta-labclin-merces.png",
+      "https://www.labclinmg.com.br/images/unidades/merces/area-tecnica-labclin-merces.png"
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: "Praça Dr. Castelões, 40 - Centro",
@@ -337,6 +341,73 @@ const UnidadeMerces = () => {
                     </span>
                   )
                 )}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Gallery Section - Fotos Geotagueadas para SEO Local */}
+        <section className="py-16 bg-muted/30" aria-labelledby="gallery-heading">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 id="gallery-heading" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Conheça Nossa Unidade em Mercês
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Instalações modernas e ambiente preparado para seu conforto e segurança
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Fachada - Imagem Principal */}
+              <div className="md:col-span-2 group relative overflow-hidden rounded-xl shadow-lg">
+                <img
+                  src="/images/unidades/merces/fachada-labclin-merces.png"
+                  alt="Fachada do Labclin Mercês - Laboratório de análises clínicas na Praça Dr. Castelões, Centro de Mercês MG"
+                  title="Labclin Mercês - Laboratório de Análises Clínicas"
+                  className="w-full h-64 md:h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                  width="800"
+                  height="500"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                  <h3 className="text-white font-semibold">Fachada do Labclin Mercês</h3>
+                  <p className="text-white/80 text-sm">Praça Dr. Castelões, 40 - Centro</p>
+                </div>
+              </div>
+
+              {/* Sala de Coleta */}
+              <div className="group relative overflow-hidden rounded-xl shadow-lg">
+                <img
+                  src="/images/unidades/merces/sala-coleta-labclin-merces.png"
+                  alt="Sala de coleta de exames do Labclin Mercês - Ambiente limpo e confortável para coleta de sangue em Mercês MG"
+                  title="Sala de Coleta de Exames - Labclin Mercês"
+                  className="w-full h-64 md:h-80 object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                  <h3 className="text-white font-semibold">Sala de Coleta</h3>
+                  <p className="text-white/80 text-sm">Ambiente preparado e higienizado</p>
+                </div>
+              </div>
+
+              {/* Área Técnica */}
+              <div className="md:col-span-3 group relative overflow-hidden rounded-xl shadow-lg">
+                <img
+                  src="/images/unidades/merces/area-tecnica-labclin-merces.png"
+                  alt="Área técnica de triagem do laboratório Labclin em Mercês MG - Equipamentos modernos para processamento de amostras"
+                  title="Área Técnica - Labclin Mercês"
+                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                  width="1200"
+                  height="400"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                  <h3 className="text-white font-semibold">Área Técnica</h3>
+                  <p className="text-white/80 text-sm">Equipamentos de última geração para processamento de amostras</p>
+                </div>
               </div>
             </div>
           </div>
