@@ -11,10 +11,10 @@ import {
   Calendar, 
   AlertTriangle, 
   MapPin, 
-  MessageCircle,
   Baby,
   ArrowRight
 } from "lucide-react";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 import { Button } from "@/components/ui/button";
 import {
   Breadcrumb,
@@ -276,15 +276,14 @@ const TesteGravidezBetaHCG = () => {
                         <p className="text-sm font-medium text-foreground mb-3">
                           Confirme sua gravidez com precisão
                         </p>
-                        <a
-                          href={whatsappLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center w-full gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold py-2.5 px-4 rounded-lg transition-colors text-sm"
-                        >
-                          <MessageCircle className="h-4 w-4" />
-                          Agendar Beta HCG
-                        </a>
+                        <WhatsAppCTA
+                          number="5532988847713"
+                          message="Olá! Gostaria de agendar o exame Beta HCG (teste de gravidez) no Labclin."
+                          text="Agendar Beta HCG"
+                          source="blog_beta_hcg_sidebar"
+                          size="sm"
+                          className="w-full"
+                        />
                       </div>
                     </div>
                   </nav>
@@ -480,15 +479,13 @@ const TesteGravidezBetaHCG = () => {
                       <p className="text-primary-foreground/90 mb-6 max-w-md mx-auto">
                         Agende seu exame Beta HCG pelo WhatsApp. Rápido, sem pedido médico e com resultado confiável.
                       </p>
-                      <a
-                        href={whatsappLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
-                      >
-                        <MessageCircle className="h-5 w-5" />
-                        Agendar Beta HCG
-                      </a>
+                      <WhatsAppCTA
+                        number="5532988847713"
+                        message="Olá! Gostaria de agendar o exame Beta HCG (teste de gravidez) no Labclin."
+                        text="Agendar Beta HCG"
+                        source="blog_beta_hcg_mid"
+                        className="bg-white text-primary hover:bg-gray-100 shadow-lg"
+                      />
                     </div>
 
                     {/* Section: Onde Fazer */}
@@ -587,15 +584,13 @@ const TesteGravidezBetaHCG = () => {
 
           {/* Sticky CTA - Mobile */}
           <div className="lg:hidden fixed bottom-20 left-4 right-4 z-40">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold py-4 px-6 rounded-xl shadow-lg transition-colors"
-            >
-              <MessageCircle className="h-5 w-5" />
-              Agendar Beta HCG e Tirar Dúvidas
-            </a>
+            <WhatsAppCTA
+              number="5532988847713"
+              message="Olá! Gostaria de agendar o exame Beta HCG (teste de gravidez) no Labclin."
+              text="Agendar Beta HCG"
+              source="blog_beta_hcg_mobile"
+              className="w-full"
+            />
           </div>
         </main>
 

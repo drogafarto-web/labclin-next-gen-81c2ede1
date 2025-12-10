@@ -4,9 +4,9 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import SEO from "@/components/SEO";
 import OptimizedImage from "@/components/OptimizedImage";
 import { Link } from "react-router-dom";
-import { ArrowLeft, MapPin, MessageCircle } from "lucide-react";
+import { ArrowLeft, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 
 const ColetaInfantilSemTraumas = () => {
   const blogPostSchema = {
@@ -209,21 +209,14 @@ const ColetaInfantilSemTraumas = () => {
                 <p className="text-muted-foreground mb-6">
                   Agende agora pelo WhatsApp e garanta um atendimento humanizado para o seu pequeno.
                 </p>
-                <Button
-                  asChild
+                <WhatsAppCTA
+                  number="5532991990239"
+                  message="Olá! Gostaria de saber sobre coleta infantil e Espaço Kids."
+                  text="Agendar pelo WhatsApp"
+                  source="blog_coleta_infantil"
                   size="lg"
-                  className="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold px-8"
-                >
-                  <a
-                    href="https://wa.me/5532991990239?text=Olá,%20gostaria%20de%20saber%20sobre%20coleta%20infantil"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2"
-                  >
-                    <MessageCircle className="h-5 w-5" />
-                    Agendar pelo WhatsApp
-                  </a>
-                </Button>
+                  animated
+                />
               </div>
 
               {/* Back to Blog */}

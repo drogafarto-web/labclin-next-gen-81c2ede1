@@ -16,6 +16,7 @@ import {
   Home
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -403,15 +404,14 @@ const TestePezinhoAmpliado = () => {
 
                   {/* CTA Principal */}
                   <div className="text-center">
-                    <a
-                      href={whatsappLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                    >
-                      <Phone className="h-6 w-6" />
-                      Falar com Biomédica no WhatsApp
-                    </a>
+                    <WhatsAppCTA
+                      number="5532991990239"
+                      message="Olá! Gostaria de agendar o Teste do Pezinho Ampliado para meu bebê."
+                      text="Falar com Biomédica no WhatsApp"
+                      source="blog_teste_pezinho_main"
+                      size="lg"
+                      animated
+                    />
                     <p className="text-sm text-muted-foreground mt-3">
                       Atendimento humanizado para você e seu bebê
                     </p>
@@ -449,15 +449,13 @@ const TestePezinhoAmpliado = () => {
 
         {/* Sticky Mobile CTA */}
         <div className="fixed bottom-20 left-4 right-4 z-40 md:hidden">
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full px-6 py-3.5 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold rounded-full shadow-lg"
-          >
-            <Phone className="h-5 w-5" />
-            Agendar Teste do Pezinho
-          </a>
+          <WhatsAppCTA
+            number="5532991990239"
+            message="Olá! Gostaria de agendar o Teste do Pezinho Ampliado para meu bebê."
+            text="Agendar Teste do Pezinho"
+            source="blog_teste_pezinho_mobile"
+            className="w-full rounded-full"
+          />
         </div>
       </div>
     </>

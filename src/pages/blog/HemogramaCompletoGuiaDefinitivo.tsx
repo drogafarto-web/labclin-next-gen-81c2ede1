@@ -5,6 +5,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 
 
 const HemogramaCompletoGuiaDefinitivo = () => {
@@ -169,11 +170,12 @@ const HemogramaCompletoGuiaDefinitivo = () => {
                     </p>
                   </div>
                   <div className="flex gap-3">
-                    <Link to="/agendar">
-                      <Button className="bg-gradient-hero">
-                        Agendar Exame
-                      </Button>
-                    </Link>
+                    <WhatsAppCTA
+                      number="5532991990239"
+                      message="Olá! Gostaria de agendar um hemograma completo."
+                      text="Agendar no WhatsApp"
+                      source="blog_hemograma_guia"
+                    />
                     <Link to="/coleta-domiciliar">
                       <Button variant="outline">
                         Coleta Domiciliar

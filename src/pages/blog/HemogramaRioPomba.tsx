@@ -4,8 +4,9 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import OptimizedImage from "@/components/OptimizedImage";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WhatsAppCTA from "@/components/WhatsAppCTA";
 
 const HemogramaRioPomba = () => {
   return (
@@ -186,11 +187,12 @@ const HemogramaRioPomba = () => {
                     </p>
                   </div>
                   <div className="flex gap-3">
-                    <Link to="/agendar">
-                      <Button className="bg-gradient-hero">
-                        Agendar Agora
-                      </Button>
-                    </Link>
+                    <WhatsAppCTA
+                      number="5532991990239"
+                      message="Olá! Gostaria de agendar um hemograma em Rio Pomba."
+                      text="Agendar no WhatsApp"
+                      source="blog_hemograma_rio_pomba"
+                    />
                     <Link to="/coleta-domiciliar">
                       <Button variant="outline">
                         Coleta Domiciliar
