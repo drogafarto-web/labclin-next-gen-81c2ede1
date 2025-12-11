@@ -47,8 +47,15 @@
     <link rel="dns-prefetch" href="https://wa.me" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     
-    <!-- Preload Critical Assets -->
-    <link rel="preload" as="image" href="/hero-professionals.jpg" fetchpriority="high" />
+    <!-- Preload Critical Assets - Hero image with responsive srcset -->
+    <link 
+      rel="preload" 
+      as="image" 
+      href="/hero-professionals.webp"
+      imagesrcset="/hero-professionals-480w.webp 480w, /hero-professionals-768w.webp 768w, /hero-professionals.webp 1200w"
+      imagesizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+      fetchpriority="high" 
+    />
     <link rel="preload" as="image" href="/labclin-logo-optimized.webp" fetchpriority="high" />
     
     <title>Labclin: Rio Pomba, Mercês, Guarani e Silveirânia | Análises Clínicas</title>

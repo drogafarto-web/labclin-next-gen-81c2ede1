@@ -3,6 +3,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Calendar, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import OptimizedImage from "@/components/OptimizedImage";
+import HeroImage from "@/components/HeroImage";
 
 const CITIES = [
   { name: "Rio Pomba", href: "/unidades/rio-pomba" },
@@ -131,13 +132,7 @@ const Hero = () => {
               </div>
               
               <div className="rounded-lg overflow-hidden shadow-strong">
-                <OptimizedImage
-                  src="/hero-professionals.jpg"
-                  alt="Profissionais do Laboratório Labclin"
-                  className="w-full h-full"
-                  imgClassName="object-cover"
-                  priority
-                />
+                <HeroImage />
               </div>
               
               {/* Bottom left - PNCQ Badge */}
