@@ -207,11 +207,11 @@ const OptimizedImage = ({
           <img 
             src={finalSrc} 
             {...imageProps}
-            onError={(e) => {
-              // Se o source WebP falhou, o browser tenta o img
-              // Se o img também falhar, marca erro
+            onError={() => {
+              // WebP falhou - apenas marca para re-render sem <picture>
+              // NÃO chamar handleImageError aqui!
+              // O componente vai re-renderizar e tentar o img direto
               setWebpFailed(true);
-              handleImageError(e);
             }}
           />
         </picture>
