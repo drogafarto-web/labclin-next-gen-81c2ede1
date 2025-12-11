@@ -72,41 +72,43 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <PageTracker />
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/exames" element={<Exames />} />
-            <Route path="/agendar" element={<Agendar />} />
-            <Route path="/unidades" element={<Unidades />} />
-            <Route path="/unidades/rio-pomba" element={<UnidadeRioPomba />} />
-            <Route path="/unidades/merces" element={<UnidadeMerces />} />
-            <Route path="/unidades/silveirania" element={<UnidadeSilveirania />} />
-            <Route path="/unidades/guarani" element={<UnidadeGuarani />} />
-            <Route path="/contato" element={<Contato />} />
-            <Route path="/resultados" element={<Resultados />} />
-            <Route path="/coleta-domiciliar" element={<ColetaDomiciliar />} />
-            <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
-            <Route path="/termos-de-uso" element={<TermosUso />} />
-            <Route path="/politica-de-cookies" element={<PoliticaCookies />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/hemograma-rio-pomba" element={<HemogramaRioPomba />} />
-            <Route path="/blog/sexagem-fetal-merces" element={<SexagemFetalMerces />} />
-            <Route path="/blog/coleta-domiciliar-guarani-silverania" element={<ColetaDomiciliarGuaraniSilverania />} />
-            <Route path="/blog/hemograma-completo-guia-definitivo" element={<HemogramaCompletoGuiaDefinitivo />} />
-            <Route path="/blog/jejum-exames-mitos-e-verdades" element={<JejumExamesMitosVerdades />} />
-            <Route path="/blog/coleta-domiciliar-agende" element={<ColetaDomiciliarAgende />} />
-            <Route path="/blog/sexagem-fetal-preco" element={<SexagemFetalPreco />} />
-            <Route path="/blog/coleta-infantil-sem-traumas" element={<ColetaInfantilSemTraumas />} />
-            <Route path="/blog/exame-toxicologico-primeira-habilitacao-preco" element={<ExameToxicologicoCNH />} />
-            <Route path="/blog/teste-gravidez-farmacia-ou-sangue-beta-hcg" element={<TesteGravidezBetaHCG />} />
-            <Route path="/blog/teste-do-pezinho-ampliado-sus-particular" element={<TestePezinhoAmpliado />} />
-            <Route path="/duvidas-frequentes" element={<DuvidasFrequentes />} />
-            <Route path="/bio" element={<Bio />} />
-            <Route path="/admin/generate-image" element={<GenerateImage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+        <main id="main-content" className="flex-1">
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/exames" element={<Exames />} />
+              <Route path="/agendar" element={<Agendar />} />
+              <Route path="/unidades" element={<Unidades />} />
+              <Route path="/unidades/rio-pomba" element={<UnidadeRioPomba />} />
+              <Route path="/unidades/merces" element={<UnidadeMerces />} />
+              <Route path="/unidades/silveirania" element={<UnidadeSilveirania />} />
+              <Route path="/unidades/guarani" element={<UnidadeGuarani />} />
+              <Route path="/contato" element={<Contato />} />
+              <Route path="/resultados" element={<Resultados />} />
+              <Route path="/coleta-domiciliar" element={<ColetaDomiciliar />} />
+              <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
+              <Route path="/termos-de-uso" element={<TermosUso />} />
+              <Route path="/politica-de-cookies" element={<PoliticaCookies />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/hemograma-rio-pomba" element={<HemogramaRioPomba />} />
+              <Route path="/blog/sexagem-fetal-merces" element={<SexagemFetalMerces />} />
+              <Route path="/blog/coleta-domiciliar-guarani-silverania" element={<ColetaDomiciliarGuaraniSilverania />} />
+              <Route path="/blog/hemograma-completo-guia-definitivo" element={<HemogramaCompletoGuiaDefinitivo />} />
+              <Route path="/blog/jejum-exames-mitos-e-verdades" element={<JejumExamesMitosVerdades />} />
+              <Route path="/blog/coleta-domiciliar-agende" element={<ColetaDomiciliarAgende />} />
+              <Route path="/blog/sexagem-fetal-preco" element={<SexagemFetalPreco />} />
+              <Route path="/blog/coleta-infantil-sem-traumas" element={<ColetaInfantilSemTraumas />} />
+              <Route path="/blog/exame-toxicologico-primeira-habilitacao-preco" element={<ExameToxicologicoCNH />} />
+              <Route path="/blog/teste-gravidez-farmacia-ou-sangue-beta-hcg" element={<TesteGravidezBetaHCG />} />
+              <Route path="/blog/teste-do-pezinho-ampliado-sus-particular" element={<TestePezinhoAmpliado />} />
+              <Route path="/duvidas-frequentes" element={<DuvidasFrequentes />} />
+              <Route path="/bio" element={<Bio />} />
+              <Route path="/admin/generate-image" element={<GenerateImage />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </main>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
