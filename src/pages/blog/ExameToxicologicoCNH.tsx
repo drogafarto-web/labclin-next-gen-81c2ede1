@@ -23,9 +23,11 @@ import {
   ChevronRight,
   MapPin,
   Award,
-  Phone
+  Phone,
+  Car
 } from "lucide-react";
 import WhatsAppCTA from "@/components/WhatsAppCTA";
+import HighConversionCTABanner from "@/components/HighConversionCTABanner";
 
 const ExameToxicologicoCNH = () => {
   const [activeSection, setActiveSection] = useState("");
@@ -410,26 +412,17 @@ const ExameToxicologicoCNH = () => {
                     </div>
                   </section>
 
-                  {/* CTA Box Mid-Article */}
-                  <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-xl p-6 md:p-8 text-white my-12 shadow-lg">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                      <div>
-                        <h3 className="text-xl md:text-2xl font-bold mb-2">
-                          Agende seu exame agora!
-                        </h3>
-                        <p className="text-green-100">
-                          Clique para falar no WhatsApp e garanta seu horário
-                        </p>
-                      </div>
-                      <WhatsAppCTA
-                        number="553236121500"
-                        message="Olá! Quero agendar o exame toxicológico por R$ 100,00"
-                        text="Agendar por R$ 100"
-                        source="blog_toxicologico_mid"
-                        className="bg-white text-green-700 hover:bg-green-50 shadow-md"
-                      />
-                    </div>
-                  </div>
+                  {/* High Conversion CTA - Mid Article */}
+                  <HighConversionCTABanner
+                    headline="CNH VENCENDO? LAUDO RÁPIDO E CONFIÁVEL!"
+                    subtext="Exame Toxicológico para CNH categorias C, D e E por apenas **R$ 100,00**."
+                    buttonText="AGENDAR MEU EXAME TOXICOLÓGICO"
+                    whatsappNumber="553236121500"
+                    whatsappMessage="Olá, gostaria de agendar o Exame Toxicológico por R$ 100,00 como vi no blog."
+                    icon={Car}
+                    source="blog_toxicologico_cta_mid"
+                    variant="compact"
+                  />
 
                   {/* Section 3: Como funciona a coleta */}
                   <section id="coleta" className="mb-12 scroll-mt-24">
@@ -570,31 +563,16 @@ const ExameToxicologicoCNH = () => {
                     </div>
                   </aside>
 
-                  {/* Final CTA */}
-                  <div className="bg-gradient-subtle border border-border rounded-xl p-8 text-center">
-                    <h3 className="text-2xl font-bold text-foreground mb-3">
-                      Pronto para agendar seu exame toxicológico?
-                    </h3>
-                    <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-                      Garanta o menor preço da região: <strong>R$ 100,00</strong> com laudo rápido para o RENACH.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <WhatsAppCTA
-                        number="553236121500"
-                        message="Olá! Quero agendar o exame toxicológico por R$ 100,00"
-                        text="Agendar pelo WhatsApp"
-                        source="blog_toxicologico_final"
-                        animated
-                      />
-                      <a
-                        href="tel:+553236121500"
-                        className="inline-flex items-center justify-center gap-2 bg-card border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-lg font-bold transition-colors"
-                      >
-                        <Phone className="h-5 w-5" />
-                        (32) 3612-1500
-                      </a>
-                    </div>
-                  </div>
+                  {/* High Conversion CTA - Bottom Article */}
+                  <HighConversionCTABanner
+                    headline="PRECISA DA CNH? AGENDE AGORA E GARANTA SEU LAUDO!"
+                    subtext="Exame Toxicológico para primeira habilitação e renovação por apenas **R$ 100,00**. Laudo rápido para RENACH!"
+                    buttonText="AGENDAR MEU EXAME TOXICOLÓGICO"
+                    whatsappNumber="553236121500"
+                    whatsappMessage="Olá, gostaria de agendar o Exame Toxicológico por R$ 100,00 como vi no blog."
+                    icon={Car}
+                    source="blog_toxicologico_cta_bottom"
+                  />
                 </div>
 
                 {/* Sidebar (Desktop) */}
