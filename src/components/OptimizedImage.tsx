@@ -27,7 +27,17 @@ const resolveSrc = (src: string | { default?: string; src?: string } | any): str
 
 // Get WebP version of an image path
 const getWebPSrc = (src: string): string | null => {
-  if (src.endsWith('.webp') || src.startsWith('data:') || src.includes('?')) {
+  // Não gerar WebP para:
+  // 1. Já é WebP
+  // 2. É data URL
+  // 3. Tem query string
+  // 4. É imagem processada pelo Vite (contém hash no path /assets/)
+  if (
+    src.endsWith('.webp') || 
+    src.startsWith('data:') || 
+    src.includes('?') ||
+    src.match(/\/assets\/.*-[a-f0-9]{8}\.(jpg|jpeg|png|gif)$/i)
+  ) {
     return null;
   }
   return src.replace(/\.(jpg|jpeg|png|gif)$/i, '.webp');

@@ -3,49 +3,42 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
 
-import fachadaLabclin from "@/assets/gallery/fachada-labclin.png";
-import brinquedoteca from "@/assets/gallery/brinquedoteca.png";
-import recepcaoPlantas from "@/assets/gallery/recepcao-plantas.png";
-import equipamentoLab from "@/assets/gallery/equipamento-lab.png";
-import profissionalRetrato from "@/assets/gallery/profissional-retrato.png";
-import equipeEntrada from "@/assets/gallery/equipe-entrada.png";
-
 const GallerySection = () => {
-  const [selectedImage, setSelectedImage] = useState<string | { default?: string; src?: string } | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const galleryImages = [
     {
-      src: fachadaLabclin,
+      src: "/images/gallery/fachada-labclin.png",
       alt: "Fachada do Labclin - Laboratório de Análises Clínicas em Rio Pomba",
       title: "Nossa Fachada",
       description: "Unidade moderna e acessível",
     },
     {
-      src: brinquedoteca,
+      src: "/images/gallery/brinquedoteca.png",
       alt: "Brinquedoteca do Labclin - Espaço infantil colorido",
       title: "Brinquedoteca",
       description: "Conforto para as crianças",
     },
     {
-      src: recepcaoPlantas,
+      src: "/images/gallery/recepcao-plantas.png",
       alt: "Recepção do Labclin - Ambiente acolhedor com decoração moderna",
       title: "Ambiente Acolhedor",
       description: "Espaço pensado no seu bem-estar",
     },
     {
-      src: equipamentoLab,
+      src: "/images/gallery/equipamento-lab.png",
       alt: "Equipamentos de laboratório modernos do Labclin",
       title: "Tecnologia de Ponta",
       description: "Equipamentos de última geração",
     },
     {
-      src: profissionalRetrato,
+      src: "/images/gallery/profissional-retrato.png",
       alt: "Profissional biomédico do Labclin",
       title: "Equipe Qualificada",
       description: "Profissionais especializados",
     },
     {
-      src: equipeEntrada,
+      src: "/images/gallery/equipe-entrada.png",
       alt: "Equipe do Labclin na entrada da unidade - Atendimento humanizado",
       title: "Atendimento Humanizado",
       description: "Nossa equipe sempre pronta para ajudar",
@@ -72,12 +65,13 @@ const GallerySection = () => {
               onClick={() => setSelectedImage(image.src)}
             >
               <div className="aspect-[4/3] overflow-hidden">
-              <OptimizedImage
+                <OptimizedImage
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full"
                   imgClassName="object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading={index < 3 ? "eager" : "lazy"}
+                  priority={index < 3}
+                  enableWebP={true}
                   width={400}
                   height={300}
                 />
@@ -106,12 +100,13 @@ const GallerySection = () => {
             
             {selectedImage && (
               <div className="relative rounded-lg overflow-hidden">
-              <OptimizedImage
+                <OptimizedImage
                   src={selectedImage}
                   alt="Visualização ampliada"
                   className="w-full h-auto max-h-[85vh]"
                   imgClassName="object-contain"
-                  loading="eager"
+                  priority={true}
+                  enableWebP={true}
                   width={1200}
                   height={900}
                 />
