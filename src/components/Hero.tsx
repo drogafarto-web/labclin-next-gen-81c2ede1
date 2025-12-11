@@ -137,7 +137,6 @@ const Hero = () => {
                   className="w-full h-full"
                   imgClassName="object-cover"
                   priority
-                  enableWebP={false}
                 />
               </div>
               
@@ -149,7 +148,6 @@ const Hero = () => {
                   className="w-full h-auto"
                   imgClassName="object-contain"
                   priority
-                  enableWebP={false}
                   width={200}
                   height={200}
                 />
