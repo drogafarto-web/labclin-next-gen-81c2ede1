@@ -2,7 +2,7 @@
 # Optimized for static deploy with CDN caching
 
 [build]
-  command = "node scripts/convert-to-webp.js && npm run build"
+  command = "npm run build"
   publish = "dist"
 
 [build.environment]
