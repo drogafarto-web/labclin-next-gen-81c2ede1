@@ -3,7 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock, MapPin, Phone, CheckCircle, Baby, Heart, Sparkles, AlertCircle } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, MapPin, Phone, CheckCircle, Baby, Heart, Sparkles, AlertCircle, Car } from "lucide-react";
+import HighConversionCTABanner from "@/components/HighConversionCTABanner";
 import { Button } from "@/components/ui/button";
 import WhatsAppCTA from "@/components/WhatsAppCTA";
 
@@ -258,6 +259,18 @@ const SexagemFetalPreco = () => {
                   </li>
                 </ul>
 
+                {/* High Conversion CTA - Mid Article */}
+                <HighConversionCTABanner
+                  headline="DESCUBRA O SEXO DO SEU BEBÊ COM SEGURANÇA E RAPIDEZ!"
+                  subtext="Sexagem Fetal no Labclin por apenas **R$ 140,00** em Rio Pomba e Região."
+                  buttonText="AGENDAR EXAME VIA WHATSAPP"
+                  whatsappNumber="5532991990239"
+                  whatsappMessage="Olá, gostaria de agendar a Sexagem Fetal por R$ 140,00 como vi no blog."
+                  icon={Baby}
+                  source="blog_sexagem_cta_mid"
+                  variant="compact"
+                />
+
                 {/* When to do */}
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-6">
                   A partir de quantas semanas posso fazer?
@@ -348,6 +361,17 @@ const SexagemFetalPreco = () => {
                     </div>
                   ))}
                 </div>
+
+                {/* High Conversion CTA - Bottom Article */}
+                <HighConversionCTABanner
+                  headline="NÃO AGUENTA MAIS A ANSIEDADE? DESCUBRA AGORA!"
+                  subtext="Sexagem Fetal com 99% de precisão por apenas **R$ 140,00**. Resultado em 3 a 5 dias úteis!"
+                  buttonText="QUERO AGENDAR MINHA SEXAGEM"
+                  whatsappNumber="5532991990239"
+                  whatsappMessage="Olá, gostaria de agendar a Sexagem Fetal por R$ 140,00 como vi no blog."
+                  icon={Baby}
+                  source="blog_sexagem_cta_bottom"
+                />
 
                 {/* FAQ Section */}
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mt-12 mb-6">
