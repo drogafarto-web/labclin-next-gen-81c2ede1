@@ -81,7 +81,25 @@
 </head>
 
   <body class="notranslate" translate="no">
-    <div id="root"></div>
+    <div id="root">
+      <!-- Loading Placeholder - será substituído pelo React -->
+      <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:hsl(210,20%,98%);">
+        <div style="text-align:center;">
+          <img src="/labclin-logo.png" alt="Labclin" style="height:60px;margin-bottom:16px;" width="180" height="60">
+          <div style="color:#0056b3;font-family:system-ui,sans-serif;">Carregando...</div>
+        </div>
+      </div>
+    </div>
+    
+    <noscript>
+      <div style="text-align:center;padding:40px;font-family:system-ui,sans-serif;">
+        <img src="/labclin-logo.png" alt="Labclin" style="height:60px;margin-bottom:16px;">
+        <h1 style="color:#0056b3;">Labclin - Laboratório de Análises Clínicas</h1>
+        <p>Este site requer JavaScript habilitado para funcionar corretamente.</p>
+        <p><a href="https://wa.me/5532991990239" style="color:#25D366;">Contato via WhatsApp</a></p>
+      </div>
+    </noscript>
+    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
