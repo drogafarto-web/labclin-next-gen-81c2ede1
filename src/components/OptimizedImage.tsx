@@ -10,6 +10,8 @@ interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   enableWebP?: boolean;
   showSkeleton?: boolean;
   imgClassName?: string;
+  sizes?: string;
+  enableSrcSet?: boolean;
 }
 
 // Resolve src SYNCHRONOUSLY to avoid race conditions in production
@@ -18,7 +20,6 @@ const resolveSrc = (src: string | { default?: string; src?: string } | any): str
     return src;
   }
   if (src && typeof src === "object") {
-    // Handle Vite ES6 imports: { default: "url" }
     return src.default || src.src || String(src);
   }
   return String(src);
@@ -26,13 +27,26 @@ const resolveSrc = (src: string | { default?: string; src?: string } | any): str
 
 // Get WebP version of an image path
 const getWebPSrc = (src: string): string | null => {
-  // Don't convert if already WebP or if it's a data URL
-  if (src.endsWith('.webp') || src.startsWith('data:')) {
+  if (src.endsWith('.webp') || src.startsWith('data:') || src.includes('?')) {
     return null;
   }
-  // Replace extension with .webp
   return src.replace(/\.(jpg|jpeg|png|gif)$/i, '.webp');
 };
+
+// Generate srcset for responsive images (for static images in /public or /images)
+const generateSrcSet = (src: string): string | null => {
+  // Only generate srcset for local images in public folder
+  if (!src.startsWith('/') || src.startsWith('data:') || src.includes('?')) {
+    return null;
+  }
+  
+  // For images that already have srcset-ready versions, return the base
+  // This is a simplified version - in production you'd have actual resized images
+  return null; // Disable auto srcset as we don't have resized versions
+};
+
+// Default responsive sizes for different use cases
+const DEFAULT_SIZES = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw";
 
 const OptimizedImage = ({ 
   src, 
@@ -44,6 +58,8 @@ const OptimizedImage = ({
   showSkeleton = true,
   className = "",
   imgClassName = "",
+  sizes = DEFAULT_SIZES,
+  enableSrcSet = false,
   width,
   height,
   onError,
@@ -55,9 +71,9 @@ const OptimizedImage = ({
   const [isInView, setIsInView] = useState(priority);
   const imgRef = useRef<HTMLDivElement>(null);
   
-  // Resolve src synchronously
   const resolvedSrc = resolveSrc(src);
   const webpSrc = enableWebP ? getWebPSrc(resolvedSrc) : null;
+  const srcSet = enableSrcSet ? generateSrcSet(resolvedSrc) : null;
 
   // Intersection Observer for lazy loading
   useEffect(() => {
@@ -73,7 +89,7 @@ const OptimizedImage = ({
         });
       },
       {
-        rootMargin: '50px 0px', // Start loading 50px before entering viewport
+        rootMargin: '100px 0px', // Start loading 100px before viewport
         threshold: 0.01,
       }
     );
@@ -88,16 +104,12 @@ const OptimizedImage = ({
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
     console.error(`[OptimizedImage] Failed to load: ${resolvedSrc}`);
     setImageError(true);
-    if (onError) {
-      onError(e);
-    }
+    onError?.(e);
   };
 
   const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
     setIsLoaded(true);
-    if (onLoad) {
-      onLoad(e);
-    }
+    onLoad?.(e);
   };
 
   // Error placeholder
@@ -128,76 +140,64 @@ const OptimizedImage = ({
     );
   }
 
-  // Use fallback if provided and error occurred
   const finalSrc = (imageError && fallbackSrc) ? fallbackSrc : resolvedSrc;
   const finalWebpSrc = (imageError && fallbackSrc) ? getWebPSrc(fallbackSrc) : webpSrc;
-
   const loadingValue = priority ? "eager" : "lazy";
   const fetchPriorityValue = priority ? "high" : "auto";
 
-  // Skeleton placeholder while loading
+  // Skeleton placeholder
   const skeleton = showSkeleton && !isLoaded && (
     <div 
       className={cn(
         "absolute inset-0 animate-pulse bg-gradient-to-r from-muted via-muted/70 to-muted rounded",
         isLoaded && "opacity-0 transition-opacity duration-300"
       )}
-      style={{ width: width || '100%', height: height || '100%' }}
+      aria-hidden="true"
     />
   );
 
-  // If WebP is available, use picture element
+  // Common image props
+  const imageProps = {
+    alt,
+    className: cn(
+      "w-full h-full transition-opacity duration-300",
+      imgClassName,
+      !isLoaded && "opacity-0",
+      isLoaded && "opacity-100"
+    ),
+    loading: loadingValue as "lazy" | "eager",
+    fetchPriority: fetchPriorityValue as "high" | "low" | "auto",
+    decoding: priority ? "sync" as const : "async" as const,
+    width,
+    height,
+    onError: handleImageError,
+    onLoad: handleImageLoad,
+    sizes: sizes,
+    ...props
+  };
+
+  // WebP with picture element
   if (finalWebpSrc && isInView) {
     return (
       <div ref={imgRef} className={cn("relative overflow-hidden", className)}>
         {skeleton}
         <picture>
           <source type="image/webp" srcSet={finalWebpSrc} />
-          <img
-            src={finalSrc}
-            alt={alt}
-            className={cn(
-              "w-full h-full transition-opacity duration-300",
-              imgClassName,
-              !isLoaded && "opacity-0",
-              isLoaded && "opacity-100"
-            )}
-            loading={loadingValue}
-            fetchPriority={fetchPriorityValue}
-            decoding={priority ? "sync" : "async"}
-            width={width}
-            height={height}
-            onError={handleImageError}
-            onLoad={handleImageLoad}
-            {...props}
-          />
+          <img src={finalSrc} {...imageProps} />
         </picture>
       </div>
     );
   }
 
-  // Standard image (no WebP or not in view yet)
+  // Standard image
   return (
     <div ref={imgRef} className={cn("relative overflow-hidden", className)}>
       {skeleton}
       {isInView && (
         <img
           src={finalSrc}
-          alt={alt}
-          className={cn(
-            "w-full h-full transition-opacity duration-300",
-            imgClassName,
-            !isLoaded && "opacity-0",
-            isLoaded && "opacity-100"
-          )}
-          loading={loadingValue}
-          fetchPriority={fetchPriorityValue}
-          decoding={priority ? "sync" : "async"}
-          width={width}
-          height={height}
-          onError={handleImageError}
-          onLoad={handleImageLoad}
-          {...props}
+          srcSet={srcSet || undefined}
+          {...imageProps}
         />
       )}
     </div>
