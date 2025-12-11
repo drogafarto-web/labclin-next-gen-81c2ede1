@@ -1,8 +1,9 @@
-const CACHE_NAME = 'labclin-v1';
-const STATIC_CACHE = 'labclin-static-v1';
-const IMAGE_CACHE = 'labclin-images-v1';
+const CACHE_VERSION = 2;
+const CACHE_NAME = `labclin-v${CACHE_VERSION}`;
+const STATIC_CACHE = `labclin-static-v${CACHE_VERSION}`;
+const IMAGE_CACHE = `labclin-images-v${CACHE_VERSION}`;
 
-// Assets críticos para cache inicial
+// Assets críticos para cache inicial (NÃO incluir JS chunks)
 const PRECACHE_ASSETS = [
   '/',
   '/offline.html',
@@ -36,7 +37,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate: Limpar caches antigos
+// Activate: Limpar TODOS os caches antigos (incluindo JS chunks)
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
@@ -44,15 +45,20 @@ self.addEventListener('activate', (event) => {
         return Promise.all(
           cacheNames
             .filter((name) => {
+              // Remove qualquer cache que não seja da versão atual
               return name.startsWith('labclin-') && 
-                     name !== CACHE_NAME && 
-                     name !== STATIC_CACHE && 
-                     name !== IMAGE_CACHE;
+                     !name.includes(`-v${CACHE_VERSION}`);
             })
-            .map((name) => caches.delete(name))
+            .map((name) => {
+              console.log('[SW] Deletando cache antigo:', name);
+              return caches.delete(name);
+            })
         );
       })
-      .then(() => self.clients.claim())
+      .then(() => {
+        console.log('[SW] Service Worker ativado, versão:', CACHE_VERSION);
+        return self.clients.claim();
+      })
   );
 });
 
@@ -115,7 +121,11 @@ function isFontRequest(request) {
 
 function isStaticAsset(request) {
   const url = new URL(request.url);
-  return /\.(js|css)$/i.test(url.pathname);
+  // Não cachear chunks JS para evitar problemas de versão
+  if (/\.js$/i.test(url.pathname) && url.pathname.includes('assets/')) {
+    return false; // Network first para JS chunks
+  }
+  return /\.css$/i.test(url.pathname);
 }
 
 function isNavigationRequest(request) {
