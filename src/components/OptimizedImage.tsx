@@ -79,11 +79,19 @@ const OptimizedImage = ({
   const [imageError, setImageError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(priority);
+  const [webpFailed, setWebpFailed] = useState(false);
   const imgRef = useRef<HTMLDivElement>(null);
   
   const resolvedSrc = resolveSrc(src);
   const webpSrc = enableWebP ? getWebPSrc(resolvedSrc) : null;
   const srcSet = enableSrcSet ? generateSrcSet(resolvedSrc) : null;
+
+  // Reset states when src changes
+  useEffect(() => {
+    setWebpFailed(false);
+    setImageError(false);
+    setIsLoaded(false);
+  }, [resolvedSrc]);
 
   // Intersection Observer for lazy loading
   useEffect(() => {
@@ -186,20 +194,32 @@ const OptimizedImage = ({
     ...props
   };
 
-  // WebP with picture element
-  if (finalWebpSrc && isInView) {
+  // WebP with picture element (only if webp hasn't failed)
+  if (finalWebpSrc && isInView && !webpFailed) {
     return (
       <div ref={imgRef} className={cn("relative overflow-hidden", className)}>
         {skeleton}
         <picture>
-          <source type="image/webp" srcSet={finalWebpSrc} />
-          <img src={finalSrc} {...imageProps} />
+          <source 
+            type="image/webp" 
+            srcSet={finalWebpSrc}
+          />
+          <img 
+            src={finalSrc} 
+            {...imageProps}
+            onError={(e) => {
+              // Se o source WebP falhou, o browser tenta o img
+              // Se o img também falhar, marca erro
+              setWebpFailed(true);
+              handleImageError(e);
+            }}
+          />
         </picture>
       </div>
     );
   }
 
-  // Standard image
+  // Standard image (fallback or no WebP)
   return (
     <div ref={imgRef} className={cn("relative overflow-hidden", className)}>
       {skeleton}
