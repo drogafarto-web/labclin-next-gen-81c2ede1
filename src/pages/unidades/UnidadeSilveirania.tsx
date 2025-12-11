@@ -319,6 +319,62 @@ const UnidadeSilveirania = () => {
           </div>
         </section>
 
+        {/* Gallery Section */}
+        <section className="py-16 md:py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                Conheça Nossa Unidade
+              </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                Ambiente moderno e acolhedor para você e sua família
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                {
+                  src: "/images/unidades/silveirania/fachada-labclin-silveirania.jpg",
+                  alt: "Fachada Labclin Silveirânia - Galeria Lamas, MG",
+                  title: "Fachada"
+                },
+                {
+                  src: "/images/unidades/silveirania/entrada-espaco-kids-labclin-silveirania.jpg",
+                  alt: "Entrada e recepção com espaço kids Labclin Silveirânia",
+                  title: "Entrada e Espaço Kids"
+                },
+                {
+                  src: "/images/unidades/silveirania/sala-coleta-labclin-silveirania.jpg",
+                  alt: "Sala de coleta Labclin Silveirânia com vista externa",
+                  title: "Sala de Coleta"
+                },
+                {
+                  src: "/images/unidades/silveirania/equipamentos-labclin-silveirania.jpg",
+                  alt: "Equipamentos do laboratório de análises clínicas Labclin Silveirânia",
+                  title: "Equipamentos"
+                }
+              ].map((image, index) => (
+                <div 
+                  key={index}
+                  className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <p className="text-white font-medium text-sm">{image.title}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Location Section */}
         <section id="mapa" className="py-16 md:py-20 bg-muted/30">
           <div className="container mx-auto px-4">
