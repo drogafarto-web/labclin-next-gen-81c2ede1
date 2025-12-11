@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import DualServiceCTABanner from "@/components/DualServiceCTABanner";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -128,6 +129,11 @@ const ColetaDomiciliarAgende = () => {
                   <li><strong>Pacientes acamados:</strong> Atendimento especializado no conforto do lar</li>
                 </ul>
 
+                <DualServiceCTABanner 
+                  source="blog_coleta_domiciliar_cta_mid"
+                  variant="compact"
+                />
+
                 <h2>Segurança e Qualidade Garantidas</h2>
                 <p>
                   No Labclin, todos os profissionais que realizam coleta domiciliar são devidamente capacitados e seguem rígidos protocolos de biossegurança:
@@ -172,6 +178,11 @@ const ColetaDomiciliarAgende = () => {
                   <li><strong>Unidade Silveirânia:</strong> (32) 99959-2154</li>
                 </ul>
               </div>
+
+              <DualServiceCTABanner 
+                source="blog_coleta_domiciliar_cta_bottom"
+                variant="default"
+              />
 
               <div className="mt-12 pt-8 border-t border-border">
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
