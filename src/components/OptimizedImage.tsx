@@ -54,7 +54,7 @@ const OptimizedImage = ({
   fallbackSrc,
   showErrorIndicator = true,
   priority = false,
-  enableWebP = false,
+  enableWebP = true,
   showSkeleton = true,
   className = "",
   imgClassName = "",

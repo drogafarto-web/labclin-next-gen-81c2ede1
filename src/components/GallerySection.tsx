@@ -78,7 +78,6 @@ const GallerySection = () => {
                   className="w-full h-full"
                   imgClassName="object-cover transition-transform duration-500 group-hover:scale-110"
                   loading={index < 3 ? "eager" : "lazy"}
-                  enableWebP={false}
                   width={400}
                   height={300}
                 />
@@ -113,7 +112,6 @@ const GallerySection = () => {
                   className="w-full h-auto max-h-[85vh]"
                   imgClassName="object-contain"
                   loading="eager"
-                  enableWebP={false}
                   width={1200}
                   height={900}
                 />

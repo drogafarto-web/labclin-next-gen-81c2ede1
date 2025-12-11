@@ -57,7 +57,6 @@ const ColetaDomiciliar = () => {
                   className="w-full h-full rounded-lg shadow-strong"
                   imgClassName="object-cover rounded-lg"
                   priority
-                  enableWebP={false}
                 />
               </div>
             </div>
