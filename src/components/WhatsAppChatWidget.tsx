@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTACTS, WHATSAPP_MESSAGES, getWhatsAppUrl } from "@/config/constants";
@@ -13,44 +13,9 @@ const PROFESSIONAL_INFO = {
 
 const WhatsAppChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showProactiveBubble, setShowProactiveBubble] = useState(false);
   const [bubbleDismissed, setBubbleDismissed] = useState(false);
   
   const whatsappUrl = getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, WHATSAPP_MESSAGES.WIDGET_HUMANIZADO);
-
-  // Timer e scroll para balão proativo
-  useEffect(() => {
-    if (bubbleDismissed) return;
-
-    // Timer de 5 segundos
-    const timer = setTimeout(() => {
-      if (!bubbleDismissed && !isOpen) {
-        setShowProactiveBubble(true);
-      }
-    }, 5000);
-
-    // Detector de scroll 25%
-    const handleScroll = () => {
-      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      if (scrollPercent >= 25 && !bubbleDismissed && !isOpen) {
-        setShowProactiveBubble(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [bubbleDismissed, isOpen]);
-
-  // Ocultar balão proativo quando popup abre
-  useEffect(() => {
-    if (isOpen) {
-      setShowProactiveBubble(false);
-    }
-  }, [isOpen]);
 
   const handleWhatsAppClick = () => {
     analytics.whatsappClick('chat_widget', CONTACTS.WHATSAPP_MAIN, WHATSAPP_MESSAGES.WIDGET_HUMANIZADO);
@@ -58,19 +23,17 @@ const WhatsAppChatWidget = () => {
 
   const handleDismissBubble = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setShowProactiveBubble(false);
     setBubbleDismissed(true);
   };
 
   const handleBubbleClick = () => {
     setIsOpen(true);
-    setShowProactiveBubble(false);
   };
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
       {/* Balão Proativo - Apenas Desktop */}
-      {showProactiveBubble && !isOpen && (
+      {!isOpen && !bubbleDismissed && (
         <div 
           className="hidden md:block absolute bottom-20 right-0 w-72 bg-card border border-border rounded-xl p-3 shadow-lg animate-fade-in cursor-pointer"
           onClick={handleBubbleClick}
@@ -175,7 +138,7 @@ const WhatsAppChatWidget = () => {
         </div>
         
         {/* Tooltip (apenas quando fechado e sem balão proativo) */}
-        {!isOpen && !showProactiveBubble && (
+        {!isOpen && !bubbleDismissed && (
           <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-foreground text-background px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-lg">
             Fale conosco no WhatsApp
             <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 rotate-45 w-2 h-2 bg-foreground" />
