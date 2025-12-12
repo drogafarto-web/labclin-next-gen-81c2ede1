@@ -32,6 +32,11 @@ const ColetaInfantilSemTraumas = lazy(() => import("./pages/blog/ColetaInfantilS
 const ExameToxicologicoCNH = lazy(() => import("./pages/blog/ExameToxicologicoCNH"));
 const TesteGravidezBetaHCG = lazy(() => import("./pages/blog/TesteGravidezBetaHCG"));
 const TestePezinhoAmpliado = lazy(() => import("./pages/blog/TestePezinhoAmpliado"));
+const ColesterolLDLHDLTriglicerideos = lazy(() => import("./pages/blog/ColesterolLDLHDLTriglicerideos"));
+const TireoideTSHT3T4 = lazy(() => import("./pages/blog/TireoideTSHT3T4"));
+const UreiaCreatininaRins = lazy(() => import("./pages/blog/UreiaCreatininaRins"));
+const GlicemiaHemoglobinaGlicada = lazy(() => import("./pages/blog/GlicemiaHemoglobinaGlicada"));
+const LabclinPrecisaoQualidade = lazy(() => import("./pages/blog/LabclinPrecisaoQualidade"));
 const UnidadeRioPomba = lazy(() => import("./pages/unidades/UnidadeRioPomba"));
 const UnidadeMerces = lazy(() => import("./pages/unidades/UnidadeMerces"));
 const UnidadeSilveirania = lazy(() => import("./pages/unidades/UnidadeSilveirania"));
@@ -100,6 +105,11 @@ const App = () => (
             <Route path="/blog/exame-toxicologico-primeira-habilitacao-preco" element={<ExameToxicologicoCNH />} />
             <Route path="/blog/teste-gravidez-farmacia-ou-sangue-beta-hcg" element={<TesteGravidezBetaHCG />} />
             <Route path="/blog/teste-do-pezinho-ampliado-sus-particular" element={<TestePezinhoAmpliado />} />
+            <Route path="/blog/colesterol-ldl-hdl-triglicerideos" element={<ColesterolLDLHDLTriglicerideos />} />
+            <Route path="/blog/tsh-t3-t4-tireoide" element={<TireoideTSHT3T4 />} />
+            <Route path="/blog/ureia-creatinina-rins" element={<UreiaCreatininaRins />} />
+            <Route path="/blog/glicemia-jejum-hemoglobina-glicada-diferenca" element={<GlicemiaHemoglobinaGlicada />} />
+            <Route path="/blog/labclin-precisao-qualidade" element={<LabclinPrecisaoQualidade />} />
             <Route path="/duvidas-frequentes" element={<DuvidasFrequentes />} />
             <Route path="/bio" element={<Bio />} />
             <Route path="/admin/generate-image" element={<GenerateImage />} />
