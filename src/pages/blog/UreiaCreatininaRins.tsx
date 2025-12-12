@@ -90,8 +90,8 @@ const UreiaCreatininaRins = () => {
 
               <div className="rounded-lg overflow-hidden mb-8">
                 <img
-                  src="/images/blog/hemograma-enhanced.jpg"
-                  alt="Exame de função renal ureia e creatinina"
+                  src="/images/blog/exame-creatinina-ureia-funcao-renal-labclin.jpg"
+                  alt="Ilustração 3D de rins representando exame de função renal no Labclin"
                   className="w-full h-auto object-cover"
                   loading="lazy"
                   width="800"

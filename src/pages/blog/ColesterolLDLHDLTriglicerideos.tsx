@@ -90,8 +90,8 @@ const ColesterolLDLHDLTriglicerideos = () => {
 
               <div className="rounded-lg overflow-hidden mb-8">
                 <img
-                  src="/images/blog/hemograma-enhanced.jpg"
-                  alt="Exame de colesterol sendo realizado em laboratório"
+                  src="/images/blog/exame-colesterol-triglicerideos-labclin.jpg"
+                  alt="Tubo de ensaio com amostra de colesterol em laboratório Labclin"
                   className="w-full h-auto object-cover"
                   loading="lazy"
                   width="800"
