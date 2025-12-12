@@ -9,6 +9,12 @@
   NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
 
+# Página Bio estática para compatibilidade com Instagram WebView
+[[redirects]]
+  from = "/bio"
+  to = "/bio.html"
+  status = 200
+
 # SPA Redirects - todas as rotas vão para index.html
 [[redirects]]
   from = "/*"
