@@ -14,38 +14,46 @@ const WhatsAppChatWidget = () => {
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
-      {/* Popup expandido */}
+      {/* Popup expandido - Estilo Jordana Rosati */}
       {isOpen && (
-        <div className="mb-4 w-80 bg-background rounded-2xl shadow-2xl border border-border overflow-hidden animate-fade-in">
-          {/* Header verde com foto */}
-          <div className="flex items-center gap-3 p-4 bg-[#25D366]">
-            <div className="relative flex-shrink-0 w-14 h-14 bg-white/20 rounded-full flex items-center justify-center">
-              <MessageCircle className="w-7 h-7 text-white" />
-              <span className="absolute bottom-0 right-0 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse" />
-            </div>
-            <div className="flex-1 text-white">
-              <h4 className="font-semibold">Labclin</h4>
-              <p className="text-sm opacity-90">Atendimento ao Cliente</p>
-            </div>
-            <button 
-              onClick={() => setIsOpen(false)}
-              className="text-white/80 hover:text-white transition-colors p-1"
-              aria-label="Fechar chat"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
+        <div className="mb-4 w-80 bg-background rounded-2xl shadow-2xl border border-border overflow-hidden animate-fade-in relative">
+          {/* Botão fechar */}
+          <button 
+            onClick={() => setIsOpen(false)}
+            className="absolute top-3 right-3 text-muted-foreground hover:text-foreground transition-colors z-10"
+            aria-label="Fechar chat"
+          >
+            <X className="w-5 h-5" />
+          </button>
           
-          {/* Mensagem de boas-vindas */}
-          <div className="p-4">
-            <div className="bg-muted rounded-lg p-3 text-foreground text-sm leading-relaxed">
-              Olá! 👋 Ficou com alguma dúvida sobre nossos exames ou serviços? 
-              Fale comigo pelo WhatsApp!
+          {/* Conteúdo principal */}
+          <div className="p-5">
+            <div className="flex items-start gap-4">
+              {/* Foto com indicador online */}
+              <div className="relative flex-shrink-0">
+                <img 
+                  src="/images/atendente-labclin.png" 
+                  alt="Atendente Labclin"
+                  className="w-16 h-16 rounded-full object-cover border-2 border-border shadow-sm"
+                />
+                <span className="absolute bottom-0 left-0 w-4 h-4 bg-green-500 rounded-full border-2 border-background" />
+              </div>
+              
+              {/* Texto */}
+              <div className="flex-1 pt-1">
+                <h4 className="font-semibold text-foreground text-lg">Labclin</h4>
+                <p className="text-sm text-primary font-medium">Atendimento ao Cliente</p>
+              </div>
             </div>
+            
+            {/* Mensagem de boas-vindas */}
+            <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
+              Olá! 👋 Ficou com alguma dúvida sobre nossos exames ou serviços? Fale comigo pelo WhatsApp!
+            </p>
           </div>
           
           {/* Botão CTA */}
-          <div className="p-4 pt-0">
+          <div className="px-5 pb-5">
             <a 
               href={whatsappUrl}
               target="_blank"
@@ -53,7 +61,7 @@ const WhatsAppChatWidget = () => {
               onClick={handleWhatsAppClick}
               className="block"
             >
-              <Button className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white font-medium">
+              <Button className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white font-medium h-11">
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Iniciar Conversa
               </Button>
