@@ -77,7 +77,7 @@ const WhatsAppChatWidget = () => {
         aria-label={isOpen ? "Fechar chat" : "Abrir chat do WhatsApp"}
       >
         {!isOpen && (
-          <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-75 animate-ping" />
+          <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-75 animate-ping pointer-events-none" />
         )}
         <div className="relative rounded-full h-16 w-16 bg-[#25D366] hover:bg-[#20BD5A] text-white shadow-[0_8px_30px_rgb(37,211,102,0.4)] hover:shadow-[0_12px_40px_rgb(37,211,102,0.6)] transition-all duration-300 hover:scale-110 flex items-center justify-center">
           {isOpen ? (
