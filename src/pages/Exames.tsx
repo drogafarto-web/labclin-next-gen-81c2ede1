@@ -8,10 +8,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Link } from "react-router-dom";
 import { Search, ArrowRight, CheckCircle2, Activity, Heart, Users, ShieldAlert, HeartPulse, AlertTriangle } from "lucide-react";
 import { useState } from "react";
 import { generateBreadcrumbSchema } from "@/lib/structuredData";
+import { CONTACTS, getWhatsAppUrl } from "@/config/constants";
+import { analytics } from "@/lib/analytics";
 import covidVirusImg from "@/assets/exames/covid-virus.png";
 import influenzaSyringeImg from "@/assets/exames/influenza-syringe.png";
 import sexagemDnaImg from "@/assets/exames/sexagem-dna.png";
@@ -699,11 +700,16 @@ const Exames = () => {
                 />
               </div>
 
-              <Link to="/agendar">
+              <a
+                href={getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, "Olá! Gostaria de agendar um check-up. Podem me ajudar?")}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => analytics.whatsappClick("hero_checkup", CONTACTS.WHATSAPP_MAIN, "check-up")}
+              >
                 <Button size="lg" variant="secondary" className="shadow-strong hover:scale-105 transition-transform text-lg px-8">
                   Agendar Check-up
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -769,12 +775,20 @@ const Exames = () => {
                       </div>
 
                       <div className="pt-2">
-                        <Link to="/agendar">
+                        <a
+                          href={getWhatsAppUrl(
+                            CONTACTS.WHATSAPP_MAIN,
+                            `Olá! Gostaria de agendar o ${checkup.name} com os seguintes exames: ${checkup.exams.map(e => e.name).join(", ")}.`
+                          )}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => analytics.whatsappClick("checkup_card", CONTACTS.WHATSAPP_MAIN, checkup.name)}
+                        >
                           <Button variant="default" className="w-full shadow-md group-hover:shadow-lg transition-all">
                             Agendar Check-up
                             <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                           </Button>
-                        </Link>
+                        </a>
                       </div>
                     </CardContent>
                   </Card>
@@ -864,7 +878,15 @@ const Exames = () => {
                         </div>
                       </div>
 
-                      <Link to="/agendar">
+                      <a
+                        href={getWhatsAppUrl(
+                          CONTACTS.WHATSAPP_MAIN,
+                          `Olá! Gostaria de agendar o exame: ${exame.name}.`
+                        )}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => analytics.whatsappClick("exame_card", CONTACTS.WHATSAPP_MAIN, exame.name)}
+                      >
                         <Button
                           variant="default"
                           className="w-full justify-between hover:shadow-md transition-all"
@@ -873,7 +895,7 @@ const Exames = () => {
                           Agendar Exame
                           <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </Button>
-                      </Link>
+                      </a>
                     </CardContent>
                   </Card>
                 ))}
@@ -947,11 +969,16 @@ const Exames = () => {
               Agende agora pelo WhatsApp seu exame ou check-up e tenha resultados rápidos e precisos
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/agendar">
+              <a
+                href={getWhatsAppUrl(CONTACTS.WHATSAPP_MAIN, "Olá! Gostaria de agendar um exame. Podem me ajudar?")}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => analytics.whatsappClick("cta_bottom", CONTACTS.WHATSAPP_MAIN, "agendar exame")}
+              >
                 <Button size="lg" variant="secondary" className="shadow-strong text-lg px-8">
                   Agendar Exame
                 </Button>
-              </Link>
+              </a>
               <a
                 href="https://wa.me/5532991990239?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20exames."
                 target="_blank"
