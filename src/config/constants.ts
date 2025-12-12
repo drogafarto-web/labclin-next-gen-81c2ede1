@@ -92,6 +92,7 @@ export const WHATSAPP_MESSAGES = {
   COLETA_DOMICILIAR: "Olá! Gostaria de agendar um serviço de comodidade Labclin.",
   INFORMACOES: "Olá! Gostaria de mais informações.",
   AGENDAR_COLETA: "Quero agendar coleta",
+  WIDGET_HUMANIZADO: "Olá, Bruno! Vi seu contato no site do Labclin e gostaria de ajuda.",
 } as const;
 
 /**
