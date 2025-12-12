@@ -19,12 +19,8 @@ const WhatsAppChatWidget = () => {
         <div className="mb-4 w-80 bg-background rounded-2xl shadow-2xl border border-border overflow-hidden animate-fade-in">
           {/* Header verde com foto */}
           <div className="flex items-center gap-3 p-4 bg-[#25D366]">
-            <div className="relative flex-shrink-0">
-              <img 
-                src="/images/atendente-labclin.png" 
-                alt="Atendente Labclin"
-                className="w-14 h-14 rounded-full object-cover border-2 border-white"
-              />
+            <div className="relative flex-shrink-0 w-14 h-14 bg-white/20 rounded-full flex items-center justify-center">
+              <MessageCircle className="w-7 h-7 text-white" />
               <span className="absolute bottom-0 right-0 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse" />
             </div>
             <div className="flex-1 text-white">
