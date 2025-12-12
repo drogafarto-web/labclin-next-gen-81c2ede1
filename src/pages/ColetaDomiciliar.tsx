@@ -22,9 +22,9 @@ const ColetaDomiciliar = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Coleta Domiciliar"
-        description="Serviço de coleta domiciliar em Rio Pomba, Mercês, Guarani e Silveirânia. Exames no conforto de casa com segurança e praticidade."
-        keywords="coleta domiciliar, exames em casa, coleta residencial, laboratorio domicilio"
+        title="Coleta Domiciliar de Exames"
+        description="Serviço de coleta domiciliar de exames em Rio Pomba, Mercês, Guarani e Silveirânia. Exames no conforto de casa com segurança e praticidade. Agende pelo WhatsApp."
+        keywords="coleta domiciliar, exames em casa, coleta residencial, laboratorio domicilio, coleta domiciliar rio pomba"
         canonicalUrl="https://www.labclinmg.com.br/coleta-domiciliar"
       />
       <Header />

@@ -224,7 +224,7 @@ const Index = () => {
     <div className="flex flex-col min-h-screen">
       <SEO
         title="Labclin: Rio Pomba, Mercês, Guarani e Silveirânia | Análises Clínicas"
-        description="Laboratório de referência na Zona da Mata. Exames de sangue, Sexagem Fetal e Toxicológico. Resultados online. Atendimento em Rio Pomba, Mercês, Guarani e Silveirânia."
+        description="Labclin: Excelência em Análises Clínicas em Rio Pomba, Mercês, Guarani e Silveirânia. Agende seu exame, acesse resultados online e faça seu Check-up com I.A. Atendimento humanizado e qualidade certificada."
         keywords="laboratório rio pomba, análises clínicas mercês, exames guarani, silveirânia, hemograma, coleta domiciliar, sexagem fetal, toxicológico cnh"
         canonicalUrl="https://www.labclinmg.com.br"
         structuredData={structuredData}
