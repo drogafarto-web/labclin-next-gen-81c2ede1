@@ -136,10 +136,11 @@ export const generateLocalBusinessSchema = () => ({
   description:
     "Laboratório de análises clínicas com mais de 58 anos de experiência em Rio Pomba, Mercês, Guarani e Silveirânia - MG. Exames de rotina, especializados, coleta domiciliar e resultados online.",
   url: "https://www.labclinmg.com.br",
-  logo: "https://www.labclinmg.com.br/logo.png",
-  image: "https://www.labclinmg.com.br/og-image.jpg",
+  logo: "https://www.labclinmg.com.br/labclin-logo.png",
+  image: "https://www.labclinmg.com.br/images/faq/recepcao-laboratorio-rio-pomba.jpg",
   telephone: "+55-32-99199-0239",
   email: "llabclin3@gmail.com",
+  hasMap: "https://www.google.com/maps/place/Labclin+-+Laborat%C3%B3rio+de+An%C3%A1lises+Cl%C3%ADnicas/@-21.2751,-43.1742,17z",
   address: UNITS.map((unit) => ({
     "@type": "PostalAddress",
     streetAddress: unit.address,

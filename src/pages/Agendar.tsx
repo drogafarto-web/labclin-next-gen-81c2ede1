@@ -11,9 +11,9 @@ const Agendar = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SEO
-        title="Agendar Exame"
-        description="Agende seus exames laboratoriais no Labclin de forma rápida e fácil. Atendimento em Rio Pomba, Mercês, Guarani e Silveirânia - MG."
-        keywords="agendar exame, laboratório, análises clínicas, agendamento online"
+        title="Agendamento de Exames"
+        description="Agende seus exames laboratoriais no Labclin de forma rápida e fácil pelo WhatsApp. Atendimento em Rio Pomba, Mercês, Guarani e Silveirânia - MG."
+        keywords="agendar exame, laboratório, análises clínicas, agendamento online, whatsapp"
         canonicalUrl="https://www.labclinmg.com.br/agendar"
       />
       <Header />
