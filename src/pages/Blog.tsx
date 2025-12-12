@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BlogCard from "@/components/BlogCard";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import WhatsAppChatWidget from "@/components/WhatsAppChatWidget";
 import SEO from "@/components/SEO";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -239,7 +239,7 @@ const Blog = () => {
         </main>
 
         <Footer />
-        <WhatsAppButton />
+        <WhatsAppChatWidget />
       </div>
     </>
   );

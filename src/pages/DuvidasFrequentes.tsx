@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { Search, MessageCircle, Phone, HelpCircle, Baby, Truck, TestTube, MapPin, CreditCard } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import WhatsAppChatWidget from "@/components/WhatsAppChatWidget";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -425,7 +425,7 @@ const DuvidasFrequentes = () => {
       </main>
 
       <Footer />
-      <WhatsAppButton />
+      <WhatsAppChatWidget />
     </>
   );
 };

@@ -5,7 +5,7 @@ import ServiceCard from "@/components/ServiceCard";
 import BlogCard from "@/components/BlogCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import DifferentialCard from "@/components/DifferentialCard";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import WhatsAppChatWidget from "@/components/WhatsAppChatWidget";
 import CookieBanner from "@/components/CookieBanner";
 import ResultsIframe from "@/components/ResultsIframe";
 import ConveniosSection from "@/components/ConveniosSection";
@@ -464,7 +464,7 @@ const Index = () => {
       </main>
 
       <Footer />
-      <WhatsAppButton />
+      <WhatsAppChatWidget />
       <CookieBanner />
     </div>
   );
