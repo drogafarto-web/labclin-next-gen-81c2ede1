@@ -414,8 +414,8 @@ const ExameToxicologicoCNH = () => {
 
                   {/* High Conversion CTA - Mid Article */}
                   <HighConversionCTABanner
-                    headline="CNH VENCENDO? LAUDO RÁPIDO E CONFIÁVEL!"
-                    subtext="Exame Toxicológico para CNH categorias C, D e E por apenas **R$ 100,00**."
+                    headline="CNH VENCENDO? LAUDO RÁPIDO E CONFIÁVEL PARA SEU EXAME TOXICOLÓGICO!"
+                    subtext="Exame Toxicológico para CNH categorias C, D e E por apenas **R$ 100,00**. Agende agora e evite multas!"
                     buttonText="AGENDAR MEU EXAME TOXICOLÓGICO"
                     whatsappNumber="553236121500"
                     whatsappMessage="Olá, gostaria de agendar o Exame Toxicológico por R$ 100,00 como vi no blog."
@@ -565,8 +565,8 @@ const ExameToxicologicoCNH = () => {
 
                   {/* High Conversion CTA - Bottom Article */}
                   <HighConversionCTABanner
-                    headline="PRECISA DA CNH? AGENDE AGORA E GARANTA SEU LAUDO!"
-                    subtext="Exame Toxicológico para primeira habilitação e renovação por apenas **R$ 100,00**. Laudo rápido para RENACH!"
+                    headline="PRIMEIRA HABILITAÇÃO OU RENOVAÇÃO? GARANTA SEU EXAME TOXICOLÓGICO AGORA!"
+                    subtext="Exame Toxicológico para CNH 2025 por apenas **R$ 100,00**. Laudo válido para RENACH em até 5 dias úteis!"
                     buttonText="AGENDAR MEU EXAME TOXICOLÓGICO"
                     whatsappNumber="553236121500"
                     whatsappMessage="Olá, gostaria de agendar o Exame Toxicológico por R$ 100,00 como vi no blog."
