@@ -72,7 +72,7 @@ const WhatsAppChatWidget = () => {
       {/* Balão Proativo - Apenas Desktop */}
       {showProactiveBubble && !isOpen && (
         <div 
-          className="hidden md:block absolute bottom-20 right-0 w-64 bg-card border border-border rounded-xl p-3 shadow-lg animate-fade-in cursor-pointer"
+          className="hidden md:block absolute bottom-20 right-0 w-72 bg-card border border-border rounded-xl p-3 shadow-lg animate-fade-in cursor-pointer"
           onClick={handleBubbleClick}
         >
           {/* Botão fechar balão */}
@@ -84,18 +84,18 @@ const WhatsAppChatWidget = () => {
             <X className="w-3 h-3 text-muted-foreground" />
           </button>
           
-          <div className="flex items-center gap-3">
+          <div className="flex items-start gap-3">
             <div className="relative flex-shrink-0">
               <img 
                 src="/images/atendente-labclin.png" 
                 alt={PROFESSIONAL_INFO.name}
-                className="w-10 h-10 rounded-full object-cover border border-border"
+                className="w-10 h-10 rounded-full object-cover object-top border border-border"
               />
               <span className="absolute -bottom-0.5 -left-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-card" />
             </div>
-            <div>
+            <div className="flex-1">
               <p className="text-sm font-medium text-foreground">{PROFESSIONAL_INFO.name}</p>
-              <p className="text-xs text-muted-foreground">Posso ajudar? 👋</p>
+              <p className="text-xs text-muted-foreground leading-relaxed">Olá! Ficou com alguma dúvida sobre os seus exames? Fale comigo!</p>
             </div>
           </div>
         </div>
@@ -118,11 +118,11 @@ const WhatsAppChatWidget = () => {
             <div className="flex items-start gap-4">
               {/* Foto com indicador online */}
               <div className="relative flex-shrink-0">
-                <img 
-                  src="/images/atendente-labclin.png" 
-                  alt={PROFESSIONAL_INFO.name}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-border shadow-sm"
-                />
+              <img 
+                src="/images/atendente-labclin.png" 
+                alt={PROFESSIONAL_INFO.name}
+                className="w-16 h-16 rounded-full object-cover object-top border-2 border-border shadow-sm"
+              />
                 <span className="absolute bottom-0 left-0 w-4 h-4 bg-green-500 rounded-full border-2 border-background" />
               </div>
               
