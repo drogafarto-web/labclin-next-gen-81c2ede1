@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import WhatsAppChatWidget from "@/components/WhatsAppChatWidget";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock, MapPin, Phone, CheckCircle, Baby, Heart, Sparkles, AlertCircle, Car } from "lucide-react";
 import HighConversionCTABanner from "@/components/HighConversionCTABanner";
@@ -478,7 +478,7 @@ const SexagemFetalPreco = () => {
         </main>
 
         <Footer />
-        <WhatsAppButton />
+        <WhatsAppChatWidget />
       </div>
     </>
   );

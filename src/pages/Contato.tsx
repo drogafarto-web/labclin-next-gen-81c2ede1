@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import WhatsAppChatWidget from "@/components/WhatsAppChatWidget";
 import WhatsAppCTA from "@/components/WhatsAppCTA";
 import SEO from "@/components/SEO";
 import UnitCard from "@/components/cards/UnitCard";
@@ -140,7 +140,7 @@ const Contato = () => {
       </main>
 
       <Footer />
-      <WhatsAppButton />
+      <WhatsAppChatWidget />
     </div>
   );
 };

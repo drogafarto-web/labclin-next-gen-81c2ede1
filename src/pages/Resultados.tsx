@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import WhatsAppChatWidget from "@/components/WhatsAppChatWidget";
 import SEO from "@/components/SEO";
 import ResultsIframe from "@/components/ResultsIframe";
 import { Shield, FileCheck, Download, User, Stethoscope, Building, Building2 } from "lucide-react";
@@ -191,7 +191,7 @@ const Resultados = () => {
       </main>
 
       <Footer />
-      <WhatsAppButton />
+      <WhatsAppChatWidget />
     </div>
   );
 };

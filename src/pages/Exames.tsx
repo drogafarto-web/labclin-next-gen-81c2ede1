@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import WhatsAppChatWidget from "@/components/WhatsAppChatWidget";
 import TestimonialCard from "@/components/TestimonialCard";
 import SEO from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -967,7 +967,7 @@ const Exames = () => {
       </main>
 
       <Footer />
-      <WhatsAppButton />
+      <WhatsAppChatWidget />
     </div>
   );
 };
