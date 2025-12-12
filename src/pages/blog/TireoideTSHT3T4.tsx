@@ -90,8 +90,8 @@ const TireoideTSHT3T4 = () => {
 
               <div className="rounded-lg overflow-hidden mb-8">
                 <img
-                  src="/images/blog/preparo-exames-enhanced.jpg"
-                  alt="Exame de tireoide TSH T3 T4"
+                  src="/images/blog/exame-tireoide-tsh-t3-t4-labclin.jpg"
+                  alt="Tubo de coleta para exame de tireoide TSH T3 T4 no Labclin"
                   className="w-full h-auto object-cover"
                   loading="lazy"
                   width="800"
